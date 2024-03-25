@@ -10,7 +10,7 @@
             sosial media
          </div>
          <div>
-            list menu 2
+            list menu 2j
          </div>
     </div>
   </div>
