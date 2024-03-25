@@ -1,4 +1,3 @@
 <?php
 
-// Content
-echo "Landing Page";
+include "component/Navbar.php";
