@@ -2,7 +2,43 @@
     padding: 0;
     margin: 0;
 }
+/* login */
 
 #login{
     height: 100vh !important;
 }
+/* login */
+/* navbar */
+  .bg-body-tertiary {
+    background-color:rgb(255, 255, 255, 0.8)  !important; /* Warna teks hitam transparan */
+    padding: 10px 0;
+    position: fixed;
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar-brand {
+    color: rgba(0, 0, 0, 0.8) !important; /* Warna teks hitam transparan */
+    transition: color 0.3s ease-in-out;
+  }
+
+  .navbar-brand:hover {
+    color: #666666 !important; /* Warna teks saat di-hover */
+  }
+/* navbar */
+
+/* herosection */
+.hero {
+    /* background: url('assets/img/gambar1.jpeg') no-repeat center center/cover; */
+    background-color: aqua;
+    padding: 100px 0;
+    text-align: center;
+    height: 100vh;
+}
+.container {
+    width: 80%; 
+    margin: 0 auto; 
+}
+/* herosection */
