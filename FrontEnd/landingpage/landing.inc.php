@@ -1,4 +1,5 @@
 <?php
 
-// Content
-echo "Landing Page";
+// Navbar
+include "component/Navbar.php";
+include "component/Header.php";

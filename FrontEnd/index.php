@@ -7,10 +7,8 @@ include "partials/header.php";
         
         // Route
         if($_GET['url'] == "user"){
-            var_dump(($_GET['url']));
             include "landingpage/landing.inc.php";
         }else if($_GET['url'] == "admin"){
-            var_dump(($_GET['url']));
             include "Admin/admin.inc.php";
         }
 
