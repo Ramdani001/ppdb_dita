@@ -1,5 +1,4 @@
 <?php
 
-// Navbar
 include "component/Navbar.php";
-include "component/Header.php";
+include "component/Herosection.php";
