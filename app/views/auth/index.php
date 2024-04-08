@@ -1,3 +1,10 @@
 
-<h1>Halaman Login dengan id Person = <?= $data['id_person'] ?></h1>
+<h1>Data Siswa</h1>
+
+<?php foreach ($data['person'] as $person) : ?>
+    <ul>
+        <li><?= $person['nrp'] ?></li>
+        <li><?= $person['nama'] ?></li>
+    </ul>
+<?php endforeach; ?>
 
