@@ -1,26 +1,17 @@
 <?php
 
 class User_model{
-    private $dbh;
-    private $stmt;
+
+    private $table = "person";
+    private $db;
 
     public function __construct(){
-        // Datasource Name
-        $dsn = 'mysql:host=localhost;dbname=db_profita';
-        
-        try {
-            $this->dbh = new PDO($dsn, 'root', '');
-            
-        } catch (PDOException $error) {
-            die($error->getMessage());
-        }
-        
+        $this->db = new Database;
     }
 
     public function getUser(){
-        $this->stmt = $this->dbh->prepare('SELECT * FROM person');
-        $this->stmt->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        $this->db->query('SELECT * FROM '. $this->table);
+        return $this->db->resultSet();
     }
 
 }
