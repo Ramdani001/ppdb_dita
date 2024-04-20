@@ -6,9 +6,14 @@
     <title> <?= $data['title'] ?></title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="<?= BASEURL; ?>/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>assets/bootstrap/css/bootstrap.css">
 
     <!-- MyStyle -->
-    <link rel="stylesheet" href="<?= BASEURL ?>/assets/style.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>assets/style.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="<?= BASEURL ?>assets/fontawesome/css/all.css">
+    
+
 </head>
 <body>

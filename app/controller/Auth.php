@@ -11,6 +11,8 @@ class Auth extends Controller {
         $this->view('templates/header', $data);
         $this->view('component/Navbar', $data);
             $this->view('auth/index', $data);
+            $this->view('component/HeroSection', $data);
+            $this->view('component/ProfileSection', $data);
         $this->view('templates/footer');
     }
 }
