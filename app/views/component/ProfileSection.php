@@ -1,7 +1,7 @@
 <section class="w-100 h-100">
-    <div class="profileContent d-flex gap-5 p-5" style=' height: 100vh; background-repeat: no-repeat; background-position: center;'>
-        
-        <div class="w-50 h-100" style="display: grid; place-items: center;">
+    <div class="profileContent d-flex gap-5 p-5 align-items-center" style=' height: 100vh; background-repeat: no-repeat; background-position: center;'>
+         
+        <div class="kepsek w-50 h-100" style="display: grid; place-items: center;">
             <img src="<?= BASEURL ?>assets/img/kepsek.jpg" alt="" class="shadow-lg border border-3 border-light">
         </div>
         <div class="right-profile w-50">
@@ -19,7 +19,7 @@
             </p>
             <p id="textSambutan" class="d-none">
                 Lorem ipsum dolor
-            </p>
+            </p> 
         </div>
 
     </div>

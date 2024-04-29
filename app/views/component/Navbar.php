@@ -1,10 +1,13 @@
-<nav class="shadow row position-fixed top-0 bg-light w-100 m-0" style="z-index: 100;">
-    <div class="p-1 ps-md-5 col-4 d-flex align-items-center">
-        <img src="<?= BASEURL ?>/assets/img/logo.png" alt="logo" style="height: 50px;">
+<nav class="shadow row position-fixed top-0 bg-light w-100 m-0 navbar-expand-lg" style="z-index: 100;">
+    <div class="brand p-1 ps-md-5 col-8 col-md-4 d-flex align-items-center">
+        <img src="<?= BASEURL ?>/assets/img/logo.png" alt="logo" id="logo">
         <h4 class="ms-2">SMK PROFITA BANDUNG</h4>
     </div>
-    <div class="col-8">
-        <div class="col-12 d-flex justify-content-end mt-1 gap-5 pe-5 w-100 text-dark" style="align-items: center;">
+    <div id="btnMobile" class="col-1 fs-1" style="width: 30%; display: grid; justify-content: end; align-items: center;">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div id="mScreen" class="col-md-8 col-6">
+        <div class="sosmed col-12 d-flex justify-content-end mt-1 gap-md-5 pe-5 w-100 text-dark" style="align-items: center;">
             <div class="nav-link" style="font-size: 20px; box-sizing: border-box;">
                 <i class="fa-brands fa-facebook"></i>
             </div>
