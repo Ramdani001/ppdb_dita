@@ -22,10 +22,10 @@ class User_model{
         $password = $data['password'];
         $password = hash('sha256', $_POST['password']);
 
-        $type = 'siswa';
+        $type = 3;
         $created_at = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO person VALUES ('', :name, '', :email, '', :type, :created_at, '')";
+        $query = "INSERT INTO person VALUES ('', '', :name, :email, :type, '', :created_at, '')";
         $this->db->query($query);
         $this->db->bind('type', $type);
         $this->db->bind('name', $name);
@@ -38,17 +38,17 @@ class User_model{
             return false; // Gagal memasukkan data ke tabel person
         }
         // ======
-
-        $this->db->query('SELECT id_person FROM person');
+        $this->db->query('SELECT id_person FROM person WHERE email=:email');
+        $this->db->bind(':email', $email);
         $id_person = $this->db->single();
         // var_dump($id_person['id_person']);
         // die();
-        $query = "INSERT INTO user VALUES ('', :id_person, :name, :email, :password)";
+        $query = "INSERT INTO user VALUES ('', :id_person, :email, :password, :created_at, '')";
         $this->db->query($query);
         $this->db->bind(':id_person', $id_person['id_person']);
-        $this->db->bind('name', $name);
         $this->db->bind('email', $email);
         $this->db->bind('password', $password);
+        $this->db->bind('created_at', $created_at);
         
         $this->db->execute();
 
@@ -85,7 +85,7 @@ class User_model{
                     $send = [
                         ['SESSION' => 'Gagal Login']
                     ];
-                    return 
+                    return $send;
                 }
             }else{
                 return $this->db->rowCount();

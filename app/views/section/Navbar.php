@@ -27,25 +27,29 @@
         </div> 
         <div class="d-flex align-items-center gap-3 mt-md-3 gap-5">
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="#heroSection">Beranda</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#heroSection">Beranda</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="#profileSection">Profile</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#profileSection">Profile</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="#">Akademika</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing/Akademika">tenaga Pendidik</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="#galeriSection">Galeri</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#galeriSection">Galeri</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="#">Sarana & Prasarana</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing/Sarana">Sarana & Prasarana</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="#beritaSection">Berita</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#beritaSection">Berita</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="#kontakSection">Kontak</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#kontakSection">Kontak</a>
+            </div>
+            <?php echo $data['person'] ?>
+            <div class="nav-link">
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#kontakSection">Kontak</a>
             </div>
         </div>
     </div>

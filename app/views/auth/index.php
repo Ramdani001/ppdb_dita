@@ -5,11 +5,11 @@
       <form action="<?= BASEURL ?>/AdminController/Auth/login" method="post" class="p-2 mt-5">
         <div class="mb-3">
           <label for="emailLogin" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="emailLogin" name="email" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="emailLogin" name="email" aria-describedby="emailHelp" required>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" name="password">
+          <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <button type="submit" class="btn btn-primary w-100">SUBMIT</button>
         <label class="mt-2">Tidak Memiliki Akun? 

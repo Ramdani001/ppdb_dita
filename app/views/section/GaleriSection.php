@@ -1,4 +1,4 @@
-<section id="galeri" style="background-image: url(<?= BASEURL ?>public/assets/img/galeri.png);" class="mt-5 shadow-lg p-5">
+<section id="galeriSection" style="background-image: url(<?= BASEURL ?>public/assets/img/galeri.png);  background-repeat: no-repeat; background-size: cover;" class="mt-5 shadow-lg p-5">
     <h2 class="text-center pb-2">
         <b>Galeri</b>
     </h2>

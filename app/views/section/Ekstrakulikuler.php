@@ -1,5 +1,7 @@
 <section class="p-2" id="ekstrakulikuler">
-  <h2 class="ps-md-2">Ekstrakulikuler</h2>
+  <div class="ps-5">
+    <h2 class="ps-2">Ekstrakulikuler</h2>
+  </div>
     <fieldset class="d-flex flex-wrap justify-content-evenly gap-3">
         <!-- Card -->
         <div class="card eks shadow-md" style="width: 25rem; cursor: pointer;">
