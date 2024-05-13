@@ -6,8 +6,9 @@ class Landing extends Controller {
         $data['id_person'] = $id;
         $data['title'] = "SMK PROFITA";
 
-        $data['person'] = $this->model('User_model')->getUser();
 
+        $data['person'] = $this->model('User_model')->getUser();
+        
         $this->view('templates/header', $data);
         $this->view('section/Navbar', $data);
             $this->view('section/HeroSection', $data);

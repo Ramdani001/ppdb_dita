@@ -15,8 +15,8 @@ class AdminController extends Controller {
 
         $person = (object) $data['person'];
 
-        var_dump($data['person']);
-        die();
+        // var_dump($data['person']);
+        // die();
         $this->view('templates/header', $data);
         
         $this->view('auth/index', $data);
@@ -39,9 +39,10 @@ class AdminController extends Controller {
                 $this->db->execute();
                 
                 if($this->db->single()['tipe'] == 3){
-                    header('Location: '. BASEURL .'Landing');
+                    
+                    header('Location: '. BASEURL .'Landing/index/'.$id_person);
                 }else{
-                    header('Location: '. BASEURL .'ViewAdminController');
+                    header('Location: '. BASEURL .'ViewAdminController/index/'.$id_person);
                 }
                 exit;
             }else{

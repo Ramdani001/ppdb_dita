@@ -1,42 +1,43 @@
- <!-- ======= Sidebar ======= -->
- <aside id="sidebar" class="sidebar">
 
-<ul class="sidebar-nav" id="sidebar-nav">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="index.html">
-      <i class="bi bi-grid"></i>
-      <span>Dashboard</span>
-    </a>
-  </li>
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-  <li class="nav-heading">Pages</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
 
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="<?= BASEURL ?>viewAdminController/user">
-      <i class="bi bi-person"></i>
-      <span>User</span>
-    </a>
-  </li>
+      <li class="nav-heading">Pages</li>
 
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="users-profile.html">
-      <i class="bi bi-person"></i>
-      <span>Siswa Daftar</span>
-    </a>
-  </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="<?= BASEURL ?>viewAdminController/user">
+          <i class="bi bi-person"></i>
+          <span>User</span>
+        </a>
+      </li>
 
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-faq.html">
-      <i class="bi bi-question-circle"></i>
-      <span>Laporan Pendaftaran</span>
-    </a>
-  </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Siswa Daftar</span>
+        </a>
+      </li>
 
-</ul>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-faq.html">
+          <i class="bi bi-question-circle"></i>
+          <span>Laporan Pendaftaran</span>
+        </a>
+      </li>
 
-</aside>
-<!-- End Sidebar-->
+    </ul>
+
+  </aside>
+  <!-- End Sidebar-->
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -58,6 +59,7 @@
       </form>
     </div><!-- End Search Bar -->
 
+    <main class="d-flex flex-direction-column">
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
@@ -94,7 +96,7 @@
 
             <li>
               <hr class="dropdown-divider">
-            </li>
+            </li>b
 
             <li class="notification-item">
               <i class="bi bi-x-circle text-danger"></i>
@@ -247,4 +249,13 @@
       </ul>
     </nav>
 
-  </header><!-- End Header -->
+    <div class="bg-danger" style="width: 100%; height: 100vh;">
+        <h1 class="fs-1 text-danget ps-5 mt-5" style="padding-top: 20px;">User</h1>
+    </div>
+
+
+    </main>
+    
+  </header>
+  <!-- End Header -->
+

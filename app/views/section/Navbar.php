@@ -47,10 +47,11 @@
             <div class="nav-link">
                 <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#kontakSection">Kontak</a>
             </div>
-            <?php echo $data['person'] ?>
+            <?php if($data['id_person'] > 0) :?>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#kontakSection">Kontak</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#kontakSection">PPDB</a>
             </div>
+            <?php endif;?>
         </div>
     </div>
 </nav>

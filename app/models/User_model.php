@@ -14,6 +14,8 @@ class User_model{
         return $this->db->resultSet();
     }
 
+    
+
     public function register($data){
         // var_dump($data);
         // die();
