@@ -1,8 +1,8 @@
 <?php
 
 // BASE URL
-define('BASEURL', 'http://localhost/stt%20mandala/ppdb_dita/');
-define('COMPONENT_PATH', 'http://localhost/stt%20mandala/ppdb_dita/app/views/component/');
+define('BASEURL', 'http://localhost/ppdb_dita/');
+define('COMPONENT_PATH', 'http://localhost/ppdb_dita/app/views/component/');
 
 // DB
 define('DB_HOST', 'localhost');

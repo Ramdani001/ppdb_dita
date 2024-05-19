@@ -19,7 +19,13 @@ class AdminController extends Controller {
         // die();
         $this->view('templates/header', $data);
         
-        $this->view('auth/index', $data);
+        $this->view('section/navbar', $data);
+        $this->view('section/heroSection', $data);
+        $this->view('section/profileSection', $data);
+        $this->view('section/Ekstrakulikuler', $data);
+        $this->view('section/GaleriSection', $data);
+        $this->view('section/BeritaSection', $data);
+        $this->view('section/KontakSection', $data);
 
         $this->view('templates/footer');
     }
@@ -28,10 +34,10 @@ class AdminController extends Controller {
         session_start();
         if($type == 'login'){
             $send = $this->model('User_model')->login($_POST);
+            
             if($send[1]['SESSION'] > 0){
                 
-                $id_person = $send[0]['SESSION'];
-                
+                $id_person = $send[0]['BERHASIL'];
                 
                 $sql = "SELECT tipe FROM person WHERE id_person = :id_person";
                 $this->db->query($sql);
@@ -39,15 +45,12 @@ class AdminController extends Controller {
                 $this->db->execute();
                 
                 if($this->db->single()['tipe'] == 3){
-                    
-                    header('Location: '. BASEURL .'Landing/index/'.$id_person);
+                    header('Location: '. BASEURL .'PPDBController/index/'.$id_person);
                 }else{
                     header('Location: '. BASEURL .'ViewAdminController/index/'.$id_person);
                 }
                 exit;
-            }else{
-                var_dump($send[1]['SESSION']);
-                die();
+            }else{  
                 $_SESSION['message'] = 'Gagal login!';
                 header('Location: '. BASEURL .'AdminController');
                 exit;
@@ -55,7 +58,7 @@ class AdminController extends Controller {
         }else if($type == 'register'){
             if($this->model('User_model')->register($_POST)){
                 $_SESSION['message'] = 'Berhasil dibuat!';
-                header('Location: '. BASEURL .'AdminController');
+                header('Location: '. BASEURL .'LoginController');
                 exit;
             }else{
                 $_SESSION['message'] = 'Gagal dibuat!';

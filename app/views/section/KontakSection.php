@@ -1,4 +1,4 @@
-<section id="kontakSection" style="background-image: url(<?= BASEURL ?>assets/img/bg4.jpg); height: 100vh; background-size: cover; background-position: center;">
+<section id="kontakSection" style="background-image: url(<?= BASEURL ?>assets/img/bg4.jpg); height: 100vh; background-size: cover; background-position: center;" class="mb-3">
     <fieldset class="d-flex flex-wrap gap-4 p-5 justify-content-between">
         <div class="card w-50">
             <div class="card-body w-100">

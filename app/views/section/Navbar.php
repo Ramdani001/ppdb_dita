@@ -47,11 +47,9 @@
             <div class="nav-link">
                 <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#kontakSection">Kontak</a>
             </div>
-            <?php if($data['id_person'] > 0) :?>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#kontakSection">PPDB</a>
+                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>LoginController">PPDB</a>
             </div>
-            <?php endif;?>
         </div>
     </div>
 </nav>

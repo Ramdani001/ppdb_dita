@@ -18,9 +18,5 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="<?= BASEURL ?>public/assets/script/jquery.js"></script>
 
-
-    
-    <!-- MyScript -->
-    <script src="<?= BASEURL ?>public/assets/script.js"></script>
 </head>
 <body style="scroll-behavior: smooth;">
