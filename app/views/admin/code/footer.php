@@ -12,6 +12,9 @@
 
     <!-- Template Main JS File -->
     <script src="<?= BASEURL ?>public/assets/admin/js/main.js"></script>
+    
+    <!-- My Script --> 
+    <script src="<?= BASEURL ?>public/assets/scriptPPDB.js"></script>
 </body>
 </html>
 

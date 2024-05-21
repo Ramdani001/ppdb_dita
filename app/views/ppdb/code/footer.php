@@ -12,6 +12,7 @@
 
     <!-- Template Main JS File -->
     <script src="<?= BASEURL ?>public/assets/admin/js/main.js"></script>
+
 </body>
 </html>
 

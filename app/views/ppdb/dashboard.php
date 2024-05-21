@@ -240,8 +240,8 @@
     </div>
     <div class="header border p-2 d-flex">
       <!-- Btn Data Diri -->
-      <div id="dataDiri" class="pe-3 d-flex">
-        <button class="btn btn-primary">
+      <div class="pe-3 d-flex">
+        <button id="sub_dataDiri" class="btn btn-primary" disabled>
           <i class="ri-account-box-fill"></i>
           Data Diri
         </button>
@@ -251,8 +251,8 @@
       </div>
 
       <!-- Btn Alamat -->
-      <div id="alamat" class="pe-3 d-flex">
-        <button class="btn btn-secondary" disabled>
+      <div class="pe-3 d-flex">
+        <button id="sub_alamat" class="btn btn-secondary" disabled>
           <i class="ri-home-8-fill"></i>
           Alamat
         </button>
@@ -262,16 +262,16 @@
       </div>
 
       <!-- Btn Data Orang Tua -->
-      <div id="orangtua" class="pe-3 d-flex">
-        <button class="btn btn-secondary" disabled> <i class="ri-parent-fill"></i> Data Orang Tua</button>
+      <div class="pe-3 d-flex">
+        <button id="sub_orangtua" class="btn btn-secondary" disabled> <i class="ri-parent-fill"></i> Data Orang Tua</button>
       </div>
       <div class="me-3">
         <i class="ri-arrow-right-double-fill text-secondary fs-3"></i>
       </div>
 
       <!-- Btn Foto -->
-      <div id="dataDiri" class="pe-3 d-flex">
-        <button class="btn btn-secondary" disabled>
+      <div class="pe-3 d-flex">
+        <button id="sub_fotoUpload" class="btn btn-secondary" disabled>
           <i class="ri-image-2-fill"></i>  
           Foto
         </button>
@@ -279,303 +279,688 @@
       
     </div>
 
-    
+     
     <!-- form data diri -->
-    <form action="#" class=" w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
-    <table class="w-100">
-      <tr>
-        <td>
-          <!-- No Daftar -->
-          <div class="row g-3 align-items-center m-2">
-          <div class="col-6">
-            <label for="inputPassword6" class="col-form-label">No. Pendaftaran</label>
-          </div>
-          <div class="col-6">
-            <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control" aria-describedby="passwordHelpInline">
-          </div>
-        </div>
-        </td>
-        <td>
-          <!-- No Daftar -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="inputPassword6" class="col-form-label">Asal Sekolah</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <!-- No Daftar -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="npsn_sekolah" class="col-form-label">NPSN Sekolah Asal</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-        <td>
-            <!-- No Daftar -->
-            <div class="row g-3 align-items-center m-2">
+    <div id="form-diri">
+      <form action="#" class=" w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
+        <table class="w-100">
+          <tr>
+            <td>
+              <!-- No Daftar -->
+              <div class="row g-3 align-items-center m-2">
               <div class="col-6">
-                <label for="nisn" class="col-form-label">NISN</label>
+                <label for="inputPassword6" class="col-form-label">No. Pendaftaran</label>
               </div>
               <div class="col-6">
-                <input type="Text" id="nisn" name="nisn" class="form-control" aria-describedby="passwordHelpInline">
+                <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control" aria-describedby="passwordHelpInline" required>
               </div>
             </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <!-- NIK -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="nik" class="col-form-label">NIK</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="nik" name="nik" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- kewarganegaraan -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="kewarganegaraan" class="col-form-label">Kewarganegaraan</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <!-- Nama Lengkap -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="nama_lengkap" class="col-form-label">Nama Lengkap</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- Nama Lengkap -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="tempat" class="col-form-label">Tempat</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="tempat" name="tempat" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <!-- Tanggal Lahir -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="tanggal_lahir" class="col-form-label">Tanggal Lahir</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="tanggal_lahir" name="tanggal_lahir" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- Jenis Kelamin -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <!-- Anak Ke -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="anak_ke" class="col-form-label">Anak Ke</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="anak_ke" name="anak_ke" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-        <td>
-            <!-- Jumlah Saudara -->
-            <div class="row g-3 align-items-center m-2">
-              <div class="col-6">
-                <label for="jml_saudara" class="col-form-label">Jumlah Saudara/i</label>
+            </td>
+            <td>
+              <!-- No Daftar -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="inputPassword6" class="col-form-label">Asal Sekolah</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
               </div>
-              <div class="col-6">
-                <input type="Text" id="jml_saudara" name="jml_saudara" class="form-control" aria-describedby="passwordHelpInline">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- No Daftar -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="npsn_sekolah" class="col-form-label">NPSN Sekolah Asal</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
               </div>
-            </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <!-- Agama -->
-            <div class="row g-3 align-items-center m-2">
-              <div class="col-6">
-                <label for="agama" class="col-form-label">Agama</label>
+            </td>
+            <td>
+                <!-- No Daftar -->
+                <div class="row g-3 align-items-center m-2">
+                  <div class="col-6">
+                    <label for="nisn" class="col-form-label">NISN</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="Text" id="nisn" name="nisn" class="form-control" aria-describedby="passwordHelpInline" required>
+                  </div>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- NIK -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nik" class="col-form-label">NIK</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="nik" name="nik" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
               </div>
-              <div class="col-6">
-                <input type="Text" id="agama" name="agama" class="form-control" aria-describedby="passwordHelpInline">
+            </td>
+            <td>
+              <!-- kewarganegaraan -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="kewarganegaraan" class="col-form-label">Kewarganegaraan</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
               </div>
-            </div>
-        </td>
-        <td>
-          <!-- Cita-Cita -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="cita_cita" class="col-form-label">Cita-Cita</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="cita_cita" name="cita_cita" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <!-- Hobi -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="hobi" class="col-form-label">Hobi</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="hobi" name="hobi" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- Email -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="email" class="col-form-label">Email</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="email" name="email" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-         <td>
-           <!-- No.Handphone -->
-           <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="no_telp" class="col-form-label">No. Handphone</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="no_telp" name="no_telp" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-         </td>
-         <td>
-               <!-- Yang Membiayai Sekolah -->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Nama Lengkap -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nama_lengkap" class="col-form-label">Nama Lengkap</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Nama Lengkap -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="tempat" class="col-form-label">Tempat</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="tempat" name="tempat" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Tanggal Lahir -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="tanggal_lahir" class="col-form-label">Tanggal Lahir</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="tanggal_lahir" name="tanggal_lahir" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Jenis Kelamin -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Anak Ke -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="anak_ke" class="col-form-label">Anak Ke</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="anak_ke" name="anak_ke" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+                <!-- Jumlah Saudara -->
+                <div class="row g-3 align-items-center m-2">
+                  <div class="col-6">
+                    <label for="jml_saudara" class="col-form-label">Jumlah Saudara/i</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="Text" id="jml_saudara" name="jml_saudara" class="form-control" aria-describedby="passwordHelpInline" required>
+                  </div>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <!-- Agama -->
+                <div class="row g-3 align-items-center m-2">
+                  <div class="col-6">
+                    <label for="agama" class="col-form-label">Agama</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="Text" id="agama" name="agama" class="form-control" aria-describedby="passwordHelpInline" required>
+                  </div>
+                </div>
+            </td>
+            <td>
+              <!-- Cita-Cita -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="cita_cita" class="col-form-label">Cita-Cita</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="cita_cita" name="cita_cita" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Hobi -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="hobi" class="col-form-label">Hobi</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="hobi" name="hobi" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Email -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="email" class="col-form-label">Email</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="email" name="email" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- No.Handphone -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="no_telp" class="col-form-label">No. Handphone</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="no_telp" name="no_telp" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+                  <!-- Yang Membiayai Sekolah -->
+                  <div class="row g-3 align-items-center m-2">
+                    <div class="col-6">
+                      <label for="biaya_sekolah" class="col-form-label">Yang Membiayai Sekolah</label>
+                    </div>
+                    <div class="col-6">
+                      <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" aria-describedby="passwordHelpInline" required>
+                    </div>
+                  </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Yang Membiayai Sekolah -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
                   <label for="biaya_sekolah" class="col-form-label">Yang Membiayai Sekolah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" aria-describedby="passwordHelpInline">
+                  <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" aria-describedby="passwordHelpInline" required>
                 </div>
               </div>
-         </td>
-      </tr>
-      <tr>
-        <td>
-          <!-- Yang Membiayai Sekolah -->
-          <div class="row g-3 align-items-center m-2">
-            <div class="col-6">
-              <label for="biaya_sekolah" class="col-form-label">Yang Membiayai Sekolah</label>
-            </div>
-            <div class="col-6">
-              <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-          </div>
-        </td>
-        <td>
-            <!-- PAUD -->
+            </td>
+            <td>
+                <!-- PAUD -->
+                <div class="row g-3 align-items-center m-2">
+                  <div class="col-6">
+                    <label for="paud" class="col-form-label">PAUD</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="Text" id="paud" name="paud" class="form-control" aria-describedby="passwordHelpInline" required>
+                  </div>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- TK -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="tk" class="col-form-label">TK</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="tk" name="tk" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- No.Kip -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="kip" class="col-form-label">No.KIP</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="kip" name="kip" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- No.KK -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="kk" class="col-form-label">No.KK</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="kk" name="kk" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+          </td>
+          <td>
+            <!-- Kepala Keluarga -->
             <div class="row g-3 align-items-center m-2">
               <div class="col-6">
-                <label for="paud" class="col-form-label">PAUD</label>
+                <label for="kepala_keluarga" class="col-form-label">Kepala Keluarga</label>
               </div>
               <div class="col-6">
-                <input type="Text" id="paud" name="paud" class="form-control" aria-describedby="passwordHelpInline">
+                <input type="Text" id="kepala_keluarga" name="kepala_keluarga" class="form-control" aria-describedby="passwordHelpInline" required>
               </div>
             </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-<!-- TK -->
-<div class="row g-3 align-items-center m-2">
-      <div class="col-6">
-        <label for="tk" class="col-form-label">TK</label>
-      </div>
-      <div class="col-6">
-        <input type="Text" id="tk" name="tk" class="form-control" aria-describedby="passwordHelpInline">
-      </div>
+          </td>
+          </tr>
+        </table>
+        <div class="d-flex justify-content-end w-100 mt-3">
+          <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(1)">Next</button>
+        </div>
+      </form>
+      <hr>
+      <span class="text-secondary mb-2" style="padding-bottom: 10px;">*Harap isi data dengan Sebenar-benarnya</span>
     </div>
-        </td>
-        <td>
-<!-- No.Kip -->
-<div class="row g-3 align-items-center m-2">
-      <div class="col-6">
-        <label for="kip" class="col-form-label">No.KIP</label>
-      </div>
-      <div class="col-6">
-        <input type="Text" id="kip" name="kip" class="form-control" aria-describedby="passwordHelpInline">
-      </div>
-    </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <!-- No.KK -->
-    <div class="row g-3 align-items-center m-2">
-      <div class="col-6">
-        <label for="kk" class="col-form-label">No.KK</label>
-      </div>
-      <div class="col-6">
-        <input type="Text" id="kk" name="kk" class="form-control" aria-describedby="passwordHelpInline">
-      </div>
-    </div>
-        </td>
-        <td>
-<!-- Kepala Keluarga -->
-<div class="row g-3 align-items-center m-2">
-      <div class="col-6">
-        <label for="kepala_keluarga" class="col-form-label">Kepala Keluarga</label>
-      </div>
-      <div class="col-6">
-        <input type="Text" id="kepala_keluarga" name="kepala_keluarga" class="form-control" aria-describedby="passwordHelpInline">
-      </div>
-     </div>
-        </td>
-      </tr>
-    </table>
-    </form>
-    <hr>
-    <span class="text-secondary mb-2" style="padding-bottom: 10px;">*Harap isi data dengan Sebenar-benarnya</span>
     <!-- form data diri -->
+
+    <!-- form Data alamat --> 
+    <div id="form-alamat" class="d-none">
+      <form action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
+        <table class="w-100">
+          <tr>
+            <td>
+              <!-- NIK -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nik" class="col-form-label">Status Tempat Tinggal</label>
+                </div>
+                <div class="col-6">
+                  <select class="form-select" name="status_rumah" id="status_rumah">
+                    <option value="1">Tinggal denga Orangtua/Wali</option>
+                  </select>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- kewarganegaraan -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="alamat" class="col-form-label">Alamat</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="alamat" name="alamat" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Nama Lengkap -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nama_lengkap" class="col-form-label">RT/RW</label>
+                </div>
+                <div class="col-6 d-flex gap-3">
+                  <input type="number" id="rt" name="rt" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="number" id="rw" name="rw" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Nama Lengkap -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="desa" class="col-form-label">Desa</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="desa" name="desa" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Tanggal Lahir -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="tanggal_lahir" class="col-form-label">Kecamatan</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="kecamatan" name="kecamatan" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Jenis Kelamin -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="kab_kota" class="col-form-label">Kabupaten/Kota</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="kab_kota" name="kab_kota" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Anak Ke -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="provinsi" class="col-form-label">Provinsi</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="provinsi" name="provinsi" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+                <!-- Jumlah Saudara -->
+                <div class="row g-3 align-items-center m-2">
+                  <div class="col-6">
+                    <label for="kode_pos" class="col-form-label">Kode Pos</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="number" id="kode_pos" name="kode_pos" class="form-control" aria-describedby="passwordHelpInline" required>
+                  </div>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <!-- Agama -->
+                <div class="row g-3 align-items-center m-2">
+                  <div class="col-6">
+                    <label for="transportasi" class="col-form-label">Transportasi</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="Text" id="transportasi" name="transportasi" class="form-control" aria-describedby="passwordHelpInline" required>
+                  </div>
+                </div>
+            </td>
+            <td>
+              <!-- Cita-Cita -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="jarak_kesekolah" class="col-form-label">Jarak Ke Sekolah</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="jarak_kesekolah" name="jarak_kesekolah" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Hobi -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="waktu_tempuh" class="col-form-label">Waktu Tempuh</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="waktu_tempuh" name="waktu_tempuh" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+           
+          </tr>
+        </table>
+        <div class="d-flex justify-content-end w-100 mt-3">
+          <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(11)">Back</button>
+          <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(2)">Next</button>
+        </div>
+      </form>
+      <hr>
+      <span class="text-secondary mb-2" style="padding-bottom: 10px;">*Harap isi data dengan Sebenar-benarnya</span>
+    </div>
+    <!-- form Data alamat -->
+    <!-- form Data orangtuan -->
+    <div id="form-orangtua" class="d-none">
+      <form action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
+        <table class="w-100">
+          <tr>
+            <td>
+              <!-- Status Ayah -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nik" class="col-form-label">Status Ayah</label>
+                </div>
+                <div class="col-6">
+                  <select class="form-select" name="status_ayah" id="status_ayah">
+                    <option value="1">Masih Hidup</option>
+                  </select>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- NIK Ayah -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nik_ayah" class="col-form-label">NIK Ayah</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="nik_ayah" name="nik_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Status Ayah -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nik" class="col-form-label">Nama Ayah</label>
+                </div>
+                <div class="col-6">
+                <input type="Text" id="nama_ayah" name="nama_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Tempat Lahir -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="lhr_ayah" class="col-form-label">Tempat Lahir</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="lhr_ayah" name="lhr_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Pendidikan Ayah -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nik" class="col-form-label">Pendidikan Ayah</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="pendidikan_ayah" name="pendidikan_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Pekerjaan -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="pekerjaan_ayah" class="col-form-label">Pekerjaan</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="pekerjaan_ayah" name="pekerjaan_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- penghasilan Ayah -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="penghasilan_ayah" class="col-form-label">Penghasilan Ayah</label>
+                </div>
+                <div class="col-6">
+                   <select class="form-select" name="penghasilan_ayah" id="penghasilan_ayah">
+                    <option value="1">1.000.000 - 2.000.000</option>
+                    <option value="1">2.000.000 - 4.000.000</option>
+                  </select>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Status Ibu -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="status_ibu" class="col-form-label">Status Ibu</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="status_ibu" name="status_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- NIK IBU -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nik_ibu" class="col-form-label">NIK Ibu</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="nik_ibu" name="nik_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- nama Ibu -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nama_ibu" class="col-form-label">Nama Ibu</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="nama_ibu" name="nama_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Tempat Lahir IBU -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="lhr_ibu" class="col-form-label">Tempat Lahir</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="lhr_ibu" name="lhr_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Tgl Lhir Ibu -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nama_ibu" class="col-form-label">Tanggal Lahir</label>
+                </div>
+                <div class="col-6">
+                  <input type="date" id="tgl_lhir_ibu" name="tgl_lhir_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- No Hp Ibu -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="no_ibu" class="col-form-label">No. HP Ibu</label>
+                </div>
+                <div class="col-6">
+                  <input type="date" id="no_ibu" name="no_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Pendidikan Ibu -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="pendidikan_ibu" class="col-form-label">Pendidikan Ibu</label>
+                </div>
+                <div class="col-6">
+                   <select class="form-select" name="pendidikan_ibu" id="pendidikan_ibu">
+                    <option value="1">SD</option>
+                    <option value="1">S3</option>
+                  </select>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Penghasilan Ibu -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="penghasilan_ibu" class="col-form-label">Penghasilan Ibu</label>
+                </div>
+                <div class="col-6">
+                  <select class="form-select" name="penghasilan_ibu" id="pendidikan_ibu">
+                    <option value="1">1.000.000 - </option>
+                    <option value="1">S3</option>
+                  </select>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="d-flex justify-content-end w-100 mt-3">
+          <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(21)">Back</button>
+          <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(3)">Next</button>
+        </div>
+      </form>
+      <hr>
+      <span class="text-secondary mb-2" style="padding-bottom: 10px;">*Harap isi data dengan Sebenar-benarnya</span>
+    </div>
+    <!-- form Data orangtua -->
+    <!-- form Data foto -->
+    <div id="form-foto" class="d-none">
+      <form action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
+        <table class="w-100">
+          <tr>
+            <td>
+              <!-- NIK -->
+              <div class="row g-3 align-items-center m-2">
+                  <input type="file" class="form-control" id="foto_siswa" name="foto_siswa">
+                </div>
+              </div>
+            </td> 
+          </tr>
+        </table>
+        <div class="d-flex justify-content-end w-100 mt-3">
+          <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(31)">Back</button>
+          <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(4)">Simpan</button>
+        </div>
+      </form>
+    </div>
+    <!-- form Data foto -->
+
   </div>
 </main>
 <!-- Content -->

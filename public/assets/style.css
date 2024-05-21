@@ -5,7 +5,15 @@
 
 body{
   background-color: rgb(249, 249, 249);
-} 
+}
+
+.text-menu:hover{
+  border-bottom: 2px solid rgb(21, 204, 94);
+}
+
+.sosmed-list:hover{
+  color: rgb(21, 204,94);
+}
 
 .active-profile{
   z-index: 1;

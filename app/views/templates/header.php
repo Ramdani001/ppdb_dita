@@ -15,7 +15,9 @@
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="<?= BASEURL ?>public/assets/fontawesome/css/all.css">
+    
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     <script src="<?= BASEURL ?>public/assets/script/jquery.js"></script>
 
 </head>

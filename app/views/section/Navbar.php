@@ -8,47 +8,40 @@
     </div>
     <div id="mScreen" class="col-md-8 col-6 mt-md-2">
         <div class="sosmed col-12 d-flex justify-content-end mt-1 gap-md-5 pe-5 w-100 text-dark" style="align-items: center;">
-            <div class="nav-link" style="font-size: 20px; box-sizing: border-box;">
+            <div class="nav-link sosmed-list" style="font-size: 20px;">
                 <i class="fa-brands fa-facebook"></i> 
             </div>
-            <div class="nav-link" style="font-size: 20px; box-sizing: border-box;">
+            <div class="nav-link sosmed-list" style="font-size: 20px;">
                 <i class="fa-brands fa-instagram"></i>
             </div>
-            <div class="nav-link" style="font-size: 20px; box-sizing: border-box;">
+            <div class="nav-link sosmed-list" style="font-size: 20px;">
                 <i class="fa-brands fa-youtube"></i>
             </div>
-            <div class="nav-link d-flex gap-3" style="font-size: 20px; box-sizing: border-box;">
-                <label>Dita Sri Rahayu</label>
-                <div class="bg-dark" style="width: 30px; height: 30px; border-radius: 100%;">
-    
-                </div>
-            </div>
-            
         </div> 
-        <div class="d-flex align-items-center gap-3 mt-md-3 gap-5">
+        <div class="d-flex align-items-center gap-3 mt-md-3 gap-4">
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#heroSection">Beranda</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#heroSection">Beranda</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#profileSection">Profile</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#profileSection">Profile</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing/Akademika">tenaga Pendidik</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing/Akademika">tenaga Pendidik</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#galeriSection">Galeri</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#galeriSection">Galeri</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing/Sarana">Sarana & Prasarana</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing/Sarana">Sarana & Prasarana</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#beritaSection">Berita</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#beritaSection">Berita</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>Landing#kontakSection">Kontak</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#kontakSection">Kontak</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-dark" href="<?= BASEURL ?>LoginController">PPDB</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>LoginController">PPDB</a>
             </div>
         </div>
     </div>
