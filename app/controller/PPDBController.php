@@ -12,7 +12,28 @@ class PPDBController extends Controller {
             $this->view('ppdb/dashboard');
         $this->view('admin/code/footer');
     }
-    
+
+    public function berkas($id = 0){
+        $data['id_person'] = $id;
+        $data['title'] = "SMK PROFITA";
+
+        $data['person'] = $this->model('User_model')->getUser();
+
+        $this->view('admin/code/header', $data);
+            $this->view('ppdb/berkas');
+        $this->view('admin/code/footer');
+    }
+    public function cetakKartu($id = 0){
+        $data['id_person'] = $id;
+        $data['title'] = "SMK PROFITA";
+
+        $data['person'] = $this->model('User_model')->getUser();
+
+        $this->view('admin/code/header', $data);
+            $this->view('ppdb/cetakKartu');
+        $this->view('admin/code/footer');
+    }
+
     public function user($id = 0){
 
         $data['id_person'] = $id;

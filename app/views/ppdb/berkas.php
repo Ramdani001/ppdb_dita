@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: white;">
+<header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: #6dc146;">
 
   <div class="d-flex align-items-center justify-content-center">
     <a class="logo d-flex align-items-center ps-md-5">
@@ -210,32 +210,23 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link bg-primary text-light collapsed" href="#">
-        <i class="bi bi-person text-light"></i>
-        <span>Dashboard</span>
-      </a>
-    </li>
-
-    <li class="nav-heading">Pages</li>
-
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/user">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController">
         <i class="bi bi-person"></i>
-        <span>User</span>
+        <span>Formulir</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
-        <i class="bi bi-question-circle"></i>
-        <span>Siswa Daftar</span>
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas">
+        <i class="bi bi-person"></i>
+        <span>Upload Berkas</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/laporan">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu">
         <i class="bi bi-question-circle"></i>
-        <span>Laporan Pendaftaran</span>
+        <span>Cetak Kartu</span>
       </a>
     </li>
 
@@ -244,93 +235,40 @@
 <!-- End Sidebar-->
 <!-- Content -->
 <main class="d-flex w-100 h-100 me-1 rounded shadow-lg p-3 card z-1" style="height: 87vh; margin-top: 5%; margin-left: 24%;">
-   <section class="d-flex justify-content-evenly">
-      <!-- Siswa Daftar -->
-      <div class="card info-card sales-card w-25 d-flex justify-content-center">
-        <div class="card-body">
-          <h5 class="card-title text-center">Siswa Daftar</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon text-center rounded-circle d-flex align-items-center justify-content-center">
-            <i class="ri-team-line"></i>
-            </div>
-            <div class="ps-3 text-center">
-              <h2>145</h2>
-            </div>
-          </div>
+    <h3 class="text-decoration-underline">
+        UPLOAD BERKAS
+    </h3>
+    <form action="#" enctype="multiple">
+    <div class="mb-3">
+            <label for="kkFile" class="form-label">Kartu Keluarga</label>
+            <input class="form-control" type="file" id="kkFile" name="kkFile">
         </div>
-      </div>
-      <!-- End Siswa Daftar -->
-      <!-- Verifikasi Data -->
-      <div class="card info-card sales-card w-25">
-        <div class="card-body">
-          <h5 class="card-title text-center">Verifikasi Data</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-              <i class="ri-file-user-line"></i>
-            </div>
-            <div class="ps-3">
-              <h2>2</h2>
-            </div>
-          </div>
+
+        <div class="mb-3">
+            <label for="aktaFile" class="form-label">Akta Keluarga</label>
+            <input class="form-control" type="file" id="aktaFile">
         </div>
-      </div>
-      <!-- End Verifikasi Data -->
-      <!-- Verifikasi Data -->
-      <div class="card info-card sales-card w-25">
-        <div class="card-body">
-          <h5 class="card-title text-center">User Active</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-            <i class="ri-id-card-fill"></i>
-            </div>
-            <div class="ps-3">
-              <h2>78</h2>
-            </div>
-          </div>
+
+        <div class="mb-3">
+            <label for="ijazahFile" class="form-label">Ijazah/SKL</label>
+            <input class="form-control" type="file" id="ijazahFile">
         </div>
-      </div>
-      <!-- End Verifikasi Data -->
-   </section>
 
-   <!-- Grafik -->
+        <div class="mb-3">
+            <label for="kipFile" class="form-label">Kartu Indonesia Pintar</label>
+            <input class="form-control" type="file" id="kipFile">
+            <label for="kipFile" class="form-label">
+                <span style="font-size: 10px;">
+                    <i>**Upload jika memilikinya</i>
+                </span>
+            </label>
+        </div>
 
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Jurusan Yang Diminati</h5>
+        <div class="d-flex justify-content-end" style="">
+            <button class="btn btn-primary w-25">Submit</button>
+        </div>
 
-        <!-- Pie Chart -->
-        <canvas id="pieChart" style="max-height: 400px;"></canvas>
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-            new Chart(document.querySelector('#pieChart'), {
-              type: 'pie',
-              data: {
-                labels: [
-                  'RPL',
-                  'TKJ',
-                  'TTT'
-                ],
-                datasets: [{
-                  label: 'My First Dataset',
-                  data: [300, 50, 100],
-                  backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
-                  ],
-                  hoverOffset: 4
-                }]
-              }
-            });
-          });
-        </script>
-        <!-- End Pie CHart -->
-
-      </div>
-    </div>
-
-   <!-- Grafik -->
-
+    </form>
 </main>
 <!-- Content -->
 </div>

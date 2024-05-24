@@ -210,8 +210,8 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link bg-primary text-light collapsed" href="#">
-        <i class="bi bi-person text-light"></i>
+      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/">
+        <i class="bi bi-person"></i>
         <span>Dashboard</span>
       </a>
     </li>
@@ -226,15 +226,15 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
-        <i class="bi bi-question-circle"></i>
+      <a class="nav-link collapsed " href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
+        <i class="ri-graduation-cap-fill"></i>
         <span>Siswa Daftar</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/laporan">
-        <i class="bi bi-question-circle"></i>
+      <a class="nav-link collapsed bg-primary text-light" href="<?= BASEURL ?>ViewAdminController/laporan">
+        <i class="ri-folder-chart-fill"></i>
         <span>Laporan Pendaftaran</span>
       </a>
     </li>
@@ -242,59 +242,12 @@
   </ul>
 </aside>
 <!-- End Sidebar-->
+
 <!-- Content -->
 <main class="d-flex w-100 h-100 me-1 rounded shadow-lg p-3 card z-1" style="height: 87vh; margin-top: 5%; margin-left: 24%;">
-   <section class="d-flex justify-content-evenly">
-      <!-- Siswa Daftar -->
-      <div class="card info-card sales-card w-25 d-flex justify-content-center">
-        <div class="card-body">
-          <h5 class="card-title text-center">Siswa Daftar</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon text-center rounded-circle d-flex align-items-center justify-content-center">
-            <i class="ri-team-line"></i>
-            </div>
-            <div class="ps-3 text-center">
-              <h2>145</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Siswa Daftar -->
-      <!-- Verifikasi Data -->
-      <div class="card info-card sales-card w-25">
-        <div class="card-body">
-          <h5 class="card-title text-center">Verifikasi Data</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-              <i class="ri-file-user-line"></i>
-            </div>
-            <div class="ps-3">
-              <h2>2</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Verifikasi Data -->
-      <!-- Verifikasi Data -->
-      <div class="card info-card sales-card w-25">
-        <div class="card-body">
-          <h5 class="card-title text-center">User Active</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-            <i class="ri-id-card-fill"></i>
-            </div>
-            <div class="ps-3">
-              <h2>78</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Verifikasi Data -->
-   </section>
 
-   <!-- Grafik -->
-
-    <div class="card">
+     <!-- Grafik -->
+   <div class="card">
       <div class="card-body">
         <h5 class="card-title">Jurusan Yang Diminati</h5>
 
@@ -328,8 +281,64 @@
 
       </div>
     </div>
-
    <!-- Grafik -->
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex justify-content-between items-align-center">
+          <h5 class="card-title">Data Siswa </h5>
+
+          <div class="d-flex gap-4 h-100">
+            
+            <button class="btn btn-success mt-3" style="height: 10%;">
+              <i class="ri-file-excel-2-fill"></i>
+            </button>
+
+            <button class="btn btn-primary mt-3" style="height: 10%;">
+              <i class="ri-printer-fill"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+        <table class="table table-hover">
+          <thead>
+            <th class="text-center">#</th>
+            <th class="text-center">Nama</th>
+            <th class="text-center">Asal Sekolah</th>
+            <th class="text-center">No.Telpon</th>
+            <th class="text-center">Status</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">
+                <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
+              </td>
+              <td class="text-center">Rizkan Ramdani</td>
+              <td class="text-center">SMP Kemala Bhayangkari</td>
+              <td class="text-center">089487584734</td>
+              <td class="text-center">
+                <button class="btn btn-danger" disabled>Not Verif</button>
+              </td>
+            </tr>
+            <tr>
+            <td class="text-center">
+                <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/profile.jpg" alt="foto">
+              </td>
+              <td class="text-center">Dita Sri Rahayu</td>
+              <td class="text-center">SMP Bandung</td>
+              <td class="text-center">089487584734</td>
+              <td class="text-center">
+                <button class="btn btn-success" disabled>Verif</button>
+              </td>
+            </tr>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
 
 </main>
 <!-- Content -->

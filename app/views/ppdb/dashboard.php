@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: #47AF22;">
+<header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: #6dc146;">
 
   <div class="d-flex align-items-center justify-content-center">
     <a class="logo d-flex align-items-center ps-md-5">
@@ -210,21 +210,21 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>viewAdminController/user">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController">
         <i class="bi bi-person"></i>
         <span>Formulir</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="users-profile.html">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas">
         <i class="bi bi-person"></i>
         <span>Upload Berkas</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="pages-faq.html">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu">
         <i class="bi bi-question-circle"></i>
         <span>Cetak Kartu</span>
       </a>

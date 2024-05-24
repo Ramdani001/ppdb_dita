@@ -219,14 +219,14 @@
     <li class="nav-heading">Pages</li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed  bg-primary text-light " href="<?= BASEURL ?>ViewAdminController/user">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/user">
         <i class="bi bi-person"></i>
         <span>User</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
+      <a class="nav-link collapsed bg-primary text-light " href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
         <i class="ri-graduation-cap-fill"></i>
         <span>Siswa Daftar</span>
       </a>
@@ -250,27 +250,39 @@
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Data User</h5>
+        <h5 class="card-title">Siswa Daftar</h5>
 
         <table class="table table-hover">
           <thead>
             <th class="text-center">#</th>
-            <th class="text-center">Email</th>
+            <th class="text-center">Nama</th>
+            <th class="text-center">Asal Sekolah</th>
+            <th class="text-center">No.Telpon</th>
             <th class="text-center">Status</th>
             <th class="text-center">Aksi</th>
           </thead>
           <tbody>
             <tr>
               <td class="text-center">
-                1
+                <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
               </td>
-              <td class="text-center">rizkan@gmail.com</td>
+              <td class="text-center">Rizkan Ramdani</td>
+              <td class="text-center">SMKN 10 Bandung</td>
+              <td class="text-center">089487584734</td>
               <td class="text-center">
-                <button class="btn btn-success">Active</button>
+                <button class="btn btn-danger">Not Verif</button>
               </td>
               <td class="text-center">
                 <div class="d-flex gap-3 justify-content-center">
-                  
+
+                  <button class="btn btn-primary text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="ri-eye-line"></i>
+                  </button>
+
+                  <button class="btn btn-success text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                    <i class="ri-file-edit-line"></i>
+                  </button>
+
                   <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
                     <i class="ri-delete-bin-2-line"></i>
                   </button>
@@ -290,6 +302,98 @@
 <!-- Content -->
 </div>
 
+<!-- Modal Detail -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Siswa</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- NISN -->
+        <div class="mb-3">
+          <label for="det_nisn" class="form-label">NISN</label>
+          <input type="text" class="form-control" id="det_nisn" placeholder="0902399329343" disabled>
+        </div>
+        <!-- Nama Lengkap -->
+        <div class="mb-3">
+          <label for="det_name" class="form-label">Nama Lengkap</label>
+          <input type="text" class="form-control" id="det_name" placeholder="Rizkan Ramdani" disabled>
+        </div>
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="det_email" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="det_email" placeholder="Rizkan Ramdani" disabled>
+        </div>
+        <!-- No.Telp -->
+        <div class="mb-3">
+          <label for="det_no" class="form-label">No.Telpon</label>
+          <input type="text" class="form-control" id="det_no" placeholder="Rizkan Ramdani" disabled>
+        </div>
+
+        <div class="d-flex gap-4 justify-content-center flex-wrap">
+
+          <!-- KK Berkas -->
+          <div>
+            <h6>
+              <b>
+                Kartu Keluarga
+              </b>
+            </h6>
+            <div id="det_kk" class="bg-primary" style="width: 200px; height: 250px;">
+
+            </div>
+          </div>
+
+          <!-- Akta Kelahiran Berkas -->
+          <div>
+            <h6>
+              <b>
+                Akta Kelahiran
+              </b>
+            </h6>
+            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
+
+            </div>
+          </div>
+
+          <!-- Ijazah/SKL Berkas -->
+          <div>
+            <h6>
+              <b>
+                Ijazah/SKL
+              </b>
+            </h6>
+            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
+
+            </div>
+          </div>
+
+          <!-- Kartu Indonesia Pintar Berkas -->
+          <div>
+            <h6>
+              <b>
+                Kartu Indonesia Pintar
+              </b>
+            </h6>
+            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
+
+            </div>
+          </div>
+
+          
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Detail -->
+
 
 <!-- Modal Edit -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -298,22 +402,84 @@
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="editModalLabel">Edit Siswa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- NISN -->
+        <div class="mb-3">
+          <label for="det_nisn" class="form-label">NISN</label>
+          <input type="text" class="form-control" id="det_nisn" placeholder="0902399329343">
+        </div>
+        <!-- Nama Lengkap -->
+        <div class="mb-3">
+          <label for="det_name" class="form-label">Nama Lengkap</label>
+          <input type="text" class="form-control" id="det_name" placeholder="Rizkan Ramdani">
+        </div>
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="det_email" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="det_email" placeholder="rizkan@gmail.com">
+        </div>
+        <!-- No.Telp -->
+        <div class="mb-3">
+          <label for="det_no" class="form-label">No.Telpon</label>
+          <input type="text" class="form-control" id="det_no" placeholder="089xxxxxxxxxxxxx">
+        </div>
+
+        <div class="d-flex gap-4 justify-content-center flex-wrap">
+
+          <!-- KK Berkas -->
+          <div>
+            <h6>
+              <b>
+                Kartu Keluarga
+              </b>
+            </h6>
+            <div id="det_kk" class="bg-primary" style="width: 200px; height: 250px;">
+
+            </div>
+            <input type="file" class="form-control mt-2" style="width: 200px;" name="kk_update">
           </div>
-          <!-- Nama Lengkap -->
-          <div class="mb-3">
-              <label for="det_name" class="form-label">Nama Lengkap</label>
-              <input type="text" class="form-control" id="det_name" placeholder="Rizkan Ramdani" disabled>
+
+          <!-- Akta Kelahiran Berkas -->
+          <div>
+            <h6>
+              <b>
+                Akta Kelahiran
+              </b>
+            </h6>
+            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
+
             </div>
-            <!-- Email -->
-            <div class="mb-3">
-              <label for="det_email" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="det_email" placeholder="Rizkan Ramdani" disabled>
+            <input type="file" class="form-control mt-2" style="width: 200px;" name="akta_update">
+          </div>
+
+          <!-- Ijazah/SKL Berkas -->
+          <div>
+            <h6>
+              <b>
+                Ijazah/SKL
+              </b>
+            </h6>
+            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;" >
+
             </div>
-            <!-- No.Telp -->
-            <div class="mb-3">
-              <label for="det_no" class="form-label">Aksi</label>
-              <input type="text" class="form-control" id="det_no" placeholder="Rizkan Ramdani" disabled>
+            <input type="file" class="form-control mt-2" style="width: 200px;" name="ijazah_update">
+          </div>
+
+          <!-- Kartu Indonesia Pintar Berkas -->
+          <div>
+            <h6>
+              <b>
+                Kartu Indonesia Pintar
+              </b>
+            </h6>
+            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
+
             </div>
+            <input type="file" class="form-control mt-2" style="width: 200px;" name="kip_update">
+          </div>
+
+          
         </div>
 
       </div>

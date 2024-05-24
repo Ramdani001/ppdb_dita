@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: white;">
+<header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: #6dc146;">
 
   <div class="d-flex align-items-center justify-content-center">
     <a class="logo d-flex align-items-center ps-md-5">
@@ -210,32 +210,23 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link bg-primary text-light collapsed" href="#">
-        <i class="bi bi-person text-light"></i>
-        <span>Dashboard</span>
-      </a>
-    </li>
-
-    <li class="nav-heading">Pages</li>
-
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/user">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController">
         <i class="bi bi-person"></i>
-        <span>User</span>
+        <span>Formulir</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
-        <i class="bi bi-question-circle"></i>
-        <span>Siswa Daftar</span>
+      <a class="nav-link collapsed" href="users-profile.html">
+        <i class="bi bi-person"></i>
+        <span>Upload Berkas</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/laporan">
+      <a class="nav-link collapsed" href="pages-faq.html">
         <i class="bi bi-question-circle"></i>
-        <span>Laporan Pendaftaran</span>
+        <span>Cetak Kartu</span>
       </a>
     </li>
 
@@ -244,93 +235,49 @@
 <!-- End Sidebar-->
 <!-- Content -->
 <main class="d-flex w-100 h-100 me-1 rounded shadow-lg p-3 card z-1" style="height: 87vh; margin-top: 5%; margin-left: 24%;">
-   <section class="d-flex justify-content-evenly">
-      <!-- Siswa Daftar -->
-      <div class="card info-card sales-card w-25 d-flex justify-content-center">
-        <div class="card-body">
-          <h5 class="card-title text-center">Siswa Daftar</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon text-center rounded-circle d-flex align-items-center justify-content-center">
-            <i class="ri-team-line"></i>
+   <form action="#" method="post">
+    <div class="card p-3">
+        <div class="card-header">
+            CETAK KARTU PENDAFTARAN
+        </div>
+        <div class="card-body p-3 gap-4 d-flex justfiy-content-around align-items-center">
+            <div class="left">
+                <img src="<?= BASEURL ?>public/assets/img/profile/profile.jpg" alt="" style="width: 150px; border-radius: 10px;">
             </div>
-            <div class="ps-3 text-center">
-              <h2>145</h2>
+            <div class="right p-3 w-100 mt-4">
+                <div class="d-flex justify-content-center w-100 mb-3">
+                  <span class="w-50">
+                    <b>No. Pendaftaran</b>
+                  </span>
+                  <input type="text" class="form-control" style="background-color: #EDEDED;" placeholder="229293030999324">
+                </div>
+                <div class="d-flex justify-content-center w-100 mb-3">
+                  <span class="w-50">
+                    <b>Nama Lengkap</b>
+                  </span>
+                  <input type="text" class="form-control" style="background-color: #EDEDED;" placeholder="Dita Sri Rahayu">
+                </div>
+                <div class="d-flex justify-content-center w-100 mb-3">
+                  <span class="w-50">
+                    <b>NISN</b>
+                  </span>
+                  <input type="text" class="form-control" style="background-color: #EDEDED;" placeholder="1212121212121">
+                </div>
+                <div class="d-flex justify-content-center w-100 mb-3">
+                  <span class="w-50">
+                    <b>Tempat dan Tanggal Lahir</b>
+                  </span>
+                  <input type="text" class="form-control" style="background-color: #EDEDED;" placeholder="jakarta, 08-12-1998">
+                </div>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- End Siswa Daftar -->
-      <!-- Verifikasi Data -->
-      <div class="card info-card sales-card w-25">
-        <div class="card-body">
-          <h5 class="card-title text-center">Verifikasi Data</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-              <i class="ri-file-user-line"></i>
-            </div>
-            <div class="ps-3">
-              <h2>2</h2>
-            </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn text-light" style="background-color: #8F0DA4;">
+              <i class="ri-chat-download-line"></i>
+              Download Formulir Pendaftaran</button>
           </div>
-        </div>
-      </div>
-      <!-- End Verifikasi Data -->
-      <!-- Verifikasi Data -->
-      <div class="card info-card sales-card w-25">
-        <div class="card-body">
-          <h5 class="card-title text-center">User Active</h5>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-            <i class="ri-id-card-fill"></i>
-            </div>
-            <div class="ps-3">
-              <h2>78</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Verifikasi Data -->
-   </section>
-
-   <!-- Grafik -->
-
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Jurusan Yang Diminati</h5>
-
-        <!-- Pie Chart -->
-        <canvas id="pieChart" style="max-height: 400px;"></canvas>
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-            new Chart(document.querySelector('#pieChart'), {
-              type: 'pie',
-              data: {
-                labels: [
-                  'RPL',
-                  'TKJ',
-                  'TTT'
-                ],
-                datasets: [{
-                  label: 'My First Dataset',
-                  data: [300, 50, 100],
-                  backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
-                  ],
-                  hoverOffset: 4
-                }]
-              }
-            });
-          });
-        </script>
-        <!-- End Pie CHart -->
-
-      </div>
     </div>
-
-   <!-- Grafik -->
-
+   </form>
 </main>
 <!-- Content -->
 </div>
