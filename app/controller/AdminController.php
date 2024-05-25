@@ -28,15 +28,14 @@ class AdminController extends Controller {
         $this->view('section/KontakSection', $data);
 
         $this->view('templates/footer');
-    }
+    } 
 
     public function Auth($type){
-        session_start();
         if($type == 'login'){
             $send = $this->model('User_model')->login($_POST);
             
             if($send[1]['SESSION'] > 0){
-                
+
                 $id_person = $send[0]['BERHASIL'];
                 
                 $sql = "SELECT tipe FROM person WHERE id_person = :id_person";
@@ -51,12 +50,14 @@ class AdminController extends Controller {
                 }
                 exit;
             }else{  
-                $_SESSION['message'] = 'Gagal login!';
-                header('Location: '. BASEURL .'AdminController');
+                Flasher::setFlash('Gagal Login Mohon periksan emil & password', 'Login', 'danger');
+
+                header('Location: '. BASEURL .'LoginController');
                 exit;
             }
         }else if($type == 'register'){
             if($this->model('User_model')->register($_POST)){
+                Flasher::setFlash('Selamat Bergabung', 'Login', 'success');
                 $_SESSION['message'] = 'Berhasil dibuat!';
                 header('Location: '. BASEURL .'LoginController');
                 exit;

@@ -1,3 +1,9 @@
+<!-- Mengambil nama -->
+<?php
+  $person = $data['person'];      
+?>
+<!-- =========== -->
+
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: #6dc146;">
 
@@ -165,12 +171,12 @@
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
-          <span class="d-none d-md-block dropdown-toggle ps-2">Rizkan Ramdani</span>
+          <span class="d-none d-md-block dropdown-toggle ps-2"><?= $person['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>Rizkan Ramdani</h6>
+            <h6><?= $person['nama'] ?></h6>
             <span>Profesor Teknologi</span>
           </li>
           <li>
@@ -188,7 +194,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -210,21 +216,21 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/index/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Formulir</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Upload Berkas</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu/<?= $person['id_person'] ?>">
         <i class="bi bi-question-circle"></i>
         <span>Cetak Kartu</span>
       </a>
@@ -233,6 +239,7 @@
   </ul>
 </aside>
 <!-- End Sidebar-->
+
 <!-- Content -->
 <main class="d-flex w-100 h-100 me-1 rounded shadow-lg p-3 card z-1" style="height: 87vh; margin-top: 5%; margin-left: 24%;">
     <div class="card-title w-100" style="border-bottom: 1px solid gray;">
@@ -279,7 +286,7 @@
       
     </div>
 
-     
+
     <!-- form data diri -->
     <div id="form-diri">
       <form action="#" class=" w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">

@@ -14,8 +14,6 @@ class User_model{
         return $this->db->resultSet();
     }
 
-    
-
     public function register($data){
         $name = $data['name'];
         $email = $data['email'];

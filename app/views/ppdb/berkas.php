@@ -1,3 +1,6 @@
+<?php
+  $person = $data['person'];      
+?>
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: #6dc146;">
 
@@ -188,7 +191,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -210,21 +213,21 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/index/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Formulir</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Upload Berkas</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu">
+      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu/<?= $person['id_person'] ?>">
         <i class="bi bi-question-circle"></i>
         <span>Cetak Kartu</span>
       </a>

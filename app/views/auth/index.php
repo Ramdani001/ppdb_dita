@@ -1,9 +1,19 @@
+
+<!-- Message -->
+<div class="position-absolute d-flex w-100 justify-content-center" style="margin-top: 10px;">
+  <?php
+    Flasher::flash();
+  ?>
+</div>
+<!-- Message -->
+
 <section id="login" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
   <div class="card w-25" style="height: 70%;">
     <div class="card-body">
+      
       <h2 class="text-center">SMK PROFITA</h2>
       <form action="<?= BASEURL ?>/AdminController/Auth/login" method="post" class="p-2 mt-5">
-        <div class="mb-3">
+        <div class="mb-3"> 
           <label for="emailLogin" class="form-label">Email address</label>
           <input type="email" class="form-control" id="emailLogin" name="email" aria-describedby="emailHelp" required>
         </div>

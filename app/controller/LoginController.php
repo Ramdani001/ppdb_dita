@@ -12,4 +12,15 @@ class LoginController extends Controller {
             $this->view('auth/index', $data);
         $this->view('templates/footer');
     }
+
+    public function logout(){
+        session_destroy(); 
+        Flasher::setFlash('Logout Berhasil, semoga harimu menyenangkan &#128519;', 'Login', 'success');
+
+        $this->view('templates/header');
+            $this->view('auth/index');
+        $this->view('templates/footer');
+
+    }
+
 } 
