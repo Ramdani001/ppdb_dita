@@ -49,7 +49,7 @@ class User_model{
         }
 
 
-        $query = "INSERT INTO person VALUES( :result, :name, '', :email, '' ,:type, :created_at)";
+        $query = "INSERT INTO person VALUES( :result, :name, '', :email, :type, '', '', '', '', '', '', '', :created_at, :created_at)";
 
         $this->db->query($query);
         $this->db->bind('type', $type);
@@ -57,7 +57,6 @@ class User_model{
         $this->db->bind('result', $result);
         $this->db->bind('email', $email);
         $this->db->bind('created_at', $created_at);
-        
         $this->db->execute();
         
         $nameFull = $data['name'];
@@ -70,15 +69,15 @@ class User_model{
         $this->db->query('SELECT id_person FROM person WHERE email=:email');
         $this->db->bind(':email', $email);
         $id_person = $this->db->single();
+        
         $idPerson = (int)$id_person['id_person'];
-        $query = "INSERT INTO user VALUES (:result, :id_person, :nameFull ,:emailFull, :password, :created_ate, :created_ate)";
+
+        $query = "INSERT INTO user VALUES (:result, :id_person, :password, :created_at, :created_at)";
         $this->db->query($query);
         $this->db->bind('result', $result);
         $this->db->bind(':id_person', $id_person['id_person']);
-        $this->db->bind('emailFull', $emailFull);
-        $this->db->bind('nameFull', $nameFull);
         $this->db->bind('password', $password);
-        $this->db->bind('created_ate', $created_at);
+        $this->db->bind('created_at', $created_at);
         
         $this->db->execute();
 
@@ -89,15 +88,22 @@ class User_model{
         $email = $_POST['email'];
         $password = hash('sha256', $_POST['password']);
 
-        $sql = "SELECT * FROM user WHERE email = :email";
+        $sql = "SELECT * FROM person WHERE email = :email";
         $this->db->query($sql);
         $this->db->bind(':email', $email);
         $this->db->execute();
 
+        
         try {
             $this->db->execute();
-
+            
             if($this->db->rowCount() > 0){
+                $id_person = $this->db->single()['id_person'];
+                $sql2 = "SELECT * FROM user WHERE id_person= :id_person";
+                $this->db->query($sql2);
+                $this->db->bind(':id_person', $id_person);
+                $this->db->execute();
+
                 $result = $this->db->single()['password'];
                 $checked = strcasecmp($password, $result);
 

@@ -177,7 +177,7 @@
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
             <h6><?= $person['nama'] ?></h6>
-            <span>Profesor Teknologi</span>
+            <span> <?php echo ($person['tipe'] == 3) ? 'Siswa' : 'Administrator'; ?> </span>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -286,10 +286,13 @@
       
     </div>
 
-
+  <form action="<?= BASEURL ?>PPDBController/insertFormulir/<?= $person['id_person'] ?>" method="post" enctype="multipart/form-data">
     <!-- form data diri -->
+
+    <input type="hidden" value="<?= $person['id_person'] ?>" name="id_person" id="id_person">
+
     <div id="form-diri">
-      <form action="#" class=" w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
+      <div class=" w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
         <table class="w-100">
           <tr>
             <td>
@@ -299,7 +302,7 @@
                 <label for="inputPassword6" class="col-form-label">No. Pendaftaran</label>
               </div>
               <div class="col-6">
-                <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control" aria-describedby="passwordHelpInline" required>
+                <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control"  required>
               </div>
             </div>
             </td>
@@ -358,7 +361,7 @@
                   <label for="kewarganegaraan" class="col-form-label">Kewarganegaraan</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" value="<?= $person['kewarganegaraan'] ?>" required>
                 </div>
               </div>
             </td>
@@ -371,7 +374,7 @@
                   <label for="nama_lengkap" class="col-form-label">Nama Lengkap</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?= $person['nama'] ?>" required>
                 </div>
               </div>
             </td>
@@ -382,7 +385,7 @@
                   <label for="tempat" class="col-form-label">Tempat</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="tempat" name="tempat" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="tempat" name="tempat" class="form-control" value="<?= $person['tempat_lhir'] ?>" required>
                 </div>
               </div>
             </td>
@@ -395,7 +398,7 @@
                   <label for="tanggal_lahir" class="col-form-label">Tanggal Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="tanggal_lahir" name="tanggal_lahir" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" aria-describedby="passwordHelpInline" required>
                 </div>
               </div>
             </td>
@@ -406,7 +409,7 @@
                   <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $person['jk'] ?>" required>
                 </div>
               </div>
             </td>
@@ -443,7 +446,7 @@
                     <label for="agama" class="col-form-label">Agama</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="agama" name="agama" class="form-control" aria-describedby="passwordHelpInline" required>
+                    <input type="Text" id="agama" name="agama" class="form-control" value="<?= $person['agama'] ?>" required>
                   </div>
                 </div>
             </td>
@@ -478,7 +481,7 @@
                   <label for="email" class="col-form-label">Email</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="email" name="email" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="email" name="email" class="form-control" value="<?= $person['email'] ?>">
                 </div>
               </div>
             </td>
@@ -491,7 +494,7 @@
                   <label for="no_telp" class="col-form-label">No. Handphone</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="no_telp" name="no_telp" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="no_telp" name="no_telp" class="form-control" value="<?= $person['no_telp'] ?>" required>
                 </div>
               </div>
             </td>
@@ -509,21 +512,10 @@
           </tr>
           <tr>
             <td>
-              <!-- Yang Membiayai Sekolah -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="biaya_sekolah" class="col-form-label">Yang Membiayai Sekolah</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" aria-describedby="passwordHelpInline" required>
-                </div>
-              </div>
-            </td>
-            <td>
                 <!-- PAUD -->
                 <div class="row g-3 align-items-center m-2">
                   <div class="col-6">
-                    <label for="paud" class="col-form-label">PAUD</label>
+                    <label for="paud" class="col-form-label">SD</label>
                   </div>
                   <div class="col-6">
                     <input type="Text" id="paud" name="paud" class="form-control" aria-describedby="passwordHelpInline" required>
@@ -536,7 +528,7 @@
               <!-- TK -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
-                  <label for="tk" class="col-form-label">TK</label>
+                  <label for="tk" class="col-form-label">SMP</label>
                 </div>
                 <div class="col-6">
                   <input type="Text" id="tk" name="tk" class="form-control" aria-describedby="passwordHelpInline" required>
@@ -583,7 +575,7 @@
         <div class="d-flex justify-content-end w-100 mt-3">
           <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(1)">Next</button>
         </div>
-      </form>
+        </div>
       <hr>
       <span class="text-secondary mb-2" style="padding-bottom: 10px;">*Harap isi data dengan Sebenar-benarnya</span>
     </div>
@@ -591,7 +583,7 @@
 
     <!-- form Data alamat --> 
     <div id="form-alamat" class="d-none">
-      <form action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
+      <div action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
         <table class="w-100">
           <tr>
             <td>
@@ -602,7 +594,7 @@
                 </div>
                 <div class="col-6">
                   <select class="form-select" name="status_rumah" id="status_rumah">
-                    <option value="1">Tinggal denga Orangtua/Wali</option>
+                    <option value="Orang Tua">Tinggal denga Orangtua/Wali</option>
                   </select>
                 </div>
               </div>
@@ -614,7 +606,7 @@
                   <label for="alamat" class="col-form-label">Alamat</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="alamat" name="alamat" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="alamat" name="alamat" class="form-control" value="<?= $person['alamat'] ?>" required>
                 </div>
               </div>
             </td>
@@ -627,8 +619,8 @@
                   <label for="nama_lengkap" class="col-form-label">RT/RW</label>
                 </div>
                 <div class="col-6 d-flex gap-3">
-                  <input type="number" id="rt" name="rt" class="form-control" aria-describedby="passwordHelpInline" required>
-                  <input type="number" id="rw" name="rw" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="number" id="rt" name="rt" class="form-control" value="<?= $person['rt'] ?>" required>
+                  <input type="number" id="rw" name="rw" class="form-control" value="<?= $person['rw'] ?>" required>
                 </div>
               </div>
             </td>
@@ -639,7 +631,7 @@
                   <label for="desa" class="col-form-label">Desa</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="desa" name="desa" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="desa" name="desa" class="form-control" value="<?= $person['desa'] ?>" required>
                 </div>
               </div>
             </td>
@@ -652,7 +644,7 @@
                   <label for="tanggal_lahir" class="col-form-label">Kecamatan</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kecamatan" name="kecamatan" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="kecamatan" name="kecamatan" class="form-control" value="<?= $person['kecamatan'] ?>" required>
                 </div>
               </div>
             </td>
@@ -663,7 +655,7 @@
                   <label for="kab_kota" class="col-form-label">Kabupaten/Kota</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kab_kota" name="kab_kota" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="kab_kota" name="kab_kota" class="form-control" value="<?= $person['kab_kota'] ?>" required>
                 </div>
               </div>
             </td>
@@ -676,7 +668,7 @@
                   <label for="provinsi" class="col-form-label">Provinsi</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="provinsi" name="provinsi" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="provinsi" name="provinsi" class="form-control" value="<?= $person['provinsi'] ?>" required>
                 </div>
               </div>
             </td>
@@ -687,7 +679,7 @@
                     <label for="kode_pos" class="col-form-label">Kode Pos</label>
                   </div>
                   <div class="col-6">
-                    <input type="number" id="kode_pos" name="kode_pos" class="form-control" aria-describedby="passwordHelpInline" required>
+                    <input type="number" id="kode_pos" name="kode_pos" class="form-control" value="<?= $person['kode_pos'] ?>" required>
                   </div>
                 </div>
             </td>
@@ -735,14 +727,14 @@
           <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(11)">Back</button>
           <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(2)">Next</button>
         </div>
-      </form>
+        </div>
       <hr>
       <span class="text-secondary mb-2" style="padding-bottom: 10px;">*Harap isi data dengan Sebenar-benarnya</span>
     </div>
     <!-- form Data alamat -->
     <!-- form Data orangtuan -->
     <div id="form-orangtua" class="d-none">
-      <form action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
+      <div class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
         <table class="w-100">
           <tr>
             <td>
@@ -753,7 +745,7 @@
                 </div>
                 <div class="col-6">
                   <select class="form-select" name="status_ayah" id="status_ayah">
-                    <option value="1">Masih Hidup</option>
+                    <option value="Hidup">Masih Hidup</option>
                   </select>
                 </div>
               </div>
@@ -827,8 +819,8 @@
                 </div>
                 <div class="col-6">
                    <select class="form-select" name="penghasilan_ayah" id="penghasilan_ayah">
-                    <option value="1">1.000.000 - 2.000.000</option>
-                    <option value="1">2.000.000 - 4.000.000</option>
+                    <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
+                    <option value="2.000.000 - 4.000.000">2.000.000 - 4.000.000</option>
                   </select>
                 </div>
               </div>
@@ -901,7 +893,7 @@
                   <label for="no_ibu" class="col-form-label">No. HP Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="date" id="no_ibu" name="no_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="text" id="no_ibu" name="no_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
                 </div>
               </div>
             </td>
@@ -915,13 +907,21 @@
                 </div>
                 <div class="col-6">
                    <select class="form-select" name="pendidikan_ibu" id="pendidikan_ibu">
-                    <option value="1">SD</option>
-                    <option value="1">S3</option>
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA/K">SMA/K</option>
+                    <option value="D1">D1</option>
+                    <option value="D2">D2</option>
+                    <option value="D3">D3</option>
+                    <option value="D4">D4</option>
+                    <option value="S1">S1</option>
+                    <option value="S2">S2</option>
+                    <option value="S3">S3</option>
                   </select>
                 </div>
               </div>
             </td>
-            <td>
+            <td>  
               <!-- Penghasilan Ibu -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
@@ -929,8 +929,8 @@
                 </div>
                 <div class="col-6">
                   <select class="form-select" name="penghasilan_ibu" id="pendidikan_ibu">
-                    <option value="1">1.000.000 - </option>
-                    <option value="1">S3</option>
+                    <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
+                    <option value="2.000.000 - 4.000.000">2.000.000 - 4.000.000</option>
                   </select>
                 </div>
               </div>
@@ -941,14 +941,14 @@
           <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(21)">Back</button>
           <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(3)">Next</button>
         </div>
-      </form>
+      </div>
       <hr>
       <span class="text-secondary mb-2" style="padding-bottom: 10px;">*Harap isi data dengan Sebenar-benarnya</span>
     </div>
     <!-- form Data orangtua -->
     <!-- form Data foto -->
     <div id="form-foto" class="d-none">
-      <form action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
+      <div class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
         <table class="w-100">
           <tr>
             <td>
@@ -962,12 +962,12 @@
         </table>
         <div class="d-flex justify-content-end w-100 mt-3">
           <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(31)">Back</button>
-          <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(4)">Simpan</button>
+          <button type="submit" class="btn btn-primary" style="width: 20%;">Simpan</button>
         </div>
-      </form>
+      </div>
     </div>
     <!-- form Data foto -->
-
+    </form>
   </div>
 </main>
 <!-- Content -->

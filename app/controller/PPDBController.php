@@ -57,4 +57,33 @@ class PPDBController extends Controller {
         $this->view('admin/code/footer');
     }
 
+    public function insertFormulir($id = 0){
+        
+        // $data = json_encode($_POST);
+// Admin1234%
+        // var_dump($data);
+        // die();
+        $person = $this->model('Person_Model')->update($_POST);
+        // var_dump($person);
+        // die();
+
+        if($person > 0){
+            $siswa = $this->model('Siswa_Model')->insert($_POST);
+
+            if($siswa > 0){
+                $id_person = (int)$id; 
+                $data['title'] = "PPDB SMK PROFITA";
+
+                $sql = "SELECT * FROM person WHERE id_person=".$id_person;
+                $this->db->query($sql);
+                $data['person'] = $this->db->single();
+            
+                header("Location: ".BASEURL."PPDBController/$id_person");
+                exit(); 
+            }
+
+        }
+
+    }
+
 }
