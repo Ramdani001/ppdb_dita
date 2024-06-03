@@ -1,6 +1,8 @@
 <!-- Mengambil nama -->
 <?php
-  $person = $data['person'];      
+  $person = $data['person'];
+  $siswa = $data['siswa'];
+  $parent = $data['parent'];
 ?>
 <!-- =========== -->
 
@@ -288,7 +290,7 @@
 
   <form action="<?= BASEURL ?>PPDBController/insertFormulir/<?= $person['id_person'] ?>" method="post" enctype="multipart/form-data">
     <!-- form data diri -->
-
+ 
     <input type="hidden" value="<?= $person['id_person'] ?>" name="id_person" id="id_person">
 
     <div id="form-diri">
@@ -302,7 +304,7 @@
                 <label for="inputPassword6" class="col-form-label">No. Pendaftaran</label>
               </div>
               <div class="col-6">
-                <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control"  required>
+                <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control" value="<?= $siswa['no_pendaftaran'] ?>"  required>
               </div>
             </div>
             </td>
@@ -313,7 +315,7 @@
                   <label for="inputPassword6" class="col-form-label">Asal Sekolah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" value="<?= $siswa['asal_sekolah'] ?>" required>
                 </div>
               </div>
             </td>
@@ -326,7 +328,7 @@
                   <label for="npsn_sekolah" class="col-form-label">NPSN Sekolah Asal</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" value="<?= $siswa['npsn_sekolah_asal']?>"  required>
                 </div>
               </div>
             </td>
@@ -337,7 +339,7 @@
                     <label for="nisn" class="col-form-label">NISN</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="nisn" name="nisn" class="form-control" aria-describedby="passwordHelpInline" required>
+                    <input type="Text" id="nisn" name="nisn" class="form-control" value="<?= $siswa['nisn'] ?>" required>
                   </div>
                 </div>
             </td>
@@ -350,7 +352,7 @@
                   <label for="nik" class="col-form-label">NIK</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nik" name="nik" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="nik" name="nik" class="form-control" value="<?= $siswa['nik'] ?>" required>
                 </div>
               </div>
             </td>
@@ -398,7 +400,7 @@
                   <label for="tanggal_lahir" class="col-form-label">Tanggal Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control"  required>
                 </div>
               </div>
             </td>
@@ -422,7 +424,7 @@
                   <label for="anak_ke" class="col-form-label">Anak Ke</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="anak_ke" name="anak_ke" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="anak_ke" name="anak_ke" class="form-control" value="<?= $siswa['anak_ke'] ?>" required>
                 </div>
               </div>
             </td>
@@ -433,7 +435,7 @@
                     <label for="jml_saudara" class="col-form-label">Jumlah Saudara/i</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="jml_saudara" name="jml_saudara" class="form-control" aria-describedby="passwordHelpInline" required>
+                    <input type="Text" id="jml_saudara" name="jml_saudara" class="form-control" value="<?= $siswa['jml_saudara'] ?>" required>
                   </div>
                 </div>
             </td>
@@ -457,7 +459,7 @@
                   <label for="cita_cita" class="col-form-label">Cita-Cita</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="cita_cita" name="cita_cita" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="cita_cita" name="cita_cita" class="form-control" value="<?= $siswa['cita_cita'] ?>" required>
                 </div>
               </div>
             </td>
@@ -470,7 +472,7 @@
                   <label for="hobi" class="col-form-label">Hobi</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="hobi" name="hobi" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="hobi" name="hobi" class="form-control" value="<?= $siswa['hobi'] ?>" required>
                 </div>
               </div>
             </td>
@@ -505,7 +507,7 @@
                       <label for="biaya_sekolah" class="col-form-label">Yang Membiayai Sekolah</label>
                     </div>
                     <div class="col-6">
-                      <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" aria-describedby="passwordHelpInline" required>
+                      <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" value="<?= $siswa['biaya_sekolah'] ?>" required>
                     </div>
                   </div>
             </td>
@@ -518,7 +520,7 @@
                     <label for="paud" class="col-form-label">SD</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="paud" name="paud" class="form-control" aria-describedby="passwordHelpInline" required>
+                    <input type="Text" id="paud" name="paud" class="form-control" value="<?= $siswa['sd'] ?>" required>
                   </div>
                 </div>
             </td>
@@ -531,7 +533,7 @@
                   <label for="tk" class="col-form-label">SMP</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="tk" name="tk" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="tk" name="tk" class="form-control" value="<?= $siswa['smp'] ?>" required>
                 </div>
               </div>
             </td>
@@ -542,7 +544,7 @@
                   <label for="kip" class="col-form-label">No.KIP</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kip" name="kip" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="kip" name="kip" class="form-control" value="<?= $siswa['kip'] ?>" required>
                 </div>
               </div>
             </td>
@@ -555,7 +557,7 @@
                   <label for="kk" class="col-form-label">No.KK</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kk" name="kk" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="no_kk" name="no_kk" class="form-control" value="<?= $siswa['no_kk'] ?>" required>
                 </div>
               </div>
           </td>
@@ -566,7 +568,7 @@
                 <label for="kepala_keluarga" class="col-form-label">Kepala Keluarga</label>
               </div>
               <div class="col-6">
-                <input type="Text" id="kepala_keluarga" name="kepala_keluarga" class="form-control" aria-describedby="passwordHelpInline" required>
+                <input type="Text" id="kepala_keluarga" name="kepala_keluarga" class="form-control"  required value="<?= $siswa['kepala_keluarga'] ?>">
               </div>
             </div>
           </td>
@@ -594,7 +596,9 @@
                 </div>
                 <div class="col-6">
                   <select class="form-select" name="status_rumah" id="status_rumah">
-                    <option value="Orang Tua">Tinggal denga Orangtua/Wali</option>
+                    <option value="Tinggal dengan Orangtua">Tinggal dengan Orangtua</option>
+                    <option value="Tinggal dengan saudara">Tinggal dengan saudara</option>
+                    <option value="Tinggal Sendiri">Tinggal Sendiri</option>
                   </select>
                 </div>
               </div>
@@ -692,7 +696,7 @@
                     <label for="transportasi" class="col-form-label">Transportasi</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="transportasi" name="transportasi" class="form-control" aria-describedby="passwordHelpInline" required>
+                    <input type="Text" id="transportasi" name="transportasi" class="form-control"  required value="<?= $siswa['transportasi'] ?>">
                   </div>
                 </div>
             </td>
@@ -703,7 +707,7 @@
                   <label for="jarak_kesekolah" class="col-form-label">Jarak Ke Sekolah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="jarak_kesekolah" name="jarak_kesekolah" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="jarak_kesekolah" name="jarak_kesekolah" class="form-control" value="<?= $siswa['jarak_sekolah'] ?>" required>
                 </div>
               </div>
             </td>
@@ -716,7 +720,7 @@
                   <label for="waktu_tempuh" class="col-form-label">Waktu Tempuh</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="waktu_tempuh" name="waktu_tempuh" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="waktu_tempuh" name="waktu_tempuh" class="form-control" value="<?= $siswa['waktu_tempuh'] ?>" required>
                 </div>
               </div>
             </td>
@@ -746,6 +750,7 @@
                 <div class="col-6">
                   <select class="form-select" name="status_ayah" id="status_ayah">
                     <option value="Hidup">Masih Hidup</option>
+                    <option value="Hidup">Meninggal</option>
                   </select>
                 </div>
               </div>
@@ -757,7 +762,7 @@
                   <label for="nik_ayah" class="col-form-label">NIK Ayah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nik_ayah" name="nik_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="nik_ayah" name="nik_ayah" class="form-control" value="<?= $parent['nik_ayah'] ?>" required>
                 </div>
               </div>
             </td>
@@ -770,7 +775,7 @@
                   <label for="nik" class="col-form-label">Nama Ayah</label>
                 </div>
                 <div class="col-6">
-                <input type="Text" id="nama_ayah" name="nama_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                <input type="Text" id="nama_ayah" name="nama_ayah" class="form-control" value="<?= $parent['nama_ayah'] ?>" required>
                 </div>
               </div>
             </td>
@@ -781,7 +786,7 @@
                   <label for="lhr_ayah" class="col-form-label">Tempat Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="lhr_ayah" name="lhr_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="lhr_ayah" name="lhr_ayah" class="form-control" value="<?= $parent['lhir_ayah'] ?>" required>
                 </div>
               </div>
             </td>
@@ -794,7 +799,7 @@
                   <label for="nik" class="col-form-label">Pendidikan Ayah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="pendidikan_ayah" name="pendidikan_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="pendidikan_ayah" name="pendidikan_ayah" class="form-control" value="<?= $parent['pendidikan_ayah'] ?>" required>
                 </div>
               </div>
             </td>
@@ -805,7 +810,7 @@
                   <label for="pekerjaan_ayah" class="col-form-label">Pekerjaan</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="pekerjaan_ayah" name="pekerjaan_ayah" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="pekerjaan_ayah" name="pekerjaan_ayah" class="form-control" value="<?= $parent['pekerjaan_ayah'] ?>" required>
                 </div>
               </div>
             </td>
@@ -818,9 +823,11 @@
                   <label for="penghasilan_ayah" class="col-form-label">Penghasilan Ayah</label>
                 </div>
                 <div class="col-6">
-                   <select class="form-select" name="penghasilan_ayah" id="penghasilan_ayah">
+                   <select class="form-select" name="penghasilan_ayah" id="penghasilan_ayah" value="<?= $parent['penghasilan_ayah'] ?>">
                     <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
                     <option value="2.000.000 - 4.000.000">2.000.000 - 4.000.000</option>
+                    <option value="4.000.000 - 6.000.000">4.000.000 - 6.000.000</option>
+                    <option value="6.000.000 - 10.000.000">6.000.000 - 10.000.000</option>
                   </select>
                 </div>
               </div>
@@ -832,7 +839,10 @@
                   <label for="status_ibu" class="col-form-label">Status Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="status_ibu" name="status_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <select class="form-select" name="status_ibu" id="status_ibu" value="<?= $parent['status_ibu'] ?>">
+                    <option value="Masih Hidup">Masih Hidup</option>
+                    <option value="Meninggal">Meninggal</option>
+                  </select>
                 </div>
               </div>
             </td>
@@ -845,7 +855,7 @@
                   <label for="nik_ibu" class="col-form-label">NIK Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nik_ibu" name="nik_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="nik_ibu" name="nik_ibu" class="form-control" value="<?= $parent['nik_ibu'] ?>" required>
                 </div>
               </div>
             </td>
@@ -856,7 +866,7 @@
                   <label for="nama_ibu" class="col-form-label">Nama Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nama_ibu" name="nama_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="nama_ibu" name="nama_ibu" class="form-control" value="<?= $parent['nama_ibu'] ?>" required>
                 </div>
               </div>
             </td>
@@ -869,7 +879,7 @@
                   <label for="lhr_ibu" class="col-form-label">Tempat Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="lhr_ibu" name="lhr_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="Text" id="lhr_ibu" name="lhr_ibu" class="form-control" value="<?= $parent['lhir_ibu'] ?>" required>
                 </div>
               </div>
             </td>
@@ -880,7 +890,7 @@
                   <label for="nama_ibu" class="col-form-label">Tanggal Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="date" id="tgl_lhir_ibu" name="tgl_lhir_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="date" id="tgl_lhir_ibu" name="tgl_lhir_ibu" class="form-control" value="<?= $parent['tgl_lhr_ibu'] ?>" required>
                 </div>
               </div>
             </td>
@@ -893,7 +903,7 @@
                   <label for="no_ibu" class="col-form-label">No. HP Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="text" id="no_ibu" name="no_ibu" class="form-control" aria-describedby="passwordHelpInline" required>
+                  <input type="text" id="no_ibu" name="no_ibu" class="form-control" value="<?= $parent['no_ibu'] ?>" required>
                 </div>
               </div>
             </td>
@@ -906,7 +916,7 @@
                   <label for="pendidikan_ibu" class="col-form-label">Pendidikan Ibu</label>
                 </div>
                 <div class="col-6">
-                   <select class="form-select" name="pendidikan_ibu" id="pendidikan_ibu">
+                   <select class="form-select" name="pendidikan_ibu" id="pendidikan_ibu" value="<?= $parent['pendidikan_ibu'] ?>">
                     <option value="SD">SD</option>
                     <option value="SMP">SMP</option>
                     <option value="SMA/K">SMA/K</option>
@@ -928,9 +938,11 @@
                   <label for="penghasilan_ibu" class="col-form-label">Penghasilan Ibu</label>
                 </div>
                 <div class="col-6">
-                  <select class="form-select" name="penghasilan_ibu" id="pendidikan_ibu">
-                    <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
+                  <select class="form-select" name="penghasilan_ibu" id="pendidikan_ibu" value="<?= $parent['penghasilan_ibu'] ?>">
+                  <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
                     <option value="2.000.000 - 4.000.000">2.000.000 - 4.000.000</option>
+                    <option value="4.000.000 - 6.000.000">4.000.000 - 6.000.000</option>
+                    <option value="6.000.000 - 10.000.000">6.000.000 - 10.000.000</option>
                   </select>
                 </div>
               </div>

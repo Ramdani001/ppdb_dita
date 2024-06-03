@@ -14,6 +14,18 @@ class PPDBController extends Controller {
         $sql = "SELECT * FROM person WHERE id_person=".$id_person;
         $this->db->query($sql);
         $data['person'] = $this->db->single();
+
+        $sql = "SELECT * FROM siswa WHERE id_person=".$id_person;
+        $this->db->query($sql);
+        $data['siswa'] = $this->db->single();
+
+        $id_siswa = $this->db->single()['id_siswa'];
+
+        $sql = "SELECT * FROM parents WHERE id_siswa=:id_siswa";
+        $this->db->query($sql);
+        // $this->db->bind(':id_person', $id_person);
+        $this->db->bind(':id_siswa', $id_siswa);
+        $data['parent'] = $this->db->single();
        
         $this->view('admin/code/header', $data);
             $this->view('ppdb/dashboard',  $data);
@@ -59,27 +71,26 @@ class PPDBController extends Controller {
 
     public function insertFormulir($id = 0){
         
-        // $data = json_encode($_POST);
-// Admin1234%
-        // var_dump($data);
-        // die();
         $person = $this->model('Person_Model')->update($_POST);
-        // var_dump($person);
-        // die();
 
         if($person > 0){
             $siswa = $this->model('Siswa_Model')->insert($_POST);
 
-            if($siswa > 0){
-                $id_person = (int)$id; 
-                $data['title'] = "PPDB SMK PROFITA";
+            if($siswa > 0){ 
+                $parent = $this->model('Parent_Model')->insert($_POST);
 
-                $sql = "SELECT * FROM person WHERE id_person=".$id_person;
-                $this->db->query($sql);
-                $data['person'] = $this->db->single();
-            
-                header("Location: ".BASEURL."PPDBController/$id_person");
-                exit(); 
+                if($parent > 0){
+                    $id_person = (int)$id; 
+                    $data['title'] = "PPDB SMK PROFITA";
+
+                    $sql = "SELECT * FROM person WHERE id_person=".$id_person;
+                    $this->db->query($sql);
+                    $data['person'] = $this->db->single();
+                
+                    header("Location: ".BASEURL."PPDBController/$id_person");
+                    exit(); 
+                }
+
             }
 
         }

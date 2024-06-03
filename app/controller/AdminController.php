@@ -56,6 +56,7 @@ class AdminController extends Controller {
                 exit;
             }
         }else if($type == 'register'){
+            
             if($this->model('User_model')->register($_POST)){
                 Flasher::setFlash('Selamat Bergabung', 'Login', 'success');
                 $_SESSION['message'] = 'Berhasil dibuat!';
