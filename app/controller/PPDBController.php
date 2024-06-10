@@ -80,15 +80,20 @@ class PPDBController extends Controller {
                 $parent = $this->model('Parent_Model')->insert($_POST);
 
                 if($parent > 0){
-                    $id_person = (int)$id; 
-                    $data['title'] = "PPDB SMK PROFITA";
 
-                    $sql = "SELECT * FROM person WHERE id_person=".$id_person;
-                    $this->db->query($sql);
-                    $data['person'] = $this->db->single();
-                
-                    header("Location: ".BASEURL."PPDBController/$id_person");
-                    exit(); 
+                    $berkas = $this->model('Berkas_Model')->profile($_POST);
+                    if($berkas > 0){
+                        $id_person = (int)$id; 
+                        $data['title'] = "PPDB SMK PROFITA";
+
+                        $sql = "SELECT * FROM person WHERE id_person=".$id_person;
+                        $this->db->query($sql);
+                        $data['person'] = $this->db->single();
+                    
+                        header("Location: ".BASEURL."PPDBController/$id_person");
+                        exit(); 
+                    }
+
                 }
 
             }

@@ -304,7 +304,13 @@
                 <label for="inputPassword6" class="col-form-label">No. Pendaftaran</label>
               </div>
               <div class="col-6">
-                <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control" value="<?= $siswa['no_pendaftaran'] ?>"  required>
+                <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control" 
+                  value="<?php
+                            if($siswa['no_pendaftaran']){
+                              echo $siswa['no_pendaftaran'];
+                            }
+                          ?>"
+                  required>
               </div>
             </div>
             </td>
