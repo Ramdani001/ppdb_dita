@@ -8,6 +8,11 @@ class Siswa_Model{
     public function __construct(){
         $this->db = new Database;
     }
+    
+    public function getAll(){
+        $this->db->query('SELECT * FROM '. $this->table .' s INNER JOIN person p ON s.id_person = p.id_person');
+        return $this->db->resultSet();
+    }
 
     public function insert(){
         date_default_timezone_set('Asia/Jakarta');

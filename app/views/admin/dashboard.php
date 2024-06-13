@@ -165,13 +165,13 @@
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
-          <span class="d-none d-md-block dropdown-toggle ps-2">Rizkan Ramdani</span>
+          <span class="d-none d-md-block dropdown-toggle ps-2"><?= $data['auth']['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>Rizkan Ramdani</h6>
-            <span>Profesor Teknologi</span>
+            <h6><?= $data['auth']['nama'] ?></h6>
+            <span><?= $data['auth']['email'] ?></span>
           </li>
           <li>
             <hr class="dropdown-divider">

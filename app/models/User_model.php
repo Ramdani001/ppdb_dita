@@ -129,4 +129,12 @@ class User_model{
 
     }
 
+    public function deleteByIdPerson($id_person) {
+        $query = "DELETE FROM ". $this->table ." WHERE id_person='$id_person'";
+        $this->db->query($query);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
 }

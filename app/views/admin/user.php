@@ -165,12 +165,12 @@
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
-          <span class="d-none d-md-block dropdown-toggle ps-2">Rizkan Ramdani</span>
+          <span class="d-none d-md-block dropdown-toggle ps-2"><?= $data['auth']['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>Rizkan Ramdani</h6>
+            <h6><?= $data['auth']['nama'] ?></h6>
             <span>Profesor Teknologi</span>
           </li>
           <li>
@@ -251,35 +251,36 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Data User</h5>
-
+        
         <table class="table table-hover">
           <thead>
-            <th class="text-center">#</th>
-            <th class="text-center">Email</th>
-            <th class="text-center">Status</th>
-            <th class="text-center">Aksi</th>
+              <tr>
+                  <th class="text-center">#</th>
+                  <th class="text-center">Email</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center">Aksi</th>
+              </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="text-center">
-                1
-              </td>
-              <td class="text-center">rizkan@gmail.com</td>
-              <td class="text-center">
-                <button class="btn btn-success">Active</button>
-              </td>
-              <td class="text-center">
-                <div class="d-flex gap-3 justify-content-center">
-                  
-                  <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                    <i class="ri-delete-bin-2-line"></i>
-                  </button>
-
-                </div>
-              </td>
-            </tr>
+              <?php foreach ($data["list_person"] as $key => $value) { ?>
+                  <tr>
+                      <td class="text-center"><?= $key + 1 ?></td>
+                      <td class="text-center"><?= $value["email"] ?></td>
+                      <td class="text-center">
+                          <button class="btn btn-success"><?= $value["status"] ?></button>
+                      </td>
+                      <td class="text-center">
+                          <div class="d-flex gap-3 justify-content-center">
+                            <button class="btn btn-danger text-light" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="<?= $value['id_person'] ?>">
+                              <i class="ri-delete-bin-2-line"></i>
+                            </button>
+                          </div>
+                      </td>
+                  </tr>
+              <?php } ?>
           </tbody>
-        </table>
+      </table>
+
        
       </div>
     </div>
@@ -341,9 +342,27 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-danger">Hapus</button>
+        <a type="button" class="btn btn-danger" id="deleteConfirmBtn">Hapus</a>
       </div>
     </div>
   </div>
 </div>
 <!-- Modal delete -->
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const deleteModal = document.getElementById('deleteModal');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const idPerson = button.getAttribute('data-id');
+      const deleteConfirmBtn = deleteModal.querySelector('#deleteConfirmBtn');
+      const baseUrl = "<?= BASEURL ?>AdminController/deleteUser/";
+  
+      deleteConfirmBtn.href = baseUrl + idPerson;
+    });
+
+  });
+
+</script>
