@@ -70,6 +70,22 @@ class AdminController extends Controller {
         }
     }
 
+    public function deleteUser($id_person) {
+        if (isset($_SESSION["id_person"])) {
+            $_SESSION['message'] = 'Berhasil dihapus!';
+
+            $this->model('User_model')->deleteByIdPerson($id_person);
+            $this->model('Person_model')->deleteByIdPerson($id_person);
+
+            header('Location: '. BASEURL .'ViewAdminController/user');
+            exit;
+        } else {
+            $_SESSION['message'] = 'Gagal dihapus!';
+            header('Location: '. BASEURL .'ViewAdminController/user');
+            exit;
+        }
+    }
+
 
 
 }

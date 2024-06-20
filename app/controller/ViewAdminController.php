@@ -6,10 +6,10 @@ class ViewAdminController extends Controller {
         $data['id_person'] = $id;
         $data['title'] = "SMK PROFITA";
 
-        $data['person'] = $this->model('User_model')->getUser();
+        $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
 
         $this->view('admin/code/header', $data);
-            $this->view('admin/dashboard');
+            $this->view('admin/dashboard', $data);
         $this->view('admin/code/footer');
     }
     
@@ -18,30 +18,33 @@ class ViewAdminController extends Controller {
         $data['id_person'] = $id; 
         $data['title'] = "SMK PROFITA";
 
-        $data['person'] = $this->model('User_model')->getUser();
+        $data['list_person'] = $this->model('Person_model')->getUser();
+        $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
 
         $this->view('admin/code/header', $data);
-            $this->view('admin/user');
+            $this->view('admin/user', $data);
         $this->view('admin/code/footer');
     }
 
-    public function siswaDaftar(){
+    public function siswaDaftar($id = 0){
         $data['title'] = "SMK PROFITA";
 
-        $data['person'] = $this->model('User_model')->getUser();
+        $data['list_siswa'] = $this->model('Siswa_model')->getAll();
+        $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
 
         $this->view('admin/code/header', $data);
-            $this->view('admin/siswaDaftar');
+            $this->view('admin/siswaDaftar', $data);
         $this->view('admin/code/footer');
     }
 
     public function laporan(){
         $data['title'] = "SMK PROFITA";
 
-        $data['person'] = $this->model('User_model')->getUser();
+        $data['list_siswa'] = $this->model('Siswa_model')->getAll();
+        $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
 
         $this->view('admin/code/header', $data);
-            $this->view('admin/laporan');
+            $this->view('admin/laporan', $data);
         $this->view('admin/code/footer');
     }
 

@@ -165,12 +165,12 @@
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
-          <span class="d-none d-md-block dropdown-toggle ps-2">Rizkan Ramdani</span>
+          <span class="d-none d-md-block dropdown-toggle ps-2"><?= $data['auth']['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>Rizkan Ramdani</h6>
+            <h6><?= $data['auth']['nama'] ?></h6>
             <span>Profesor Teknologi</span>
           </li>
           <li>
@@ -289,11 +289,11 @@
 
           <div class="d-flex gap-4 h-100">
             
-            <button class="btn btn-success mt-3" style="height: 10%;">
+            <button id="export-excel" class="btn btn-success mt-3" style="height: 10%;">
               <i class="ri-file-excel-2-fill"></i>
             </button>
 
-            <button class="btn btn-primary mt-3" style="height: 10%;">
+            <button id="export-pdf" class="btn btn-primary mt-3" style="height: 10%;">
               <i class="ri-printer-fill"></i>
             </button>
 
@@ -310,29 +310,19 @@
             <th class="text-center">Status</th>
           </thead>
           <tbody>
-            <tr>
-              <td class="text-center">
-                <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
-              </td>
-              <td class="text-center">Rizkan Ramdani</td>
-              <td class="text-center">SMP Kemala Bhayangkari</td>
-              <td class="text-center">089487584734</td>
-              <td class="text-center">
-                <button class="btn btn-danger" disabled>Not Verif</button>
-              </td>
-            </tr>
-            <tr>
-            <td class="text-center">
-                <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/profile.jpg" alt="foto">
-              </td>
-              <td class="text-center">Dita Sri Rahayu</td>
-              <td class="text-center">SMP Bandung</td>
-              <td class="text-center">089487584734</td>
-              <td class="text-center">
-                <button class="btn btn-success" disabled>Verif</button>
-              </td>
-            </tr>
-            </tr>
+            <?php foreach ($data["list_siswa"] as $key => $value) { ?>
+              <tr>
+                <td class="text-center">
+                  <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
+                </td>
+                <td class="text-center"><?= $value["nama"] ?></td>
+                <td class="text-center"><?= $value["asal_sekolah"] ?></td>
+                <td class="text-center"><?= $value["no_telp"] ?></td>
+                <td class="text-center">
+                  <button class="btn btn-danger"><?= $value["status"] ?></button>
+                </td>
+              </tr>
+            <?php } ?>
           </tbody>
         </table>
       </div>
@@ -343,3 +333,40 @@
 </main>
 <!-- Content -->
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById('export-pdf').addEventListener('click', function () {
+      const { jsPDF } = window.jspdf;
+
+      html2canvas(document.querySelector('table')).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const doc = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: 'a4'
+        });
+
+        const imgProps= doc.getImageProperties(imgData);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        doc.save('Laporan Pendaftaran.pdf');
+      });
+    });
+
+    document.getElementById('export-excel').addEventListener('click', function () {
+      let table = document.querySelector('table');
+      let workbook = XLSX.utils.table_to_book(table, {sheet: "Sheet1"});
+      XLSX.writeFile(workbook, 'Laporan Pendaftaran.xlsx');
+    });
+
+  });
+</script>
+

@@ -14,13 +14,18 @@ class Person_model{
         return $this->db->resultSet();
     }
 
+    public function getById($id){
+        $this->db->query('SELECT * FROM '. $this->table  .' WHERE id_person = '. $id .' LIMIT 1');
+        return $this->db->single();
+    }
+
     public function register($data){
         $nama = $data['nama'];
         $email = $data['email'];
         $type = 'siswa';
         $created_at = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO $table VALUES ('', '', '', :type, :created_at)";
+        $query = "INSERT INTO $this->table VALUES ('', '', '', :type, :created_at)";
         $this->db->query($query);
         $this->db->bind('tipe', $type);
         $this->db->bind('created_at', $created_at);
@@ -55,6 +60,14 @@ class Person_model{
 
         return $this->db->rowCount();
         
+    }
+
+    public function deleteByIdPerson($id_person) {
+        $query = "DELETE FROM ". $this->table ." WHERE id_person='$id_person'";
+        $this->db->query($query);
+        $this->db->execute();
+
+        return $this->db->rowCount();
     }
 
 }

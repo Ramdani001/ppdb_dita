@@ -165,13 +165,13 @@
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
-          <span class="d-none d-md-block dropdown-toggle ps-2">Rizkan Ramdani</span>
+          <span class="d-none d-md-block dropdown-toggle ps-2"><?= $data['auth']['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>Rizkan Ramdani</h6>
-            <span>Profesor Teknologi</span>
+            <h6><?= $data['auth']['nama'] ?></h6>
+            <span><?= $data['auth']['email'] ?></span>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -262,34 +262,36 @@
             <th class="text-center">Aksi</th>
           </thead>
           <tbody>
-            <tr>
-              <td class="text-center">
-                <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
-              </td>
-              <td class="text-center">Rizkan Ramdani</td>
-              <td class="text-center">SMKN 10 Bandung</td>
-              <td class="text-center">089487584734</td>
-              <td class="text-center">
-                <button class="btn btn-danger">Not Verif</button>
-              </td>
-              <td class="text-center">
-                <div class="d-flex gap-3 justify-content-center">
-
-                  <button class="btn btn-primary text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <i class="ri-eye-line"></i>
-                  </button>
-
-                  <button class="btn btn-success text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                    <i class="ri-file-edit-line"></i>
-                  </button>
-
-                  <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                    <i class="ri-delete-bin-2-line"></i>
-                  </button>
-
-                </div>
-              </td>
-            </tr>
+            <?php foreach ($data["list_siswa"] as $key => $value) { ?>
+              <tr>
+                <td class="text-center">
+                  <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
+                </td>
+                <td class="text-center"><?= $value["nama"] ?></td>
+                <td class="text-center"><?= $value["asal_sekolah"] ?></td>
+                <td class="text-center"><?= $value["no_telp"] ?></td>
+                <td class="text-center">
+                  <button class="btn btn-danger"><?= $value["status"] ?></button>
+                </td>
+                <td class="text-center">
+                  <div class="d-flex gap-3 justify-content-center">
+  
+                    <button class="btn btn-primary text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-siswa='<?= json_encode($value) ?>'>
+                      <i class="ri-eye-line"></i>
+                    </button>
+  
+                    <button class="btn btn-success text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-siswa='<?= json_encode($value) ?>'>
+                      <i class="ri-file-edit-line"></i>
+                    </button>
+  
+                    <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" data-siswa='<?= json_encode($value) ?>'>
+                      <i class="ri-delete-bin-2-line"></i>
+                    </button>
+  
+                  </div>
+                </td>
+              </tr>
+            <?php } ?>
           </tbody>
         </table>
        
@@ -314,22 +316,22 @@
         <!-- NISN -->
         <div class="mb-3">
           <label for="det_nisn" class="form-label">NISN</label>
-          <input type="text" class="form-control" id="det_nisn" placeholder="0902399329343" disabled>
+          <input type="text" class="form-control" id="det_nisn" disabled>
         </div>
         <!-- Nama Lengkap -->
         <div class="mb-3">
           <label for="det_name" class="form-label">Nama Lengkap</label>
-          <input type="text" class="form-control" id="det_name" placeholder="Rizkan Ramdani" disabled>
+          <input type="text" class="form-control" id="det_name" disabled>
         </div>
         <!-- Email -->
         <div class="mb-3">
           <label for="det_email" class="form-label">Email address</label>
-          <input type="text" class="form-control" id="det_email" placeholder="Rizkan Ramdani" disabled>
+          <input type="text" class="form-control" id="det_email" disabled>
         </div>
         <!-- No.Telp -->
         <div class="mb-3">
           <label for="det_no" class="form-label">No.Telpon</label>
-          <input type="text" class="form-control" id="det_no" placeholder="Rizkan Ramdani" disabled>
+          <input type="text" class="form-control" id="det_no" disabled>
         </div>
 
         <div class="d-flex gap-4 justify-content-center flex-wrap">
@@ -406,23 +408,23 @@
       <div class="modal-body">
         <!-- NISN -->
         <div class="mb-3">
-          <label for="det_nisn" class="form-label">NISN</label>
-          <input type="text" class="form-control" id="det_nisn" placeholder="0902399329343">
+          <label for="edit_nisn" class="form-label">NISN</label>
+          <input type="text" class="form-control" id="edit_nisn">
         </div>
         <!-- Nama Lengkap -->
         <div class="mb-3">
-          <label for="det_name" class="form-label">Nama Lengkap</label>
-          <input type="text" class="form-control" id="det_name" placeholder="Rizkan Ramdani">
+          <label for="edit_name" class="form-label">Nama Lengkap</label>
+          <input type="text" class="form-control" id="edit_name">
         </div>
         <!-- Email -->
         <div class="mb-3">
-          <label for="det_email" class="form-label">Email address</label>
-          <input type="text" class="form-control" id="det_email" placeholder="rizkan@gmail.com">
+          <label for="edit_email" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="edit_email">
         </div>
         <!-- No.Telp -->
         <div class="mb-3">
-          <label for="det_no" class="form-label">No.Telpon</label>
-          <input type="text" class="form-control" id="det_no" placeholder="089xxxxxxxxxxxxx">
+          <label for="edit_no" class="form-label">No.Telpon</label>
+          <input type="text" class="form-control" id="edit_no">
         </div>
 
         <div class="d-flex gap-4 justify-content-center flex-wrap">
@@ -513,3 +515,33 @@
   </div>
 </div>
 <!-- Modal delete -->
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const detailModal = document.getElementById('exampleModal');
+    detailModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const siswa = JSON.parse(button.getAttribute('data-siswa'));
+
+        document.getElementById('det_nisn').value = siswa.nisn;
+        document.getElementById('det_name').value = siswa.nama;
+        document.getElementById('det_email').value = siswa.email;
+        document.getElementById('det_no').value = siswa.no_telp;
+    });
+
+    const editModal = document.getElementById('editModal');
+    editModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const siswa = JSON.parse(button.getAttribute('data-siswa'));
+
+        document.getElementById('edit_nisn').value = siswa.nisn;
+        document.getElementById('edit_name').value = siswa.nama;
+        document.getElementById('edit_email').value = siswa.email;
+        document.getElementById('edit_no').value = siswa.no_telp;
+    });
+
+  });
+
+</script>
