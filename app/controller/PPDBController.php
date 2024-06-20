@@ -79,10 +79,12 @@ class PPDBController extends Controller {
             if($siswa > 0){ 
                 $parent = $this->model('Parent_Model')->insert($_POST);
 
-                if($parent > 0){
-
+                // if($parent > 0){
                     $berkas = $this->model('Berkas_Model')->profile($_POST);
+  
                     if($berkas > 0){
+                        // var_dump("MaSUK berkas");
+                        // die();
                         $id_person = (int)$id; 
                         $data['title'] = "PPDB SMK PROFITA";
 
@@ -94,7 +96,7 @@ class PPDBController extends Controller {
                         exit(); 
                     }
 
-                }
+                // }
 
             }
 

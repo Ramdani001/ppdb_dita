@@ -52,8 +52,6 @@ class Person_model{
         $query = "UPDATE person SET no_telp='$no_telp', agama='$agama', alamat='$alamat', desa='$desa', kecamatan='$kecamatan', kab_kota='$kab_kota', provinsi='$provinsi', kode_pos='$kode_pos', kewarganegaraan='$kewarganegaraan', tempat_lhir='$tempat_lhr', jk='$jk', tanggal_lahir='$tanggal_lahir', rt='$rt', rw='$rw', updated_at='$updated_at' WHERE id_person='$id_person'";
         $this->db->query($query);
         $this->db->execute();
-        // var_dump($this->db->rowCount());
-        // die();
 
         return $this->db->rowCount();
         
