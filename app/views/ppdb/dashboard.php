@@ -1,8 +1,73 @@
 <!-- Mengambil nama -->
 <?php
-  $person = $data['person'];
-  $siswa = $data['siswa'];
-  $parent = $data['parent'];
+    $person = $data['person'];
+    $siswa = $data['siswa'];
+    $parent = $data['parent'];
+    $berkas = $data['berkas'];
+
+    // Foto Profile
+    $foto_profile = "";
+    if($berkas){
+      $foto_profile = $berkas['profile'];
+    }
+    // Foto Profile
+
+    $status_ayah = "";
+
+    if($parent){
+      $status_ayah = $parent['status_ayah'];
+    }
+
+    $options = array(
+        'Hidup' => 'Masih Hidup',
+        'Meninggal' => 'Meninggal'
+    );
+
+    // Status Rumah
+    // $status_rumah = "";
+
+    // if($parent){
+    //   $status_rumah = $parent['status_rumah'];
+    // }
+    // $optionsRmh = array(
+    //     'Tinggal Dengan Orang Tua' => 'Tinggal Dengan Orang Tua',
+    //     'Tinggal Dengan Saudara' => 'Tinggal Dengan Saudara',
+    //     'Tinggal Sendiri' => 'Tinggal Sendiri'
+    // );
+
+    // Pendidikan
+
+    // Pendidikan Ibu
+    $pendidikan_ibu = "";
+    $pendidikan_ayah = "";
+
+    if($parent){
+      $pendidikan_ibu = $parent['pendidikan_ibu'];
+      $pendidikan_ayah = $parent['pendidikan_ayah'];
+    }
+
+    $opt_pendidikan = array(
+      'SD' => 'SD',
+      'SMP' => 'SMP',
+      'SMK/SMA' => 'SMK/SMA',
+      'D1' => 'D1',
+      'D2' => 'D2',
+      'D3' => 'D3',
+      'S1' => 'S1',
+      'S2' => 'S2',
+      'S3' => 'S3'
+    );
+
+    $penghasilan_ibu = "";
+    $penghasilan_ayah = "";
+
+    $opt_penghasilan = array(
+      '1.000.000 - 2.000.000' => '1.000.000 - 2.000.000',
+      '2.000.000 - 4.000.000' => '2.000.000 - 4.000.000',
+      '4.000.000 - 6.000.000' =>  '4.000.000 - 6.000.000',
+      '6.000.000 - 10.000.000' => '6.000.000 - 10.000.000'
+    );
+
 ?>
 <!-- =========== -->
 
@@ -22,152 +87,7 @@
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
 
-      <li class="nav-item d-block d-lg-none">
-        <a class="nav-link nav-icon search-bar-toggle " href="#">
-          <i class="bi bi-search"></i>
-        </a>
-      </li><!-- End Search Icon-->
-
-      <li class="nav-item dropdown">
-
-        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-          <i class="bi bi-bell"></i>
-          <span class="badge bg-primary badge-number">4</span>
-        </a><!-- End Notification Icon -->
-
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-          <li class="dropdown-header">
-            You have 4 new notifications
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-exclamation-circle text-warning"></i>
-            <div>
-              <h4>Lorem Ipsum</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>30 min. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-x-circle text-danger"></i>
-            <div>
-              <h4>Atque rerum nesciunt</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>1 hr. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-check-circle text-success"></i>
-            <div>
-              <h4>Sit rerum fuga</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>2 hrs. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-info-circle text-primary"></i>
-            <div>
-              <h4>Dicta reprehenderit</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>4 hrs. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li class="dropdown-footer">
-            <a href="#">Show all notifications</a>
-          </li>
-
-        </ul><!-- End Notification Dropdown Items -->
-
-      </li><!-- End Notification Nav -->
-
-      <li class="nav-item dropdown">
-
-        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-          <i class="bi bi-chat-left-text"></i>
-          <span class="badge bg-secondary badge-number">3</span>
-        </a><!-- End Messages Icon -->
-
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-          <li class="dropdown-header">
-            You have 3 new messages
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>Maria Hudson</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>Anna Nelson</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>6 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>David Muldon</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>8 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="dropdown-footer">
-            <a href="#">Show all messages</a>
-          </li>
-
-        </ul><!-- End Messages Dropdown Items -->
-
-      </li><!-- End Messages Nav -->
+      
 
       <li class="nav-item dropdown pe-3">
 
@@ -183,13 +103,6 @@
           </li>
           <li>
             <hr class="dropdown-divider">
-          </li>
-
-          <li>
-            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-              <i class="bi bi-person"></i>
-              <span>My Profile</span>
-            </a>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -306,8 +219,10 @@
               <div class="col-6">
                 <input type="Text" id="no_pendaftaran" name="no_pendaftaran" class="form-control" 
                   value="<?php
-                            if($siswa['no_pendaftaran']){
+                            if($siswa){
                               echo $siswa['no_pendaftaran'];
+                            }else{
+                              echo "";
                             }
                           ?>"
                   required>
@@ -321,7 +236,13 @@
                   <label for="inputPassword6" class="col-form-label">Asal Sekolah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" value="<?= $siswa['asal_sekolah'] ?>" required>
+                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" value="
+                  <?php if($siswa){
+                        echo $siswa['asal_sekolah'];
+                    }else{
+                      echo "";
+                      } ?>
+                  " required>
                 </div>
               </div>
             </td>
@@ -334,7 +255,12 @@
                   <label for="npsn_sekolah" class="col-form-label">NPSN Sekolah Asal</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" value="<?= $siswa['npsn_sekolah_asal']?>"  required>
+                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" value="
+                  <?php if($siswa){
+                        echo $siswa['npsn_sekolah_asal'];
+                    }else{
+                      echo "";
+                    } ?>"  required>
                 </div>
               </div>
             </td>
@@ -345,7 +271,12 @@
                     <label for="nisn" class="col-form-label">NISN</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="nisn" name="nisn" class="form-control" value="<?= $siswa['nisn'] ?>" required>
+                    <input type="Text" id="nisn" name="nisn" class="form-control" value="
+                    <?php if($siswa){
+                        echo $siswa['nisn'];
+                    }else{
+                      echo "";
+                    } ?>" required>
                   </div>
                 </div>
             </td>
@@ -358,7 +289,12 @@
                   <label for="nik" class="col-form-label">NIK</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nik" name="nik" class="form-control" value="<?= $siswa['nik'] ?>" required>
+                  <input type="Text" id="nik" name="nik" class="form-control" value="
+                  <?php if($siswa){
+                        echo $siswa['nik'];
+                    }else{
+                      echo "";
+                    } ?>" required>
                 </div>
               </div>
             </td>
@@ -406,7 +342,7 @@
                   <label for="tanggal_lahir" class="col-form-label">Tanggal Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control"  required>
+                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" value="<?= $person['tanggal_lahir'] ?>" required>
                 </div>
               </div>
             </td>
@@ -594,29 +530,37 @@
       <div action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
         <table class="w-100">
           <tr>
-            <td>
+            <!-- <td> -->
               <!-- NIK -->
-              <div class="row g-3 align-items-center m-2">
+              <!-- <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
                   <label for="nik" class="col-form-label">Status Tempat Tinggal</label>
                 </div>
-                <div class="col-6">
-                  <select class="form-select" name="status_rumah" id="status_rumah">
+                <div class="col-6"> -->
+                  <!-- <select class="form-select" name="status_rumah" id="status_rumah">
                     <option value="Tinggal dengan Orangtua">Tinggal dengan Orangtua</option>
                     <option value="Tinggal dengan saudara">Tinggal dengan saudara</option>
                     <option value="Tinggal Sendiri">Tinggal Sendiri</option>
+                  </select> -->
+
+                                    
+                  <!-- <select class="form-select" name="status_rumah" id="status_rumah">
                   </select>
+
                 </div>
               </div>
-            </td>
-            <td>
+            </td> -->
+            <td colspan="2">
               <!-- kewarganegaraan -->
               <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
+                <div class="col-3">
                   <label for="alamat" class="col-form-label">Alamat</label>
                 </div>
-                <div class="col-6">
-                  <input type="Text" id="alamat" name="alamat" class="form-control" value="<?= $person['alamat'] ?>" required>
+                <div class="col-9">
+                  <textarea name="alamat" id="alamat" class="form-control"  required>
+                    <?= $person['alamat'] ?>
+                  </textarea>
+                  <!-- <input type="Text" id="alamat" name="alamat" class="form-control" value="<?= $person['alamat'] ?>" required> -->
                 </div>
               </div>
             </td>
@@ -754,10 +698,20 @@
                   <label for="nik" class="col-form-label">Status Ayah</label>
                 </div>
                 <div class="col-6">
-                  <select class="form-select" name="status_ayah" id="status_ayah">
+                  <!-- <select class="form-select" name="status_ayah" id="status_ayah">
                     <option value="Hidup">Masih Hidup</option>
-                    <option value="Hidup">Meninggal</option>
+                    <option value="Meninggal">Meninggal</option>
+                  </select> -->
+                  
+                  <select class="form-select" name="status_ayah" id="status_ayah">
+                      <?php
+                      foreach ($options as $value => $label) {
+                          $selected = ($value == $status_ayah) ? 'selected' : '';
+                          echo "<option value=\"$value\" $selected>$label</option>";
+                      }
+                      ?>
                   </select>
+                  
                 </div>
               </div>
             </td>
@@ -805,7 +759,15 @@
                   <label for="nik" class="col-form-label">Pendidikan Ayah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="pendidikan_ayah" name="pendidikan_ayah" class="form-control" value="<?= $parent['pendidikan_ayah'] ?>" required>
+                  <!-- <input type="Text" id="pendidikan_ayah" name="pendidikan_ayah" class="form-control" value="<?= $parent['pendidikan_ayah'] ?>" required> -->
+                  <select class="form-select" name="pendidikan_ayah" id="pendidikan_ayah">
+                      <?php
+                      foreach ($opt_pendidikan as $value => $label) {
+                          $selected = ($value == $pendidikan_ayah) ? 'selected' : '';
+                          echo "<option value=\"$value\" $selected>$label</option>";
+                      }
+                      ?>
+                  </select>
                 </div>
               </div>
             </td>
@@ -829,12 +791,22 @@
                   <label for="penghasilan_ayah" class="col-form-label">Penghasilan Ayah</label>
                 </div>
                 <div class="col-6">
-                   <select class="form-select" name="penghasilan_ayah" id="penghasilan_ayah" value="<?= $parent['penghasilan_ayah'] ?>">
+                   <!-- <select class="form-select" name="penghasilan_ayah" id="penghasilan_ayah" value="<?= $parent['penghasilan_ayah'] ?>">
                     <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
                     <option value="2.000.000 - 4.000.000">2.000.000 - 4.000.000</option>
                     <option value="4.000.000 - 6.000.000">4.000.000 - 6.000.000</option>
                     <option value="6.000.000 - 10.000.000">6.000.000 - 10.000.000</option>
+                  </select> -->
+
+                  <select class="form-select" name="penghasilan_ayah" id="penghasilan_ayah">
+                      <?php
+                      foreach ($opt_penghasilan as $value => $label) {
+                          $selected = ($value == $penghasilan_ayah) ? 'selected' : '';
+                          echo "<option value=\"$value\" $selected>$label</option>";
+                      }
+                      ?>
                   </select>
+
                 </div>
               </div>
             </td>
@@ -922,18 +894,16 @@
                   <label for="pendidikan_ibu" class="col-form-label">Pendidikan Ibu</label>
                 </div>
                 <div class="col-6">
-                   <select class="form-select" name="pendidikan_ibu" id="pendidikan_ibu" value="<?= $parent['pendidikan_ibu'] ?>">
-                    <option value="SD">SD</option>
-                    <option value="SMP">SMP</option>
-                    <option value="SMA/K">SMA/K</option>
-                    <option value="D1">D1</option>
-                    <option value="D2">D2</option>
-                    <option value="D3">D3</option>
-                    <option value="D4">D4</option>
-                    <option value="S1">S1</option>
-                    <option value="S2">S2</option>
-                    <option value="S3">S3</option>
+
+                  <select class="form-select" name="pendidikan_ibu" id="pendidikan_ibu">
+                      <?php
+                      foreach ($opt_pendidikan as $value => $label) {
+                          $selected = ($value == $pendidikan_ibu) ? 'selected' : '';
+                          echo "<option value=\"$value\" $selected>$label</option>";
+                      }
+                      ?>
                   </select>
+
                 </div>
               </div>
             </td>
@@ -944,12 +914,22 @@
                   <label for="penghasilan_ibu" class="col-form-label">Penghasilan Ibu</label>
                 </div>
                 <div class="col-6">
-                  <select class="form-select" name="penghasilan_ibu" id="pendidikan_ibu" value="<?= $parent['penghasilan_ibu'] ?>">
+                  <!-- <select class="form-select" name="penghasilan_ibu" id="pendidikan_ibu" value="<?= $parent['penghasilan_ibu'] ?>">
                   <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
                     <option value="2.000.000 - 4.000.000">2.000.000 - 4.000.000</option>
                     <option value="4.000.000 - 6.000.000">4.000.000 - 6.000.000</option>
                     <option value="6.000.000 - 10.000.000">6.000.000 - 10.000.000</option>
+                  </select> -->
+
+                  <select class="form-select" name="penghasilan_ibu" id="penghasilan_ibu">
+                      <?php
+                      foreach ($opt_penghasilan as $value => $label) {
+                          $selected = ($value == $penghasilan_ibu) ? 'selected' : '';
+                          echo "<option value=\"$value\" $selected>$label</option>";
+                      }
+                      ?>
                   </select>
+
                 </div>
               </div>
             </td>
@@ -970,7 +950,12 @@
         <table class="w-100">
           <tr>
             <td>
-              <!-- NIK -->
+              <img src="<?= BASEURL ?>public/assets/img/profile/<?= $foto_profile ?>" alt="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Foto Siswa -->
               <div class="row g-3 align-items-center m-2">
                   <input type="file" class="form-control" id="foto_siswa" name="foto_siswa">
                 </div>

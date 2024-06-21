@@ -26,6 +26,14 @@ class PPDBController extends Controller {
         // $this->db->bind(':id_person', $id_person);
         $this->db->bind(':id_siswa', $id_siswa);
         $data['parent'] = $this->db->single();
+
+        // Berkas
+        $id_berkas = $data['person']['id_berkas'];
+
+        $sql = "SELECT * FROM berkas WHERE id_berkas=:id_berkas";
+        $this->db->query($sql);
+        $this->db->bind(':id_berkas', $id_berkas);
+        $data['berkas'] = $this->db->single();
        
         $this->view('admin/code/header', $data);
             $this->view('ppdb/dashboard',  $data);

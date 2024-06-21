@@ -48,7 +48,7 @@ class User_model{
                 break;
         }
   
-        $query = "INSERT INTO person VALUES( :result, :name, '', :email, :type, '', '', '', '', '', '', '', '', '', '', :created_at, '', '', :created_at, :created_at)";
+        $query = "INSERT INTO person VALUES( :result, :name, '', :email, :type, '', '', '', '', '', '', '', '', '', '', :created_at, '', '', 0,:created_at, :created_at)";
 
         $this->db->query($query);
         $this->db->bind('type', $type);
