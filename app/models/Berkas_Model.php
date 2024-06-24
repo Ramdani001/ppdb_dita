@@ -105,4 +105,149 @@ class Berkas_Model{
 
     }
 
+    public function allBerkas($data){
+
+        // var_dump($_FILES);
+        // die();
+
+        $id_person = $_POST['id_person'];
+
+        $query = "SELECT * FROM person WHERE id_person='$id_person'";
+        $this->db->query($query);
+        $this->db->execute();
+
+        $id_berkas = $this->db->single()['id_berkas'];
+
+        // ============== KK =====================
+        if(!empty($_FILES['kkFile']['name'])){
+
+            $kkFile_nameFile   = $_FILES['kkFile']['name'];
+            $kkFile_ukuran     = $_FILES['kkFile']['size'];
+            $kkFile_tmpName    = $_FILES['kkFile']['tmp_name'];
+
+            $kkFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $kkFile_extensionGambar = explode('.', $kkFile_nameFile);
+            $kkFile_extensionGambar = strtolower(end($kkFile_extensionGambar));
+
+            if( $kkFile_ukuran > 2500000 ){
+                echo "<script>
+                        alert('Ukuran Gambar Terlalu Besar !!!');
+                    </script>";
+
+                return false;
+            };
+
+            $kkFile_namaFileBaru = uniqid();
+            $kkFile_namaFileBaru .= '.';
+            $kkFile_namaFileBaru .= $kkFile_extensionGambar;
+
+            $kkFile_pindah = move_uploaded_file($kkFile_tmpName, 'public/assets/img/kk/'. $kkFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET kk='$kkFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+        }
+        // ============== KK =====================
+
+        // ============== Akta =====================
+        if(!empty($_FILES['aktaFile']['name'])){
+            $aktaFile_nameFile   = $_FILES['aktaFile']['name'];
+            $aktaFile_ukuran     = $_FILES['aktaFile']['size'];
+            $aktaFile_tmpName    = $_FILES['aktaFile']['tmp_name'];
+
+            $aktaFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $aktaFile_extensionGambar = explode('.', $aktaFile_nameFile);
+            $aktaFile_extensionGambar = strtolower(end($aktaFile_extensionGambar));
+
+            if( $aktaFile_ukuran > 2500000 ){
+                echo "<script>
+                        alert('Ukuran Gambar Terlalu Besar !!!');
+                    </script>";
+
+                return false;
+            };
+
+            $aktaFile_namaFileBaru = uniqid();
+            $aktaFile_namaFileBaru .= '.';
+            $aktaFile_namaFileBaru .= $aktaFile_extensionGambar;
+
+            $aktaFile_pindah = move_uploaded_file($aktaFile_tmpName, 'public/assets/img/akta/'. $aktaFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET akta='$aktaFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+
+        }
+        // ============== Akta =====================
+
+        // ============== Ijazah =====================
+        if(!empty($_FILES['ijazahFile']['name'])){
+
+            $ijazahFile_nameFile   = $_FILES['ijazahFile']['name'];
+            $ijazahFile_ukuran     = $_FILES['ijazahFile']['size'];
+            $ijazahFile_tmpName    = $_FILES['ijazahFile']['tmp_name'];
+
+            $ijazahFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $ijazahFile_extensionGambar = explode('.', $ijazahFile_nameFile);
+            $ijazahFile_extensionGambar = strtolower(end($ijazahFile_extensionGambar));
+
+            if( $ijazahFile_ukuran > 2500000 ){
+                echo "<script>
+                        alert('Ukuran Gambar Terlalu Besar !!!');
+                    </script>";
+
+                return false;
+            };
+
+            $ijazahFile_namaFileBaru = uniqid();
+            $ijazahFile_namaFileBaru .= '.';
+            $ijazahFile_namaFileBaru .= $ijazahFile_extensionGambar;
+
+            $ijazahFile_pindah = move_uploaded_file($ijazahFile_tmpName, 'public/assets/img/ijazah/'. $ijazahFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET ijazah='$ijazahFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+
+            $inBer = $this->db->rowCount();
+        }
+        // ============== Ijazah =====================
+
+        // ============== Kip =====================
+        if(!empty($_FILES['kipFile']['name'])){
+            $kipFile_nameFile   = $_FILES['kipFile']['name'];
+            $kipFile_ukuran     = $_FILES['kipFile']['size'];
+            $kipFile_tmpName    = $_FILES['kipFile']['tmp_name'];
+
+            $kipFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $kipFile_extensionGambar = explode('.', $kipFile_nameFile);
+            $kipFile_extensionGambar = strtolower(end($kipFile_extensionGambar));
+
+            if( $kipFile_ukuran > 2500000 ){
+                echo "<script>
+                        alert('Ukuran Gambar Terlalu Besar !!!');
+                    </script>";
+
+                return false;
+            };
+
+            $kipFile_namaFileBaru = uniqid();
+            $kipFile_namaFileBaru .= '.';
+            $kipFile_namaFileBaru .= $kipFile_extensionGambar;
+
+            $kipFile_pindah = move_uploaded_file($kipFile_tmpName, 'public/assets/img/ijazah/'. $kipFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET ijazah='$kipFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+
+        }
+        // ============== Kip =====================
+        return $this->db->rowCount();
+    }
+
 }

@@ -23,20 +23,6 @@
         'Meninggal' => 'Meninggal'
     );
 
-    // Status Rumah
-    // $status_rumah = "";
-
-    // if($parent){
-    //   $status_rumah = $parent['status_rumah'];
-    // }
-    // $optionsRmh = array(
-    //     'Tinggal Dengan Orang Tua' => 'Tinggal Dengan Orang Tua',
-    //     'Tinggal Dengan Saudara' => 'Tinggal Dengan Saudara',
-    //     'Tinggal Sendiri' => 'Tinggal Sendiri'
-    // );
-
-    // Pendidikan
-
     // Pendidikan Ibu
     $pendidikan_ibu = "";
     $pendidikan_ayah = "";
@@ -92,7 +78,19 @@
       <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
+
+        <?php
+          if($berkas){
+            echo '
+              <img src="'.BASEURL.'public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle">
+            ';
+          }else{
+            echo '<img src="'.BASEURL.'public/assets/img/default.png" alt="Profile" class="rounded-circle">';
+          }
+        ?>
+
+          <!-- <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle"> -->
+
           <span class="d-none d-md-block dropdown-toggle ps-2"><?= $person['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
@@ -236,8 +234,7 @@
                   <label for="inputPassword6" class="col-form-label">Asal Sekolah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" value="
-                  <?php if($siswa){
+                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" value="<?php if($siswa){
                         echo $siswa['asal_sekolah'];
                     }else{
                       echo "";
@@ -255,8 +252,7 @@
                   <label for="npsn_sekolah" class="col-form-label">NPSN Sekolah Asal</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" value="
-                  <?php if($siswa){
+                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" value="<?php if($siswa){
                         echo $siswa['npsn_sekolah_asal'];
                     }else{
                       echo "";
@@ -271,8 +267,7 @@
                     <label for="nisn" class="col-form-label">NISN</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="nisn" name="nisn" class="form-control" value="
-                    <?php if($siswa){
+                    <input type="Text" id="nisn" name="nisn" class="form-control" value="<?php if($siswa){
                         echo $siswa['nisn'];
                     }else{
                       echo "";
@@ -289,8 +284,7 @@
                   <label for="nik" class="col-form-label">NIK</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nik" name="nik" class="form-control" value="
-                  <?php if($siswa){
+                  <input type="Text" id="nik" name="nik" class="form-control" value="<?php if($siswa){
                         echo $siswa['nik'];
                     }else{
                       echo "";
@@ -366,7 +360,14 @@
                   <label for="anak_ke" class="col-form-label">Anak Ke</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="anak_ke" name="anak_ke" class="form-control" value="<?= $siswa['anak_ke'] ?>" required>
+                  <input type="Text" id="anak_ke" name="anak_ke" class="form-control" value="<?php
+                    if($siswa){
+                      echo $siswa['anak_ke'];
+                    }else{
+                      echo "";
+                    }
+                  ?>
+                  " required>
                 </div>
               </div>
             </td>
@@ -377,7 +378,15 @@
                     <label for="jml_saudara" class="col-form-label">Jumlah Saudara/i</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="jml_saudara" name="jml_saudara" class="form-control" value="<?= $siswa['jml_saudara'] ?>" required>
+                    <input type="Text" id="jml_saudara" name="jml_saudara" class="form-control" value="
+                      <?php
+                        if($siswa){
+                          echo $siswa['jml_saudara'];
+                        }else{
+                          echo "";
+                        }
+                      ?>
+                      " required>
                   </div>
                 </div>
             </td>
@@ -390,7 +399,14 @@
                     <label for="agama" class="col-form-label">Agama</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="agama" name="agama" class="form-control" value="<?= $person['agama'] ?>" required>
+                    <input type="Text" id="agama" name="agama" class="form-control" value="<?php
+                      if($person){
+                        echo $person['agama'];
+                      }else{
+                        echo "";
+                      }
+                    ?>
+                    " required>
                   </div>
                 </div>
             </td>
@@ -401,7 +417,14 @@
                   <label for="cita_cita" class="col-form-label">Cita-Cita</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="cita_cita" name="cita_cita" class="form-control" value="<?= $siswa['cita_cita'] ?>" required>
+                  <input type="Text" id="cita_cita" name="cita_cita" class="form-control" value="<?php
+                    if($siswa){
+                      echo $siswa['cita_cita'];
+                    }else{
+                      echo "";
+                    }
+                  ?>
+                  " required>
                 </div>
               </div>
             </td>
@@ -414,7 +437,14 @@
                   <label for="hobi" class="col-form-label">Hobi</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="hobi" name="hobi" class="form-control" value="<?= $siswa['hobi'] ?>" required>
+                  <input type="Text" id="hobi" name="hobi" class="form-control" value="<?php
+                    if($siswa){
+                      echo $siswa['hobi'];
+                    }else{
+                      echo "";
+                    }
+                  ?>
+                  " required>
                 </div>
               </div>
             </td>
@@ -425,7 +455,13 @@
                   <label for="email" class="col-form-label">Email</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="email" name="email" class="form-control" value="<?= $person['email'] ?>">
+                  <input type="Text" id="email" name="email" class="form-control" value="<?php
+                      if($person){
+                        echo$person['email'];
+                      }else{
+                        echo "";
+                      }
+                    ?>">
                 </div>
               </div>
             </td>
@@ -438,7 +474,13 @@
                   <label for="no_telp" class="col-form-label">No. Handphone</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="no_telp" name="no_telp" class="form-control" value="<?= $person['no_telp'] ?>" required>
+                  <input type="Text" id="no_telp" name="no_telp" class="form-control" value="<?php
+                      if($person){
+                        echo $person['no_telp'];
+                      }else{
+                        echo "";
+                      }
+                    ?>" required>
                 </div>
               </div>
             </td>
@@ -449,7 +491,13 @@
                       <label for="biaya_sekolah" class="col-form-label">Yang Membiayai Sekolah</label>
                     </div>
                     <div class="col-6">
-                      <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" value="<?= $siswa['biaya_sekolah'] ?>" required>
+                      <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" value="<?php
+                        if($siswa){
+                          echo $siswa['biaya_sekolah'];
+                        }else{
+                          echo "";
+                        }
+                      ?>" required>
                     </div>
                   </div>
             </td>
@@ -462,7 +510,13 @@
                     <label for="paud" class="col-form-label">SD</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="paud" name="paud" class="form-control" value="<?= $siswa['sd'] ?>" required>
+                    <input type="Text" id="paud" name="paud" class="form-control" value="<?php
+                      if($siswa){
+                        echo $siswa['sd'];
+                      }else{
+                        echo "";
+                      }
+                    ?>" required>
                   </div>
                 </div>
             </td>
@@ -475,7 +529,13 @@
                   <label for="tk" class="col-form-label">SMP</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="tk" name="tk" class="form-control" value="<?= $siswa['smp'] ?>" required>
+                  <input type="Text" id="tk" name="tk" class="form-control" value="<?php if($siswa){
+                      echo $siswa['smp'];
+                    }else{
+                      echo "";
+                    }
+                  ?>
+                  " required>
                 </div>
               </div>
             </td>
@@ -486,7 +546,13 @@
                   <label for="kip" class="col-form-label">No.KIP</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kip" name="kip" class="form-control" value="<?= $siswa['kip'] ?>" required>
+                  <input type="Text" id="kip" name="kip" class="form-control" value="<?php
+                    if($siswa){
+                      echo $siswa['kip'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -499,7 +565,13 @@
                   <label for="kk" class="col-form-label">No.KK</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="no_kk" name="no_kk" class="form-control" value="<?= $siswa['no_kk'] ?>" required>
+                  <input type="Text" id="no_kk" name="no_kk" class="form-control" value="<?php
+                    if($siswa){
+                      echo $siswa['no_kk'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
           </td>
@@ -510,7 +582,13 @@
                 <label for="kepala_keluarga" class="col-form-label">Kepala Keluarga</label>
               </div>
               <div class="col-6">
-                <input type="Text" id="kepala_keluarga" name="kepala_keluarga" class="form-control"  required value="<?= $siswa['kepala_keluarga'] ?>">
+                <input type="Text" id="kepala_keluarga" name="kepala_keluarga" class="form-control"  required value="<?php
+                  if($siswa){
+                    echo $siswa['kepala_keluarga'];
+                  }else{
+                    echo "";
+                  }
+                ?>">
               </div>
             </div>
           </td>
@@ -558,9 +636,14 @@
                 </div>
                 <div class="col-9">
                   <textarea name="alamat" id="alamat" class="form-control"  required>
-                    <?= $person['alamat'] ?>
+                    <?php
+                      if($person){
+                        echo $person['alamat'];
+                      }else{
+                        echo "";
+                      }
+                    ?>
                   </textarea>
-                  <!-- <input type="Text" id="alamat" name="alamat" class="form-control" value="<?= $person['alamat'] ?>" required> -->
                 </div>
               </div>
             </td>
@@ -573,8 +656,18 @@
                   <label for="nama_lengkap" class="col-form-label">RT/RW</label>
                 </div>
                 <div class="col-6 d-flex gap-3">
-                  <input type="number" id="rt" name="rt" class="form-control" value="<?= $person['rt'] ?>" required>
-                  <input type="number" id="rw" name="rw" class="form-control" value="<?= $person['rw'] ?>" required>
+                  <input type="number" id="rt" name="rt" class="form-control" value="<?php
+                  if($person){
+                    echo $person['rt'];
+                  }else{
+                    echo "";
+                  } ?>" required>
+                  <input type="number" id="rw" name="rw" class="form-control" value="<?php
+                  if($person){
+                    echo $person['rw'];
+                  }else{
+                    echo "";
+                  } ?>" required>
                 </div>
               </div>
             </td>
@@ -585,7 +678,13 @@
                   <label for="desa" class="col-form-label">Desa</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="desa" name="desa" class="form-control" value="<?= $person['desa'] ?>" required>
+                  <input type="Text" id="desa" name="desa" class="form-control" value="<?php
+                    if($person){
+                      echo $person['desa'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -598,7 +697,13 @@
                   <label for="tanggal_lahir" class="col-form-label">Kecamatan</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kecamatan" name="kecamatan" class="form-control" value="<?= $person['kecamatan'] ?>" required>
+                  <input type="Text" id="kecamatan" name="kecamatan" class="form-control" value="<?php
+                    if($person){
+                      echo $person['kecamatan'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -609,7 +714,13 @@
                   <label for="kab_kota" class="col-form-label">Kabupaten/Kota</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kab_kota" name="kab_kota" class="form-control" value="<?= $person['kab_kota'] ?>" required>
+                  <input type="Text" id="kab_kota" name="kab_kota" class="form-control" value="<?php
+                    if($person){
+                      echo $person['kab_kota'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -622,7 +733,13 @@
                   <label for="provinsi" class="col-form-label">Provinsi</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="provinsi" name="provinsi" class="form-control" value="<?= $person['provinsi'] ?>" required>
+                  <input type="Text" id="provinsi" name="provinsi" class="form-control" value="<?php
+                    if($person){
+                      echo $person['provinsi'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -633,7 +750,12 @@
                     <label for="kode_pos" class="col-form-label">Kode Pos</label>
                   </div>
                   <div class="col-6">
-                    <input type="number" id="kode_pos" name="kode_pos" class="form-control" value="<?= $person['kode_pos'] ?>" required>
+                    <input type="number" id="kode_pos" name="kode_pos" class="form-control" value="<?php if($person){
+                        echo $person['kode_pos'];
+                      }else{
+                        echo "";
+                      }
+                    ?>" required>
                   </div>
                 </div>
             </td>
@@ -646,7 +768,13 @@
                     <label for="transportasi" class="col-form-label">Transportasi</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="transportasi" name="transportasi" class="form-control"  required value="<?= $siswa['transportasi'] ?>">
+                    <input type="Text" id="transportasi" name="transportasi" class="form-control"  required value="<?php
+                      if($siswa){
+                        echo $siswa['transportasi'];
+                      }else{
+                        echo "";
+                      }
+                    ?>">
                   </div>
                 </div>
             </td>
@@ -657,7 +785,13 @@
                   <label for="jarak_kesekolah" class="col-form-label">Jarak Ke Sekolah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="jarak_kesekolah" name="jarak_kesekolah" class="form-control" value="<?= $siswa['jarak_sekolah'] ?>" required>
+                  <input type="Text" id="jarak_kesekolah" name="jarak_kesekolah" class="form-control" value="<?php
+                    if($siswa){
+                      echo $siswa['jarak_sekolah'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -670,7 +804,13 @@
                   <label for="waktu_tempuh" class="col-form-label">Waktu Tempuh</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="waktu_tempuh" name="waktu_tempuh" class="form-control" value="<?= $siswa['waktu_tempuh'] ?>" required>
+                  <input type="Text" id="waktu_tempuh" name="waktu_tempuh" class="form-control" value="<?php
+                    if($siswa){
+                      echo $siswa['waktu_tempuh'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -722,7 +862,13 @@
                   <label for="nik_ayah" class="col-form-label">NIK Ayah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nik_ayah" name="nik_ayah" class="form-control" value="<?= $parent['nik_ayah'] ?>" required>
+                  <input type="Text" id="nik_ayah" name="nik_ayah" class="form-control" value="<?php
+                    if($parent){
+                      echo $parent['nik_ayah'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -735,7 +881,13 @@
                   <label for="nik" class="col-form-label">Nama Ayah</label>
                 </div>
                 <div class="col-6">
-                <input type="Text" id="nama_ayah" name="nama_ayah" class="form-control" value="<?= $parent['nama_ayah'] ?>" required>
+                <input type="Text" id="nama_ayah" name="nama_ayah" class="form-control" value="<?php
+                  if($parent){
+                    echo $parent['nama_ayah'];
+                  }else{
+                    echo "";
+                  }
+                ?>" required>
                 </div>
               </div>
             </td>
@@ -746,7 +898,13 @@
                   <label for="lhr_ayah" class="col-form-label">Tempat Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="lhr_ayah" name="lhr_ayah" class="form-control" value="<?= $parent['lhir_ayah'] ?>" required>
+                  <input type="Text" id="lhr_ayah" name="lhr_ayah" class="form-control" value="<?php
+                    if($parent){
+                      echo $parent['lhir_ayah'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -778,7 +936,13 @@
                   <label for="pekerjaan_ayah" class="col-form-label">Pekerjaan</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="pekerjaan_ayah" name="pekerjaan_ayah" class="form-control" value="<?= $parent['pekerjaan_ayah'] ?>" required>
+                  <input type="Text" id="pekerjaan_ayah" name="pekerjaan_ayah" class="form-control" value="<?php
+                    if($parent){
+                      echo $parent['pekerjaan_ayah'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -833,7 +997,13 @@
                   <label for="nik_ibu" class="col-form-label">NIK Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nik_ibu" name="nik_ibu" class="form-control" value="<?= $parent['nik_ibu'] ?>" required>
+                  <input type="Text" id="nik_ibu" name="nik_ibu" class="form-control" value="<?php
+                    if($parent){
+                      echo $parent['nik_ibu'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -844,7 +1014,13 @@
                   <label for="nama_ibu" class="col-form-label">Nama Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nama_ibu" name="nama_ibu" class="form-control" value="<?= $parent['nama_ibu'] ?>" required>
+                  <input type="Text" id="nama_ibu" name="nama_ibu" class="form-control" value="<?php
+                    if($parent){
+                      echo $parent['nama_ibu'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -857,7 +1033,13 @@
                   <label for="lhr_ibu" class="col-form-label">Tempat Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="lhr_ibu" name="lhr_ibu" class="form-control" value="<?= $parent['lhir_ibu'] ?>" required>
+                  <input type="Text" id="lhr_ibu" name="lhr_ibu" class="form-control" value="<?php
+                    if($parent){
+                      echo $parent['lhir_ibu'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -868,7 +1050,13 @@
                   <label for="nama_ibu" class="col-form-label">Tanggal Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="date" id="tgl_lhir_ibu" name="tgl_lhir_ibu" class="form-control" value="<?= $parent['tgl_lhr_ibu'] ?>" required>
+                  <input type="date" id="tgl_lhir_ibu" name="tgl_lhir_ibu" class="form-control" value="<?php
+                    if($parent){
+                      echo $parent['tgl_lhr_ibu'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -881,7 +1069,13 @@
                   <label for="no_ibu" class="col-form-label">No. HP Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="text" id="no_ibu" name="no_ibu" class="form-control" value="<?= $parent['no_ibu'] ?>" required>
+                  <input type="text" id="no_ibu" name="no_ibu" class="form-control" value="<?php
+                    if($parent){
+                      echo $parent['no_ibu'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
                 </div>
               </div>
             </td>
@@ -914,13 +1108,6 @@
                   <label for="penghasilan_ibu" class="col-form-label">Penghasilan Ibu</label>
                 </div>
                 <div class="col-6">
-                  <!-- <select class="form-select" name="penghasilan_ibu" id="pendidikan_ibu" value="<?= $parent['penghasilan_ibu'] ?>">
-                  <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
-                    <option value="2.000.000 - 4.000.000">2.000.000 - 4.000.000</option>
-                    <option value="4.000.000 - 6.000.000">4.000.000 - 6.000.000</option>
-                    <option value="6.000.000 - 10.000.000">6.000.000 - 10.000.000</option>
-                  </select> -->
-
                   <select class="form-select" name="penghasilan_ibu" id="penghasilan_ibu">
                       <?php
                       foreach ($opt_penghasilan as $value => $label) {

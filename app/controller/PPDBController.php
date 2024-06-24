@@ -48,6 +48,14 @@ class PPDBController extends Controller {
         $this->db->query($sql);
         $data['person'] = $this->db->single();
 
+        // Berkas
+        $id_berkas = $data['person']['id_berkas'];
+
+        $sql = "SELECT * FROM berkas WHERE id_berkas=:id_berkas";
+        $this->db->query($sql);
+        $this->db->bind(':id_berkas', $id_berkas);
+        $data['berkas'] = $this->db->single();
+
         $this->view('admin/code/header', $data);
             $this->view('ppdb/berkas', $data);
         $this->view('admin/code/footer');
@@ -59,6 +67,18 @@ class PPDBController extends Controller {
         $sql = "SELECT * FROM person WHERE id_person=".$id_person;
         $this->db->query($sql);
         $data['person'] = $this->db->single();
+
+        $sql = "SELECT * FROM siswa WHERE id_person=".$id_person;
+        $this->db->query($sql);
+        $data['siswa'] = $this->db->single();
+
+        // Berkas
+        $id_berkas = $data['person']['id_berkas'];
+
+        $sql = "SELECT * FROM berkas WHERE id_berkas=:id_berkas";
+        $this->db->query($sql);
+        $this->db->bind(':id_berkas', $id_berkas);
+        $data['berkas'] = $this->db->single();
 
         $this->view('admin/code/header', $data);
             $this->view('ppdb/cetakKartu', $data);
@@ -111,5 +131,23 @@ class PPDBController extends Controller {
         }
 
     }
+
+    public function updateBerkas($id = 0){
+        $berkas = $this->model('Berkas_Model')->allBerkas($_POST);
+
+        if($berkas > 0 ){
+            $id_person = (int)$id; 
+            $data['title'] = "PPDB SMK PROFITA";
+
+            $sql = "SELECT * FROM person WHERE id_person=".$id_person;
+            $this->db->query($sql);
+            $data['person'] = $this->db->single();
+        
+            header("Location: ".BASEURL."PPDBController/berkas/$id_person");
+            exit(); 
+        }
+
+    }
+
 
 }
