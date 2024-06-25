@@ -54,6 +54,20 @@
       '6.000.000 - 10.000.000' => '6.000.000 - 10.000.000'
     );
 
+    // Jurusan
+    $jurusan = "";
+
+    if($siswa){
+      $jurusan = $siswa['jurusan'];
+    }
+
+    $opt_jurusan = array(
+      'RPL' => 'RPL',
+      'TKJ' => 'TKJ',
+      'Akuntansi' => 'Akuntansi',
+      'Tata Boga' => 'Tata Boga'
+    );
+
 ?>
 <!-- =========== -->
 
@@ -378,10 +392,7 @@
                     <label for="jml_saudara" class="col-form-label">Jumlah Saudara/i</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="jml_saudara" name="jml_saudara" class="form-control" value="
-                      <?php
-                        if($siswa){
-                          echo $siswa['jml_saudara'];
+                    <input type="Text" id="jml_saudara" name="jml_saudara" class="form-control" value="<?php if($siswa){echo $siswa['jml_saudara'];
                         }else{
                           echo "";
                         }
@@ -520,6 +531,24 @@
                   </div>
                 </div>
             </td>
+            <td>
+                <!-- jurusan -->
+                <div class="row g-3 align-items-center m-2">
+                  <div class="col-6">
+                    <label for="jurusan" class="col-form-label">Jurusan</label>
+                  </div>
+                  <div class="col-6">
+                    <select class="form-select" name="jurusan" id="jurusan">
+                        <?php
+                        foreach ($opt_jurusan as $value => $label) {
+                            $selected = ($value == $jurusan) ? 'selected' : '';
+                            echo "<option value=\"$value\" $selected>$label</option>";
+                        }
+                        ?>
+                    </select>
+                  </div>
+                </div>
+            </td>
           </tr>
           <tr>
             <td>
@@ -635,10 +664,8 @@
                   <label for="alamat" class="col-form-label">Alamat</label>
                 </div>
                 <div class="col-9">
-                  <textarea name="alamat" id="alamat" class="form-control"  required>
-                    <?php
-                      if($person){
-                        echo $person['alamat'];
+                  <textarea name="alamat" id="alamat" class="form-control" required style="text-align: left;">
+                    <?php if($person){ echo $person['alamat'];
                       }else{
                         echo "";
                       }
@@ -1137,7 +1164,7 @@
         <table class="w-100">
           <tr>
             <td>
-              <img src="<?= BASEURL ?>public/assets/img/profile/<?= $foto_profile ?>" alt="">
+              <img src="<?= BASEURL ?>public/assets/img/profile/<?= $foto_profile ?>" alt="" style="width: 300px;">
             </td>
           </tr>
           <tr>

@@ -257,7 +257,7 @@
               <tr>
                   <th class="text-center">#</th>
                   <th class="text-center">Email</th>
-                  <th class="text-center">Status</th>
+                  <th class="text-center">Tipe Akun</th>
                   <th class="text-center">Aksi</th>
               </tr>
           </thead>
@@ -267,8 +267,14 @@
                       <td class="text-center"><?= $key + 1 ?></td>
                       <td class="text-center"><?= $value["email"] ?></td>
                       <td class="text-center">
-                          <button class="btn btn-success"><?= $value["status"] ?></button>
-                      </td>
+                          <?php
+                            if($value["tipe"] > 1){
+                              echo "Siswa";
+                            }else{
+                              echo "Administrator";
+                            }
+                          ?>
+                      </td> 
                       <td class="text-center">
                           <div class="d-flex gap-3 justify-content-center">
                             <button class="btn btn-danger text-light" type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="<?= $value['id_person'] ?>">

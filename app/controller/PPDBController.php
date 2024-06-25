@@ -100,20 +100,18 @@ class PPDBController extends Controller {
     public function insertFormulir($id = 0){
         
         $person = $this->model('Person_Model')->update($_POST);
-
         if($person > 0){
             $siswa = $this->model('Siswa_Model')->insert($_POST);
-
+            
             if($siswa > 0){ 
                 $parent = $this->model('Parent_Model')->insert($_POST);
-
+                
                 // if($parent > 0){
                     $berkas = $this->model('Berkas_Model')->profile($_POST);
-  
+                    
                     if($berkas > 0){
-                        // var_dump("MaSUK berkas");
-                        // die();
-                        $id_person = (int)$id; 
+
+                        $id_person = (int)$id;  
                         $data['title'] = "PPDB SMK PROFITA";
 
                         $sql = "SELECT * FROM person WHERE id_person=".$id_person;

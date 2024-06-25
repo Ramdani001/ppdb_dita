@@ -111,7 +111,13 @@
         <div class="card-header">
             CETAK KARTU PENDAFTARAN
         </div>
-        <div class="card-body p-3 gap-4 d-flex justfiy-content-around align-items-center">
+        <div id="content_cetak" class="border mb-2">
+          <h2 class="text-center mt-5">
+            <b>
+              SMK PROFITA BANDUNG
+            </b>
+          </h2>
+          <div class="card-body p-3 gap-4 d-flex justfiy-content-around align-items-center">
             <div class="left">
                 <img src="<?= BASEURL ?>public/assets/img/profile/<?= $foto_profile ?>" alt="" style="width: 150px; border-radius: 10px;">
             </div>
@@ -170,13 +176,45 @@
                 </div>
             </div>
           </div>
-          <div class="d-flex justify-content-center">
-            <button class="btn text-light" style="background-color: #8F0DA4;">
-              <i class="ri-chat-download-line"></i>
-              Download Formulir Pendaftaran</button>
-          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button class="btn text-light" id="cetak_kartu" style="background-color: #8F0DA4;" type="button">
+            <i class="ri-chat-download-line"></i>
+            Download Formulir Pendaftaran</button>
+        </div>
     </div>
    </form>
 </main>
+
+
 <!-- Content -->
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById('cetak_kartu').addEventListener('click', function () {
+    const { jsPDF } = window.jspdf;
+
+    html2canvas(document.getElementById('content_cetak')).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const doc = new jsPDF({
+        orientation: 'landscape',
+        unit: 'mm',
+      });
+
+      const imgProps= doc.getImageProperties(imgData);
+      const pdfWidth = doc.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      doc.save('Kartu Pendaftaran.pdf');
+    });
+  });
+});
+
+</script>
+
