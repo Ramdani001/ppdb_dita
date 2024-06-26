@@ -16,7 +16,7 @@ class ViewAdminController extends Controller {
     public function user($id = 0){
 
         $data['id_person'] = $id; 
-        $data['title'] = "SMK PROFITA";
+        $data['title'] = "SMK PROFITA"; 
 
         $data['list_person'] = $this->model('Person_model')->getUser();
         $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
