@@ -49,10 +49,20 @@ class Siswa_Model{
         $this->db->query($sql);
         $this->db->bind(':id_person', $id_person);
         $id_person = $this->db->single()['id_person'];
+        
+        $sqlS = "SELECT * FROM siswa WHERE id_person=:id_person";
+        $this->db->query($sqlS);
+        $this->db->bind(':id_person', $id_person);
+        $id_siswa = $this->db->single();
 
-        if(empty($id_person)){
-            $query = "INSERT INTO siswa VALUES (:result, :id_person, :no_pendaftaran, :asal_sekolah, :npsn_sekolah_asal,:nisn, :nik, :biaya_sekolah, :sd, :smp, :kip, :cita_cita, :hobi, :anak_ke, :transportasi, :jarak_sekolah, :waktu_tempuh, :jml_saudara, :no_kk, :kepala_keluarga, :status, :jurusan,:created_at, :created_at)";
+        if(!$id_siswa){ 
+            // var_dump($_POST['no_pendaftaran']);
+            // die();
+            $query = "INSERT INTO siswa VALUES (:result, :id_person, :no_pendaftaran, :asal_sekolah, :npsn_sekolah_asal,:nisn, :nik, :biaya_sekolah, :sd, :smp, :kip, :cita_cita, :hobi, :anak_ke, :transportasi, :jarak_sekolah, :waktu_tempuh, :jml_saudara, :no_kk, :kepala_keluarga, :status, :jurusan, :created_at, :created_at)";
     
+            
+            $this->db->query($query);
+
             $this->db->bind(':result', $result);
             $this->db->bind(':id_person', $_POST['id_person']);
             $this->db->bind(':no_pendaftaran', $_POST['no_pendaftaran']);
@@ -60,7 +70,7 @@ class Siswa_Model{
             $this->db->bind(':npsn_sekolah_asal', $_POST['npsn_sekolah']);
             $this->db->bind(':nisn', $_POST['nisn']);
             $this->db->bind(':nik', $_POST['nik']);
-            $this->db->bind(':nisn', $_POST['nisn']);
+            $this->db->bind(':nisn', $_POST['nisn']); 
             $this->db->bind(':biaya_sekolah', $_POST['biaya_sekolah']); 
             $this->db->bind(':sd', $_POST['paud']);
             $this->db->bind(':smp', $_POST['tk']);
@@ -103,8 +113,7 @@ class Siswa_Model{
 
             $query = "UPDATE siswa SET no_pendaftaran='$no_pendaftaran', asal_sekolah='$asal_sekolah', npsn_sekolah_asal='$npsn_sekolah_asal',nisn='$nisn', nik='$nik', biaya_sekolah='$biaya_sekolah', sd='$sd', smp='$smp', kip='$kip', cita_cita='$cita_cita', hobi='$hobi', anak_ke='$anak_ke', transportasi='$transportasi', jarak_sekolah='$jarak_sekolah', waktu_tempuh='$waktu_tempuh', jml_saudara='$jml_saudara',  no_kk='$no_kk', kepala_keluarga='$kepala_keluarga', jurusan='$jurusan', updated_at='$created_at'";
         }
-
-        $this->db->query($query);
+ 
         $this->db->execute();
         return $this->db->rowCount();
         

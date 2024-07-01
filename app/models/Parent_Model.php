@@ -60,15 +60,14 @@ class Parent_Model{
         $this->db->query($Check);
         $this->db->bind(':id_siswaS', (int)$id_siswas);
         $this->db->execute();
-        $id_check = $this->db->single()['id_siswa'];
+        $id_check = $this->db->single();
 
         
-        if(empty($id_check)){
+        if(!$id_check){
             
             $queryP = "INSERT INTO parents VALUES (:id_parent, :id_siswa, :nik_ayah, :nama_ayah, :lhir_ayah, :tgl_lhr_ayah, :pendidikan_ayah, :pekerjaan_ayah, :penghasilan_ayah, :status_ayah, :nik_ibu, :nama_ibu, :lhir_ibu, :tgl_lhr_ibu, :no_ibu, :pendidikan_ibu, :penghasilan_ibu)";
             $this->db->query($queryP);
-            // var_dump(date('Y-m-d H:i:s'));
-            // die();
+            
             $this->db->bind(':id_parent', $result);
             $this->db->bind(':id_siswa', $id_siswas);
             $this->db->bind(':nik_ayah', $_POST['nik_ayah']);
@@ -88,6 +87,7 @@ class Parent_Model{
             $this->db->bind(':penghasilan_ibu', $_POST['penghasilan_ibu']);
             $this->db->execute();
             return $this->db->rowCount();
+
         }else{
 
             $queryUp = "UPDATE parents 
