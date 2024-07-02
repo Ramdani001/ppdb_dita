@@ -10,7 +10,7 @@ class Siswa_Model{
     }
     
     public function getAll(){
-        $this->db->query('SELECT * FROM '. $this->table .' s INNER JOIN person p ON s.id_person = p.id_person');
+        $this->db->query('SELECT * FROM '. $this->table .' s INNER JOIN person p ON s.id_person = p.id_person RIGHT JOIN berkas k ON p.id_berkas = k.id_berkas');
         return $this->db->resultSet();
     }
 
@@ -84,7 +84,7 @@ class Siswa_Model{
             $this->db->bind(':jml_saudara', $_POST['jml_saudara']);
             $this->db->bind(':no_kk', $_POST['no_kk']);
             $this->db->bind(':kepala_keluarga', $_POST['kepala_keluarga']);
-            $this->db->bind(':status', '');
+            $this->db->bind(':status', 0);
             $this->db->bind(':jurusan', $_POST['jurusan']);
             $this->db->bind(':created_at', $created_at);
             

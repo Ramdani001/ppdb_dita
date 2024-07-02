@@ -268,10 +268,31 @@
                   <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
                 </td>
                 <td class="text-center"><?= $value["nama"] ?></td>
+                <td class="text-center"><?= $value["nama"] ?></td>
                 <td class="text-center"><?= $value["asal_sekolah"] ?></td>
                 <td class="text-center"><?= $value["no_telp"] ?></td>
                 <td class="text-center">
-                  <button class="btn btn-danger"><?= $value["status"] ?></button>
+                  <button class="btn 
+                  <?php
+                      if($value["status"] == 0 ){
+                        echo "btn-secondary";
+                      }else if($value['status'] == 1){
+                        echo "btn-success";
+                      }else{
+                        echo "btn-danger";
+                      }
+                    ?>
+                  ">
+                    <?php
+                      if($value["status"] == 0 ){
+                        echo "Menunggu";
+                      }else if($value['status'] == 1){
+                        echo "Diterima";
+                      }else{
+                        echo "Ditolak";
+                      }
+                    ?>
+                  </button>
                 </td>
                 <td class="text-center">
                   <div class="d-flex gap-3 justify-content-center">
@@ -306,34 +327,153 @@
 
 <!-- Modal Detail -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Siswa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- NISN -->
-        <div class="mb-3">
-          <label for="det_nisn" class="form-label">NISN</label>
-          <input type="text" class="form-control" id="det_nisn" disabled>
-        </div>
-        <!-- Nama Lengkap -->
-        <div class="mb-3">
-          <label for="det_name" class="form-label">Nama Lengkap</label>
-          <input type="text" class="form-control" id="det_name" disabled>
-        </div>
-        <!-- Email -->
-        <div class="mb-3">
-          <label for="det_email" class="form-label">Email address</label>
-          <input type="text" class="form-control" id="det_email" disabled>
-        </div>
-        <!-- No.Telp -->
-        <div class="mb-3">
-          <label for="det_no" class="form-label">No.Telpon</label>
-          <input type="text" class="form-control" id="det_no" disabled>
-        </div>
+        
+        <!-- Personal -->
+         <div>
+          <h5>
+            <b>
+              <u>Personal</u>
+            </b>
+          </h5>
+         </div>
+        <div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
+          <!-- No Pendaftaran -->
+          <div class="mb-3">
+            <label for="det_pendaftaran" class="form-label">No Pendaftaran</label>
+            <input type="text" class="form-control" id="det_pendaftaran" disabled>
+          </div>
+          <!-- Nama Lengkap -->
+          <div class="mb-3">
+            <label for="det_name" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="det_name" disabled>
+          </div>
+          <!-- Asal Sekolah -->
+          <div class="mb-3">
+            <label for="det_asal_sekolah" class="form-label">Asal Sekolah</label>
+            <input type="text" class="form-control" id="det_asal_sekolah" disabled>
+          </div>
+          <!-- NPSN Sekolah Asal -->
+          <div class="mb-3">
+            <label for="det_npsn_asal_sekolah" class="form-label">NPSN Asal Sekolah</label>
+            <input type="text" class="form-control" id="det_npsn_asal_sekolah" disabled>
+          </div>
+          <!-- NISN -->
+          <div class="mb-3">
+            <label for="det_nisn" class="form-label">NISN</label>
+            <input type="text" class="form-control" id="det_nisn" disabled>
+          </div>
+          <!-- NIK -->
+          <div class="mb-3">
+            <label for="det_nik" class="form-label">NIK</label>
+            <input type="text" class="form-control" id="det_nik" disabled>
+          </div>
+          <!-- Kewarganegaraan -->
+          <div class="mb-3">
+            <label for="det_kewarganegaraan" class="form-label">Kewarganegaraan</label>
+            <input type="text" class="form-control" id="det_kewarganegaraan" disabled>
+          </div>
+          <!-- Tempat Lahir -->
+          <div class="mb-3">
+            <label for="det_tmp_lahir" class="form-label">Tempat Lahir</label>
+            <input type="text" class="form-control" id="det_tmp_lahir" disabled>
+          </div>
+          <!-- Tanggal Lahir -->
+          <div class="mb-3">
+            <label for="det_tgl_lahir" class="form-label">Tanggal Lahir</label>
+            <input type="text" class="form-control" id="det_tgl_lahir" disabled>
+          </div>
+          <!-- Jenis Kelamin -->
+          <div class="mb-3">
+            <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+            <input type="text" class="form-control" id="jenis_kelamin" disabled>
+          </div>
+          <!-- Anak Ke -->
+          <div class="mb-3">
+            <label for="det_anak_ke" class="form-label">Anak Ke</label>
+            <input type="text" class="form-control" id="det_anak_ke" disabled>
+          </div>
+          <!-- Jumlah Saudara/i -->
+          <div class="mb-3">
+            <label for="det_jml_saudara" class="form-label">Jumlah Saudara/i</label>
+            <input type="text" class="form-control" id="det_jml_saudara" disabled>
+          </div>
+          <!-- Agama -->
+          <div class="mb-3">
+            <label for="det_agama" class="form-label">Agama</label>
+            <input type="text" class="form-control" id="det_agama" disabled>
+          </div>
+          <!-- Cita-cita -->
+          <div class="mb-3">
+            <label for="det_cita_cita" class="form-label">Cita-cita</label>
+            <input type="text" class="form-control" id="det_cita_cita" disabled>
+          </div>
+          <!-- Hobi -->
+          <div class="mb-3">
+            <label for="det_hobi" class="form-label">Hobi</label>
+            <input type="text" class="form-control" id="det_hobi" disabled>
+          </div>
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="det_email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="det_email" disabled>
+          </div>
+          <!-- No. Handphone -->
+          <div class="mb-3">
+            <label for="det_phone" class="form-label">No. Handphone</label>
+            <input type="text" class="form-control" id="det_phone" disabled>
+          </div>
+          <!-- Yang Membiayai Sekolah -->
+          <div class="mb-3">
+            <label for="det_biayai" class="form-label">Yang Membiayai Sekolah</label>
+            <input type="text" class="form-control" id="det_biayai" disabled>
+          </div>
+          <!-- SD -->
+          <div class="mb-3">
+            <label for="det_sd" class="form-label">SD</label>
+            <input type="text" class="form-control" id="det_sd" disabled>
+          </div>
+          <!-- Jurusan -->
+          <div class="mb-3">
+            <label for="det_jurusan" class="form-label">Jurusan</label>
+            <input type="text" class="form-control" id="det_jurusan" disabled>
+          </div>
+          <!-- SMP -->
+          <div class="mb-3">
+            <label for="det_smp" class="form-label">SMP</label>
+            <input type="text" class="form-control" id="det_smp" disabled>
+          </div>
+          <!-- No.KIP -->
+          <div class="mb-3">
+            <label for="det_no_kip" class="form-label">No.KIP</label>
+            <input type="text" class="form-control" id="det_no_kip" disabled>
+          </div>
+          <!-- No.KK -->
+          <div class="mb-3">
+            <label for="det_no_kk" class="form-label">No.KK</label>
+            <input type="text" class="form-control" id="det_no_kk" disabled>
+          </div>
+          <!-- Kepala Keluarga -->
+          <div class="mb-3">
+            <label for="det_kepala_keluarga" class="form-label">Kepala Keluarga</label>
+            <input type="text" class="form-control" id="det_kepala_keluarga" disabled>
+          </div>
 
+          <!-- Bawah -->
+        </div>
+        
+        <hr class="pt-1 pb-1">
+        <h6>
+          <b>
+            <u>Berkas</u>
+          </b>
+        </h6>
         <div class="d-flex gap-4 justify-content-center flex-wrap">
 
           <!-- KK Berkas -->
@@ -343,8 +483,8 @@
                 Kartu Keluarga
               </b>
             </h6>
-            <div id="det_kk" class="bg-primary" style="width: 200px; height: 250px;">
-
+            <div>
+                <img src="" alt="" id="det_kk" style="width: 200px; height: 250px;">
             </div>
           </div>
 
@@ -355,8 +495,8 @@
                 Akta Kelahiran
               </b>
             </h6>
-            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
-
+            <div >
+              <img src="" alt="" id="det_akta" style="width: 200px; height: 250px;">
             </div>
           </div>
 
@@ -367,8 +507,8 @@
                 Ijazah/SKL
               </b>
             </h6>
-            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
-
+            <div >
+              <img src="" alt="" id="det_ijazah" style="width: 200px; height: 250px;">
             </div>
           </div>
 
@@ -379,8 +519,8 @@
                 Kartu Indonesia Pintar
               </b>
             </h6>
-            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
-
+            <div>
+              <img src="" alt="" id="det_kip" style="width: 200px; height: 250px;">
             </div>
           </div>
 
@@ -396,7 +536,7 @@
 </div>
 <!-- Modal Detail -->
 
-
+<input type="hidden" value="<?= BASEURL ?>" id="base_url">
 <!-- Modal Edit -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -436,8 +576,8 @@
                 Kartu Keluarga
               </b>
             </h6>
-            <div id="det_kk" class="bg-primary" style="width: 200px; height: 250px;">
-
+            <div>
+              <img src="" alt="" id="edit_kk" style="width: 200px; height: 250px;">
             </div>
             <input type="file" class="form-control mt-2" style="width: 200px;" name="kk_update">
           </div>
@@ -449,8 +589,8 @@
                 Akta Kelahiran
               </b>
             </h6>
-            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
-
+            <div>
+            <img src="" alt="" id="edit_akta" style="width: 200px; height: 250px;">
             </div>
             <input type="file" class="form-control mt-2" style="width: 200px;" name="akta_update">
           </div>
@@ -462,8 +602,8 @@
                 Ijazah/SKL
               </b>
             </h6>
-            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;" >
-
+            <div>
+            <img src="" alt="" id="edit_ijazah" style="width: 200px; height: 250px;">
             </div>
             <input type="file" class="form-control mt-2" style="width: 200px;" name="ijazah_update">
           </div>
@@ -475,8 +615,8 @@
                 Kartu Indonesia Pintar
               </b>
             </h6>
-            <div id="det_akta" class="bg-primary" style="width: 200px; height: 250px;">
-
+            <div>
+            <img src="" alt="" id="edit_kip" style="width: 200px; height: 250px;">
             </div>
             <input type="file" class="form-control mt-2" style="width: 200px;" name="kip_update">
           </div>
@@ -515,24 +655,58 @@
   </div>
 </div>
 <!-- Modal delete -->
-
 <script>
   
   document.addEventListener('DOMContentLoaded', function () {
+    const base_url = document.getElementById('base_url').value;
 
     const detailModal = document.getElementById('exampleModal');
     detailModal.addEventListener('show.bs.modal', function (event) {
         const button = event.relatedTarget;
         const siswa = JSON.parse(button.getAttribute('data-siswa'));
 
-        document.getElementById('det_nisn').value = siswa.nisn;
+        console.log(siswa);
+
+        document.getElementById('det_pendaftaran').value = siswa.no_pendaftaran;
         document.getElementById('det_name').value = siswa.nama;
+        document.getElementById('det_asal_sekolah').value = siswa.asal_sekolah;
+        document.getElementById('det_npsn_asal_sekolah').value = siswa.npsn_sekolah_asal;
+        document.getElementById('det_nisn').value = siswa.nisn;
+        document.getElementById('det_nik').value = siswa.nik;
+
+        document.getElementById('det_kewarganegaraan').value = siswa.kewarganegaraan;
+        document.getElementById('det_tmp_lahir').value = siswa.tempat_lhir;
+        document.getElementById('det_tgl_lahir').value = siswa.tanggal_lahir;
+        document.getElementById('jenis_kelamin').value = siswa.jk;
+        document.getElementById('det_anak_ke').value = siswa.anak_ke;
+        document.getElementById('det_jml_saudara').value = siswa.jml_saudara;
+        document.getElementById('det_agama').value = siswa.agama;
+        document.getElementById('det_cita_cita').value = siswa.cita_cita;
+        document.getElementById('det_hobi').value = siswa.hobi;
         document.getElementById('det_email').value = siswa.email;
-        document.getElementById('det_no').value = siswa.no_telp;
+        document.getElementById('det_phone').value = siswa.no_telp;
+        document.getElementById('det_biayai').value = siswa.biaya_sekolah;
+        document.getElementById('det_sd').value = siswa.sd;
+        document.getElementById('det_jurusan').value = siswa.jurusan;
+        document.getElementById('det_smp').value = siswa.smp;
+        document.getElementById('det_no_kip').value = siswa.kip;
+        document.getElementById('det_no_kk').value = siswa.no_kk;
+        document.getElementById('det_kepala_keluarga').value = siswa.kepala_keluarga;
+
+        
+        
+        // Img
+        document.getElementById('det_kk').src = base_url+"public/assets/img/kk/"+siswa.kk;
+        document.getElementById('det_akta').src = base_url+"public/assets/img/akta/"+siswa.akta;
+        document.getElementById('det_ijazah').src = base_url+"public/assets/img/ijazah/"+siswa.ijazah;
+        document.getElementById('det_kip').src = base_url+"public/assets/img/kip/"+siswa.kip;
+
+
     });
 
     const editModal = document.getElementById('editModal');
     editModal.addEventListener('show.bs.modal', function (event) {
+      const base_url = document.getElementById('base_url').value;
         const button = event.relatedTarget;
         const siswa = JSON.parse(button.getAttribute('data-siswa'));
 
@@ -540,6 +714,13 @@
         document.getElementById('edit_name').value = siswa.nama;
         document.getElementById('edit_email').value = siswa.email;
         document.getElementById('edit_no').value = siswa.no_telp;
+
+        // Img
+        document.getElementById('edit_kk').src = base_url+"public/assets/img/kk/"+siswa.kk;
+        document.getElementById('edit_akta').src = base_url+"public/assets/img/akta/"+siswa.akta;
+        document.getElementById('edit_ijazah').src = base_url+"public/assets/img/ijazah/"+siswa.ijazah;
+        document.getElementById('edit_kip').src = base_url+"public/assets/img/kip/"+siswa.kip;
+        
     });
 
   });

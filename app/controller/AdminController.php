@@ -69,7 +69,7 @@ class AdminController extends Controller {
             }
         }
     }
-
+ 
     public function deleteUser($id_person) {
         if (isset($_SESSION["id_person"])) {
             $_SESSION['message'] = 'Berhasil dihapus!';
