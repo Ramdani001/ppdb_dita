@@ -637,26 +637,6 @@
       <div action="#"  class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
         <table class="w-100">
           <tr>
-            <!-- <td> -->
-              <!-- NIK -->
-              <!-- <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="nik" class="col-form-label">Status Tempat Tinggal</label>
-                </div>
-                <div class="col-6"> -->
-                  <!-- <select class="form-select" name="status_rumah" id="status_rumah">
-                    <option value="Tinggal dengan Orangtua">Tinggal dengan Orangtua</option>
-                    <option value="Tinggal dengan saudara">Tinggal dengan saudara</option>
-                    <option value="Tinggal Sendiri">Tinggal Sendiri</option>
-                  </select> -->
-
-                                    
-                  <!-- <select class="form-select" name="status_rumah" id="status_rumah">
-                  </select>
-
-                </div>
-              </div>
-            </td> -->
             <td colspan="2">
               <!-- kewarganegaraan -->
               <div class="row g-3 align-items-center m-2">
@@ -664,13 +644,10 @@
                   <label for="alamat" class="col-form-label">Alamat</label>
                 </div>
                 <div class="col-9">
-                  <textarea name="alamat" id="alamat" class="form-control" required style="text-align: left;">
-                    <?php if($person){ echo $person['alamat'];
+                  <textarea name="alamat" id="alamat" class="form-control" required style="text-align: left;"><?php if($person){ echo $person['alamat'];
                       }else{
                         echo "";
-                      }
-                    ?>
-                  </textarea>
+                      }?></textarea>
                 </div>
               </div>
             </td>

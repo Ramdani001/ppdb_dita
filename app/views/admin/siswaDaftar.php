@@ -467,7 +467,194 @@
 
           <!-- Bawah -->
         </div>
-        
+        <!-- Personal -->
+        <!-- Alamat -->
+          <div>
+            <h5>
+              <b>
+                <u>Alamat</u>
+              </b>
+            </h5>
+         </div>
+
+         <!-- Content -->
+          <div>
+            <div class="d-flex" style="gap: 20px;">
+              <span style="width: 200px;">Alamat</span>
+              <span>:</span>
+              <textarea id="det_alamat" cols="100" disabled></textarea>
+            </div>
+            <!-- RT/RW -->
+            <div class="d-flex mt-4" style="gap: 30px;">
+              <div class="d-flex" style="gap: 20px;">
+                <span style="width: 130px;">RT</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_rt" style="width: 50px;" disabled>
+              </div>
+              <div class="d-flex" style="gap: 20px;">
+                <span>RW</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_rw" style="width: 50px;" disabled>
+              </div>
+              <!-- RT/RW -->
+              <!-- Desa -->
+              <div class="d-flex" style="gap: 20px;">
+                <span>Desa/Kelurahan</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_desa" disabled>
+              </div>
+              <!-- Desa -->
+              <!-- Kec -->
+              <div class="d-flex" style="gap: 20px;">
+                <span>Kecamatan</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_kecamatan" disabled>
+              </div>
+              <!-- Kec -->
+            </div>
+            <!--  -->
+            <div style="display: flex; gap: 40px; flex-wrap: wrap;" class="mt-4">
+              <!-- Kab/Kot -->
+              <div class="d-flex" style="gap: 20px;">
+                <span style="width: 210px;">Kabupaten/Kota</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_kab_kot" disabled>
+              </div>
+              <!-- Kab/Kot -->
+              <!-- Provinsi -->
+              <div class="d-flex" style="gap: 20px;">
+                <span>Provinsi</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_provinsi" disabled>
+              </div>
+              <!-- Provinsi -->
+              <!-- Kode Pos -->
+              <div class="d-flex" style="gap: 20px;">
+                <span style=" width: 210px;">Kode Pos</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_kode_pos" disabled>
+              </div>
+              <!-- Kode Pos -->
+              <!-- Transportasi -->
+              <div class="d-flex" style="gap: 20px;">
+                <span>Transportasi</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_transport" disabled>
+              </div>
+              <!-- Transportasi -->
+              <!-- Jarak Ke Sekolah -->
+              <div class="d-flex" style="gap: 20px;">
+                <span style="width: 210px;">Jarak Ke Sekolah</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_jarak_kesekolah" disabled>
+              </div>
+              <!-- Jarak Ke Sekolah -->
+              <!-- Waktu Tempuh -->
+              <div class="d-flex" style="gap: 20px;">
+                <span>Waktu Tempuh</span>
+                <span>:</span>
+                <input type="text" class="form-control" id="det_tempuh" disabled>
+              </div>
+              <!-- Waktu Tempuh -->
+            </div>
+            <!--  -->
+          </div>
+         <!-- Content -->
+
+        <!-- Alamat -->
+        <!-- ORTU -->
+          <div>
+              <h5>
+                <b>
+                  <u>Data Orang Tua</u>
+                </b>
+              </h5>
+          </div>
+          <!-- Content -->
+           <h6>
+            <u>Ayah</u>
+           </h6>
+          <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <!-- Nama Ayah -->
+          <div class="mb-3">
+            <label for="det_ayah" class="form-label">Nama Ayah</label>
+            <input type="text" class="form-control" id="det_ayah" disabled>
+          </div>
+          <!-- Status Ayah -->
+          <div class="mb-3">
+            <label for="det_stat_ayah" class="form-label">Status Ayah</label>
+            <input type="text" class="form-control" id="det_stat_ayah" disabled>
+          </div>
+          <!-- NIK -->
+          <div class="mb-3">
+            <label for="det_nik_ayah" class="form-label">NIK</label>
+            <input type="text" class="form-control" id="det_nik_ayah" disabled>
+          </div>
+          <!-- Tempat Lahir -->
+          <div class="mb-3">
+            <label for="det_lahir_ayah" class="form-label">Tempat Lahir</label>
+            <input type="text" class="form-control" id="det_lahir_ayah" disabled>
+          </div>
+          <!-- Pendidikan -->
+          <div class="mb-3">
+            <label for="det_pendidikan_ayah" class="form-label">Pendidikan</label>
+            <input type="text" class="form-control" id="det_pendidikan_ayah" disabled>
+          </div>
+          <!-- Pekerjaan -->
+          <div class="mb-3">
+            <label for="det_nik" class="form-label">Pekerjaan</label>
+            <input type="text" class="form-control" id="det_pekerjaan_ayah" disabled>
+          </div>
+          <!-- Penghasilan -->
+          <div class="mb-3">
+            <label for="det_penghasilan_ayah" class="form-label">Penghasilan</label>
+            <input type="text" class="form-control" id="det_penghasilan_ayah" disabled>
+          </div>
+        </div>
+        <!-- IBU -->
+            <h6>
+              <u>Ibu</u>
+            </h6>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <!-- Nama Ibu -->
+            <div class="mb-3">
+              <label for="det_ibu" class="form-label">Nama Ibu</label>
+              <input type="text" class="form-control" id="det_ibu" disabled>
+            </div>
+            <!-- Status Ibu -->
+            <div class="mb-3">
+              <label for="det_stat_ibu" class="form-label">Status Ibu</label>
+              <input type="text" class="form-control" id="det_stat_ibu" disabled>
+            </div>
+            <!-- NIK -->
+            <div class="mb-3">
+              <label for="det_nik_ibu" class="form-label">NIK</label>
+              <input type="text" class="form-control" id="det_nik_ibu" disabled>
+            </div>
+            <!-- Tempat Lahir -->
+            <div class="mb-3">
+              <label for="det_lahir_ibu" class="form-label">Tempat Lahir</label>
+              <input type="text" class="form-control" id="det_lahir_ibu" disabled>
+            </div>
+            <!-- Pendidikan -->
+            <div class="mb-3">
+              <label for="det_pendidikan_ibu" class="form-label">Pendidikan</label>
+              <input type="text" class="form-control" id="det_pendidikan_ibu" disabled>
+            </div>
+            <!-- Pekerjaan -->
+            <div class="mb-3">
+              <label for="det_pekerjaan_ibu" class="form-label">Pekerjaan</label>
+              <input type="text" class="form-control" id="det_pekerjaan_ibu" disabled>
+            </div>
+            <!-- Penghasilan -->
+            <div class="mb-3">
+              <label for="det_penghasilan_ibu" class="form-label">Penghasilan</label>
+              <input type="text" class="form-control" id="det_penghasilan_ibu" disabled>
+            </div>
+          </div>
+        <!-- IBU -->
+        <!-- Content -->
+        <!-- ORTU -->
         <hr class="pt-1 pb-1">
         <h6>
           <b>
