@@ -13,154 +13,6 @@
 
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
-
-      <li class="nav-item d-block d-lg-none">
-        <a class="nav-link nav-icon search-bar-toggle " href="#">
-          <i class="bi bi-search"></i>
-        </a>
-      </li><!-- End Search Icon-->
-
-      <li class="nav-item dropdown">
-
-        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-          <i class="bi bi-bell"></i>
-          <span class="badge bg-primary badge-number">4</span>
-        </a><!-- End Notification Icon -->
-
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-          <li class="dropdown-header">
-            You have 4 new notifications
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-exclamation-circle text-warning"></i>
-            <div>
-              <h4>Lorem Ipsum</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>30 min. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-x-circle text-danger"></i>
-            <div>
-              <h4>Atque rerum nesciunt</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>1 hr. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-check-circle text-success"></i>
-            <div>
-              <h4>Sit rerum fuga</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>2 hrs. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-info-circle text-primary"></i>
-            <div>
-              <h4>Dicta reprehenderit</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>4 hrs. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li class="dropdown-footer">
-            <a href="#">Show all notifications</a>
-          </li>
-
-        </ul><!-- End Notification Dropdown Items -->
-
-      </li><!-- End Notification Nav -->
-
-      <li class="nav-item dropdown">
-
-        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-          <i class="bi bi-chat-left-text"></i>
-          <span class="badge bg-secondary badge-number">3</span>
-        </a><!-- End Messages Icon -->
-
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-          <li class="dropdown-header">
-            You have 3 new messages
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>Maria Hudson</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>Anna Nelson</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>6 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>David Muldon</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>8 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="dropdown-footer">
-            <a href="#">Show all messages</a>
-          </li>
-
-        </ul><!-- End Messages Dropdown Items -->
-
-      </li><!-- End Messages Nav -->
-
       <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -175,13 +27,6 @@
           </li>
           <li>
             <hr class="dropdown-divider">
-          </li>
-
-          <li>
-            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-              <i class="bi bi-person"></i>
-              <span>My Profile</span>
-            </a>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -622,10 +467,10 @@
               <input type="text" class="form-control" id="det_ibu" disabled>
             </div>
             <!-- Status Ibu -->
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="det_stat_ibu" class="form-label">Status Ibu</label>
               <input type="text" class="form-control" id="det_stat_ibu" disabled>
-            </div>
+            </div> -->
             <!-- NIK -->
             <div class="mb-3">
               <label for="det_nik_ibu" class="form-label">NIK</label>
@@ -642,10 +487,10 @@
               <input type="text" class="form-control" id="det_pendidikan_ibu" disabled>
             </div>
             <!-- Pekerjaan -->
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="det_pekerjaan_ibu" class="form-label">Pekerjaan</label>
               <input type="text" class="form-control" id="det_pekerjaan_ibu" disabled>
-            </div>
+            </div> -->
             <!-- Penghasilan -->
             <div class="mb-3">
               <label for="det_penghasilan_ibu" class="form-label">Penghasilan</label>
@@ -734,88 +579,107 @@
       </div>
       <div class="modal-body">
         <!-- NISN -->
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="edit_nisn" class="form-label">NISN</label>
           <input type="text" class="form-control" id="edit_nisn">
-        </div>
+        </div> -->
         <!-- Nama Lengkap -->
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="edit_name" class="form-label">Nama Lengkap</label>
           <input type="text" class="form-control" id="edit_name">
-        </div>
+        </div> -->
         <!-- Email -->
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="edit_email" class="form-label">Email address</label>
           <input type="text" class="form-control" id="edit_email">
-        </div>
+        </div> -->
         <!-- No.Telp -->
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="edit_no" class="form-label">No.Telpon</label>
           <input type="text" class="form-control" id="edit_no">
+        </div> -->
+        <form action="" id="form_update">
+          <div style="display: flex; justify-content: space-between;">
+            <div class="w-50">
+              <div><span>No. Pendaftaran</span></div>
+              <input type="text" style="border: 0; font-size: 30px; font-weight: bold; background: transparent; widt: 100%;" name="edit_pendaftaran" id="edit_pendaftaran">
+            </div>
+            <div class="w-100">
+              <div><span>Status Siswa</span></div>
+              <select class="form-select" aria-label="Default select example" name="edit_stat_siswa" id="edit_stat_siswa" style="">
+                <option selected>-- Status Siswa --</option>
+                <option value="0">Menunggu</option>
+                <option value="1">Di terima</option>
+                <option value="2">Di Tolak</option>
+              </select>
+            </div>
+          </div>
+          <input type="hidden" name="det_id_siswa" id="det_id_siswa">
+          <input type="hidden" name="det_id_person" id="det_id_person">
+
+          <div class="d-flex gap-4 justify-content-center flex-wrap">
+
+            <!-- KK Berkas -->
+            <!-- <div>
+              <h6>
+                <b>
+                  Kartu Keluarga
+                </b>
+              </h6>
+              <div>
+                <img src="" alt="" id="edit_kk" style="width: 200px; height: 250px;">
+              </div>
+              <input type="file" class="form-control mt-2" style="width: 200px;" name="kk_update">
+            </div> -->
+
+            <!-- Akta Kelahiran Berkas -->
+            <!-- <div>
+              <h6>
+                <b>
+                  Akta Kelahiran
+                </b>
+              </h6>
+              <div>
+              <img src="" alt="" id="edit_akta" style="width: 200px; height: 250px;">
+              </div>
+              <input type="file" class="form-control mt-2" style="width: 200px;" name="akta_update">
+            </div> -->
+
+            <!-- Ijazah/SKL Berkas -->
+            <!-- <div>
+              <h6>
+                <b>
+                  Ijazah/SKL
+                </b>
+              </h6>
+              <div>
+              <img src="" alt="" id="edit_ijazah" style="width: 200px; height: 250px;">
+              </div>
+              <input type="file" class="form-control mt-2" style="width: 200px;" name="ijazah_update">
+            </div> -->
+
+            <!-- Kartu Indonesia Pintar Berkas -->
+            <!-- <div>
+              <h6>
+                <b>
+                  Kartu Indonesia Pintar
+                </b>
+              </h6>
+              <div>
+              <img src="" alt="" id="edit_kip" style="width: 200px; height: 250px;">
+              </div>
+              <input type="file" class="form-control mt-2" style="width: 200px;" name="kip_update">
+            </div> -->
+
+            
+          </div>
+
         </div>
-
-        <div class="d-flex gap-4 justify-content-center flex-wrap">
-
-          <!-- KK Berkas -->
-          <div>
-            <h6>
-              <b>
-                Kartu Keluarga
-              </b>
-            </h6>
-            <div>
-              <img src="" alt="" id="edit_kk" style="width: 200px; height: 250px;">
-            </div>
-            <input type="file" class="form-control mt-2" style="width: 200px;" name="kk_update">
-          </div>
-
-          <!-- Akta Kelahiran Berkas -->
-          <div>
-            <h6>
-              <b>
-                Akta Kelahiran
-              </b>
-            </h6>
-            <div>
-            <img src="" alt="" id="edit_akta" style="width: 200px; height: 250px;">
-            </div>
-            <input type="file" class="form-control mt-2" style="width: 200px;" name="akta_update">
-          </div>
-
-          <!-- Ijazah/SKL Berkas -->
-          <div>
-            <h6>
-              <b>
-                Ijazah/SKL
-              </b>
-            </h6>
-            <div>
-            <img src="" alt="" id="edit_ijazah" style="width: 200px; height: 250px;">
-            </div>
-            <input type="file" class="form-control mt-2" style="width: 200px;" name="ijazah_update">
-          </div>
-
-          <!-- Kartu Indonesia Pintar Berkas -->
-          <div>
-            <h6>
-              <b>
-                Kartu Indonesia Pintar
-              </b>
-            </h6>
-            <div>
-            <img src="" alt="" id="edit_kip" style="width: 200px; height: 250px;">
-            </div>
-            <input type="file" class="form-control mt-2" style="width: 200px;" name="kip_update">
-          </div>
-
-          
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        </form>
     </div>
   </div>
 </div>
@@ -880,6 +744,33 @@
         document.getElementById('det_no_kk').value = siswa.no_kk;
         document.getElementById('det_kepala_keluarga').value = siswa.kepala_keluarga;
 
+        document.getElementById('det_alamat').value = siswa.alamat;
+        document.getElementById('det_rt').value = siswa.rt;
+        document.getElementById('det_rw').value = siswa.rw;
+        document.getElementById('det_desa').value = siswa.desa;
+        document.getElementById('det_kecamatan').value = siswa.kecamatan;
+        document.getElementById('det_kab_kot').value = siswa.kab_kota;
+        document.getElementById('det_provinsi').value = siswa.provinsi;
+        document.getElementById('det_kode_pos').value = siswa.kode_pos;
+        document.getElementById('det_transport').value = siswa.transportasi;
+        document.getElementById('det_jarak_kesekolah').value = siswa.jarak_sekolah;
+        document.getElementById('det_tempuh').value = siswa.waktu_tempuh;
+        document.getElementById('det_ayah').value = siswa.nama_ayah;
+        document.getElementById('det_stat_ayah').value = siswa.status_ayah;
+        document.getElementById('det_nik_ayah').value = siswa.nik_ayah;
+        document.getElementById('det_lahir_ayah').value = siswa.tgl_lhr_ayah;
+        document.getElementById('det_pendidikan_ayah').value = siswa.pendidikan_ayah;
+        document.getElementById('det_pekerjaan_ayah').value = siswa.pekerjaan_ayah;
+        document.getElementById('det_penghasilan_ayah').value = siswa.penghasilan_ayah;
+
+        // Ibu
+        document.getElementById('det_ibu').value = siswa.nama_ibu;
+        document.getElementById('det_lahir_ibu').value = siswa.tgl_lhr_ibu;
+        document.getElementById('det_pendidikan_ibu').value = siswa.pendidikan_ibu;
+        // document.getElementById('det_pekerjaan_ibu').value = siswa.pekerjaan_ibu;
+        document.getElementById('det_penghasilan_ibu').value = siswa.penghasilan_ibu;
+        document.getElementById('det_nik_ibu').value = siswa.nik_ibu;
+
         
         
         // Img
@@ -897,16 +788,21 @@
         const button = event.relatedTarget;
         const siswa = JSON.parse(button.getAttribute('data-siswa'));
 
-        document.getElementById('edit_nisn').value = siswa.nisn;
-        document.getElementById('edit_name').value = siswa.nama;
-        document.getElementById('edit_email').value = siswa.email;
-        document.getElementById('edit_no').value = siswa.no_telp;
+        document.getElementById('edit_pendaftaran').value = siswa.no_pendaftaran;
+        document.getElementById('det_id_siswa').value = siswa.id_siswa;
+        document.getElementById('det_id_person').value = siswa.id_person;
+        document.getElementById('form_update').action = base_url;
+
+        // document.getElementById('edit_nisn').value = siswa.nisn;
+        // document.getElementById('edit_name').value = siswa.nama;
+        // document.getElementById('edit_email').value = siswa.email;
+        // document.getElementById('edit_no').value = siswa.no_telp;
 
         // Img
-        document.getElementById('edit_kk').src = base_url+"public/assets/img/kk/"+siswa.kk;
-        document.getElementById('edit_akta').src = base_url+"public/assets/img/akta/"+siswa.akta;
-        document.getElementById('edit_ijazah').src = base_url+"public/assets/img/ijazah/"+siswa.ijazah;
-        document.getElementById('edit_kip').src = base_url+"public/assets/img/kip/"+siswa.kip;
+        // document.getElementById('edit_kk').src = base_url+"public/assets/img/kk/"+siswa.kk;
+        // document.getElementById('edit_akta').src = base_url+"public/assets/img/akta/"+siswa.akta;
+        // document.getElementById('edit_ijazah').src = base_url+"public/assets/img/ijazah/"+siswa.ijazah;
+        // document.getElementById('edit_kip').src = base_url+"public/assets/img/kip/"+siswa.kip;
         
     });
 

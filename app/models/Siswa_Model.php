@@ -10,7 +10,7 @@ class Siswa_Model{
     }
     
     public function getAll(){
-        $this->db->query('SELECT * FROM '. $this->table .' s INNER JOIN person p ON s.id_person = p.id_person RIGHT JOIN berkas k ON p.id_berkas = k.id_berkas');
+        $this->db->query('SELECT * FROM '. $this->table .' s INNER JOIN person p ON s.id_person = p.id_person RIGHT JOIN berkas k ON p.id_berkas = k.id_berkas RIGHT JOIN parents z ON z.id_siswa = s.id_siswa');
         return $this->db->resultSet();
     }
 
