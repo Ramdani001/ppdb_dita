@@ -15,8 +15,6 @@ class AdminController extends Controller {
 
         $person = (object) $data['person'];
 
-        // var_dump($data['person']);
-        // die();
         $this->view('templates/header', $data);
         
         $this->view('section/navbar', $data);
@@ -84,6 +82,20 @@ class AdminController extends Controller {
             header('Location: '. BASEURL .'ViewAdminController/user');
             exit;
         }
+    }
+
+    public function editStatus(){
+
+        $id_siswa = $_POST['det_id_siswa'];
+        $siswa = $this->model('Siswa_Model')->editStatus($_POST);
+
+        if($siswa > 0){
+            header('Location: '. BASEURL .'ViewAdminController/siswaDaftar');
+        }else{
+            var_dump($siswa);
+            die();
+        }
+        
     }
 
 

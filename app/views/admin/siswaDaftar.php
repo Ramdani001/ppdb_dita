@@ -578,27 +578,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- NISN -->
-        <!-- <div class="mb-3">
-          <label for="edit_nisn" class="form-label">NISN</label>
-          <input type="text" class="form-control" id="edit_nisn">
-        </div> -->
-        <!-- Nama Lengkap -->
-        <!-- <div class="mb-3">
-          <label for="edit_name" class="form-label">Nama Lengkap</label>
-          <input type="text" class="form-control" id="edit_name">
-        </div> -->
-        <!-- Email -->
-        <!-- <div class="mb-3">
-          <label for="edit_email" class="form-label">Email address</label>
-          <input type="text" class="form-control" id="edit_email">
-        </div> -->
-        <!-- No.Telp -->
-        <!-- <div class="mb-3">
-          <label for="edit_no" class="form-label">No.Telpon</label>
-          <input type="text" class="form-control" id="edit_no">
-        </div> -->
-        <form action="" id="form_update">
+        <form action="<?= BASEURL ?>AdminController/editStatus" method="POST">
           <div style="display: flex; justify-content: space-between;">
             <div class="w-50">
               <div><span>No. Pendaftaran</span></div>
@@ -618,58 +598,6 @@
           <input type="hidden" name="det_id_person" id="det_id_person">
 
           <div class="d-flex gap-4 justify-content-center flex-wrap">
-
-            <!-- KK Berkas -->
-            <!-- <div>
-              <h6>
-                <b>
-                  Kartu Keluarga
-                </b>
-              </h6>
-              <div>
-                <img src="" alt="" id="edit_kk" style="width: 200px; height: 250px;">
-              </div>
-              <input type="file" class="form-control mt-2" style="width: 200px;" name="kk_update">
-            </div> -->
-
-            <!-- Akta Kelahiran Berkas -->
-            <!-- <div>
-              <h6>
-                <b>
-                  Akta Kelahiran
-                </b>
-              </h6>
-              <div>
-              <img src="" alt="" id="edit_akta" style="width: 200px; height: 250px;">
-              </div>
-              <input type="file" class="form-control mt-2" style="width: 200px;" name="akta_update">
-            </div> -->
-
-            <!-- Ijazah/SKL Berkas -->
-            <!-- <div>
-              <h6>
-                <b>
-                  Ijazah/SKL
-                </b>
-              </h6>
-              <div>
-              <img src="" alt="" id="edit_ijazah" style="width: 200px; height: 250px;">
-              </div>
-              <input type="file" class="form-control mt-2" style="width: 200px;" name="ijazah_update">
-            </div> -->
-
-            <!-- Kartu Indonesia Pintar Berkas -->
-            <!-- <div>
-              <h6>
-                <b>
-                  Kartu Indonesia Pintar
-                </b>
-              </h6>
-              <div>
-              <img src="" alt="" id="edit_kip" style="width: 200px; height: 250px;">
-              </div>
-              <input type="file" class="form-control mt-2" style="width: 200px;" name="kip_update">
-            </div> -->
 
             
           </div>
