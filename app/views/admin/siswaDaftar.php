@@ -150,9 +150,9 @@
                       <i class="ri-file-edit-line"></i>
                     </button>
   
-                    <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" data-siswa='<?= json_encode($value) ?>'>
+                    <!-- <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" data-siswa='<?= json_encode($value) ?>'>
                       <i class="ri-delete-bin-2-line"></i>
-                    </button>
+                    </button> -->
   
                   </div>
                 </td>

@@ -132,4 +132,12 @@ class Siswa_Model{
         return $this->db->rowCount();
     }
 
+    public function getData(){
+        $query = "SELECT COUNT(*) as total_rows FROM siswa WHERE status = 0";
+        $this->db->query($query);
+        $result = $this->db->single(); // Menggunakan single() karena kita hanya mengharapkan satu baris hasil
+        return $result['total_rows']; // Mengembalikan jumlah baris dengan status 0
+
+    }
+
 }

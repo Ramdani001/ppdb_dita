@@ -7,6 +7,7 @@ class ViewAdminController extends Controller {
         $data['title'] = "SMK PROFITA";
 
         $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
+        $data['data'] = $this->model('Siswa_model')->getData();
 
         $this->view('admin/code/header', $data);
             $this->view('admin/dashboard', $data);

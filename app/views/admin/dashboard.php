@@ -1,3 +1,10 @@
+<?php
+
+// var_dump($data[0]);
+// die();
+
+?>
+
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center z-2" style="background-color: white;">
 
@@ -113,7 +120,7 @@
             <i class="ri-team-line"></i>
             </div>
             <div class="ps-3 text-center">
-              <h2>145</h2>
+              <h2>23</h2>
             </div>
           </div>
         </div>
@@ -125,10 +132,10 @@
           <h5 class="card-title text-center">Verifikasi Data</h5>
           <div class="d-flex align-items-center justify-content-center">
             <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-              <i class="ri-file-user-line"></i>
+              <i class="ri-file-user-line"></i> 
             </div>
             <div class="ps-3">
-              <h2>2</h2>
+              <h2><?= $data['data'][0] ?></h2>
             </div>
           </div>
         </div>
