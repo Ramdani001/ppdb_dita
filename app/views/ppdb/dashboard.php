@@ -677,7 +677,7 @@
               <!-- Nama Lengkap -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
-                  <label for="desa" class="col-form-label">Desa</label>
+                  <label for="desa" class="col-form-label">Kelurahan</label>
                 </div>
                 <div class="col-6">
                   <input type="Text" id="desa" name="desa" class="form-control" value="<?php
