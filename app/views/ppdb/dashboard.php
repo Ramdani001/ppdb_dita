@@ -222,8 +222,7 @@
       <div class=" w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
         <table class="w-100">
           <tr>
-            <td>
-              <!-- No Daftar -->
+            <!-- <td>
               <div class="row g-3 align-items-center m-2">
               <div class="col-6">
                 <label for="inputPassword6" class="col-form-label">No. Pendaftaran</label>
@@ -240,7 +239,7 @@
                   required>
               </div>
             </div>
-            </td>
+            </td> -->
             <td>
               <!-- No Daftar -->
               <div class="row g-3 align-items-center m-2">
@@ -257,23 +256,7 @@
                 </div>
               </div>
             </td>
-          </tr>
-          <tr>
-            <td>
-              <!-- No Daftar -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="npsn_sekolah" class="col-form-label">NPSN Sekolah Asal</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" value="<?php if($siswa){
-                        echo $siswa['npsn_sekolah_asal'];
-                    }else{
-                      echo "";
-                    } ?>"  required>
-                </div>
-              </div>
-            </td>
+
             <td>
                 <!-- No Daftar -->
                 <div class="row g-3 align-items-center m-2">
@@ -291,8 +274,45 @@
             </td>
           </tr>
           <tr>
+            <!-- <td>
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="npsn_sekolah" class="col-form-label">NPSN Sekolah Asal</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="npsn_sekolah" name="npsn_sekolah" class="form-control" value="<?php if($siswa){
+                        echo $siswa['npsn_sekolah_asal'];
+                    }else{
+                      echo "";
+                    } ?>"  required>
+                </div>
+              </div>
+            </td> -->
             <td>
-              <!-- NIK -->
+              <!-- kewarganegaraan -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="kewarganegaraan" class="col-form-label">Kewarganegaraan</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" value="<?= $person['kewarganegaraan'] ?>" required>
+                </div>
+              </div>
+            </td>
+            <td>
+              <!-- Nama Lengkap -->
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="nama_lengkap" class="col-form-label">Nama Lengkap</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?= $person['nama'] ?>" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <!-- <td>
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
                   <label for="nik" class="col-form-label">NIK</label>
@@ -305,31 +325,7 @@
                     } ?>" required>
                 </div>
               </div>
-            </td>
-            <td>
-              <!-- kewarganegaraan -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="kewarganegaraan" class="col-form-label">Kewarganegaraan</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" value="<?= $person['kewarganegaraan'] ?>" required>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <!-- Nama Lengkap -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="nama_lengkap" class="col-form-label">Nama Lengkap</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?= $person['nama'] ?>" required>
-                </div>
-              </div>
-            </td>
+            </td> -->
             <td>
               <!-- Nama Lengkap -->
               <div class="row g-3 align-items-center m-2">
@@ -341,8 +337,6 @@
                 </div>
               </div>
             </td>
-          </tr>
-          <tr>
             <td>
               <!-- Tanggal Lahir -->
               <div class="row g-3 align-items-center m-2">
@@ -354,7 +348,9 @@
                 </div>
               </div>
             </td>
-            <td>
+          </tr>
+          <tr>
+          <td>
               <!-- Jenis Kelamin -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
@@ -365,8 +361,6 @@
                 </div>
               </div>
             </td>
-          </tr>
-          <tr>
             <td>
               <!-- Anak Ke -->
               <div class="row g-3 align-items-center m-2">
@@ -385,7 +379,9 @@
                 </div>
               </div>
             </td>
-            <td>
+          </tr>
+          <tr>
+          <td>
                 <!-- Jumlah Saudara -->
                 <div class="row g-3 align-items-center m-2">
                   <div class="col-6">
@@ -401,8 +397,6 @@
                   </div>
                 </div>
             </td>
-          </tr>
-          <tr>
             <td>
                 <!-- Agama -->
                 <div class="row g-3 align-items-center m-2">
@@ -421,7 +415,9 @@
                   </div>
                 </div>
             </td>
-            <td>
+          </tr>
+          <tr>
+          <td>
               <!-- Cita-Cita -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
@@ -439,8 +435,6 @@
                 </div>
               </div>
             </td>
-          </tr>
-          <tr>
             <td>
               <!-- Hobi -->
               <div class="row g-3 align-items-center m-2">
@@ -459,7 +453,9 @@
                 </div>
               </div>
             </td>
-            <td>
+          </tr>
+          <tr>
+          <td>
               <!-- Email -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
@@ -476,8 +472,6 @@
                 </div>
               </div>
             </td>
-          </tr>
-          <tr>
             <td>
               <!-- No.Handphone -->
               <div class="row g-3 align-items-center m-2">
@@ -495,43 +489,9 @@
                 </div>
               </div>
             </td>
-            <td>
-                  <!-- Yang Membiayai Sekolah -->
-                  <div class="row g-3 align-items-center m-2">
-                    <div class="col-6">
-                      <label for="biaya_sekolah" class="col-form-label">Yang Membiayai Sekolah</label>
-                    </div>
-                    <div class="col-6">
-                      <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" value="<?php
-                        if($siswa){
-                          echo $siswa['biaya_sekolah'];
-                        }else{
-                          echo "";
-                        }
-                      ?>" required>
-                    </div>
-                  </div>
-            </td>
           </tr>
           <tr>
-            <td>
-                <!-- PAUD -->
-                <div class="row g-3 align-items-center m-2">
-                  <div class="col-6">
-                    <label for="paud" class="col-form-label">SD</label>
-                  </div>
-                  <div class="col-6">
-                    <input type="Text" id="paud" name="paud" class="form-control" value="<?php
-                      if($siswa){
-                        echo $siswa['sd'];
-                      }else{
-                        echo "";
-                      }
-                    ?>" required>
-                  </div>
-                </div>
-            </td>
-            <td>
+          <td>
                 <!-- jurusan -->
                 <div class="row g-3 align-items-center m-2">
                   <div class="col-6">
@@ -548,25 +508,6 @@
                     </select>
                   </div>
                 </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <!-- TK -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="tk" class="col-form-label">SMP</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="tk" name="tk" class="form-control" value="<?php if($siswa){
-                      echo $siswa['smp'];
-                    }else{
-                      echo "";
-                    }
-                  ?>
-                  " required>
-                </div>
-              </div>
             </td>
             <td>
               <!-- No.Kip -->
@@ -586,9 +527,66 @@
               </div>
             </td>
           </tr>
-          <tr>
-            <td>
-              <!-- No.KK -->
+          <!-- <tr> -->
+            
+            <!-- <td>
+                  <div class="row g-3 align-items-center m-2">
+                    <div class="col-6">
+                      <label for="biaya_sekolah" class="col-form-label">Yang Membiayai Sekolah</label>
+                    </div>
+                    <div class="col-6">
+                      <input type="Text" id="biaya_sekolah" name="biaya_sekolah" class="form-control" value="<?php
+                        if($siswa){
+                          echo $siswa['biaya_sekolah'];
+                        }else{
+                          echo "";
+                        }
+                      ?>" required>
+                    </div>
+                  </div>
+            </td> -->
+          <!-- </tr>
+          <tr> -->
+            <!-- <td>
+                
+                <div class="row g-3 align-items-center m-2">
+                  <div class="col-6">
+                    <label for="paud" class="col-form-label">SD</label>
+                  </div>
+                  <div class="col-6">
+                    <input type="Text" id="paud" name="paud" class="form-control" value="<?php
+                      if($siswa){
+                        echo $siswa['sd'];
+                      }else{
+                        echo "";
+                      }
+                    ?>" required>
+                  </div>
+                </div>
+            </td> -->
+            
+          <!-- </tr>
+          <tr> -->
+            <!-- <td>
+              <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="tk" class="col-form-label">SMP</label>
+                </div>
+                <div class="col-6">
+                  <input type="Text" id="tk" name="tk" class="form-control" value="<?php if($siswa){
+                      echo $siswa['smp'];
+                    }else{
+                      echo "";
+                    }
+                  ?>
+                  " required>
+                </div>
+              </div>
+            </td> -->
+            
+          <!-- </tr>
+          <tr> -->
+            <!-- <td>
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
                   <label for="kk" class="col-form-label">No.KK</label>
@@ -603,10 +601,10 @@
                   ?>" required>
                 </div>
               </div>
-          </td>
-          <td>
+          </td> -->
+          <!-- <td> -->
             <!-- Kepala Keluarga -->
-            <div class="row g-3 align-items-center m-2">
+            <!-- <div class="row g-3 align-items-center m-2">
               <div class="col-6">
                 <label for="kepala_keluarga" class="col-form-label">Kepala Keluarga</label>
               </div>
@@ -619,9 +617,9 @@
                   }
                 ?>">
               </div>
-            </div>
-          </td>
-          </tr>
+            </div> -->
+          <!-- </td> -->
+          <!-- </tr> -->
         </table>
         <div class="d-flex justify-content-end w-100 mt-3">
           <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(1)">Next</button>
@@ -859,9 +857,9 @@
                 </div>
               </div>
             </td>
-            <td>
+            <!-- <td> -->
               <!-- NIK Ayah -->
-              <div class="row g-3 align-items-center m-2">
+              <!-- <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
                   <label for="nik_ayah" class="col-form-label">NIK Ayah</label>
                 </div>
@@ -874,8 +872,8 @@
                     }
                   ?>" required>
                 </div>
-              </div>
-            </td>
+              </div> -->
+            <!-- </td> -->
           </tr>
           <tr>
             <td>
@@ -994,9 +992,9 @@
             </td>
           </tr>
           <tr>
-            <td>
+            <!-- <td> -->
               <!-- NIK IBU -->
-              <div class="row g-3 align-items-center m-2">
+              <!-- <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
                   <label for="nik_ibu" class="col-form-label">NIK Ibu</label>
                 </div>
@@ -1009,8 +1007,8 @@
                     }
                   ?>" required>
                 </div>
-              </div>
-            </td>
+              </div> -->
+            <!-- </td> -->
             <td>
               <!-- nama Ibu -->
               <div class="row g-3 align-items-center m-2">

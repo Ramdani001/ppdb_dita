@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `berkas` (
   PRIMARY KEY (`id_berkas`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2419 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table db_profita.berkas: ~2 rows (approximately)
+-- Dumping data for table db_profita.berkas: ~1 rows (approximately)
 REPLACE INTO `berkas` (`id_berkas`, `kk`, `akta`, `ijazah`, `kip`, `profile`) VALUES
 	(-1, '667ac7afc4f72.png', '66798954d6608.jpg', '', '-', '667ac73c49052.png');
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `parents` (
   PRIMARY KEY (`id_parent`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1321 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table db_profita.parents: ~2 rows (approximately)
+-- Dumping data for table db_profita.parents: ~1 rows (approximately)
 REPLACE INTO `parents` (`id_parent`, `id_siswa`, `nik_ayah`, `nama_ayah`, `lhir_ayah`, `tgl_lhr_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `status_ayah`, `nik_ibu`, `nama_ibu`, `lhir_ibu`, `tgl_lhr_ibu`, `no_ibu`, `pendidikan_ibu`, `penghasilan_ibu`) VALUES
 	(162, 3692, '345345345345345', 'Robert', 'Bandung', '2024-06-25', 'D3', 'Pengusaha', '1.000.000 - 2.000.000', 'Meninggal', '567342545656', 'Cindy', 'Canada', '2024-06-18', '764656546456', 'S3', '1.000.000 - 2.000.000');
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `person` (
   PRIMARY KEY (`id_person`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6913 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table db_profita.person: ~3 rows (approximately)
+-- Dumping data for table db_profita.person: ~2 rows (approximately)
 REPLACE INTO `person` (`id_person`, `nama`, `no_telp`, `email`, `tipe`, `agama`, `alamat`, `desa`, `kecamatan`, `kab_kota`, `provinsi`, `kode_pos`, `kewarganegaraan`, `tempat_lhir`, `jk`, `tanggal_lahir`, `rt`, `rw`, `id_berkas`, `created_at`, `updated_at`) VALUES
 	(6, 'Administrator', '', 'profita.admin@gmail.com', 1, '', '', '', '', '', '', '', '', '', '', '2024-06-25', '', '', 0, '2024-06-25 07:17:32', '2024-06-25 07:17:32'),
 	(192, 'Rizkan Ramdani', '098787867878', 'rizkan@gmail.com', 3, 'Islam                                             ', 'Jl. Soekarno Hatta 2039', 'Gumuruh', 'Batununggal', 'Kota Bandung', 'Jawa Barat', '40866', 'Indonesia', 'Bandung', 'Laki-laki', '2024-06-25', '12', '32', -1, '2024-05-25 06:02:52', '2024-06-25 14:13:31');
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `siswa` (
   PRIMARY KEY (`id_siswa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4691 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table db_profita.siswa: ~2 rows (approximately)
+-- Dumping data for table db_profita.siswa: ~1 rows (approximately)
 REPLACE INTO `siswa` (`id_siswa`, `id_person`, `no_pendaftaran`, `asal_sekolah`, `npsn_sekolah_asal`, `nisn`, `nik`, `biaya_sekolah`, `sd`, `smp`, `kip`, `cita_cita`, `hobi`, `anak_ke`, `transportasi`, `jarak_sekolah`, `waktu_tempuh`, `jml_saudara`, `no_kk`, `kepala_keluarga`, `status`, `jurusan`, `created_at`, `updated_at`) VALUES
 	(3692, 192, '787867867867', 'SMP 12 Jakarta                  ', '203498', '03945032945', '000099388577848', 'Orang Tua', 'SD 888', 'SMP 90 Jakarta', '-', 'Penyanyi', 'Baca, Tidur', '2', 'Mobil', '2 Km', '2 Jam', '1', '0000949595800284', 'Husein', 1, 'Akuntansi', '2024-05-25 18:15:10', '2024-06-30 08:57:43');
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2305 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table db_profita.user: ~3 rows (approximately)
+-- Dumping data for table db_profita.user: ~2 rows (approximately)
 REPLACE INTO `user` (`id_user`, `id_person`, `password`, `created_at`, `updated_at`) VALUES
 	(6, 6, '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', '2024-06-25 00:17:32', '2024-06-25 00:17:32'),
 	(192, 192, 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', '2024-05-25 06:02:52', '2024-05-25 06:02:52');
