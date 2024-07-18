@@ -29,7 +29,7 @@ class PPDBController extends Controller {
 
         // Berkas
         $id_berkas = $data['person']['id_berkas'];
-
+ 
         $sql = "SELECT * FROM berkas WHERE id_berkas=:id_berkas";
         $this->db->query($sql);
         $this->db->bind(':id_berkas', $id_berkas);

@@ -87,7 +87,9 @@
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
 
-      
+      <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
+        <i class="bi bi-envelope"></i>
+      </div>
 
       <li class="nav-item dropdown pe-3">
 
@@ -107,6 +109,7 @@
 
           <span class="d-none d-md-block dropdown-toggle ps-2"><?= $person['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
+        
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
