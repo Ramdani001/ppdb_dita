@@ -67,7 +67,7 @@ class AdminController extends Controller {
             }
         }
     }
- 
+  
     public function deleteUser($id_person) {
         if (isset($_SESSION["id_person"])) {
             $_SESSION['message'] = 'Berhasil dihapus!';
@@ -96,6 +96,39 @@ class AdminController extends Controller {
             die();
         }
         
+    }
+
+    public function messages($id){
+
+        
+        $id_person = (int)$id; 
+        $data['title'] = "PPDB SMK PROFITA";
+
+        $sql = "SELECT * FROM person WHERE id_person=".$id_person;
+        $this->db->query($sql);
+        $data['person'] = $this->db->single();
+
+        $sql = "SELECT * FROM siswa WHERE id_person=".$id_person;
+        $this->db->query($sql);
+        $data['siswa'] = $this->db->single();
+
+        $id_siswa = $this->db->single()['id_siswa'];
+
+        $sql = "SELECT * FROM parents WHERE id_siswa=:id_siswa";
+        $this->db->query($sql);
+        // $this->db->bind(':id_person', $id_person);
+        $this->db->bind(':id_siswa', $id_siswa);
+        $data['parent'] = $this->db->single();
+
+        // Berkas
+        $id_berkas = $data['person']['id_berkas'];
+ 
+        $sql = "SELECT * FROM berkas WHERE id_berkas=:id_berkas";
+        $this->db->query($sql);
+        $this->db->bind(':id_berkas', $id_berkas);
+        $data['berkas'] = $this->db->single();
+
+        $this->view('section/Dokumen', $data);
     }
 
 

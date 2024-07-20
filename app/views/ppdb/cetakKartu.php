@@ -25,6 +25,26 @@
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
 
+    <?php if((int)$siswa['status'] != 0) {  
+        echo '
+            <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
+            <div style="width: 15px; height: 15px; background-color: blue; position: absolute; border-radius: 100%; margin-top: 2px; margin-left: -5px;"></div>
+              <a href="'.BASEURL.'/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
+              <i class="bi bi-envelope"></i> 
+              </a>
+            </div>
+        ';
+      }else{
+        echo '
+            <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
+              <button type="button" style="background: none; border: none;" id="pesan_button">
+                <i class="bi bi-envelope"></i> 
+              </button>
+            </div>
+        ';
+      }
+      ?>
+
       <li class="nav-item d-block d-lg-none">
         <a class="nav-link nav-icon search-bar-toggle " href="#">
           <i class="bi bi-search"></i>

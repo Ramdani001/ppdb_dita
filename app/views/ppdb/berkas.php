@@ -1,6 +1,8 @@
 <?php
   $person = $data['person'];
   $berkas = $data['berkas'];
+  
+  $siswa = $data['siswa'];
 
   $kk = "";
   if($berkas){
@@ -39,6 +41,26 @@
 
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
+
+    <?php if((int)$siswa['status'] != 0) {  
+        echo '
+            <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
+            <div style="width: 15px; height: 15px; background-color: blue; position: absolute; border-radius: 100%; margin-top: 2px; margin-left: -5px;"></div>
+              <a href="'.BASEURL.'/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
+              <i class="bi bi-envelope"></i> 
+              </a>
+            </div>
+        ';
+      }else{
+        echo '
+            <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
+              <button type="button" style="background: none; border: none;" id="pesan_button">
+                <i class="bi bi-envelope"></i> 
+              </button>
+            </div>
+        ';
+      }
+      ?>
 
       <li class="nav-item d-block d-lg-none">
         <a class="nav-link nav-icon search-bar-toggle " href="#">
@@ -130,42 +152,54 @@
     <form action="<?= BASEURL ?>PPDBController/updateBerkas/<?= $person['id_person'] ?>" enctype="multipart/form-data" method="POST">
 
       <input type="hidden" name="id_person" id="id_person" value="<?= $person['id_person'] ?>">
-        <div class="mb-3" style="display: grid; gap: 5px; justify-items: center;"> 
-              <label for="kkFile" class="form-label">Kartu Keluarga</label>
 
-              <img src="<?= BASEURL ?>public/assets/img/kk/<?= $kk ?>" alt="" style="width: 200px;">
+          <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;"> 
+                <label for="kkFile" class="form-label">Kartu Keluarga</label>
 
-              <input class="form-control" type="file" id="kkFile" name="kkFile">
+                <img src="<?= BASEURL ?>public/assets/img/kk/<?= $kk ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" id="kkFile" name="kkFile">
+            </div>
+
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <label for="aktaFile" class="form-label">Akta Keluarga</label>
+
+                <img src="<?= BASEURL ?>public/assets/img/akta/<?= $akta ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" name="aktaFile" id="aktaFile">
+            </div>
+
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <label for="ijazahFile" class="form-label">Ijazah/SKL</label>
+
+                <img src="<?= BASEURL ?>public/assets/img/ijazah/<?= $ijazah ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" name="ijazahFile" id="ijazahFile" style="height: 40px;">
+            </div>
+
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <label for="kipFile" class="form-label">Kartu Indonesia Pintar</label>
+
+                <img src="<?= BASEURL ?>public/assets/img/kip/<?= $kip ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" id="kipFile" name="kipFile" style="height: 40px;">
+            </div>
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <label for="kipFile" class="form-label">Kartu Indonesia Pintar</label>
+
+                <img src="<?= BASEURL ?>public/assets/img/kip/<?= $kip ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" id="kipFile" name="kipFile" style="height: 40px;">
+            </div>
+            <!-- Bawah -->
           </div>
 
-          <div class="mb-3" style="display: grid; gap: 5px; justify-items: center;">
-              <label for="aktaFile" class="form-label">Akta Keluarga</label>
-
-              <img src="<?= BASEURL ?>public/assets/img/akta/<?= $akta ?>" alt="" style="width: 200px;">
-
-              <input class="form-control" type="file" name="aktaFile" id="aktaFile">
-          </div>
-
-          <div class="mb-3" style="display: grid; gap: 5px; justify-items: center;">
-              <label for="ijazahFile" class="form-label">Ijazah/SKL</label>
-
-              <img src="<?= BASEURL ?>public/assets/img/ijazah/<?= $ijazah ?>" alt="" style="width: 200px;">
-
-              <input class="form-control" type="file" name="ijazahFile" id="ijazahFile">
-          </div>
-
-          <div class="mb-3" style="display: grid; gap: 5px; justify-items: center;">
-              <label for="kipFile" class="form-label">Kartu Indonesia Pintar</label>
-
-              <img src="<?= BASEURL ?>public/assets/img/kip/<?= $kip ?>" alt="" style="width: 200px;">
-
-              <input class="form-control" type="file" id="kipFile" name="kipFile">
-              <label for="kipFile" class="form-label">
-                  <span style="font-size: 10px;">
-                      <i>**Upload jika memilikinya</i>
-                  </span>
-              </label>
-          </div>
+          <label for="kipFile" class="form-label">
+                    <span style="font-size: 10px;">
+                        <i>**Upload jika memilikinya</i>
+                    </span>
+                </label>
 
           <div class="d-flex justify-content-end" style="">
               <button class="btn btn-primary w-25" type="submit">Submit</button>

@@ -56,7 +56,7 @@ class Siswa_Model{
         $id_siswa = $this->db->single();
 
         if(!$id_siswa){ 
-            $query = "INSERT INTO siswa VALUES (:result, :id_person, :no_pendaftaran, :asal_sekolah, :npsn_sekolah_asal,:nisn, :nik, :biaya_sekolah, :sd, :smp, :kip, :cita_cita, :hobi, :anak_ke, :transportasi, :jarak_sekolah, :waktu_tempuh, :jml_saudara, :no_kk, :kepala_keluarga, :status, :jurusan, :created_at, :created_at)";
+            $query = "INSERT INTO siswa VALUES (:result, :id_person, :no_pendaftaran, :asal_sekolah, :npsn_sekolah_asal,:nisn, :nik, :biaya_sekolah, :sd, :smp, :kip, :cita_cita, :hobi, :anak_ke, :transportasi, :jarak_sekolah, :waktu_tempuh, :jml_saudara, :no_kk, :kepala_keluarga, :status, :jurusan, ':id_m', :created_at, :created_at)";
     
             $this->db->query($query);
 
@@ -83,6 +83,7 @@ class Siswa_Model{
             $this->db->bind(':kepala_keluarga', $_POST['kepala_keluarga']);
             $this->db->bind(':status', 0);
             $this->db->bind(':jurusan', $_POST['jurusan']);
+            $this->db->bnd(':id_m', 0);
             $this->db->bind(':created_at', $created_at);
             
         }else{
@@ -108,7 +109,7 @@ class Siswa_Model{
             $kepala_keluarga           = $_POST['kepala_keluarga'];
             $jurusan                   = $_POST['jurusan'];
 
-            $query = "UPDATE siswa SET no_pendaftaran='$no_pendaftaran', asal_sekolah='$asal_sekolah', npsn_sekolah_asal='$npsn_sekolah_asal',nisn='$nisn', nik='$nik', biaya_sekolah='$biaya_sekolah', sd='$sd', smp='$smp', kip='$kip', cita_cita='$cita_cita', hobi='$hobi', anak_ke='$anak_ke', transportasi='$transportasi', jarak_sekolah='$jarak_sekolah', waktu_tempuh='$waktu_tempuh', jml_saudara='$jml_saudara',  no_kk='$no_kk', kepala_keluarga='$kepala_keluarga', jurusan='$jurusan', updated_at='$created_at'";
+            $query = "UPDATE siswa SET no_pendaftaran='$no_pendaftaran', asal_sekolah='$asal_sekolah', npsn_sekolah_asal='$npsn_sekolah_asal',nisn='$nisn', nik='$nik', biaya_sekolah='$biaya_sekolah', sd='$sd', smp='$smp', kip='$kip', cita_cita='$cita_cita', hobi='$hobi', anak_ke='$anak_ke', transportasi='$transportasi', jarak_sekolah='$jarak_sekolah', waktu_tempuh='$waktu_tempuh', jml_saudara='$jml_saudara',  no_kk='$no_kk', kepala_keluarga='$kepala_keluarga', jurusan='$jurusan', id_m=0, updated_at='$created_at'";
 
             $this->db->query($query);
         }
@@ -123,10 +124,10 @@ class Siswa_Model{
         $id_siswa = $_POST['det_id_siswa'];
         $stat = $_POST['edit_stat_siswa'];
 
-        $sqlS = "UPDATE siswa SET status='$stat' WHERE id_siswa=:id_siswa";
+        $sqlS = "UPDATE siswa SET status='$stat',  WHERE id_siswa=:id_siswa";
         $this->db->query($sqlS);
         $this->db->bind(':id_siswa', $id_siswa);
-        // $id_siswa = $this->db->single();
+        $id_siswa = $this->db->single();
 
         $this->db->execute();
         return $this->db->rowCount();
