@@ -128,8 +128,8 @@ class Berkas_Model{
 
     public function allBerkas($data){
 
-        // var_dump($_FILES);
-        // die();
+        var_dump($_FILES);
+        die();
 
         $id_person = $_POST['id_person'];
 

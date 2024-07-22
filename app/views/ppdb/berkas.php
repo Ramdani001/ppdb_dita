@@ -150,12 +150,21 @@
         UPLOAD BERKAS
     </h3>  
     <form action="<?= BASEURL ?>PPDBController/updateBerkas/<?= $person['id_person'] ?>" enctype="multipart/form-data" method="POST">
-
+ 
       <input type="hidden" name="id_person" id="id_person" value="<?= $person['id_person'] ?>">
 
           <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;"> 
-                <label for="kkFile" class="form-label">Kartu Keluarga</label>
+                <span for="kkFile" class="text-center">Akta</span>
+
+                <img src="<?= BASEURL ?>public/assets/img/kelakuan/<?= $kelakuan ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" id="kelakuanFile" name="kelakuanFile">
+            </div>
+
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;"> 
+                <span for="kkFile" class="text-center">Kartu Keluarga</span>
 
                 <img src="<?= BASEURL ?>public/assets/img/kk/<?= $kk ?>" alt="" style="width: 200px;">
 
@@ -163,30 +172,56 @@
             </div>
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="aktaFile" class="form-label">Akta Keluarga</label>
+                <label for="aktaFile" class="form-label">KTP Orang Tua</label>
 
-                <img src="<?= BASEURL ?>public/assets/img/akta/<?= $akta ?>" alt="" style="width: 200px;">
+                <img src="<?= BASEURL ?>public/assets/img/ortu/<?= $ortu ?>" alt="" style="width: 200px;">
 
-                <input class="form-control" type="file" name="aktaFile" id="aktaFile">
+                <input class="form-control" type="file" name="ortuFile" id="ortuFile">
             </div>
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="ijazahFile" class="form-label">Ijazah/SKL</label>
+                <label for="aktaFile" class="form-label">KIP <br>(Jika Memiliki)</label>
 
-                <img src="<?= BASEURL ?>public/assets/img/ijazah/<?= $ijazah ?>" alt="" style="width: 200px;">
+                <img src="<?= BASEURL ?>public/assets/img/sehat/<?= $sehat ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" name="sehatFile" id="sehatFile">
+            </div>
+
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <label for="ijazahFile" class="form-label">KTP Orang Tua</label>
+
+                <img src="<?= BASEURL ?>public/assets/img/ktp_ortu/<?= $ktp_ortu ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" name="ijazahFile" id="ijazahFile" style="height: 40px;">
             </div>
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="kipFile" class="form-label">Kartu Indonesia Pintar</label>
+                <label for="ijazahFile" class="form-label">Pas Foto Ukuran 3x4</label>
 
-                <img src="<?= BASEURL ?>public/assets/img/kip/<?= $kip ?>" alt="" style="width: 200px;">
+                <img src="<?= BASEURL ?>public/assets/img/pas_foto/<?= $pasFoto ?>" alt="" style="width: 200px;">
 
-                <input class="form-control" type="file" id="kipFile" name="kipFile" style="height: 40px;">
+                <input class="form-control" type="file" name="pasFotoFile" id="pasFotoFile" style="height: 40px;">
+            </div>
+
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <div class="text-center">
+                  <div for="kipFile">Keterangan Lulus <br> Dari Sekolah Asal</div>
+                  <div>(SMP/MTs)</div>
+                </div>
+
+                <img src="<?= BASEURL ?>public/assets/img/lulus/<?= $lulus ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" id="lulusFile" name="lulusFile" style="height: 40px;">
             </div>
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="kipFile" class="form-label">Kartu Indonesia Pintar</label>
+                <label for="kipFile" class="form-label">Ijazah SLTP <br> (Jika Sudah Ada) </label>
+
+                <img src="<?= BASEURL ?>public/assets/img/ijazah/<?= $ijazah ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" id="ijazahFile" name="ijazahFile" style="height: 40px;">
+            </div>
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <label for="kipFile" class="form-label">Kartu Indonesia Pintar <br> (Bila Memiliki) </label>
 
                 <img src="<?= BASEURL ?>public/assets/img/kip/<?= $kip ?>" alt="" style="width: 200px;">
 
