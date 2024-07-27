@@ -49,4 +49,17 @@ class ViewAdminController extends Controller {
         $this->view('admin/code/footer');
     }
 
+    public function chart(){
+
+        header('Content-Type: application/json');
+
+        $data = [
+            'labels' => ['TKJ', 'RPL', 'AKUNTING', 'MANAGEMENT'],
+            'data' => [300, 50, 100, 900]
+        ];
+
+        echo json_encode($data);
+
+    }
+
 }

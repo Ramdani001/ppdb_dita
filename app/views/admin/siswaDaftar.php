@@ -555,6 +555,66 @@
             </div>
           </div>
 
+          <!-- Kelakuan -->
+          <div>
+            <h6>
+              <b>
+                Surat Keterangan Kelakuan Baik
+              </b>
+            </h6>
+            <div>
+              <img src="" alt="" id="det_kelakuan" style="width: 200px; height: 250px;">
+            </div>
+          </div>
+
+          <!-- KTP Ortu -->
+          <div>
+            <h6>
+              <b>
+                KTP Orang Tua
+              </b>
+            </h6>
+            <div>
+              <img src="" alt="" id="det_ortu" style="width: 200px; height: 250px;">
+            </div>
+          </div>
+
+          <!-- Surat Keterangan Sehat -->
+          <div>
+            <h6>
+              <b>
+                Surat Keterangan Sehat
+              </b>
+            </h6>
+            <div>
+              <img src="" alt="" id="det_sehat" style="width: 200px; height: 250px;">
+            </div>
+          </div>
+
+          <!-- Pas Foto -->
+          <div>
+            <h6>
+              <b>
+                Pas Foto
+              </b>
+            </h6>
+            <div>
+              <img src="" alt="" id="det_foto" style="width: 200px; height: 250px;">
+            </div>
+          </div>
+
+          <!-- Surat Keterangan Lulus -->
+          <div>
+            <h6>
+              <b>
+                Surat Keterangan Lulus
+              </b>
+            </h6>
+            <div>
+              <img src="" alt="" id="det_lulus" style="width: 200px; height: 250px;">
+            </div>
+          </div>
+
           
         </div>
 
@@ -705,6 +765,11 @@
         document.getElementById('det_akta').src = base_url+"public/assets/img/akta/"+siswa.akta;
         document.getElementById('det_ijazah').src = base_url+"public/assets/img/ijazah/"+siswa.ijazah;
         document.getElementById('det_kip').src = base_url+"public/assets/img/kip/"+siswa.kip;
+        document.getElementById('det_kelakuan').src = base_url+"public/assets/img/kelakuan/"+siswa.kelakuan;
+        document.getElementById('det_ortu').src = base_url+"public/assets/img/ortu/"+siswa.ortu;
+        document.getElementById('det_sehat').src = base_url+"public/assets/img/sehat/"+siswa.sehat;
+        document.getElementById('det_foto').src = base_url+"public/assets/img/pas_foto/"+siswa.pas_foto;
+        document.getElementById('det_lulus').src = base_url+"public/assets/img/lulus/"+siswa.lulus;
 
 
     });

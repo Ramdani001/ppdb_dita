@@ -120,10 +120,8 @@ class Siswa_Model{
     }
  
     public function editStatus(){
-
         $id_siswa = $_POST['det_id_siswa'];
         $stat = (int)$_POST['edit_stat_siswa'];
-
         try{
             $sqlS = "UPDATE siswa SET st=$stat WHERE id_siswa=:id_siswa";
             $this->db->query($sqlS);

@@ -99,28 +99,41 @@
 
         <!-- Pie Chart -->
         <canvas id="pieChart" style="max-height: 400px;"></canvas>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
         <script>
           document.addEventListener("DOMContentLoaded", () => {
-            new Chart(document.querySelector('#pieChart'), {
-              type: 'pie',
-              data: {
-                labels: [
-                  'RPL',
-                  'TKJ',
-                  'TTT'
-                ],
-                datasets: [{
-                  label: 'My First Dataset',
-                  data: [300, 50, 100],
-                  backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
-                  ],
-                  hoverOffset: 4
-                }]
-              }
+
+            $.ajax({
+                url: '<?= BASEURL ?>ViewAdminController/chart',
+                success: function(data) {
+
+                  console.log('Success:', data);
+                    new Chart(document.querySelector('#pieChart'), {
+                          type: 'pie',
+                          data: {
+                            labels: data.labels,
+                            datasets: [{
+                              label: 'My First Dataset',
+                              data: data.data,
+                              backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(255, 205, 200)'
+                              ],
+                              hoverOffset: 4
+                            }]
+                          }
+                        });
+
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // Handle error here
+                    console.error('Error:', textStatus, errorThrown);
+                }
             });
+            // 
           });
         </script>
         <!-- End Pie CHart -->
@@ -164,8 +177,31 @@
                 <td class="text-center"><?= $value["nama"] ?></td>
                 <td class="text-center"><?= $value["asal_sekolah"] ?></td>
                 <td class="text-center"><?= $value["no_telp"] ?></td>
+                <!-- <td class="text-center">
+                  <button class="btn btn-danger"><?= $value["st"] ?></button>
+                </td> -->
                 <td class="text-center">
-                  <button class="btn btn-danger"><?= $value["status"] ?></button>
+                  <button class="btn 
+                  <?php
+                      if($value["st"] == 0 ){
+                        echo "btn-secondary";
+                      }else if($value['st'] == 1){
+                        echo "btn-success";
+                      }else{
+                        echo "btn-danger";
+                      }
+                    ?>
+                  ">
+                    <?php
+                      if($value["st"] == 0 ){
+                        echo "Menunggu";
+                      }else if($value['st'] == 1){
+                        echo "Diterima";
+                      }else{
+                        echo "Ditolak";
+                      }
+                    ?>
+                  </button>
                 </td>
               </tr>
             <?php } ?>
