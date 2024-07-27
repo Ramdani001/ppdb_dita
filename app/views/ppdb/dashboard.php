@@ -114,10 +114,10 @@
         <?php
           if($berkas){
             echo '
-              <img src="'.BASEURL.'public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle">
+              <img src="'.BASEURL.'public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
             ';
           }else{
-            echo '<img src="'.BASEURL.'public/assets/img/default.png" alt="Profile" class="rounded-circle">';
+            echo '<img src="'.BASEURL.'public/assets/img/default.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">';
           }
         ?>
 

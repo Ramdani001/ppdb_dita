@@ -62,15 +62,15 @@ class Siswa_Model{
 
             $this->db->bind(':result', $result);
             $this->db->bind(':id_person', $_POST['id_person']);
-            $this->db->bind(':no_pendaftaran', $_POST['no_pendaftaran']);
+            $this->db->bind(':no_pendaftaran', $result);
             $this->db->bind(':asal_sekolah', $_POST['asal_sekolah']);
-            $this->db->bind(':npsn_sekolah_asal', $_POST['npsn_sekolah']);
+            $this->db->bind(':npsn_sekolah_asal', '');
             $this->db->bind(':nisn', $_POST['nisn']);
-            $this->db->bind(':nik', $_POST['nik']);
+            $this->db->bind(':nik', '');
             $this->db->bind(':nisn', $_POST['nisn']); 
-            $this->db->bind(':biaya_sekolah', $_POST['biaya_sekolah']); 
-            $this->db->bind(':sd', $_POST['paud']);
-            $this->db->bind(':smp', $_POST['tk']);
+            $this->db->bind(':biaya_sekolah', ''); 
+            $this->db->bind(':sd', '');
+            $this->db->bind(':smp', '');
             $this->db->bind(':kip', $_POST['kip']);
             $this->db->bind(':cita_cita', $_POST['cita_cita']);
             $this->db->bind(':hobi', $_POST['hobi']);
@@ -79,8 +79,8 @@ class Siswa_Model{
             $this->db->bind(':jarak_sekolah', $_POST['jarak_kesekolah']);
             $this->db->bind(':waktu_tempuh', $_POST['waktu_tempuh']);
             $this->db->bind(':jml_saudara', $_POST['jml_saudara']);
-            $this->db->bind(':no_kk', $_POST['no_kk']);
-            $this->db->bind(':kepala_keluarga', $_POST['kepala_keluarga']);
+            $this->db->bind(':no_kk', '');
+            $this->db->bind(':kepala_keluarga', '');
             $this->db->bind(':status', 0);
             $this->db->bind(':jurusan', $_POST['jurusan']);
             $this->db->bnd(':id_m', 0);
@@ -88,15 +88,15 @@ class Siswa_Model{
             
         }else{
             $id_person                 = $_POST['id_person'];
-            $no_pendaftaran            = $_POST['no_pendaftaran'];
+            $no_pendaftaran            = $result;
             $asal_sekolah              = $_POST['asal_sekolah'];
-            $npsn_sekolah_asal         = $_POST['npsn_sekolah'];
+            $npsn_sekolah_asal         = '';
             $nisn                      = $_POST['nisn'];
-            $nik                       = $_POST['nik'];
+            $nik                       = '';
             $nisn                      = $_POST['nisn'];
-            $biaya_sekolah             = $_POST['biaya_sekolah'];
-            $sd                        = $_POST['paud'];
-            $smp                       = $_POST['tk'];
+            $biaya_sekolah             = '';
+            $sd                        = ''; 
+            $smp                       = '';
             $kip                       = $_POST['kip'];
             $cita_cita                 = $_POST['cita_cita'];
             $hobi                      = $_POST['hobi'];
@@ -105,11 +105,11 @@ class Siswa_Model{
             $jarak_sekolah             = $_POST['jarak_kesekolah'];
             $waktu_tempuh              = $_POST['waktu_tempuh'];
             $jml_saudara               = $_POST['jml_saudara'];
-            $no_kk                     = $_POST['no_kk'];
-            $kepala_keluarga           = $_POST['kepala_keluarga'];
+            $no_kk                     = '';
+            $kepala_keluarga           = '';
             $jurusan                   = $_POST['jurusan'];
 
-            $query = "UPDATE siswa SET no_pendaftaran='$no_pendaftaran', asal_sekolah='$asal_sekolah', npsn_sekolah_asal='$npsn_sekolah_asal',nisn='$nisn', nik='$nik', biaya_sekolah='$biaya_sekolah', sd='$sd', smp='$smp', kip='$kip', cita_cita='$cita_cita', hobi='$hobi', anak_ke='$anak_ke', transportasi='$transportasi', jarak_sekolah='$jarak_sekolah', waktu_tempuh='$waktu_tempuh', jml_saudara='$jml_saudara',  no_kk='$no_kk', kepala_keluarga='$kepala_keluarga', jurusan='$jurusan', id_m=0, updated_at='$created_at'";
+            $query = "UPDATE siswa SET no_pendaftaran='$no_pendaftaran', asal_sekolah='$asal_sekolah', npsn_sekolah_asal='$npsn_sekolah_asal',nisn='$nisn', nik='$nik', biaya_sekolah='$biaya_sekolah', sd='$sd', smp='$smp', kip='$kip', cita_cita='$cita_cita', hobi='$hobi', anak_ke='$anak_ke', transportasi='$transportasi', jarak_sekolah='$jarak_sekolah', waktu_tempuh='$waktu_tempuh', jml_saudara='$jml_saudara',  no_kk='$no_kk', kepala_keluarga='$kepala_keluarga', jurusan='$jurusan', updated_at='$created_at'";
 
             $this->db->query($query);
         }
@@ -125,10 +125,10 @@ class Siswa_Model{
         $stat = $_POST['edit_stat_siswa'];
 
         $sqlS = "UPDATE siswa SET status='$stat',  WHERE id_siswa=:id_siswa";
-        $this->db->query($sqlS);
+        $this->db->query($sqlS); 
         $this->db->bind(':id_siswa', $id_siswa);
         $id_siswa = $this->db->single();
-
+ 
         $this->db->execute();
         return $this->db->rowCount();
     }

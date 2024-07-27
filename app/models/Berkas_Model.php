@@ -127,10 +127,6 @@ class Berkas_Model{
     }
 
     public function allBerkas($data){
-
-        var_dump($_FILES);
-        die();
-
         $id_person = $_POST['id_person'];
 
         $query = "SELECT * FROM person WHERE id_person='$id_person'";
@@ -150,13 +146,13 @@ class Berkas_Model{
             $kkFile_extensionGambar = explode('.', $kkFile_nameFile);
             $kkFile_extensionGambar = strtolower(end($kkFile_extensionGambar));
 
-            if( $kkFile_ukuran > 2500000 ){
-                echo "<script>
-                        alert('Ukuran Gambar Terlalu Besar !!!');
-                    </script>";
+            // if( $kkFile_ukuran > 2500000 ){
+            //     echo "<script>
+            //             alert('Ukuran Gambar Terlalu Besar !!!');
+            //         </script>";
 
-                return false;
-            };
+            //     return false;
+            // };
 
             $kkFile_namaFileBaru = uniqid();
             $kkFile_namaFileBaru .= '.';
@@ -181,13 +177,13 @@ class Berkas_Model{
             $aktaFile_extensionGambar = explode('.', $aktaFile_nameFile);
             $aktaFile_extensionGambar = strtolower(end($aktaFile_extensionGambar));
 
-            if( $aktaFile_ukuran > 2500000 ){
-                echo "<script>
-                        alert('Ukuran Gambar Terlalu Besar !!!');
-                    </script>";
+            // if( $aktaFile_ukuran > 2500000 ){
+            //     echo "<script>
+            //             alert('Ukuran Gambar Terlalu Besar !!!');
+            //         </script>";
 
-                return false;
-            };
+            //     return false;
+            // };
 
             $aktaFile_namaFileBaru = uniqid();
             $aktaFile_namaFileBaru .= '.';
@@ -214,13 +210,13 @@ class Berkas_Model{
             $ijazahFile_extensionGambar = explode('.', $ijazahFile_nameFile);
             $ijazahFile_extensionGambar = strtolower(end($ijazahFile_extensionGambar));
 
-            if( $ijazahFile_ukuran > 2500000 ){
-                echo "<script>
-                        alert('Ukuran Gambar Terlalu Besar !!!');
-                    </script>";
+            // if( $ijazahFile_ukuran > 2500000 ){
+            //     echo "<script>
+            //             alert('Ukuran Gambar Terlalu Besar !!!');
+            //         </script>";
 
-                return false;
-            };
+            //     return false;
+            // };
 
             $ijazahFile_namaFileBaru = uniqid();
             $ijazahFile_namaFileBaru .= '.';
@@ -247,27 +243,174 @@ class Berkas_Model{
             $kipFile_extensionGambar = explode('.', $kipFile_nameFile);
             $kipFile_extensionGambar = strtolower(end($kipFile_extensionGambar));
 
-            if( $kipFile_ukuran > 2500000 ){
-                echo "<script>
-                        alert('Ukuran Gambar Terlalu Besar !!!');
-                    </script>";
+            // if( $kipFile_ukuran > 2500000 ){
+            //     echo "<script>
+            //             alert('Ukuran Gambar Terlalu Besar !!!');
+            //         </script>";
 
-                return false;
-            };
+            //     return false;
+            // };
 
             $kipFile_namaFileBaru = uniqid();
             $kipFile_namaFileBaru .= '.';
             $kipFile_namaFileBaru .= $kipFile_extensionGambar;
 
-            $kipFile_pindah = move_uploaded_file($kipFile_tmpName, 'public/assets/img/ijazah/'. $kipFile_namaFileBaru);
+            $kipFile_pindah = move_uploaded_file($kipFile_tmpName, 'public/assets/img/kip/'. $kipFile_namaFileBaru);
 
-            $query = "UPDATE berkas SET ijazah='$kipFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $query = "UPDATE berkas SET kip='$kipFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
             $this->db->query($query);
 
             $this->db->execute();
 
         }
         // ============== Kip =====================
+
+        // ============== Surat Kelakuan Baik =====================
+        if(!empty($_FILES['kelakuanFile']['name'])){
+            $kelakuanFile_nameFile   = $_FILES['kelakuanFile']['name'];
+            $kelakuanFile_ukuran     = $_FILES['kelakuanFile']['size'];
+            $kelakuanFile_tmpName    = $_FILES['kelakuanFile']['tmp_name'];
+
+            $kelakuanFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $kelakuanFile_extensionGambar = explode('.', $kelakuanFile_nameFile);
+            $kelakuanFile_extensionGambar = strtolower(end($kelakuanFile_extensionGambar));
+
+            // if( $kelakuanFile_ukuran > 2500000 ){
+            //     echo "<script>
+            //             alert('Ukuran Gambar Terlalu Besar !!!');
+            //         </script>";
+
+            //     return false;
+            // };
+
+            $kelakuanFile_namaFileBaru = uniqid();
+            $kelakuanFile_namaFileBaru .= '.';
+            $kelakuanFile_namaFileBaru .= $kelakuanFile_extensionGambar;
+
+            $kelakuanFile_pindah = move_uploaded_file($kelakuanFile_tmpName, 'public/assets/img/kelakuan/'. $kelakuanFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET kelakuan='$kelakuanFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+
+        }
+        // ============== Surat Kelakuan Baik =====================
+
+        // ============== KTP Orang Tua =====================
+        if(!empty($_FILES['ortuFile']['name'])){
+            $ortuFile_nameFile   = $_FILES['ortuFile']['name'];
+            $ortuFile_ukuran     = $_FILES['ortuFile']['size'];
+            $ortuFile_tmpName    = $_FILES['ortuFile']['tmp_name'];
+
+            $ortuFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $ortuFile_extensionGambar = explode('.', $ortuFile_nameFile);
+            $ortuFile_extensionGambar = strtolower(end($ortuFile_extensionGambar));
+
+            // if( $ortuFile_ukuran > 10500000 ){
+            //     echo "<script>
+            //             alert('Ukuran Gambar Terlalu Besar !!!');
+            //         </script>";
+
+            //     return false;
+            // };
+
+            $ortuFile_namaFileBaru = uniqid();
+            $ortuFile_namaFileBaru .= '.';
+            $ortuFile_namaFileBaru .= $ortuFile_extensionGambar;
+
+            $ortuFile_pindah = move_uploaded_file($ortuFile_tmpName, 'public/assets/img/ortu/'. $ortuFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET ortu='$ortuFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+
+        }
+        // ============== KTP Orang Tua =====================
+
+        // ============== Surat Keterangan Sehat =====================
+        if(!empty($_FILES['sehatFile']['name'])){
+            $sehatFile_nameFile   = $_FILES['sehatFile']['name'];
+            $sehatFile_ukuran     = $_FILES['sehatFile']['size'];
+            $sehatFile_tmpName    = $_FILES['sehatFile']['tmp_name'];
+
+            $sehatFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $sehatFile_extensionGambar = explode('.', $sehatFile_nameFile);
+            $sehatFile_extensionGambar = strtolower(end($sehatFile_extensionGambar));
+
+            $sehatFile_namaFileBaru = uniqid();
+            $sehatFile_namaFileBaru .= '.';
+            $sehatFile_namaFileBaru .= $sehatFile_extensionGambar;
+
+            $sehatFile_pindah = move_uploaded_file($sehatFile_tmpName, 'public/assets/img/sehat/'. $sehatFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET sehat='$sehatFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+
+        }
+        // ============== Surat Keterangan Sehat =====================
+
+        // ============== Pas Foto =====================
+        // var_dump($_FILES['pasFotoFile']['name']);
+        // die();
+        if(!empty($_FILES['pasFotoFile']['name'])){
+            $pasFotoFile_nameFile   = $_FILES['pasFotoFile']['name'];
+            $pasFotoFile_ukuran     = $_FILES['pasFotoFile']['size'];
+            $pasFotoFile_tmpName    = $_FILES['pasFotoFile']['tmp_name'];
+
+            $pasFotoFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $pasFotoFile_extensionGambar = explode('.', $pasFotoFile_nameFile);
+            $pasFotoFile_extensionGambar = strtolower(end($pasFotoFile_extensionGambar));
+
+            $pasFotoFile_namaFileBaru = uniqid();
+            $pasFotoFile_namaFileBaru .= '.';
+            $pasFotoFile_namaFileBaru .= $pasFotoFile_extensionGambar;
+
+            $pasFotoFile_pindah = move_uploaded_file($pasFotoFile_tmpName, 'public/assets/img/pas_foto/'. $pasFotoFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET pas_foto='$pasFotoFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+
+        }
+        // ============== Pas Foto =====================
+
+        // ============== Lulus =====================
+        if(!empty($_FILES['lulusFile']['name'])){
+            $lulusFile_nameFile   = $_FILES['lulusFile']['name'];
+            $lulusFile_ukuran     = $_FILES['lulusFile']['size'];
+            $lulusFile_tmpName    = $_FILES['lulusFile']['tmp_name'];
+
+            $lulusFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $lulusFile_extensionGambar = explode('.', $lulusFile_nameFile);
+            $lulusFile_extensionGambar = strtolower(end($lulusFile_extensionGambar));
+
+            // if( $lulusFile_ukuran > 2500000 ){
+            //     echo "<script>
+            //             alert('Ukuran Gambar Terlalu Besar !!!');
+            //         </script>";
+
+            //     return false;
+            // };
+
+            $lulusFile_namaFileBaru = uniqid();
+            $lulusFile_namaFileBaru .= '.';
+            $lulusFile_namaFileBaru .= $lulusFile_extensionGambar;
+
+            $lulusFile_pindah = move_uploaded_file($lulusFile_tmpName, 'public/assets/img/lulus/'. $lulusFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET lulus='$lulusFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+
+        }
+        // ============== Lulus =====================
+
         return $this->db->rowCount();
     }
 

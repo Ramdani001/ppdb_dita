@@ -7,7 +7,7 @@ class PPDBController extends Controller {
         $this->db = new Database;
     }
     public function index($id = 0){
-        
+         
         $id_person = (int)$id; 
         $data['title'] = "PPDB SMK PROFITA";
 
@@ -106,7 +106,7 @@ class PPDBController extends Controller {
         $person = $this->model('Person_Model')->update($_POST);
         if($person > 0){
             $siswa = $this->model('Siswa_Model')->insert($_POST);
-            
+             
             if($siswa > 0){ 
                 $parent = $this->model('Parent_Model')->insert($_POST);
                 
@@ -136,7 +136,7 @@ class PPDBController extends Controller {
 
     public function updateBerkas($id = 0){
         $berkas = $this->model('Berkas_Model')->allBerkas($_POST);
- 
+
         if($berkas > 0 ){
             $id_person = (int)$id; 
             $data['title'] = "PPDB SMK PROFITA";

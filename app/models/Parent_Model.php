@@ -61,6 +61,10 @@ class Parent_Model{
         $this->db->bind(':id_siswaS', (int)$id_siswas);
         $this->db->execute();
         $id_check = $this->db->single();
+        $id_check= $id_check['id_siswa'];
+
+        // var_dump($id_check['id_siswa']);
+        // die();
 
         
         if(!$id_check){
@@ -70,7 +74,7 @@ class Parent_Model{
             
             $this->db->bind(':id_parent', $result);
             $this->db->bind(':id_siswa', $id_siswas);
-            $this->db->bind(':nik_ayah', $_POST['nik_ayah']);
+            $this->db->bind(':nik_ayah', '');
             $this->db->bind(':nama_ayah', $_POST['nama_ayah']);
             $this->db->bind(':lhir_ayah', $_POST['lhr_ayah']);
             $this->db->bind(':tgl_lhr_ayah', date('Y-m-d'));
@@ -78,7 +82,7 @@ class Parent_Model{
             $this->db->bind(':pekerjaan_ayah', $_POST['pekerjaan_ayah']);
             $this->db->bind(':penghasilan_ayah', $_POST['penghasilan_ayah']);
             $this->db->bind(':status_ayah', $_POST['status_ayah']);
-            $this->db->bind(':nik_ibu', $_POST['nik_ibu']);
+            $this->db->bind(':nik_ibu', '');
             $this->db->bind(':nama_ibu', $_POST['nama_ibu']);
             $this->db->bind(':lhir_ibu', $_POST['lhr_ibu']);
             $this->db->bind(':tgl_lhr_ibu', $_POST['tgl_lhir_ibu']);
@@ -112,7 +116,7 @@ class Parent_Model{
 
             $this->db->query($queryUp);
 
-            $this->db->bind(':nik_ayah', $_POST['nik_ayah']);
+            $this->db->bind(':nik_ayah', '');
             $this->db->bind(':nama_ayah', $_POST['nama_ayah']);
             $this->db->bind(':lhir_ayah', $_POST['lhr_ayah']);
             $this->db->bind(':tgl_lhr_ayah', date('Y-m-d'));
@@ -120,7 +124,7 @@ class Parent_Model{
             $this->db->bind(':pekerjaan_ayah', $_POST['pekerjaan_ayah']);
             $this->db->bind(':penghasilan_ayah', $_POST['penghasilan_ayah']);
             $this->db->bind(':status_ayah', $_POST['status_ayah']);
-            $this->db->bind(':nik_ibu', $_POST['nik_ibu']);
+            $this->db->bind(':nik_ibu', '');
             $this->db->bind(':nama_ibu', $_POST['nama_ibu']);
             $this->db->bind(':lhir_ibu', $_POST['lhr_ibu']);
             $this->db->bind(':tgl_lhr_ibu', $_POST['tgl_lhir_ibu']);

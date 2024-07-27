@@ -6,7 +6,7 @@
 
   $kk = "";
   if($berkas){
-    
+     
     if($berkas['kk']){
       $kk = $berkas['kk'];
     }
@@ -21,6 +21,26 @@
     
     if($berkas['kip']){
       $kip = $berkas['kip'];
+    }
+
+    if($berkas['ortu']){
+      $ortu = $berkas['ortu'];
+    }
+
+    if($berkas['kelakuan']){
+      $kelakuan = $berkas['kelakuan'];
+    }
+
+    if($berkas['pas_foto']){
+      $pasFoto = $berkas['pas_foto'];
+    }
+
+    if($berkas['lulus']){
+      $lulus = $berkas['lulus'];
+    }
+
+    if($berkas['sehat']){
+      $sehat = $berkas['sehat'];
     }
 
   }
@@ -74,10 +94,10 @@
         <?php
           if($berkas){
             echo '
-              <img src="'.BASEURL.'public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle">
+              <img src="'.BASEURL.'public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
             ';
           }else{
-            echo '<img src="'.BASEURL.'public/assets/img/default.png" alt="Profile" class="rounded-circle">';
+            echo '<img src="'.BASEURL.'public/assets/img/default.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">';
           }
         ?>
 
@@ -152,15 +172,15 @@
     <form action="<?= BASEURL ?>PPDBController/updateBerkas/<?= $person['id_person'] ?>" enctype="multipart/form-data" method="POST">
  
       <input type="hidden" name="id_person" id="id_person" value="<?= $person['id_person'] ?>">
-
+ 
           <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
             <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;"> 
-                <span for="kkFile" class="text-center">Akta</span>
+                <span for="aktaFile" class="text-center">Akta</span>
 
-                <img src="<?= BASEURL ?>public/assets/img/kelakuan/<?= $kelakuan ?>" alt="" style="width: 200px;">
+                <img src="<?= BASEURL ?>public/assets/img/akta/<?= $akta ?>" alt="" style="width: 200px;">
 
-                <input class="form-control" type="file" id="kelakuanFile" name="kelakuanFile">
+                <input class="form-control" type="file" id="aktaFile" name="aktaFile">
             </div>
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;"> 
@@ -172,7 +192,7 @@
             </div>
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="aktaFile" class="form-label">KTP Orang Tua</label>
+                <label for="ortu" class="form-label">KTP Orang Tua</label>
 
                 <img src="<?= BASEURL ?>public/assets/img/ortu/<?= $ortu ?>" alt="" style="width: 200px;">
 
@@ -180,7 +200,7 @@
             </div>
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="aktaFile" class="form-label">KIP <br>(Jika Memiliki)</label>
+                <label for="sehatFile" class="form-label">Kartu Keterangan Sehat</label>
 
                 <img src="<?= BASEURL ?>public/assets/img/sehat/<?= $sehat ?>" alt="" style="width: 200px;">
 
@@ -188,15 +208,15 @@
             </div>
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="ijazahFile" class="form-label">KTP Orang Tua</label>
+                <label for="kelakuanFile" class="form-label">Surat Kelakuan Baik Dari <br> Sekolah Asal</label>
 
-                <img src="<?= BASEURL ?>public/assets/img/ktp_ortu/<?= $ktp_ortu ?>" alt="" style="width: 200px;">
+                <img src="<?= BASEURL ?>public/assets/img/kelakuan/<?= $kelakuan ?>" alt="" style="width: 200px;">
 
-                <input class="form-control" type="file" name="ijazahFile" id="ijazahFile" style="height: 40px;">
+                <input class="form-control" type="file" name="kelakuanFile" id="kelakuanFile" style="height: 40px;">
             </div>
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="ijazahFile" class="form-label">Pas Foto Ukuran 3x4</label>
+                <label for="pasFotoFile" class="form-label">Pas Foto Ukuran 3x4</label>
 
                 <img src="<?= BASEURL ?>public/assets/img/pas_foto/<?= $pasFoto ?>" alt="" style="width: 200px;">
 
@@ -205,7 +225,7 @@
 
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
                 <div class="text-center">
-                  <div for="kipFile">Keterangan Lulus <br> Dari Sekolah Asal</div>
+                  <div for="lulusFile">Keterangan Lulus <br> Dari Sekolah Asal</div>
                   <div>(SMP/MTs)</div>
                 </div>
 
@@ -214,7 +234,7 @@
                 <input class="form-control" type="file" id="lulusFile" name="lulusFile" style="height: 40px;">
             </div>
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="kipFile" class="form-label">Ijazah SLTP <br> (Jika Sudah Ada) </label>
+                <label for="ijazahFile" class="form-label">Ijazah SLTP <br> (Jika Sudah Ada) </label>
 
                 <img src="<?= BASEURL ?>public/assets/img/ijazah/<?= $ijazah ?>" alt="" style="width: 200px;">
 
@@ -237,7 +257,7 @@
                 </label>
 
           <div class="d-flex justify-content-end" style="">
-              <button class="btn btn-primary w-25" type="submit">Submit</button>
+              <button class="btn btn-primary" type="submit">Submit</button>
           </div>
     </form>
 </main>

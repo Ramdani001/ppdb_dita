@@ -25,7 +25,7 @@ class AdminController extends Controller {
         $this->view('section/BeritaSection', $data);
         $this->view('section/KontakSection', $data);
 
-        $this->view('templates/footer');
+        $this->view('templates/footer'); 
     } 
 
     public function Auth($type){
@@ -87,7 +87,7 @@ class AdminController extends Controller {
     public function editStatus(){
 
         $id_siswa = $_POST['det_id_siswa'];
-        $siswa = $this->model('Siswa_Model')->editStatus($_POST);
+        $siswa = $this->model('Siswa_Model')->editStatus($_POST); 
 
         if($siswa > 0){
             header('Location: '. BASEURL .'ViewAdminController/siswaDaftar');
