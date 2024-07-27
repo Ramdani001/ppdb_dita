@@ -114,7 +114,7 @@
                           data: {
                             labels: data.labels,
                             datasets: [{
-                              label: 'My First Dataset',
+                              label: [data.labels.akuntansi],
                               data: data.data,
                               backgroundColor: [
                                 'rgb(255, 99, 132)',

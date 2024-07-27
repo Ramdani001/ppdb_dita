@@ -3,11 +3,17 @@
 class ViewAdminController extends Controller {
     public function index($id = 0){
         
-        $data['id_person'] = $id;
+        $data['id_person'] = $id; 
         $data['title'] = "SMK PROFITA";
 
         $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
         $data['data'] = $this->model('Siswa_model')->getData();
+
+        $data['daftar'] = $this->model('Siswa_model')->getDaftar();
+
+        $data['user'] = $this->model('Siswa_model')->getUser();
+
+
 
         $this->view('admin/code/header', $data);
             $this->view('admin/dashboard', $data);
@@ -51,11 +57,17 @@ class ViewAdminController extends Controller {
 
     public function chart(){
 
+
+        $count = $this->model('Siswa_Model')->count();
+        // var_dump($count['akuntansi']);
+        // die();
         header('Content-Type: application/json');
 
+        $data = [$count['akuntansi'], $count['penjualan'], $count['administrator_perkantoran']];
+
         $data = [
-            'labels' => ['TKJ', 'RPL', 'AKUNTING', 'MANAGEMENT'],
-            'data' => [300, 50, 100, 900]
+            'labels' => ['Akuntansi', 'Penjualan', 'Administrator Perkantoran'],
+            'data' => $data
         ];
 
         echo json_encode($data);

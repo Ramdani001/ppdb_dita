@@ -120,7 +120,7 @@
             <i class="ri-team-line"></i>
             </div>
             <div class="ps-3 text-center">
-              <h2>23</h2>
+            <h2><?= $data['daftar'] ?></h2>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@
               <i class="ri-file-user-line"></i> 
             </div>
             <div class="ps-3">
-              <h2><?= $data['data'][0] ?></h2>
+              <h2><?= $data['data'] ?></h2>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@
             <i class="ri-id-card-fill"></i>
             </div>
             <div class="ps-3">
-              <h2>78</h2>
+            <h2><?= $data['user'] ?></h2>
             </div>
           </div>
         </div>
@@ -166,30 +166,45 @@
 
         <!-- Pie Chart -->
         <canvas id="pieChart" style="max-height: 400px;"></canvas>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
         <script>
           document.addEventListener("DOMContentLoaded", () => {
-            new Chart(document.querySelector('#pieChart'), {
-              type: 'pie',
-              data: {
-                labels: [
-                  'RPL',
-                  'TKJ',
-                  'TTT'
-                ],
-                datasets: [{
-                  label: 'My First Dataset',
-                  data: [300, 50, 100],
-                  backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
-                  ],
-                  hoverOffset: 4
-                }]
-              }
+
+            $.ajax({
+                url: '<?= BASEURL ?>ViewAdminController/chart',
+                success: function(data) {
+
+                  console.log('Success:', data);
+                    new Chart(document.querySelector('#pieChart'), {
+                          type: 'pie',
+                          data: {
+                            labels: data.labels,
+                            datasets: [{
+                              label: [data.labels.akuntansi],
+                              data: data.data,
+                              backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(255, 205, 200)'
+                              ],
+                              hoverOffset: 4
+                            }]
+                          }
+                        });
+
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // Handle error here
+                    console.error('Error:', textStatus, errorThrown);
+                }
             });
+            // 
           });
         </script>
+        <!-- End Pie CHart -->
+
         <!-- End Pie CHart -->
 
       </div>

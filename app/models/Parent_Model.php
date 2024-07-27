@@ -46,7 +46,6 @@ class Parent_Model{
         $this->db->bind(':email', $email);
         $this->db->execute();
         $id_person = $this->db->single()['id_person'];
-        
 
         $queryS = "SELECT id_siswa FROM siswa WHERE id_person=:id_person";
         $this->db->query($queryS);
@@ -54,22 +53,22 @@ class Parent_Model{
         $this->db->execute();
 
         $id_siswas = $this->db->single()['id_siswa'];
-
         
         $Check = "SELECT * FROM parents WHERE id_siswa=:id_siswaS";
         $this->db->query($Check);
-        $this->db->bind(':id_siswaS', (int)$id_siswas);
+        $this->db->bind(':id_siswaS', $id_siswas);
         $this->db->execute();
         $id_check = $this->db->single();
+
         $id_check= $id_check['id_siswa'];
 
-        // var_dump($id_check['id_siswa']);
+        // var_dump($id_siswas);
         // die();
 
         
         if(!$id_check){
             
-            $queryP = "INSERT INTO parents VALUES (:id_parent, :id_siswa, :nik_ayah, :nama_ayah, :lhir_ayah, :tgl_lhr_ayah, :pendidikan_ayah, :pekerjaan_ayah, :penghasilan_ayah, :status_ayah, :nik_ibu, :nama_ibu, :lhir_ibu, :tgl_lhr_ibu, :no_ibu, :pendidikan_ibu, :penghasilan_ibu)";
+            $queryP = "INSERT INTO parents VALUES (:id_parent, :id_siswa, :nik_ayah, :nama_ayah, :lhir_ayah, :tgl_lhr_ayah, :pendidikan_ayah, :pekerjaan_ayah, :penghasilan_ayah, :status_ayah, :nik_ibu, :nama_ibu, :lhir_ibu, :tgl_lhr_ibu, :no_ibu, :pendidikan_ibu, :penghasilan_ibu, :name_wali, :no_wali ,:hubungan_wali, :pekerjaan_wali, :alamat_wali)";
             $this->db->query($queryP);
             
             $this->db->bind(':id_parent', $result);
@@ -94,11 +93,12 @@ class Parent_Model{
             $this->db->bind(':hubungan_wali', $_POST['hubungan_wali']);
             $this->db->bind(':pekerjaan_wali', $_POST['pekerjaan_wali']);
             $this->db->bind(':alamat_wali', $_POST['alamat_wali']);
+
             $this->db->execute();
             return $this->db->rowCount();
 
         }else{
-
+            // $id_check= $id_check['id_siswa'];
             $queryUp = "UPDATE parents 
             SET 
                 nik_ayah=:nik_ayah,

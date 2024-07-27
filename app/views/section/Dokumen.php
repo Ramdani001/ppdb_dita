@@ -114,7 +114,7 @@
                 <p>
                     Dengan ini telah dinyatakan di <b>
                         <?php 
-                            if($data['siswa']['status'] == 1)
+                            if($data['siswa']['st'] == 1)
                                 {
                                     echo 'DITERIMA / LULUS';
                                 }else{
