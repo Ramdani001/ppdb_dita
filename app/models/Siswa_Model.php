@@ -122,15 +122,20 @@ class Siswa_Model{
     public function editStatus(){
 
         $id_siswa = $_POST['det_id_siswa'];
-        $stat = $_POST['edit_stat_siswa'];
+        $stat = (int)$_POST['edit_stat_siswa'];
 
-        $sqlS = "UPDATE siswa SET status='$stat',  WHERE id_siswa=:id_siswa";
-        $this->db->query($sqlS); 
-        $this->db->bind(':id_siswa', $id_siswa);
-        $id_siswa = $this->db->single();
- 
-        $this->db->execute();
-        return $this->db->rowCount();
+        try{
+            $sqlS = "UPDATE siswa SET st=$stat WHERE id_siswa=:id_siswa";
+            $this->db->query($sqlS);
+            $this->db->bind(':id_siswa', $id_siswa);
+            $this->db->single();
+
+            $this->db->execute();
+            // return $this->db->rowCount();
+            return 1;
+        }catch(Exception $e){
+            return 0;
+        }
     }
 
     public function getData(){

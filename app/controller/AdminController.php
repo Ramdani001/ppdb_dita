@@ -85,22 +85,18 @@ class AdminController extends Controller {
     }
 
     public function editStatus(){
-
         $id_siswa = $_POST['det_id_siswa'];
         $siswa = $this->model('Siswa_Model')->editStatus($_POST); 
-
+        
         if($siswa > 0){
             header('Location: '. BASEURL .'ViewAdminController/siswaDaftar');
         }else{
             var_dump($siswa);
             die();
         }
-        
     }
 
     public function messages($id){
-
-        
         $id_person = (int)$id; 
         $data['title'] = "PPDB SMK PROFITA";
 
@@ -130,7 +126,4 @@ class AdminController extends Controller {
 
         $this->view('section/Dokumen', $data);
     }
-
-
-
 }

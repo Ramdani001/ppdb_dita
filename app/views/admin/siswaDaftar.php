@@ -113,15 +113,14 @@
                   <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
                 </td>
                 <td class="text-center"><?= $value["nama"] ?></td>
-                <td class="text-center"><?= $value["nama"] ?></td>
                 <td class="text-center"><?= $value["asal_sekolah"] ?></td>
                 <td class="text-center"><?= $value["no_telp"] ?></td>
                 <td class="text-center">
                   <button class="btn 
                   <?php
-                      if($value["status"] == 0 ){
+                      if($value["st"] == 0 ){
                         echo "btn-secondary";
-                      }else if($value['status'] == 1){
+                      }else if($value['st'] == 1){
                         echo "btn-success";
                       }else{
                         echo "btn-danger";
@@ -129,9 +128,9 @@
                     ?>
                   ">
                     <?php
-                      if($value["status"] == 0 ){
+                      if($value["st"] == 0 ){
                         echo "Menunggu";
-                      }else if($value['status'] == 1){
+                      }else if($value['st'] == 1){
                         echo "Diterima";
                       }else{
                         echo "Ditolak";
