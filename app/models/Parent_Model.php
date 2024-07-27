@@ -89,6 +89,11 @@ class Parent_Model{
             $this->db->bind(':no_ibu', $_POST['no_ibu']);
             $this->db->bind(':pendidikan_ibu', $_POST['pendidikan_ibu']);
             $this->db->bind(':penghasilan_ibu', $_POST['penghasilan_ibu']);
+            $this->db->bind(':name_wali', $_POST['name_wali']);
+            $this->db->bind(':no_wali', $_POST['no_wali']);
+            $this->db->bind(':hubungan_wali', $_POST['hubungan_wali']);
+            $this->db->bind(':pekerjaan_wali', $_POST['pekerjaan_wali']);
+            $this->db->bind(':alamat_wali', $_POST['alamat_wali']);
             $this->db->execute();
             return $this->db->rowCount();
 
@@ -110,7 +115,12 @@ class Parent_Model{
                 tgl_lhr_ibu=:tgl_lhr_ibu,
                 no_ibu=:no_ibu,
                 pendidikan_ibu=:pendidikan_ibu,
-                penghasilan_ibu=:penghasilan_ibu
+                penghasilan_ibu=:penghasilan_ibu,
+                name_wali=:name_wali,
+                no_wali=:no_wali,
+                hubungan_wali=:hubungan_wali,
+                pekerjaan_wali=:pekerjaan_wali,
+                alamat_wali=:alamat_wali
             WHERE 
                 id_siswa= '$id_check'";
 
@@ -131,11 +141,13 @@ class Parent_Model{
             $this->db->bind(':no_ibu', $_POST['no_ibu']);
             $this->db->bind(':pendidikan_ibu', $_POST['pendidikan_ibu']);
             $this->db->bind(':penghasilan_ibu', $_POST['penghasilan_ibu']);
+            $this->db->bind(':name_wali', $_POST['name_wali']);
+            $this->db->bind(':no_wali', $_POST['no_wali']);
+            $this->db->bind(':hubungan_wali', $_POST['hubungan_wali']);
+            $this->db->bind(':pekerjaan_wali', $_POST['pekerjaan_wali']);
+            $this->db->bind(':alamat_wali', $_POST['alamat_wali']);
 
             $this->db->execute(); 
-
-            // var_dump( $this->db->rowCount());
-            // die();
 
             return $this->db->rowCount();
         }

@@ -1090,7 +1090,7 @@
                   <label for="no_ibu" class="col-form-label">No. HP Ibu</label>
                 </div>
                 <div class="col-6">
-                  <input type="text" id="no_ibu" name="no_ibu" class="form-control" value="<?php
+                  <input type="text" id="no_ibu" name="no_ibu" class="form-control" style="width: 200px;" value="<?php
                     if($parent){
                       echo $parent['no_ibu'];
                     }else{
@@ -1143,6 +1143,74 @@
             </td>
           </tr>
         </table>
+        
+        <div id="wali_murid" class="p-3">
+           <h6>
+            <b>
+              <u>Wali Murid</u>
+            </b>
+           </h6>
+
+           <div class="d-flex mt-2" style="gap: 20px;">
+                 <div>
+                    <span>Nama Wali Murid</span>
+                    <input type="text" id="name_wali" name="name_wali" class="form-control" value="<?php
+                      if($parent){
+                        echo $parent['name_wali'];
+                      }else{
+                        echo "";
+                      }
+                    ?>" required>
+                 </div>
+                 <!--  -->
+                 <div>
+                    <span>No Telepon</span>
+                    <input type="text" id="no_wali" name="no_wali" class="form-control" value="<?php
+                      if($parent){
+                        echo $parent['no_wali'];
+                      }else{
+                        echo "";
+                      }
+                    ?>" required>
+                 </div>
+                 <!--  -->
+                 <div>
+                    <span>Hubungan Dengan Siswa</span>
+                    <input type="text" id="hubungan_wali" name="hubungan_wali" class="form-control" value="<?php
+                      if($parent){
+                        echo $parent['hubungan_wali'];
+                      }else{
+                        echo "";
+                      }
+                    ?>" required>
+                 </div>
+                 <!--  -->
+                 <div>
+                    <span>Pekerjaan</span>
+                    <input type="text" id="pekerjaan_wali" name="pekerjaan_wali" class="form-control" value="<?php
+                      if($parent){
+                        echo $parent['pekerjaan_wali'];
+                      }else{
+                        echo "";
+                      }
+                    ?>" required>
+                 </div>
+                 <!--  -->
+           </div>
+           <!-- Alamat -->
+           <div>
+              <span>Alamat</span>
+              <div>
+                <textarea name="alamat_wali" id="alamat_wali" cols="100" class="form-control" required style="text-align: left;"><?php if($parent){ echo $parent['alamat_wali'];
+                    }else{
+                      echo "";
+                    }?></textarea>
+              </div>
+           </div>
+           <!-- Alamat -->
+
+        </div>
+
         <div class="d-flex justify-content-end w-100 mt-3">
           <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(21)">Back</button>
           <button type="button" class="btn btn-primary" style="width: 20%;" onclick="nextPage(3)">Next</button>
