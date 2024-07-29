@@ -174,12 +174,12 @@
       </a>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu/<?= $person['id_person'] ?>">
         <i class="bi bi-question-circle"></i>
         <span>Cetak Kartu</span>
       </a>
-    </li>
+    </li> -->
 
   </ul>
 </aside>

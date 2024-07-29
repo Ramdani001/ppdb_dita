@@ -62,7 +62,7 @@
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
 
-    <?php if((int)$siswa['status'] != 0) {  
+    <?php if((int)$siswa['st'] != 0) {  
         echo '
             <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
             <div style="width: 15px; height: 15px; background-color: blue; position: absolute; border-radius: 100%; margin-top: 2px; margin-left: -5px;"></div>
@@ -154,12 +154,12 @@
       </a>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu/<?= $person['id_person'] ?>">
         <i class="bi bi-question-circle"></i>
         <span>Cetak Kartu</span>
       </a>
-    </li>
+    </li> -->
 
   </ul>
 </aside>

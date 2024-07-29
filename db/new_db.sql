@@ -20,22 +20,26 @@ REPLACE INTO `berkas` (`id_berkas`, `kk`, `akta`, `ijazah`, `kip`, `profile`, `k
 
 -- Dumping data for table db_profita.master_message: ~0 rows (approximately)
 
--- Dumping data for table db_profita.parents: ~0 rows (approximately)
+-- Dumping data for table db_profita.parents: ~1 rows (approximately)
 REPLACE INTO `parents` (`id_parent`, `id_siswa`, `nik_ayah`, `nama_ayah`, `lhir_ayah`, `tgl_lhr_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `status_ayah`, `nik_ibu`, `nama_ibu`, `lhir_ibu`, `tgl_lhr_ibu`, `no_ibu`, `pendidikan_ibu`, `penghasilan_ibu`, `name_wali`, `no_wali`, `hubungan_wali`, `pekerjaan_wali`, `alamat_wali`) VALUES
+	(-53, 61, '', 'Yusuf', 'fdsg', '2024-07-27', 'SD', 'sdfg', '1.000.000 - 2.000.000', 'Hidup', '', 'sfd', 'sdf', '2024-07-29', '234', 'SD', '1.000.000 - 2.000.000', 'sf', '234', 'sdf', 'sfd', 'sdf'),
 	(162, 3692, '', 'Robert', 'Bandung', '2024-07-27', 'D3', 'Pengusaha', '1.000.000 - 2.000.000', 'Hidup', '', 'Cindy', 'Canada', '2024-06-26', '764656546456', 'S3', '1.000.000 - 2.000.000', 'Aul', '234234234', 'Sodara', 'Wiraswasta', 'Alamat isi');
 
 -- Dumping data for table db_profita.person: ~2 rows (approximately)
 REPLACE INTO `person` (`id_person`, `nama`, `no_telp`, `email`, `tipe`, `agama`, `alamat`, `desa`, `kecamatan`, `kab_kota`, `provinsi`, `kode_pos`, `kewarganegaraan`, `tempat_lhir`, `jk`, `tanggal_lahir`, `rt`, `rw`, `id_berkas`, `created_at`, `updated_at`) VALUES
 	(6, 'Administrator', '', 'profita.admin@gmail.com', 1, '', '', '', '', '', '', '', '', '', '', '2024-06-25', '', '', 0, '2024-06-25 07:17:32', '2024-06-25 07:17:32'),
+	(126, 'Dita', '87685674', 'dita@gmail.com', 3, 'sg                                        ', '-', '-', '-', '-', '-', '78', 'INdonesia', 'adf', 'adf', '2024-07-27', '6', '7', 0, '2024-07-27 07:14:18', '2024-07-27 15:04:36'),
 	(192, 'Rizkan Ramdani', '098787867878', 'rizkan@gmail.com', 3, 'Islam                                             ', 'Jl. Soekarno Hatta 2039', 'Gumuruh', 'Batununggal', 'Kota Bandung', 'Jawa Barat', '40866', 'Indonesia', 'Bandung', 'Laki-laki', '2024-06-25', '12', '32', -1, '2024-05-25 06:02:52', '2024-07-27 10:31:08');
 
 -- Dumping data for table db_profita.siswa: ~1 rows (approximately)
 REPLACE INTO `siswa` (`id_siswa`, `id_person`, `no_pendaftaran`, `asal_sekolah`, `npsn_sekolah_asal`, `nisn`, `nik`, `biaya_sekolah`, `sd`, `smp`, `kip`, `cita_cita`, `hobi`, `anak_ke`, `transportasi`, `jarak_sekolah`, `waktu_tempuh`, `jml_saudara`, `no_kk`, `kepala_keluarga`, `st`, `jurusan`, `created_at`, `updated_at`) VALUES
-	(3692, 192, '38', 'SMP 12 Jakarta                                                                                      ', '', '03945032945', '', '', '', '', '-', 'Penyanyi                                          ', 'Baca, Tidur                                       ', '2                                                 ', 'Mobil', '2 Km', '2 Jam', '2', '', '', 2, 'Akuntansi', '2024-05-25 18:15:10', '2024-07-27 10:31:08');
+	(61, 126, '1768', 'asd                                    ', '', '234234', '', '', '', '', '-', 'd                                    ', 'fd                                    ', '1                                    ', '-', '-', '34', '3                                            ', '', '', 2, 'Penjualan', '2024-07-27 14:18:41', '2024-07-27 15:04:36'),
+	(3692, 192, '9', ' SD                                                                       ', '', '324234', '', '', '', '', '-', 'hjj                                               ', 'rty                                               ', '23                                                ', 'sdf', '345', '34', '2                                                 ', '', '', 1, 'Akuntansi', '2024-05-25 18:15:10', '2024-07-27 13:59:31');
 
 -- Dumping data for table db_profita.user: ~2 rows (approximately)
 REPLACE INTO `user` (`id_user`, `id_person`, `password`, `created_at`, `updated_at`) VALUES
 	(6, 6, '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', '2024-06-25 00:17:32', '2024-06-25 00:17:32'),
+	(126, 126, 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', '2024-07-27 07:14:18', '2024-07-27 07:14:18'),
 	(192, 192, 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', '2024-05-25 06:02:52', '2024-05-25 06:02:52');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
