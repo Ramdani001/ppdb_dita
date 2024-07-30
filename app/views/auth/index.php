@@ -48,7 +48,7 @@
           <input type="password" class="form-control" id="password1" name="password" required>
         </div>
         <button type="submit" class="btn btn-primary w-100">SUBMIT</button>
-        <label class="mt-2">Tidak Punya Akun? 
+        <label class="mt-2">Sudah Punya Akun? 
           <a href="#" class="text-decoration-none" onclick="auth('login')">Login</a>
         </label>
       </div>

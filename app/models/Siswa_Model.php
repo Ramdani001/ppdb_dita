@@ -65,7 +65,11 @@ class Siswa_Model{
         $record2 = $this->db->single();
         $id_siswa = $record2['id_siswa'];
 
+        
+ 
         if(!$id_siswa){ 
+        //     var_dump("Masuk IF");
+        // die();
             $query = "INSERT INTO siswa VALUES (:result, :id_person, :no_pendaftaran, :asal_sekolah, :npsn_sekolah_asal,:nisn, :nik, :biaya_sekolah, :sd, :smp, :kip, :cita_cita, :hobi, :anak_ke, :transportasi, :jarak_sekolah, :waktu_tempuh, :jml_saudara, :no_kk, :kepala_keluarga, :status, :jurusan, :created_at, :created_at)";
     
             $this->db->query($query);
@@ -96,6 +100,7 @@ class Siswa_Model{
             $this->db->bind(':created_at', $created_at);
             
         }else{
+            
             $id_person                 = $_POST['id_person'];
             $no_pendaftaran            = $result;
             $asal_sekolah              = $_POST['asal_sekolah'];

@@ -13,7 +13,7 @@ class LoginController extends Controller {
         $this->view('templates/footer');
     }
 
-    public function logout(){
+    public function logout(){ 
         session_destroy(); 
         Flasher::setFlash('Logout Berhasil, semoga harimu menyenangkan &#128519;', 'Login', 'success');
 

@@ -5,6 +5,8 @@ $(document).ready(() => {
 
     $('#emailLogin').focus();
 
+    
+
 });
 
 function changeProf(e){

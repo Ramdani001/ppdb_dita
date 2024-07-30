@@ -83,4 +83,6 @@ function nextPage(p){
         form_foto.classList.add('d-none');
     }
 
-  }
+}
+
+

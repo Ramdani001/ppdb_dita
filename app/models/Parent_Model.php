@@ -76,7 +76,7 @@ class Parent_Model{
             $this->db->bind(':nik_ayah', '');
             $this->db->bind(':nama_ayah', $_POST['nama_ayah']);
             $this->db->bind(':lhir_ayah', $_POST['lhr_ayah']);
-            $this->db->bind(':tgl_lhr_ayah', date('Y-m-d'));
+            $this->db->bind(':tgl_lhr_ayah', $_POST['tgl_lhr_ayar']);
             $this->db->bind(':pendidikan_ayah', $_POST['pendidikan_ayah']);
             $this->db->bind(':pekerjaan_ayah', $_POST['pekerjaan_ayah']);
             $this->db->bind(':penghasilan_ayah', $_POST['penghasilan_ayah']);
@@ -129,7 +129,7 @@ class Parent_Model{
             $this->db->bind(':nik_ayah', '');
             $this->db->bind(':nama_ayah', $_POST['nama_ayah']);
             $this->db->bind(':lhir_ayah', $_POST['lhr_ayah']);
-            $this->db->bind(':tgl_lhr_ayah', date('Y-m-d'));
+            $this->db->bind(':tgl_lhr_ayah', $_POST['tgl_lhr_ayar']);
             $this->db->bind(':pendidikan_ayah', $_POST['pendidikan_ayah']);
             $this->db->bind(':pekerjaan_ayah', $_POST['pekerjaan_ayah']);
             $this->db->bind(':penghasilan_ayah', $_POST['penghasilan_ayah']);

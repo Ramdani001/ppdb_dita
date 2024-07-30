@@ -1,8 +1,8 @@
 <?php
 
 // BASE URL
-define('BASEURL', 'http://localhost/ppdb_dita/');
-define('COMPONENT_PATH', 'http://localhost/ppdb_dita/app/views/component/');
+define('BASEURL', 'http://localhost/ditappdb/');
+define('COMPONENT_PATH', 'http://localhost/ditappdb/app/views/component/');
 
 // define('BASEURL', '203.175.10.169/ppdb_dita/');
 // define('COMPONENT_PATH', '203.175.10.169/ppdb_dita/app/views/component/');

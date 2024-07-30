@@ -48,6 +48,7 @@
     $penghasilan_ayah = "";
 
     $opt_penghasilan = array(
+      '0' => '0',
       '1.000.000 - 2.000.000' => '1.000.000 - 2.000.000',
       '2.000.000 - 4.000.000' => '2.000.000 - 4.000.000',
       '4.000.000 - 6.000.000' =>  '4.000.000 - 6.000.000',
@@ -875,23 +876,23 @@
                 </div>
               </div>
             </td>
-            <!-- <td> -->
-              <!-- NIK Ayah -->
-              <!-- <div class="row g-3 align-items-center m-2">
+            <td> 
+              <!-- Tgl Ayah -->
+              <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
-                  <label for="nik_ayah" class="col-form-label">NIK Ayah</label>
+                  <label for="nik_ayah" class="col-form-label">Tanggal Lahir Ayah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nik_ayah" name="nik_ayah" class="form-control" value="<?php
+                  <input type="date" id="tgl_lhr_ayar" name="tgl_lhr_ayar" class="form-control" value="<?php
                     if($parent){
-                      echo $parent['nik_ayah'];
+                      echo $parent['tgl_lhr_ayah'];
                     }else{
                       echo "";
                     }
                   ?>" required>
                 </div>
-              </div> -->
-            <!-- </td> -->
+              </div>
+            </td>
           </tr>
           <tr>
             <td>
@@ -1159,7 +1160,7 @@
                       }else{
                         echo "";
                       }
-                    ?>" required>
+                    ?>">
                  </div>
                  <!--  -->
                  <div>
@@ -1170,7 +1171,7 @@
                       }else{
                         echo "";
                       }
-                    ?>" required>
+                    ?>">
                  </div>
                  <!--  -->
                  <div>
@@ -1181,7 +1182,7 @@
                       }else{
                         echo "";
                       }
-                    ?>" required>
+                    ?>">
                  </div>
                  <!--  -->
                  <div>
@@ -1192,7 +1193,7 @@
                       }else{
                         echo "";
                       }
-                    ?>" required>
+                    ?>">
                  </div>
                  <!--  -->
            </div>
@@ -1200,7 +1201,7 @@
            <div>
               <span>Alamat</span>
               <div>
-                <textarea name="alamat_wali" id="alamat_wali" cols="100" class="form-control" required style="text-align: left;"><?php if($parent){ echo $parent['alamat_wali'];
+                <textarea name="alamat_wali" id="alamat_wali" cols="100" class="form-control" style="text-align: left;"><?php if($parent){ echo $parent['alamat_wali'];
                     }else{
                       echo "";
                     }?></textarea>
@@ -1250,13 +1251,3 @@
 </main>
 <!-- Content -->
 </div>
-
-<script>
-  
-  let btn_pesan = document.getElementById('pesan_button');
-
-  btn_pesan.addEventListener('click', () => {
-    alert('Anda Belum Memiliki Pesan');
-  });
-
-</script>

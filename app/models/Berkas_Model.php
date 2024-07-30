@@ -64,7 +64,6 @@ class Berkas_Model{
             $pindah = move_uploaded_file($tmpName, 'public/assets/img/profile/'. $namaFileBaru);
 
             if($pindah){
-                
                 $email = $_POST['email'];
                 $query = "SELECT * FROM person WHERE email='$email'";
                 $this->db->query($query);
@@ -73,7 +72,8 @@ class Berkas_Model{
                 $id_berkas = $this->db->single()['id_berkas'];
 
                 if(!$id_berkas){
-                    $query = "INSERT INTO berkas VALUES (:id_berkas, :kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus";
+                    
+                    $query = "INSERT INTO berkas VALUES (:id_berkas, :kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
                     $this->db->query($query);
                     
                     $this->db->bind(':id_berkas', $result);
@@ -89,12 +89,13 @@ class Berkas_Model{
                     $this->db->bind(':lulus', '-');
                     
 
+                    // var_dump($$result);
+                    // die();
                     $this->db->execute();
 
                     $inBer = $this->db->rowCount();
 
                     if($inBer > 0){
-
                         $email = $_POST['email'];
 
                         $query = "SELECT * FROM person WHERE email='$email'";

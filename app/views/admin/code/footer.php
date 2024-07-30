@@ -15,6 +15,13 @@
     
     <!-- My Script --> 
     <script src="<?= BASEURL ?>public/assets/scriptPPDB.js"></script>
+
+     <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+            alert("Selamat Anda telah di terima, untuk melanjutkan PENDAFTARAn diharapkan untuk melakukan pembayarann ke BRI 098098098098 A/N SMK Profita Bandung Kirimkan Bukti Pembayaran Ke no w.a 089xxxxxxxxxx");
+        });
+     </script>
+    
 </body>
 </html>
 
