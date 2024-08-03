@@ -141,13 +141,17 @@
                 <td class="text-center">
                   <div class="d-flex gap-3 justify-content-center">
   
-                    <button class="btn btn-primary text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-siswa='<?= json_encode($value) ?>'>
+                    <button class="btn btn-primary text-light" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-siswa='<?= json_encode($value) ?>'>
                       <i class="ri-eye-line"></i>
                     </button>
   
-                    <button class="btn btn-success text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-siswa='<?= json_encode($value) ?>'>
+                    <button class="btn btn-success text-light" type="button" data-bs-toggle="modal" data-bs-target="#editModal" data-siswa='<?= json_encode($value) ?>'>
                       <i class="ri-file-edit-line"></i>
                     </button>
+ 
+                    <a class="btn btn-secondary text-light" type="button" href="<?= BASEURL ?>ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">
+                    <i class="bi bi-printer"></i>
+                    </a>
   
                     <!-- <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" data-siswa='<?= json_encode($value) ?>'>
                       <i class="ri-delete-bin-2-line"></i>

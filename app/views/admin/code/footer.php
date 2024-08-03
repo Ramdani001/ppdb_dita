@@ -16,10 +16,20 @@
     <!-- My Script --> 
     <script src="<?= BASEURL ?>public/assets/scriptPPDB.js"></script>
 
-     <script>
-        document.addEventListener("DOMContentLoaded", function(e) {
-            alert("Selamat Anda telah di terima, untuk melanjutkan PENDAFTARAn diharapkan untuk melakukan pembayarann ke BRI 098098098098 A/N SMK Profita Bandung Kirimkan Bukti Pembayaran Ke no w.a 089xxxxxxxxxx");
-        });
+     <script> 
+
+        let status_siswa = document.getElementById("status_siswa_df").value;
+
+        if(status_siswa == 1){
+            document.addEventListener("DOMContentLoaded", function(e) {
+                alert("Selamat Anda telah di terima, untuk melanjutkan PENDAFTARAN diharapkan untuk datang ke SMK Profita Bandung dengan membawa surat lolos seleksi administrasi yang ada di feature pesan");
+            });
+        }else if(status_siswa == 2){
+            document.addEventListener("DOMContentLoaded", function(e) {
+                alert("Mohon maaf anda tidak bisa melanjutkan proses pendaftaran dikarenakan anda Tidak Lolos Dalam Tahap Seleksi Administrasi");
+            });
+        }
+
      </script>
     
 </body>

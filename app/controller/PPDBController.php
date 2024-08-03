@@ -136,10 +136,6 @@ class PPDBController extends Controller {
 
     public function updateBerkas($id = 0){
         $berkas = $this->model('Berkas_Model')->allBerkas($_POST);
- 
-        // var_dump($berkas);
-        // die();
-
         if($berkas > 0 ){
             $id_person = (int)$id; 
             $data['title'] = "PPDB SMK PROFITA";

@@ -49,14 +49,6 @@ class Berkas_Model{
             $extensionGambar = explode('.', $nameFile);
             $extensionGambar = strtolower(end($extensionGambar));
 
-            if( $ukuran > 2500000 ){
-                echo "<script>
-                        alert('Ukuran Gambar Terlalu Besar !!!');
-                    </script>";
-
-                return false;
-            };
-
             $namaFileBaru = uniqid();
             $namaFileBaru .= '.';
             $namaFileBaru .= $extensionGambar;
@@ -157,8 +149,6 @@ class Berkas_Model{
         if($id_cari > 0){
             $id_berkas = $this->db->single()['id_berkas'];
         }else{
-            // var_dump($result + 1);
-            // die();
             $query = "INSERT INTO berkas VALUES (:id_berkas, :kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
             $this->db->query($query);
             

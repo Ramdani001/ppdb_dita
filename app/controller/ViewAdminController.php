@@ -74,4 +74,9 @@ class ViewAdminController extends Controller {
 
     }
 
+    public function PrintSiswa($id = 0){
+        var_dump($id);
+        die();
+    }
+
 }

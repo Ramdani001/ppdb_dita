@@ -83,6 +83,7 @@
     </a>
   </div><!-- End Logo -->
 
+  <input type="hidden" id="status_siswa_df" value="<?= (int)$siswa['st'] ?>">
 
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
