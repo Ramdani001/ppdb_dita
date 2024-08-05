@@ -135,7 +135,7 @@
                       }else{
                         echo "Ditolak";
                       }
-                    ?>
+                    ?> 
                   </button>
                 </td>
                 <td class="text-center">
@@ -149,10 +149,10 @@
                       <i class="ri-file-edit-line"></i> 
                     </button>
  
-                    <a class="btn btn-secondary text-light" type="button" href="<?= BASEURL ?>ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">
+                    <a class="btn btn-secondary text-light" type="button" target="_blank" href="<?= BASEURL ?>ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">
                     <i class="bi bi-printer"></i>
                     </a>
-  
+   
                     <!-- <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" data-siswa='<?= json_encode($value) ?>'>
                       <i class="ri-delete-bin-2-line"></i>
                     </button> -->

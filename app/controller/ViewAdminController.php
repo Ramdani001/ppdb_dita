@@ -42,7 +42,7 @@ class ViewAdminController extends Controller {
         $this->view('admin/code/header', $data);
             $this->view('admin/siswaDaftar', $data);
         $this->view('admin/code/footer');
-    }
+    } 
 
     public function laporan(){
         $data['title'] = "SMK PROFITA";
@@ -73,12 +73,13 @@ class ViewAdminController extends Controller {
         echo json_encode($data);
 
     }
- 
+  
     public function PrintSiswa($id = 0){
         $data['title'] = "SMK PROFITA";
         $data['list_data'] = $this->model('Siswa_model')->getLap($id);
 
-        $id_person = $data['list_data'];
+        // Get data Person
+
        
         $this->view('admin/code/header', $data);
             $this->view('ppdb/berkas/lap_siswa', $data);

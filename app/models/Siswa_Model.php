@@ -187,7 +187,11 @@ class Siswa_Model{
 
     public function getLap($id){
  
-        $sql = "SELECT * FROM siswa WHERE id_siswa=$id";
+        $sql = "SELECT a.*, b.*, c.* FROM siswa a 
+                LEFT JOIN person b ON a.id_person=b.id_person
+                LEFT JOIN parents c ON a.id_siswa=c.id_siswa
+                WHERE a.id_siswa=$id
+                LIMIT 1";
         $this->db->query($sql);
         $this->db->execute();
         $record = $this->db->single();

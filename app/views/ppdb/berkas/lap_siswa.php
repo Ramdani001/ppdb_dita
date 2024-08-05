@@ -1,3 +1,7 @@
+<?php
+
+    $siswa = $data['list_data'];
+?>
 <style>
     @media print {
         @page { margin: 0; }
@@ -8,12 +12,12 @@
     }
 </style>
 <main style="margin: 20px;">
-    <div style="display: grid; justify-content: end; text-align: center">
+    <!-- <div style="display: grid; justify-content: end; text-align: center">
         <span style="font-size: 13px;">Nomor Pendaftaran</span>
         <span style="font-size: 15px;">
-            <?= $data['list_data']['no_pendaftaran'] ?>
+            <?= $siswa['no_pendaftaran'] ?>
         </span>
-    </div>
+    </div> -->
 
     <h6 style="text-align: center; margin-top: 20px;">
         <u>
@@ -33,7 +37,7 @@
                 <span style="width: 250px;">Nama Lengkap</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    SMP Bhayangkary
+                    <?= $siswa['nama'] ?>
                 </span>
             </div>
             <!-- Jenis Kelamin -->
@@ -41,7 +45,7 @@
                 <span style="width: 250px;">Jenis Kelamin</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Laki-laki
+                    <?= $siswa['jk'] ?>
                 </span>
             </div>
             <!-- No Telepon -->
@@ -49,7 +53,7 @@
                 <span style="width: 250px;">No Telepon</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    089876787656
+                    <?= $siswa['no_telp'] ?>
                 </span>
             </div>
             <!-- Tempat Lahir -->
@@ -57,7 +61,7 @@
                 <span style="width: 250px;">Tempat Lahir</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Bandung
+                <?= $siswa['tempat_lhir'] ?>
                 </span>
             </div>
             <!-- Tanggal Lahir -->
@@ -65,23 +69,23 @@
                 <span style="width: 250px;">Tanggal Lahir</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    12-02-2002
+                    <?= $siswa['tanggal_lahir'] ?>
                 </span>
             </div>
             <!-- NIK -->
-            <div style="display: flex;">
+            <!-- <div style="display: flex;">
                 <span style="width: 250px;">NIK</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    0938473898000012
+                    <?= $siswa['nik'] ?>
                 </span>
-            </div>
+            </div> -->
             <!-- NISN -->
             <div style="display: flex;">
                 <span style="width: 250px;">NISN</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    345345345345453
+                    <?= $siswa['nisn'] ?>
                 </span>
             </div>
             <!-- Agama -->
@@ -89,7 +93,7 @@
                 <span style="width: 250px;">Agama</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Islam
+                    <?= $siswa['agama'] ?>
                 </span>
             </div>
             <!-- Kewarganegaraan -->
@@ -97,7 +101,7 @@
                 <span style="width: 250px;">Kewarganegaraan</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Indonesia
+                    <?= $siswa['kewarganegaraan'] ?>
                 </span>
             </div>
             <!-- Anak Ke -->
@@ -105,7 +109,7 @@
                 <span style="width: 250px;">Anak Ke</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Indonesia
+                    <?= $siswa['anak_ke'] ?>
                 </span>
             </div>
             <!-- Jumlah Saudara/i -->
@@ -113,7 +117,7 @@
                 <span style="width: 250px;">Jumlah Saudara/i</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Indonesia
+                    <?= $siswa['jml_saudara'] ?>
                 </span>
             </div>
             <!-- Asal Sekolah -->
@@ -121,7 +125,7 @@
                 <span style="width: 250px;">Asal Sekolah</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    SMP Kemala Bhayangkari
+                    <?= $siswa['asal_sekolah'] ?>
                 </span>
             </div>
             <!-- Jurusan Yang Dipilih -->
@@ -129,7 +133,7 @@
                 <span style="width: 250px;">Jurusan Yang Dipilih</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Akunting
+                    <?= $siswa['jurusan'] ?>
                 </span>
             </div>
             <!--  -->
@@ -154,7 +158,7 @@
                 <span style="width: 250px;">Nama Ayah Kandung</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Robert Silalahi
+                    <?= $siswa['nama_ayah'] ?>
                 </span>
             </div>
             <!-- Tanggal Lahir Ayah -->
@@ -162,7 +166,7 @@
                 <span style="width: 250px;">Tanggal Lahir</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    23-03-1989
+                    <?= $siswa['lhir_ayah'] ?>
                 </span>
             </div>
             <!-- Pekerjaan -->
@@ -170,7 +174,7 @@
                 <span style="width: 250px;">Pekerjaan</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    23-03-1989
+                    <?= $siswa['pekerjaan_ayah'] ?>
                 </span>
             </div>
             <!-- Penghasilan Perbulan -->
@@ -178,7 +182,7 @@
                 <span style="width: 250px;">Penghasilan Perbulan</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    4.000.000 - 8.000.000
+                    <?= $siswa['penghasilan_ayah'] ?>
                 </span>
             </div>
 
@@ -195,7 +199,7 @@
                 <span style="width: 250px;">Nama Ibu Kandung</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Cindy Amelia
+                    <?= $siswa['nama_ibu'] ?>
                 </span>
             </div>
             <!-- Tanggal Lahir Ibu -->
@@ -203,15 +207,14 @@
                 <span style="width: 250px;">Tanggal Lahir</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    23-03-1989
+                    <?= $siswa['lhir_ibu'] ?>
                 </span>
             </div>
-            <!-- Pekerjaan -->
             <div style="display: flex;">
-                <span style="width: 250px;">Pekerjaan</span>
+                <span style="width: 250px;">pendidikan</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Ibu Rumah Tangga
+                    <?= $siswa['pendidikan_ibu'] ?>
                 </span>
             </div>
             <!-- Penghasilan Perbulan -->
@@ -219,7 +222,7 @@
                 <span style="width: 250px;">Penghasilan Perbulan</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    4.000.000 - 8.000.000
+                    <?= $siswa['penghasilan_ibu'] ?>
                 </span>
             </div>
             <!--  -->
@@ -235,15 +238,15 @@
                 <span style="width: 250px;">Nama Wali Kandung</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Cindy Amelia
+                    <?= $siswa['name_wali'] ?>
                 </span>
             </div>
             <!-- Tanggal Lahir Wali -->
             <div style="display: flex;">
-                <span style="width: 250px;">Tanggal Lahir</span>
+                <span style="width: 250px;">No Wali</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    23-03-1989
+                    <?= $siswa['no_wali'] ?>
                 </span>
             </div>
             <!-- Pekerjaan -->
@@ -251,15 +254,7 @@
                 <span style="width: 250px;">Pekerjaan</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Ibu Rumah Tangga
-                </span>
-            </div>
-            <!-- Penghasilan Perbulan -->
-            <div style="display: flex;">
-                <span style="width: 250px;">Penghasilan Perbulan</span>
-                <span style="width: 10px;">:</span>
-                <span>
-                    4.000.000 - 8.000.000
+                    <?= $siswa['pekerjaan_wali'] ?>
                 </span>
             </div>
             <!-- Hubungan Dengan Siswa -->
@@ -267,7 +262,14 @@
                 <span style="width: 250px;">Hubungan Dengan Siswa</span>
                 <span style="width: 10px;">:</span>
                 <span>
-                    Kaka Kandung
+                    <?= $siswa['hubungan_wali'] ?>
+                </span>
+            </div>
+            <div style="display: flex;">
+                <span style="width: 250px;">Alamat Wali</span>
+                <span style="width: 10px;">:</span>
+                <span>
+                    <?= $siswa['alamat_wali']?>
                 </span>
             </div>
             </div>
