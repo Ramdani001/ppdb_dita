@@ -146,7 +146,7 @@
                     </button>
   
                     <button class="btn btn-success text-light" type="button" data-bs-toggle="modal" data-bs-target="#editModal" data-siswa='<?= json_encode($value) ?>'>
-                      <i class="ri-file-edit-line"></i>
+                      <i class="ri-file-edit-line"></i> 
                     </button>
  
                     <a class="btn btn-secondary text-light" type="button" href="<?= BASEURL ?>ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">

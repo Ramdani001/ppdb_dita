@@ -36,7 +36,7 @@ class ViewAdminController extends Controller {
     public function siswaDaftar($id = 0){
         $data['title'] = "SMK PROFITA";
 
-        $data['list_siswa'] = $this->model('Siswa_model')->getAll();
+        $data['list_siswa'] = $this->model('Siswa_model')->getAll(); 
         $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
 
         $this->view('admin/code/header', $data);
@@ -73,10 +73,16 @@ class ViewAdminController extends Controller {
         echo json_encode($data);
 
     }
-
+ 
     public function PrintSiswa($id = 0){
-        var_dump($id);
-        die();
+        $data['title'] = "SMK PROFITA";
+        $data['list_data'] = $this->model('Siswa_model')->getLap($id);
+
+        $id_person = $data['list_data'];
+       
+        $this->view('admin/code/header', $data);
+            $this->view('ppdb/berkas/lap_siswa', $data);
+        $this->view('admin/code/footer');
     }
 
 }

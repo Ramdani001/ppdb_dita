@@ -185,4 +185,18 @@ class Siswa_Model{
         return $record;
     }
 
+    public function getLap($id){
+ 
+        $sql = "SELECT * FROM siswa WHERE id_siswa=$id";
+        $this->db->query($sql);
+        $this->db->execute();
+        $record = $this->db->single();
+
+        // var_dump($record);
+        // die();
+
+        return $record;
+
+    }
+
 }
