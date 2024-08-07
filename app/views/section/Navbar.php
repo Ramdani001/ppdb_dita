@@ -23,10 +23,10 @@
                 <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#heroSection">Beranda</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#profileSection">Profile</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#profileSection">Sambutan</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing/Akademika">tenaga Pendidik</a>
+                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing/Akademika">Tenaga Pendidik</a>
             </div>
             <div class="nav-link">
                 <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#galeriSection">Galeri</a>

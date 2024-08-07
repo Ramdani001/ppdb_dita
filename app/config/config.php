@@ -2,7 +2,7 @@
 
 // BASE URL
 // define('BASEURL', 'http://localhost/ditappdb/');
-define('BASEURL', 'http://localhost/ppdb_dita/');
+define('BASEURL', 'http://localhost/ditappdb/');
 define('COMPONENT_PATH', 'http://localhost/ditappdb/app/views/component/');
 
 // define('BASEURL', '203.175.10.169/ppdb_dita/');
