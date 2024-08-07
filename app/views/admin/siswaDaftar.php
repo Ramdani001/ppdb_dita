@@ -642,14 +642,14 @@
       </div>
       <div class="modal-body">
         <form action="<?= BASEURL ?>AdminController/editStatus" method="POST">
-          <div style="display: flex; justify-content: space-between;">
+          <div style="">
             <div class="w-50">
-              <div><span>No. Pendaftaran</span></div>
-              <input type="text" style="border: 0; font-size: 30px; font-weight: bold; background: transparent; widt: 100%;" name="edit_pendaftaran" id="edit_pendaftaran">
+              <!-- <div><span>No. Pendaftaran</span></div> -->
+              <input type="text" style="border: 0; width: 0; font-size: 30px; font-weight: bold; display: none; background: transparent; widt: 100%;" name="edit_pendaftaran" id="edit_pendaftaran" >
             </div>
             <div class="w-100">
               <div><span>Status Siswa</span></div>
-              <select class="form-select" aria-label="Default select example" name="edit_stat_siswa" id="edit_stat_siswa" style="">
+              <select class="form-select" aria-label="Default select example" name="edit_stat_siswa" id="edit_stat_siswa" style="width: 100%;">
                 <option selected>-- Status Siswa --</option>
                 <option value="0">Menunggu</option>
                 <option value="1">Di terima</option>
