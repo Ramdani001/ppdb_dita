@@ -14,7 +14,7 @@
         <!-- Card --> 
          <!-- Card -->
          <div class="card shadow-md" style="width: 17rem; height: 17rem; cursor: pointer; border-radius: 6px; background-color: transparent;">
-          <img src="<?= BASEURL ?>public/assets/img/gal1.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
+          <img src="<?= BASEURL ?>public/assets/img/galeri/gal2.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
           <div id="cardBody-gal" class="card-body position-absolute bottom-0 w-100 text-center text-light" style="background-color: #00000080;">
             <h5 class="card-title">PMR</h5>
             <p class="card-text">12 Photo</p>
@@ -23,7 +23,7 @@
         <!-- Card -->
          <!-- Card -->
          <div class="card shadow-md" style="width: 17rem; height: 17rem; cursor: pointer; border-radius: 6px; background-color: transparent;">
-          <img src="<?= BASEURL ?>public/assets/img/gal1.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
+          <img src="<?= BASEURL ?>public/assets/img/galeri/gal3.jpeg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
           <div id="cardBody-gal" class="card-body position-absolute bottom-0 w-100 text-center text-light" style="background-color: #00000080;">
             <h5 class="card-title">PMR</h5>
             <p class="card-text">12 Photo</p>
@@ -32,7 +32,7 @@
         <!-- Card -->
          <!-- Card -->
          <div class="card shadow-md" style="width: 17rem; height: 17rem; cursor: pointer; border-radius: 6px; background-color: transparent;">
-          <img src="<?= BASEURL ?>public/assets/img/gal1.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
+          <img src="<?= BASEURL ?>public/assets/img/galeri/gal4.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
           <div id="cardBody-gal" class="card-body position-absolute bottom-0 w-100 text-center text-light" style="background-color: #00000080;">
             <h5 class="card-title">PMR</h5>
             <p class="card-text">12 Photo</p>
@@ -41,7 +41,7 @@
         <!-- Card -->
          <!-- Card -->
          <div class="card shadow-md" style="width: 17rem; height: 17rem; cursor: pointer; border-radius: 6px; background-color: transparent;">
-          <img src="<?= BASEURL ?>public/assets/img/gal1.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
+          <img src="<?= BASEURL ?>public/assets/img/galeri/gal5.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
           <div id="cardBody-gal" class="card-body position-absolute bottom-0 w-100 text-center text-light" style="background-color: #00000080;">
             <h5 class="card-title">PMR</h5>
             <p class="card-text">12 Photo</p>
@@ -50,7 +50,7 @@
         <!-- Card -->
          <!-- Card -->
          <div class="card shadow-md" style="width: 17rem; height: 17rem; cursor: pointer; border-radius: 6px; background-color: transparent;">
-          <img src="<?= BASEURL ?>public/assets/img/gal1.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
+          <img src="<?= BASEURL ?>public/assets/img/galeri/gal6.jpg" class="card-img-top" alt="Galeri" style="height: 17rem; object-fit: cover; border-radius: 6px;" >
           <div id="cardBody-gal" class="card-body position-absolute bottom-0 w-100 text-center text-light" style="background-color: #00000080;">
             <h5 class="card-title">PMR</h5>
             <p class="card-text">12 Photo</p>
