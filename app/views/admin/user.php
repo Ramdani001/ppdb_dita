@@ -101,7 +101,7 @@
         <table class="table table-hover">
           <thead>
               <tr>
-                  <th class="text-center">#</th>
+                  <th class="text-center">No</th>
                   <th class="text-center">Email</th>
                   <th class="text-center">Tipe Akun</th>
                   <th class="text-center">Aksi</th>
