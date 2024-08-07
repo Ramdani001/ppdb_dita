@@ -102,9 +102,9 @@
         ?>
 
 
-          <span class="d-none d-md-block dropdown-toggle ps-2">Rizkan Ramdani</span>
+<span class="d-none d-md-block dropdown-toggle ps-2"><?= $person['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
-
+ 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
             <h6>Rizkan Ramdani</h6>
