@@ -99,7 +99,7 @@
 
         <table class="table table-hover">
           <thead>
-            <th class="text-center">#</th>
+            <th class="text-center">No</th>
             <th class="text-center">Nama</th>
             <th class="text-center">Asal Sekolah</th>
             <th class="text-center">No.Telpon</th>
