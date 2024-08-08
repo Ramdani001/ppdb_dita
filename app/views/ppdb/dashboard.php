@@ -261,20 +261,17 @@
             </div>
             </td> -->
             <td>
-              <!-- No Daftar -->
+              <!-- Nama Lengkap -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
-                  <label for="inputPassword6" class="col-form-label">Asal Sekolah</label>
+                  <label for="nama_lengkap" class="col-form-label">Nama Lengkap</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" value="<?php if($siswa){
-                        echo $siswa['asal_sekolah'];
-                    }else{
-                      echo "";
-                      } ?>
-                  " required>
+                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?= $person['nama'] ?>" required>
                 </div>
               </div>
+              <!-- No Daftar -->
+             
             </td>
 
             <td>
@@ -309,24 +306,29 @@
               </div>
             </td> -->
             <td>
-              <!-- kewarganegaraan -->
-              <div class="row g-3 align-items-center m-2">
+            <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
-                  <label for="kewarganegaraan" class="col-form-label">Kewarganegaraan</label>
+                  <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" value="<?= $person['kewarganegaraan'] ?>" required>
+                  <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $person['jk'] ?>" required>
                 </div>
               </div>
+              
             </td>
             <td>
               <!-- Nama Lengkap -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
-                  <label for="nama_lengkap" class="col-form-label">Nama Lengkap</label>
+                  <label for="inputPassword6" class="col-form-label">Asal Sekolah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?= $person['nama'] ?>" required>
+                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" value="<?php if($siswa){
+                        echo $siswa['asal_sekolah'];
+                    }else{
+                      echo "";
+                      } ?>
+                  " required>
                 </div>
               </div>
             </td>
@@ -350,7 +352,7 @@
               <!-- Nama Lengkap -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
-                  <label for="tempat" class="col-form-label">Tempat</label>
+                  <label for="tempat" class="col-form-label">Tempat Lahir</label>
                 </div>
                 <div class="col-6">
                   <input type="Text" id="tempat" name="tempat" class="form-control" value="<?= $person['tempat_lhir'] ?>" required>
@@ -371,13 +373,13 @@
           </tr>
           <tr>
           <td>
-              <!-- Jenis Kelamin -->
-              <div class="row g-3 align-items-center m-2">
+             <!-- kewarganegaraan -->
+             <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
-                  <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
+                  <label for="kewarganegaraan" class="col-form-label">Kewarganegaraan</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $person['jk'] ?>" required>
+                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" value="<?= $person['kewarganegaraan'] ?>" required>
                 </div>
               </div>
             </td>
@@ -656,7 +658,7 @@
         <table class="w-100">
           <tr>
             <td colspan="2">
-              <!-- kewarganegaraan -->
+              <!-- Alamat -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-3">
                   <label for="alamat" class="col-form-label">Alamat</label>
@@ -730,7 +732,6 @@
               </div>
             </td>
             <td>
-              <!-- Jenis Kelamin -->
               <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
                   <label for="kab_kota" class="col-form-label">Kabupaten/Kota</label>
@@ -850,8 +851,18 @@
     <!-- form Data alamat -->
     <!-- form Data orangtuan -->
     <div id="form-orangtua" class="d-none">
+      
       <div class="w-100 p-3 border d-flex flex-wrap" style="background-color: #f9f8f8;">
         <table class="w-100">
+          <tr>
+            <td colspan="2">
+              <h6>
+                <b>
+                  <u>Ayah</u>
+                </b>
+              </h6>
+            </td>
+          </tr>
           <tr>
             <td>
               <!-- Status Ayah -->
@@ -969,6 +980,7 @@
               </div>
             </td>
           </tr>
+          
           <tr>
             <td>
               <!-- penghasilan Ayah -->
@@ -997,8 +1009,36 @@
               </div>
             </td>
             <td>
-              <!-- Status Ibu -->
+              <!-- No Hp Ibu -->
               <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="no_ibu" class="col-form-label">No. HP Ayah</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" id="no_ayah" name="no_ayah" class="form-control" style="width: 100%;" value="<?php
+                    if($parent){
+                      echo $parent['no_ayah'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <h6>
+                <b>
+                  <u>Ibu</u>
+                </b>
+              </h6>
+            </td>
+          </tr>
+          <tr>
+            <td>
+             <!-- Status Ibu -->
+             <div class="row g-3 align-items-center m-2">
                 <div class="col-6">
                   <label for="status_ibu" class="col-form-label">Status Ibu</label>
                 </div>
@@ -1010,25 +1050,6 @@
                 </div>
               </div>
             </td>
-          </tr>
-          <tr>
-            <!-- <td> -->
-              <!-- NIK IBU -->
-              <!-- <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="nik_ibu" class="col-form-label">NIK Ibu</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="nik_ibu" name="nik_ibu" class="form-control" value="<?php
-                    if($parent){
-                      echo $parent['nik_ibu'];
-                    }else{
-                      echo "";
-                    }
-                  ?>" required>
-                </div>
-              </div> -->
-            <!-- </td> -->
             <td>
               <!-- nama Ibu -->
               <div class="row g-3 align-items-center m-2">
@@ -1098,6 +1119,22 @@
                       echo "";
                     }
                   ?>" required>
+                </div>
+              </div>
+            </td>
+            <td>
+            <div class="row g-3 align-items-center m-2">
+                <div class="col-6">
+                  <label for="no_ibu" class="col-form-label">Pekerjaan Ibu</label>
+                </div>
+                <div class="col-6">
+                  <input type="text" id="pekerjaan_ibu" name="pekerjaan_ibu" class="form-control" style="width: 200px;" value="<?php
+                    if($parent){
+                      echo $parent['pekerjaan_ibu'];
+                    }else{
+                      echo "";
+                    }
+                  ?>" required> 
                 </div>
               </div>
             </td>

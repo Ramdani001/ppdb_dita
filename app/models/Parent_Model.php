@@ -68,7 +68,7 @@ class Parent_Model{
         
         if(!$id_check){
             
-            $queryP = "INSERT INTO parents VALUES (:id_parent, :id_siswa, :nik_ayah, :nama_ayah, :lhir_ayah, :tgl_lhr_ayah, :pendidikan_ayah, :pekerjaan_ayah, :penghasilan_ayah, :status_ayah, :nik_ibu, :nama_ibu, :lhir_ibu, :tgl_lhr_ibu, :no_ibu, :pendidikan_ibu, :penghasilan_ibu, :name_wali, :no_wali ,:hubungan_wali, :pekerjaan_wali, :alamat_wali)";
+            $queryP = "INSERT INTO parents VALUES (:id_parent, :id_siswa, :nik_ayah, :nama_ayah, :lhir_ayah, :tgl_lhr_ayah, :pendidikan_ayah, :pekerjaan_ayah, :penghasilan_ayah, :status_ayah, :no_ayah ,:nik_ibu, :nama_ibu, :lhir_ibu, :tgl_lhr_ibu, :no_ibu, :pendidikan_ibu, pekerjaan_ibu ,:penghasilan_ibu, :name_wali, :no_wali ,:hubungan_wali, :pekerjaan_wali, :alamat_wali)";
             $this->db->query($queryP);
             
             $this->db->bind(':id_parent', $result);
@@ -81,12 +81,14 @@ class Parent_Model{
             $this->db->bind(':pekerjaan_ayah', $_POST['pekerjaan_ayah']);
             $this->db->bind(':penghasilan_ayah', $_POST['penghasilan_ayah']);
             $this->db->bind(':status_ayah', $_POST['status_ayah']);
+            $this->db->bind(':no_ayah', $_POST['no_ayah']);
             $this->db->bind(':nik_ibu', '');
             $this->db->bind(':nama_ibu', $_POST['nama_ibu']);
             $this->db->bind(':lhir_ibu', $_POST['lhr_ibu']);
             $this->db->bind(':tgl_lhr_ibu', $_POST['tgl_lhir_ibu']);
             $this->db->bind(':no_ibu', $_POST['no_ibu']);
             $this->db->bind(':pendidikan_ibu', $_POST['pendidikan_ibu']);
+            $this->db->bind(':pekerjaan_ibu', $_POST['pekerjaan_ibu']);
             $this->db->bind(':penghasilan_ibu', $_POST['penghasilan_ibu']);
             $this->db->bind(':name_wali', $_POST['name_wali']);
             $this->db->bind(':no_wali', $_POST['no_wali']);
@@ -99,6 +101,7 @@ class Parent_Model{
 
         }else{
             // $id_check= $id_check['id_siswa'];
+            
             $queryUp = "UPDATE parents 
             SET 
                 nik_ayah=:nik_ayah,
@@ -109,12 +112,14 @@ class Parent_Model{
                 pekerjaan_ayah=:pekerjaan_ayah,
                 penghasilan_ayah=:penghasilan_ayah,
                 status_ayah=:status_ayah,
+                no_ayah=:no_ayah,
                 nik_ibu=:nik_ibu,
                 nama_ibu=:nama_ibu,
                 lhir_ibu=:lhir_ibu,
                 tgl_lhr_ibu=:tgl_lhr_ibu,
                 no_ibu=:no_ibu,
                 pendidikan_ibu=:pendidikan_ibu,
+                pekerjaan_ibu=:pekerjaan_ibu,
                 penghasilan_ibu=:penghasilan_ibu,
                 name_wali=:name_wali,
                 no_wali=:no_wali,
@@ -134,12 +139,14 @@ class Parent_Model{
             $this->db->bind(':pekerjaan_ayah', $_POST['pekerjaan_ayah']);
             $this->db->bind(':penghasilan_ayah', $_POST['penghasilan_ayah']);
             $this->db->bind(':status_ayah', $_POST['status_ayah']);
+            $this->db->bind(':no_ayah', $_POST['no_ayah']);
             $this->db->bind(':nik_ibu', '');
             $this->db->bind(':nama_ibu', $_POST['nama_ibu']);
             $this->db->bind(':lhir_ibu', $_POST['lhr_ibu']);
             $this->db->bind(':tgl_lhr_ibu', $_POST['tgl_lhir_ibu']);
             $this->db->bind(':no_ibu', $_POST['no_ibu']);
             $this->db->bind(':pendidikan_ibu', $_POST['pendidikan_ibu']);
+            $this->db->bind(':pekerjaan_ibu', $_POST['pekerjaan_ibu']);
             $this->db->bind(':penghasilan_ibu', $_POST['penghasilan_ibu']);
             $this->db->bind(':name_wali', $_POST['name_wali']);
             $this->db->bind(':no_wali', $_POST['no_wali']);
