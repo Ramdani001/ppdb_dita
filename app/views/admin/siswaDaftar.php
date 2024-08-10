@@ -617,7 +617,7 @@
               </b>
             </h6>
             <div>
-              <a href="#" id="det_down_foto"  title="ImageName" target="_blank">
+              <a href="#" id="det_down_pas_foto"  title="ImageName" target="_blank">
                 <img src="" alt="" id="det_foto" style="width: 200px; height: 250px;">
               </a>
             </div>
@@ -839,7 +839,7 @@
         document.getElementById('det_down_lulus').href = base8 + fl8;
         document.getElementById('det_down_lulus').download = fl8;
 
-        
+        console.log(siswa.pas_foto)
         // Img
         document.getElementById('det_kk').src = base_url+"public/assets/img/kk/"+siswa.kk;
         document.getElementById('det_akta').src = base_url+"public/assets/img/akta/"+siswa.akta;
