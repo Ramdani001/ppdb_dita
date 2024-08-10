@@ -519,8 +519,9 @@
               </b>
             </h6>
             <div>
-                <img src="" alt="" id="det_kk" style="width: 200px; height: 250px;">
-                <!-- <a href="#" download="det_down_kk"  title="ImageName"> -->
+              <a href="#" id="det_down_kk"  title="ImageName" target="_blank">
+              <img src="" alt="" id="det_kk" style="width: 200px; height: 250px;">
+                </a>
             </div>
           </div>
 
@@ -764,7 +765,12 @@
         document.getElementById('det_nik_ibu').value = siswa.nik_ibu;
 
         
-        // 
+        const baseUrl = base_url+"public/assets/img/kk/";
+        const fileName = siswa.kk;  // assuming siswa.kk contains the file name
+
+        document.getElementById('det_down_kk').href = baseUrl + fileName;
+        document.getElementById('det_down_kk').download = fileName;
+
         
         // Img
         document.getElementById('det_kk').src = base_url+"public/assets/img/kk/"+siswa.kk;
