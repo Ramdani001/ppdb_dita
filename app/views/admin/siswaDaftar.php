@@ -781,11 +781,14 @@
         document.getElementById('det_nik_ibu').value = siswa.nik_ibu;
 
         
-        const baseUrl = base_url+"public/assets/img/kk/";
-        const fileName = siswa.kk;  // assuming siswa.kk contains the file name
+        // Download Berkas
+        const baseUrl = base_url+"public/assets/img/";
+        const fileName = siswa.kk; 
 
-        document.getElementById('det_down_kk').href = baseUrl + fileName;
+        document.getElementById('det_down_kk').href = baseUrl +"kk"+ fileName;
         document.getElementById('det_down_kk').download = fileName;
+
+        
 
         
         // Img
