@@ -764,7 +764,7 @@
         document.getElementById('det_nik_ibu').value = siswa.nik_ibu;
 
         
-        // document.getElementById('det_down_kk').download = base_url+"public/assets/img/kk/"+siswa.kk;
+        // 
         
         // Img
         document.getElementById('det_kk').src = base_url+"public/assets/img/kk/"+siswa.kk;
