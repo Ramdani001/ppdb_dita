@@ -37,21 +37,21 @@ class Parent_Model{
                 break;
         }
         // =====================================
- 
-        $email = $_POST['email'];
-
-        $query = "SELECT * FROM person WHERE email=:email";
-
+        $id_person1 = $_POST['id_person'];
+        
+        $query = "SELECT * FROM person WHERE id_person=:id_person";
+        
         $this->db->query($query);
-        $this->db->bind(':email', $email);
+        $this->db->bind(':id_person', $id_person1);
         $this->db->execute();
         $id_person = $this->db->single()['id_person'];
-
+        
+        
         $queryS = "SELECT id_siswa FROM siswa WHERE id_person=:id_person";
         $this->db->query($queryS);
         $this->db->bind(':id_person', $id_person);
         $this->db->execute();
-
+        
         $id_siswas = $this->db->single()['id_siswa'];
         
         $Check = "SELECT * FROM parents WHERE id_siswa=:id_siswaS";
@@ -59,20 +59,25 @@ class Parent_Model{
         $this->db->bind(':id_siswaS', $id_siswas);
         $this->db->execute();
         $id_check = $this->db->single();
-
-        $id_check= $id_check['id_siswa'];
-
-        // var_dump($id_siswas);
+        
+        // var_dump($id_check);
         // die();
-
+        $id_s= $id_check['id_siswa'];
+        
+        // var_dump($result);
+        // die();
+ 
         
         if(!$id_check){
             
-            $queryP = "INSERT INTO parents VALUES (:id_parent, :id_siswa, :nik_ayah, :nama_ayah, :lhir_ayah, :tgl_lhr_ayah, :pendidikan_ayah, :pekerjaan_ayah, :penghasilan_ayah, :status_ayah, :no_ayah ,:nik_ibu, :nama_ibu, :lhir_ibu, :tgl_lhr_ibu, :no_ibu, :pendidikan_ibu, pekerjaan_ibu ,:penghasilan_ibu, :name_wali, :no_wali ,:hubungan_wali, :pekerjaan_wali, :alamat_wali)";
+            $queryP = "INSERT INTO parents VALUES (:id_parent, :id_siswa, :nik_ayah, :nama_ayah, :lhir_ayah, :tgl_lhr_ayah, :pendidikan_ayah, :pekerjaan_ayah, :penghasilan_ayah, :status_ayah, :no_ayah ,:nik_ibu, :nama_ibu, :lhir_ibu, :tgl_lhr_ibu, :no_ibu, :pendidikan_ibu, :pekerjaan_ibu ,:penghasilan_ibu, :name_wali, :no_wali ,:hubungan_wali, :pekerjaan_wali, :alamat_wali)";
             $this->db->query($queryP);
+
+            // var_dump($_POST);
+            // die();
             
-            $this->db->bind(':id_parent', $result);
-            $this->db->bind(':id_siswa', $id_siswas);
+            $this->db->bind(':id_parent', (int)$result);
+            $this->db->bind(':id_siswa', (int)$id_siswas);
             $this->db->bind(':nik_ayah', '');
             $this->db->bind(':nama_ayah', $_POST['nama_ayah']);
             $this->db->bind(':lhir_ayah', $_POST['lhr_ayah']);
@@ -82,7 +87,7 @@ class Parent_Model{
             $this->db->bind(':penghasilan_ayah', $_POST['penghasilan_ayah']);
             $this->db->bind(':status_ayah', $_POST['status_ayah']);
             $this->db->bind(':no_ayah', $_POST['no_ayah']);
-            $this->db->bind(':nik_ibu', '');
+            $this->db->bind(':nik_ibu', ''); 
             $this->db->bind(':nama_ibu', $_POST['nama_ibu']);
             $this->db->bind(':lhir_ibu', $_POST['lhr_ibu']);
             $this->db->bind(':tgl_lhr_ibu', $_POST['tgl_lhir_ibu']);
@@ -97,8 +102,10 @@ class Parent_Model{
             $this->db->bind(':alamat_wali', $_POST['alamat_wali']);
 
             $this->db->execute();
+            // var_dump("te");
+            // die();
             return $this->db->rowCount();
-
+            
         }else{
             // $id_check= $id_check['id_siswa'];
             
@@ -127,7 +134,7 @@ class Parent_Model{
                 pekerjaan_wali=:pekerjaan_wali,
                 alamat_wali=:alamat_wali
             WHERE 
-                id_siswa= '$id_check'";
+                id_siswa= '$id_s'";
 
             $this->db->query($queryUp);
 

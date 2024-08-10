@@ -56,8 +56,8 @@ class Berkas_Model{
             $pindah = move_uploaded_file($tmpName, 'public/assets/img/profile/'. $namaFileBaru);
 
             if($pindah){
-                $email = $_POST['email'];
-                $query = "SELECT * FROM person WHERE email='$email'";
+                $id_person = $_POST['id_person'];
+                $query = "SELECT * FROM person WHERE id_person='$id_person'";
                 $this->db->query($query);
                 $this->db->execute();
 
@@ -65,10 +65,10 @@ class Berkas_Model{
 
                 if(!$id_berkas){
                     
-                    $query = "INSERT INTO berkas VALUES (:id_berkas, :kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
+                    $query = "INSERT INTO berkas VALUES (:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
                     $this->db->query($query);
                     
-                    $this->db->bind(':id_berkas', $result);
+                    // $this->db->bind(':id_berkas', $result);
                     $this->db->bind(':kk', '-');
                     $this->db->bind(':akta', '-');
                     $this->db->bind(':ijazah', '-');
@@ -133,7 +133,6 @@ class Berkas_Model{
         $result = $this->db->single();
 
         $result = $result['total_rows'];
-       
 
         // ==================================================
 
@@ -143,20 +142,22 @@ class Berkas_Model{
         $this->db->query($query);
         $this->db->execute();
         
-        $id_cari = $this->db->single()['id_berkas'];
-        // var_dump($id_cari);
+        $id_berkas = $this->db->single()['id_berkas'];
+        
+        if($id_berkas == 0){
+        //     var_dump("Masuk insert");
         // die();
         
-        
-        if($id_cari){
-            $id_berkas = $this->db->single()['id_berkas'];
-        }else{
-            $query = "INSERT INTO berkas VALUES (:id_berkas, :kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
+            // Query INSERT tanpa id_berkas jika id_berkas adalah AUTO_INCREMENT
+            $query = "INSERT INTO berkas (kk, akta, ijazah, kip, profile, kelakuan, ortu, sehat, pas_foto, lulus)
+            VALUES (:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
+
+            // Menyiapkan statement
             $this->db->query($query);
-            
-            $this->db->bind(':id_berkas', $result + 4);
+
+            // Mengikat parameter
             $this->db->bind(':kk', '-');
-            $this->db->bind(':akta', '-');
+            $this->db->bind(':akta', '');
             $this->db->bind(':ijazah', '-');
             $this->db->bind(':kip', '-');
             $this->db->bind(':profile', '-');
@@ -166,14 +167,21 @@ class Berkas_Model{
             $this->db->bind(':pas_foto', '-');
             $this->db->bind(':lulus', '-');
 
+            // Eksekusi query
             $this->db->execute();
+            $id_berkas = $this->db->lastInsertId();
 
-            $id_berkas = $this->db->single()['id_berkas'];
+            $query = "UPDATE person SET id_berkas=$id_berkas WHERE id_person=$id_person";
+    
+            // die("UPDATE person SET id_berkas = ". $id_berkas ." WHERE id_person=$id_person");
+            $this->db->query($query);
+            $this->db->execute();
         }
+        
+        $count = 0;
 
         // ============== KK =====================
         if(!empty($_FILES['kkFile']['name'])){
-            
             $kkFile_nameFile   = $_FILES['kkFile']['name'];
             $kkFile_ukuran     = $_FILES['kkFile']['size'];
             $kkFile_tmpName    = $_FILES['kkFile']['tmp_name'];
@@ -192,6 +200,7 @@ class Berkas_Model{
             $this->db->query($query);
 
             $this->db->execute();
+            $count++;
         }
         // ============== KK =====================
 
@@ -215,7 +224,7 @@ class Berkas_Model{
             $this->db->query($query);
 
             $this->db->execute();
-
+            $count++;
         }
         // ============== Akta =====================
 
@@ -242,6 +251,7 @@ class Berkas_Model{
             $this->db->execute();
 
             $inBer = $this->db->rowCount();
+            $count++;
         }
         // ============== Ijazah =====================
 
@@ -255,14 +265,6 @@ class Berkas_Model{
             $kipFile_extensionGambar = explode('.', $kipFile_nameFile);
             $kipFile_extensionGambar = strtolower(end($kipFile_extensionGambar));
 
-            // if( $kipFile_ukuran > 2500000 ){
-            //     echo "<script>
-            //             alert('Ukuran Gambar Terlalu Besar !!!');
-            //         </script>";
-
-            //     return false;
-            // };
-
             $kipFile_namaFileBaru = uniqid();
             $kipFile_namaFileBaru .= '.';
             $kipFile_namaFileBaru .= $kipFile_extensionGambar;
@@ -273,7 +275,7 @@ class Berkas_Model{
             $this->db->query($query);
 
             $this->db->execute();
-
+            $count++;
         }
         // ============== Kip =====================
 
@@ -287,14 +289,6 @@ class Berkas_Model{
             $kelakuanFile_extensionGambar = explode('.', $kelakuanFile_nameFile);
             $kelakuanFile_extensionGambar = strtolower(end($kelakuanFile_extensionGambar));
 
-            // if( $kelakuanFile_ukuran > 2500000 ){
-            //     echo "<script>
-            //             alert('Ukuran Gambar Terlalu Besar !!!');
-            //         </script>";
-
-            //     return false;
-            // };
-
             $kelakuanFile_namaFileBaru = uniqid();
             $kelakuanFile_namaFileBaru .= '.';
             $kelakuanFile_namaFileBaru .= $kelakuanFile_extensionGambar;
@@ -305,7 +299,7 @@ class Berkas_Model{
             $this->db->query($query);
 
             $this->db->execute();
-
+            $count++;
         }
         // ============== Surat Kelakuan Baik =====================
 
@@ -337,7 +331,7 @@ class Berkas_Model{
             $this->db->query($query);
 
             $this->db->execute();
-
+            $count++;
         }
         // ============== KTP Orang Tua =====================
 
@@ -361,7 +355,7 @@ class Berkas_Model{
             $this->db->query($query);
 
             $this->db->execute();
-
+            $count++;
         }
         // ============== Surat Keterangan Sehat =====================
 
@@ -387,7 +381,7 @@ class Berkas_Model{
             $this->db->query($query);
 
             $this->db->execute();
-
+            $count++;
         }
         // ============== Pas Foto =====================
 
@@ -401,14 +395,6 @@ class Berkas_Model{
             $lulusFile_extensionGambar = explode('.', $lulusFile_nameFile);
             $lulusFile_extensionGambar = strtolower(end($lulusFile_extensionGambar));
 
-            // if( $lulusFile_ukuran > 2500000 ){
-            //     echo "<script>
-            //             alert('Ukuran Gambar Terlalu Besar !!!');
-            //         </script>";
-
-            //     return false;
-            // };
-
             $lulusFile_namaFileBaru = uniqid();
             $lulusFile_namaFileBaru .= '.';
             $lulusFile_namaFileBaru .= $lulusFile_extensionGambar;
@@ -419,13 +405,13 @@ class Berkas_Model{
             $this->db->query($query);
 
             $this->db->execute();
-
+            $count++;
         }
         // ============== Lulus =====================
 
 
-
-        return $this->db->rowCount();
+        // return $this->db->rowCount();
+        return $count;
     }
 
 }

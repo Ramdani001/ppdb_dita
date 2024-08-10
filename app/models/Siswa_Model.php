@@ -64,8 +64,6 @@ class Siswa_Model{
         $this->db->bind(':id_person', $id_person);
         $record2 = $this->db->single();
         $id_siswa = $record2['id_siswa'];
-
-        
  
         if(!$id_siswa){ 
         //     var_dump("Masuk IF");
@@ -89,9 +87,9 @@ class Siswa_Model{
             $this->db->bind(':cita_cita', $_POST['cita_cita']);
             $this->db->bind(':hobi', $_POST['hobi']);
             $this->db->bind(':anak_ke', $_POST['anak_ke']);
-            $this->db->bind(':transportasi', $_POST['transportasi']);
-            $this->db->bind(':jarak_sekolah', $_POST['jarak_kesekolah']);
-            $this->db->bind(':waktu_tempuh', $_POST['waktu_tempuh']);
+            $this->db->bind(':transportasi', "");
+            $this->db->bind(':jarak_sekolah', "");
+            $this->db->bind(':waktu_tempuh', "");
             $this->db->bind(':jml_saudara', $_POST['jml_saudara']);
             $this->db->bind(':no_kk', '');
             $this->db->bind(':kepala_keluarga', '');
@@ -115,9 +113,9 @@ class Siswa_Model{
             $cita_cita                 = $_POST['cita_cita'];
             $hobi                      = $_POST['hobi'];
             $anak_ke                   = $_POST['anak_ke'];
-            $transportasi              = $_POST['transportasi'];
-            $jarak_sekolah             = $_POST['jarak_kesekolah'];
-            $waktu_tempuh              = $_POST['waktu_tempuh'];
+            $transportasi              = "";
+            $jarak_sekolah             = "";
+            $waktu_tempuh              = "";
             $jml_saudara               = $_POST['jml_saudara'];
             $no_kk                     = '';
             $kepala_keluarga           = '';

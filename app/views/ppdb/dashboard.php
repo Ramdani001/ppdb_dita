@@ -88,24 +88,27 @@
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
 
-      <?php if((int)$siswa['st'] != 0) {
-        echo '
-            <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
-            <div style="width: 15px; height: 15px; background-color: blue; position: absolute; border-radius: 100%; margin-top: 2px; margin-left: -5px;"></div>
-              <a href="'.BASEURL.'/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
-              <i class="bi bi-envelope"></i> 
-              </a>
-            </div>
-        ';
-      }else{
-        echo '
-            <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
-              <button type="button" style="background: none; border: none;" id="pesan_button">
-                <i class="bi bi-envelope"></i> 
-              </button>
-            </div>
-        ';
-      }
+      <?php
+        if($siswa){
+          if((int)$siswa['st'] != 0) {
+            echo '
+                <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
+                <div style="width: 15px; height: 15px; background-color: blue; position: absolute; border-radius: 100%; margin-top: 2px; margin-left: -5px;"></div>
+                  <a href="'.BASEURL.'/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
+                  <i class="bi bi-envelope"></i> 
+                  </a>
+                </div>
+            ';
+          }else{
+            echo '
+                <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
+                  <button type="button" style="background: none; border: none;" id="pesan_button">
+                    <i class="bi bi-envelope"></i> 
+                  </button>
+                </div>
+            ';
+          }
+        }
       ?>
 
       <li class="nav-item dropdown pe-3">
@@ -256,7 +259,7 @@
                               echo "";
                             }
                           ?>"
-                  required>
+                  >
               </div>
             </div>
             </td> -->
@@ -267,14 +270,14 @@
                   <label for="nama_lengkap" class="col-form-label">Nama Lengkap</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?= $person['nama'] ?>" required>
+                  <input type="Text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?= $person['nama'] ?>">
                 </div>
               </div>
               <!-- No Daftar -->
              
             </td>
 
-            <td>
+            <td> 
                 <!-- No Daftar -->
                 <div class="row g-3 align-items-center m-2">
                   <div class="col-6">
@@ -285,7 +288,7 @@
                         echo $siswa['nisn'];
                     }else{
                       echo "";
-                    } ?>" required>
+                    } ?>" >
                   </div>
                 </div>
             </td>
@@ -301,7 +304,7 @@
                         echo $siswa['npsn_sekolah_asal'];
                     }else{
                       echo "";
-                    } ?>"  required>
+                    } ?>"  >
                 </div>
               </div>
             </td> -->
@@ -311,7 +314,7 @@
                   <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $person['jk'] ?>" required>
+                  <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $person['jk'] ?>" >
                 </div>
               </div>
               
@@ -328,7 +331,7 @@
                     }else{
                       echo "";
                       } ?>
-                  " required>
+                  " >
                 </div>
               </div>
             </td>
@@ -344,7 +347,7 @@
                         echo $siswa['nik'];
                     }else{
                       echo "";
-                    } ?>" required>
+                    } ?>" >
                 </div>
               </div>
             </td> -->
@@ -355,7 +358,7 @@
                   <label for="tempat" class="col-form-label">Tempat Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="tempat" name="tempat" class="form-control" value="<?= $person['tempat_lhir'] ?>" required>
+                  <input type="Text" id="tempat" name="tempat" class="form-control" value="<?= $person['tempat_lhir'] ?>" >
                 </div>
               </div>
             </td>
@@ -366,7 +369,7 @@
                   <label for="tanggal_lahir" class="col-form-label">Tanggal Lahir</label>
                 </div>
                 <div class="col-6">
-                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" value="<?= $person['tanggal_lahir'] ?>" required>
+                  <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" value="<?= $person['tanggal_lahir'] ?>" >
                 </div>
               </div>
             </td>
@@ -379,7 +382,7 @@
                   <label for="kewarganegaraan" class="col-form-label">Kewarganegaraan</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" value="<?= $person['kewarganegaraan'] ?>" required>
+                  <input type="Text" id="kewarganegaraan" name="kewarganegaraan" class="form-control" value="<?= $person['kewarganegaraan'] ?>" >
                 </div>
               </div>
             </td>
@@ -397,7 +400,7 @@
                       echo "";
                     }
                   ?>
-                  " required>
+                  " >
                 </div>
               </div>
             </td>
@@ -415,7 +418,7 @@
                           echo "";
                         }
                       ?>
-                      " required>
+                      " >
                   </div>
                 </div>
             </td>
@@ -433,7 +436,7 @@
                         echo "";
                       }
                     ?>
-                    " required>
+                    " >
                   </div>
                 </div>
             </td>
@@ -453,7 +456,7 @@
                       echo "";
                     }
                   ?>
-                  " required>
+                  " >
                 </div>
               </div>
             </td>
@@ -471,7 +474,7 @@
                       echo "";
                     }
                   ?>
-                  " required>
+                  " >
                 </div>
               </div>
             </td>
@@ -507,7 +510,7 @@
                       }else{
                         echo "";
                       }
-                    ?>" required>
+                    ?>" >
                 </div>
               </div>
             </td>
@@ -544,7 +547,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -563,7 +566,7 @@
                         }else{
                           echo "";
                         }
-                      ?>" required>
+                      ?>" >
                     </div>
                   </div>
             </td> -->
@@ -582,7 +585,7 @@
                       }else{
                         echo "";
                       }
-                    ?>" required>
+                    ?>" >
                   </div>
                 </div>
             </td> -->
@@ -601,7 +604,7 @@
                       echo "";
                     }
                   ?>
-                  " required>
+                  " >
                 </div>
               </div>
             </td> -->
@@ -620,7 +623,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
           </td> -->
@@ -631,7 +634,7 @@
                 <label for="kepala_keluarga" class="col-form-label">Kepala Keluarga</label>
               </div>
               <div class="col-6">
-                <input type="Text" id="kepala_keluarga" name="kepala_keluarga" class="form-control"  required value="<?php
+                <input type="Text" id="kepala_keluarga" name="kepala_keluarga" class="form-control"   value="<?php
                   if($siswa){
                     echo $siswa['kepala_keluarga'];
                   }else{
@@ -664,7 +667,7 @@
                   <label for="alamat" class="col-form-label">Alamat</label>
                 </div>
                 <div class="col-9">
-                  <textarea name="alamat" id="alamat" class="form-control" required style="text-align: left;"><?php if($person){ echo $person['alamat'];
+                  <textarea name="alamat" id="alamat" class="form-control"  style="text-align: left;"><?php if($person){ echo $person['alamat'];
                       }else{
                         echo "";
                       }?></textarea>
@@ -685,13 +688,13 @@
                     echo $person['rt'];
                   }else{
                     echo "";
-                  } ?>" required>
+                  } ?>" >
                   <input type="number" id="rw" name="rw" class="form-control" value="<?php
                   if($person){
                     echo $person['rw'];
                   }else{
                     echo "";
-                  } ?>" required>
+                  } ?>" >
                 </div>
               </div>
             </td>
@@ -708,7 +711,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -727,7 +730,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -743,7 +746,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -762,7 +765,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -778,7 +781,7 @@
                       }else{
                         echo "";
                       }
-                    ?>" required>
+                    ?>" >
                   </div>
                 </div>
             </td>
@@ -845,7 +848,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -864,7 +867,7 @@
                   }else{
                     echo "";
                   }
-                ?>" required>
+                ?>" >
                 </div>
               </div>
             </td>
@@ -881,7 +884,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -894,7 +897,7 @@
                   <label for="nik" class="col-form-label">Pendidikan Ayah</label>
                 </div>
                 <div class="col-6">
-                  <!-- <input type="Text" id="pendidikan_ayah" name="pendidikan_ayah" class="form-control" value="<?= $parent['pendidikan_ayah'] ?>" required> -->
+                  <!-- <input type="Text" id="pendidikan_ayah" name="pendidikan_ayah" class="form-control" value="<?= $parent['pendidikan_ayah'] ?>" > -->
                   <select class="form-select" name="pendidikan_ayah" id="pendidikan_ayah">
                       <?php
                       foreach ($opt_pendidikan as $value => $label) {
@@ -919,7 +922,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -965,7 +968,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -1007,7 +1010,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -1026,7 +1029,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -1043,7 +1046,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -1062,7 +1065,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required>
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -1078,7 +1081,7 @@
                     }else{
                       echo "";
                     }
-                  ?>" required> 
+                  ?>" > 
                 </div>
               </div>
             </td>
