@@ -782,13 +782,67 @@
 
         
         // Download Berkas
-        const baseUrl = base_url+"public/assets/img/";
+        const baseUrl = base_url+"public/assets/img/kk/";
         const fileName = siswa.kk; 
 
-        document.getElementById('det_down_kk').href = baseUrl +"kk"+ fileName;
+        document.getElementById('det_down_kk').href = baseUrl + fileName;
         document.getElementById('det_down_kk').download = fileName;
-
         
+        // 
+        const base = base_url+"public/assets/img/akta/";
+        const fl = siswa.akta; 
+
+        document.getElementById('det_down_akta').href = base + fl;
+        document.getElementById('det_down_akta').download = fl;
+
+        // 
+        const base2 = base_url+"public/assets/img/ijazah/";
+        const fl2 = siswa.ijazah; 
+
+        document.getElementById('det_down_ijazah').href = base2 + fl2;
+        document.getElementById('det_down_ijazah').download = fl2;
+
+        // 
+        const base3 = base_url+"public/assets/img/kip/";
+        const fl3 = siswa.kip; 
+
+        document.getElementById('det_down_kip').href = base3 + fl3;
+        document.getElementById('det_down_kip').download = fl3;
+
+        // 
+        const base4 = base_url+"public/assets/img/kelakuan/";
+        const fl4 = siswa.kelakuan; 
+
+        document.getElementById('det_down_kelakuan').href = base4 + fl4;
+        document.getElementById('det_down_kelakuan').download = fl4;
+
+        // 
+        const base5 = base_url+"public/assets/img/ortu/";
+        const fl5 = siswa.ortu; 
+
+        document.getElementById('det_down_ortu').href = base5 + fl5;
+        document.getElementById('det_down_ortu').download = fl5;
+
+        // 
+        const base6 = base_url+"public/assets/img/sehat/";
+        const fl6 = siswa.sehat; 
+
+        document.getElementById('det_down_sehat').href = base6 + fl6;
+        document.getElementById('det_down_sehat').download = fl6;
+
+        // 
+        const base7 = base_url+"public/assets/img/pas_foto/";
+        const fl7 = siswa.pas_foto; 
+
+        document.getElementById('det_down_pas_foto').href = base7 + fl7;
+        document.getElementById('det_down_pas_foto').download = fl7;
+
+        // 
+        const base8 = base_url+"public/assets/img/lulus/";
+        const fl8 = siswa.lulus; 
+
+        document.getElementById('det_down_lulus').href = base8 + fl8;
+        document.getElementById('det_down_lulus').download = fl8;
 
         
         // Img
