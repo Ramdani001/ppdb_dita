@@ -782,11 +782,11 @@
 
         
         // Download Berkas
-        const baseUrl = base_url+"public/assets/img/";
-        const fileName = siswa.kk; 
+        // const base = base_url+"public/assets/img/";
+        // const fileName = siswa.kk; 
 
-        document.getElementById('det_down_kk').href = baseUrl +"kk"+ fileName;
-        document.getElementById('det_down_kk').download = fileName;
+        // document.getElementById('det_down_kk').href = base + fileName;
+        // document.getElementById('det_down_kk').download = fileName;
 
         
 
