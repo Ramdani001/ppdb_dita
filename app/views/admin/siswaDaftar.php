@@ -520,8 +520,8 @@
             </h6>
             <div>
               <a href="#" id="det_down_kk"  title="ImageName" target="_blank">
-              <img src="" alt="" id="det_kk" style="width: 200px; height: 250px;">
-                </a>
+                <img src="" alt="" id="det_kk" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 
@@ -533,7 +533,9 @@
               </b>
             </h6>
             <div >
-              <img src="" alt="" id="det_akta" style="width: 200px; height: 250px;">
+              <a href="#" id="det_down_akta"  title="ImageName" target="_blank">
+                <img src="" alt="" id="det_akta" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 
@@ -544,8 +546,10 @@
                 Ijazah/SKL
               </b>
             </h6>
-            <div >
-              <img src="" alt="" id="det_ijazah" style="width: 200px; height: 250px;">
+            <div>
+            <a href="#" id="det_down_ijazah"  title="ImageName" target="_blank">
+                <img src="" alt="" id="det_ijazah" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 
@@ -557,7 +561,9 @@
               </b>
             </h6>
             <div>
-              <img src="" alt="" id="det_kip" style="width: 200px; height: 250px;">
+              <a href="#" id="det_down_kip"  title="ImageName" target="_blank">
+                <img src="" alt="" id="det_kip" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 
@@ -569,7 +575,9 @@
               </b>
             </h6>
             <div>
-              <img src="" alt="" id="det_kelakuan" style="width: 200px; height: 250px;">
+              <a href="#" id="det_down_kelakuan"  title="ImageName" target="_blank">
+                <img src="" alt="" id="det_kelakuan" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 
@@ -581,7 +589,9 @@
               </b>
             </h6>
             <div>
-              <img src="" alt="" id="det_ortu" style="width: 200px; height: 250px;">
+              <a href="#" id="det_down_ortu"  title="ImageName" target="_blank">
+                <img src="" alt="" id="det_ortu" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 
@@ -593,7 +603,9 @@
               </b>
             </h6>
             <div>
-              <img src="" alt="" id="det_sehat" style="width: 200px; height: 250px;">
+              <a href="#" id="det_down_sehat"  title="ImageName" target="_blank">
+                <img src="" alt="" id="det_sehat" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 
@@ -605,7 +617,9 @@
               </b>
             </h6>
             <div>
-              <img src="" alt="" id="det_foto" style="width: 200px; height: 250px;">
+              <a href="#" id="det_down_foto"  title="ImageName" target="_blank">
+                <img src="" alt="" id="det_foto" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 
@@ -617,7 +631,9 @@
               </b>
             </h6>
             <div>
-              <img src="" alt="" id="det_lulus" style="width: 200px; height: 250px;">
+              <a href="#" id="det_down_lulus"  title="ImageName" target="_blank">
+                <img src="" alt="" id="det_lulus" style="width: 200px; height: 250px;">
+              </a>
             </div>
           </div>
 

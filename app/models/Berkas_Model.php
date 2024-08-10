@@ -144,9 +144,11 @@ class Berkas_Model{
         $this->db->execute();
         
         $id_cari = $this->db->single()['id_berkas'];
+        // var_dump($id_cari);
+        // die();
         
         
-        if($id_cari > 0){
+        if($id_cari){
             $id_berkas = $this->db->single()['id_berkas'];
         }else{
             $query = "INSERT INTO berkas VALUES (:id_berkas, :kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
