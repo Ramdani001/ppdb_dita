@@ -783,62 +783,6 @@
                 </div>
             </td>
           </tr>
-          <tr>
-            <td>
-                <!-- Agama -->
-                <div class="row g-3 align-items-center m-2">
-                  <div class="col-6">
-                    <label for="transportasi" class="col-form-label">Transportasi</label>
-                  </div>
-                  <div class="col-6">
-                    <input type="Text" id="transportasi" name="transportasi" class="form-control"  required value="<?php
-                      if($siswa){
-                        echo $siswa['transportasi'];
-                      }else{
-                        echo "";
-                      }
-                    ?>">
-                  </div>
-                </div>
-            </td>
-            <td>
-              <!-- Cita-Cita -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="jarak_kesekolah" class="col-form-label">Jarak Ke Sekolah</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="jarak_kesekolah" name="jarak_kesekolah" class="form-control" value="<?php
-                    if($siswa){
-                      echo $siswa['jarak_sekolah'];
-                    }else{
-                      echo "";
-                    }
-                  ?>" required>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <!-- Hobi -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="waktu_tempuh" class="col-form-label">Waktu Tempuh</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="waktu_tempuh" name="waktu_tempuh" class="form-control" value="<?php
-                    if($siswa){
-                      echo $siswa['waktu_tempuh'];
-                    }else{
-                      echo "";
-                    }
-                  ?>" required>
-                </div>
-              </div>
-            </td>
-           
-          </tr>
         </table>
         <div class="d-flex justify-content-end w-100 mt-3">
           <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(11)">Back</button>

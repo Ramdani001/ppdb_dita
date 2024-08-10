@@ -520,6 +520,7 @@
             </h6>
             <div>
                 <img src="" alt="" id="det_kk" style="width: 200px; height: 250px;">
+                <!-- <a href="#" download="det_down_kk"  title="ImageName"> -->
             </div>
           </div>
 
@@ -763,6 +764,7 @@
         document.getElementById('det_nik_ibu').value = siswa.nik_ibu;
 
         
+        // document.getElementById('det_down_kk').download = base_url+"public/assets/img/kk/"+siswa.kk;
         
         // Img
         document.getElementById('det_kk').src = base_url+"public/assets/img/kk/"+siswa.kk;
