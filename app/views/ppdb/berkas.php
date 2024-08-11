@@ -107,7 +107,7 @@
  
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>Rizkan Ramdani</h6>
+            <h6><?= $person['nama'] ?></h6>
             <span><?php echo ($person['tipe'] == 3) ? 'Siswa' : 'Administrator'; ?></span>
           </li>
           <li>
