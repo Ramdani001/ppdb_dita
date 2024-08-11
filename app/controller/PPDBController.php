@@ -19,7 +19,10 @@ class PPDBController extends Controller {
         $this->db->query($sql);
         $data['siswa'] = $this->db->single();
 
-        $id_siswa = $this->db->single()['id_siswa'];
+        $id_siswa = 0;
+        if($data['siswa']){
+            $id_siswa = $this->db->single()['id_siswa'];
+        }
 
         $sql = "SELECT * FROM parents WHERE id_siswa=:id_siswa";
         $this->db->query($sql);
