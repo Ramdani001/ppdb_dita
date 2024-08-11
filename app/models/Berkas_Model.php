@@ -65,10 +65,10 @@ class Berkas_Model{
 
                 if(!$id_berkas){
                     
-                    $query = "INSERT INTO berkas VALUES (:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
+                    $query = "INSERT INTO berkas VALUES (:id_berkas,:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
                     $this->db->query($query);
                     
-                    // $this->db->bind(':id_berkas', $result);
+                    $this->db->bind(':id_berkas', $result);
                     $this->db->bind(':kk', '-');
                     $this->db->bind(':akta', '-');
                     $this->db->bind(':ijazah', '-');

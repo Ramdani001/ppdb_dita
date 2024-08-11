@@ -60,12 +60,9 @@ class Parent_Model{
         $this->db->execute();
         $id_check = $this->db->single();
         
-        // var_dump($id_check);
+        // var_dump($id_siswas);
         // die();
-        $id_s= $id_check['id_siswa'];
-        
-        // var_dump($result);
-        // die();
+        // $id_s= $id_check['id_siswa'];
  
         
         if(!$id_check){
@@ -75,12 +72,23 @@ class Parent_Model{
 
             // var_dump($_POST);
             // die();
+            if($lh_ay =  $_POST['tgl_lhr_ayar'] == ""){
+                $lh_ay =  "0000-00-00";
+            }else{
+                $lh_ay =  $_POST['tgl_lhr_ayar'];
+            }
+
+            if($lh_ibu =  $_POST['tgl_lhir_ibu'] == ""){
+                $lh_ibu =  "0000-00-00";
+            }else{
+                $lh_ibu =  $_POST['tgl_lhir_ibu'];
+            }
             
             $this->db->bind(':id_parent', (int)$result);
             $this->db->bind(':id_siswa', (int)$id_siswas);
             $this->db->bind(':nik_ayah', '');
             $this->db->bind(':nama_ayah', $_POST['nama_ayah']);
-            $this->db->bind(':lhir_ayah', $_POST['lhr_ayah']);
+            $this->db->bind(':lhir_ayah',$_POST['lhr_ayah']);
             $this->db->bind(':tgl_lhr_ayah', $_POST['tgl_lhr_ayar']);
             $this->db->bind(':pendidikan_ayah', $_POST['pendidikan_ayah']);
             $this->db->bind(':pekerjaan_ayah', $_POST['pekerjaan_ayah']);
@@ -102,13 +110,22 @@ class Parent_Model{
             $this->db->bind(':alamat_wali', $_POST['alamat_wali']);
 
             $this->db->execute();
-            // var_dump("te");
-            // die();
             return $this->db->rowCount();
             
         }else{
             // $id_check= $id_check['id_siswa'];
-            
+            if($lh_ay =  $_POST['tgl_lhr_ayar'] == ""){
+                $lh_ay =  "0000-00-00";
+            }else{
+                $lh_ay =  $_POST['tgl_lhr_ayar'];
+            }
+
+            if($lh_ibu =  $_POST['tgl_lhir_ibu'] == ""){
+                $lh_ibu =  "0000-00-00";
+            }else{
+                $lh_ibu =  $_POST['tgl_lhir_ibu'];
+            }
+
             $queryUp = "UPDATE parents 
             SET 
                 nik_ayah=:nik_ayah,
@@ -134,14 +151,14 @@ class Parent_Model{
                 pekerjaan_wali=:pekerjaan_wali,
                 alamat_wali=:alamat_wali
             WHERE 
-                id_siswa= '$id_s'";
+                id_siswa= '$id_siswas'";
 
             $this->db->query($queryUp);
 
             $this->db->bind(':nik_ayah', '');
             $this->db->bind(':nama_ayah', $_POST['nama_ayah']);
             $this->db->bind(':lhir_ayah', $_POST['lhr_ayah']);
-            $this->db->bind(':tgl_lhr_ayah', $_POST['tgl_lhr_ayar']);
+            $this->db->bind(':tgl_lhr_ayah', $lh_ay);
             $this->db->bind(':pendidikan_ayah', $_POST['pendidikan_ayah']);
             $this->db->bind(':pekerjaan_ayah', $_POST['pekerjaan_ayah']);
             $this->db->bind(':penghasilan_ayah', $_POST['penghasilan_ayah']);
@@ -150,7 +167,7 @@ class Parent_Model{
             $this->db->bind(':nik_ibu', '');
             $this->db->bind(':nama_ibu', $_POST['nama_ibu']);
             $this->db->bind(':lhir_ibu', $_POST['lhr_ibu']);
-            $this->db->bind(':tgl_lhr_ibu', $_POST['tgl_lhir_ibu']);
+            $this->db->bind(':tgl_lhr_ibu', $lh_ibu);
             $this->db->bind(':no_ibu', $_POST['no_ibu']);
             $this->db->bind(':pendidikan_ibu', $_POST['pendidikan_ibu']);
             $this->db->bind(':pekerjaan_ibu', $_POST['pekerjaan_ibu']);
