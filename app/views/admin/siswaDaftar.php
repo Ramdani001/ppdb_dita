@@ -193,10 +193,10 @@
          </div>
         <div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
           <!-- No Pendaftaran -->
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="det_pendaftaran" class="form-label">No Pendaftaran</label>
             <input type="text" class="form-control" id="det_pendaftaran" disabled>
-          </div>
+          </div> -->
           <!-- Nama Lengkap -->
           <div class="mb-3">
             <label for="det_name" class="form-label">Nama Lengkap</label>
@@ -208,10 +208,10 @@
             <input type="text" class="form-control" id="det_asal_sekolah" disabled>
           </div>
           <!-- NPSN Sekolah Asal -->
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="det_npsn_asal_sekolah" class="form-label">NPSN Asal Sekolah</label>
             <input type="text" class="form-control" id="det_npsn_asal_sekolah" disabled>
-          </div>
+          </div> -->
           <!-- NISN -->
           <div class="mb-3">
             <label for="det_nisn" class="form-label">NISN</label>
@@ -278,10 +278,10 @@
             <input type="text" class="form-control" id="det_phone" disabled>
           </div>
           <!-- Yang Membiayai Sekolah -->
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="det_biayai" class="form-label">Yang Membiayai Sekolah</label>
             <input type="text" class="form-control" id="det_biayai" disabled>
-          </div>
+          </div> -->
           <!-- SD -->
           <div class="mb-3">
             <label for="det_sd" class="form-label">SD</label>
@@ -298,10 +298,10 @@
             <input type="text" class="form-control" id="det_smp" disabled>
           </div>
           <!-- No.KIP -->
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="det_no_kip" class="form-label">No.KIP</label>
             <input type="text" class="form-control" id="det_no_kip" disabled>
-          </div>
+          </div> -->
           <!-- No.KK -->
           <div class="mb-3">
             <label for="det_no_kk" class="form-label">No.KK</label>
@@ -384,25 +384,25 @@
               </div>
               <!-- Kode Pos -->
               <!-- Transportasi -->
-              <div class="d-flex" style="gap: 20px;">
+              <!-- <div class="d-flex" style="gap: 20px;">
                 <span>Transportasi</span>
                 <span>:</span>
                 <input type="text" class="form-control" id="det_transport" disabled>
-              </div>
+              </div> -->
               <!-- Transportasi -->
               <!-- Jarak Ke Sekolah -->
-              <div class="d-flex" style="gap: 20px;">
+              <!-- <div class="d-flex" style="gap: 20px;">
                 <span style="width: 210px;">Jarak Ke Sekolah</span>
                 <span>:</span>
                 <input type="text" class="form-control" id="det_jarak_kesekolah" disabled>
-              </div>
+              </div> -->
               <!-- Jarak Ke Sekolah -->
               <!-- Waktu Tempuh -->
-              <div class="d-flex" style="gap: 20px;">
+              <!-- <div class="d-flex" style="gap: 20px;">
                 <span>Waktu Tempuh</span>
                 <span>:</span>
                 <input type="text" class="form-control" id="det_tempuh" disabled>
-              </div>
+              </div> -->
               <!-- Waktu Tempuh -->
             </div>
             <!--  -->
@@ -727,10 +727,10 @@
 
         console.log(siswa);
 
-        document.getElementById('det_pendaftaran').value = siswa.no_pendaftaran;
+        // document.getElementById('det_pendaftaran').value = siswa.no_pendaftaran;
         document.getElementById('det_name').value = siswa.nama;
         document.getElementById('det_asal_sekolah').value = siswa.asal_sekolah;
-        document.getElementById('det_npsn_asal_sekolah').value = siswa.npsn_sekolah_asal;
+        // document.getElementById('det_npsn_asal_sekolah').value = siswa.npsn_sekolah_asal;
         document.getElementById('det_nisn').value = siswa.nisn;
         document.getElementById('det_nik').value = siswa.nik;
 
@@ -745,11 +745,12 @@
         document.getElementById('det_hobi').value = siswa.hobi;
         document.getElementById('det_email').value = siswa.email;
         document.getElementById('det_phone').value = siswa.no_telp;
-        document.getElementById('det_biayai').value = siswa.biaya_sekolah;
+        // document.getElementById('det_biayai').value = siswa.biaya_sekolah;
         document.getElementById('det_sd').value = siswa.sd;
         document.getElementById('det_jurusan').value = siswa.jurusan;
         document.getElementById('det_smp').value = siswa.smp;
-        document.getElementById('det_no_kip').value = siswa.kip;
+        // document.getElementById('det_no_kip').value = siswa.kip;
+        // document.getElementById('det_no_kip').value = siswa.kip;
         document.getElementById('det_no_kk').value = siswa.no_kk;
         document.getElementById('det_kepala_keluarga').value = siswa.kepala_keluarga;
 
@@ -761,9 +762,9 @@
         document.getElementById('det_kab_kot').value = siswa.kab_kota;
         document.getElementById('det_provinsi').value = siswa.provinsi;
         document.getElementById('det_kode_pos').value = siswa.kode_pos;
-        document.getElementById('det_transport').value = siswa.transportasi;
-        document.getElementById('det_jarak_kesekolah').value = siswa.jarak_sekolah;
-        document.getElementById('det_tempuh').value = siswa.waktu_tempuh;
+        // document.getElementById('det_transport').value = siswa.transportasi;
+        // document.getElementById('det_jarak_kesekolah').value = siswa.jarak_sekolah;
+        // document.getElementById('det_tempuh').value = siswa.waktu_tempuh;
         document.getElementById('det_ayah').value = siswa.nama_ayah;
         document.getElementById('det_stat_ayah').value = siswa.status_ayah;
         document.getElementById('det_nik_ayah').value = siswa.nik_ayah;
