@@ -192,7 +192,15 @@
 
 <!-- Content -->
 <main class="d-flex w-100 h-100 me-1 rounded shadow-lg p-3 card z-1" style="height: 87vh; margin-top: 5%; margin-left: 24%;">
-    <div class="d-flex">
+
+<!-- Icon W.a -->
+<div class="bottom-0 rigth-0 w-full" style="position: fixed; right: 0;">
+    <a href="https://wa.link/m208kp" target="_blank">
+      <img src="<?= BASEURL ?>public/assets/img/w.a.png" alt="as" width="100">
+    </a>
+  </div>
+  <!-- Icon W.a -->    
+<div class="d-flex">
       <div class="card-title w-100" style="border-bottom: 1px solid gray;">
         Formulir Pendaftaran Siswa Baru
       </div>
@@ -1235,7 +1243,7 @@
               </div>
            </div>
            <!-- Alamat -->
-
+ 
         </div>
 
         <div class="d-flex justify-content-end w-100 mt-3">
@@ -1270,11 +1278,15 @@
           <button type="button" class="btn btn-secondary me-3" style="width: 20%;" onclick="nextPage(31)">Back</button>
           <button type="submit" class="btn btn-primary" style="width: 20%;">Simpan</button>
         </div>
+        
       </div>
     </div>
     <!-- form Data foto -->
     </form>
   </div>
+
 </main>
 <!-- Content -->
+ 
+
 </div>

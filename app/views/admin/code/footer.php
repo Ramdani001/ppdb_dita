@@ -1,5 +1,3 @@
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
     <!-- Vendor JS Files -->
     <script src="<?= BASEURL ?>public/assets/admin/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="<?= BASEURL ?>public/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -34,29 +32,39 @@
     
     <script>
     function changeSiswa(e){
+        let kond = sessionStorage.getItem('siswa');
         if(e == 2){
-
-            document.getElementById('btn_reguler').classList.remove('btn-primary');
-            document.getElementById('btn_reguler').classList.add('btn-secondary');
-
-            document.getElementById('btn_pindah').classList.remove('btn-secondary');
-            document.getElementById('btn_pindah').classList.add('btn-primary');
             
-            document.getElementById('al_awal').classList.remove('d-none');
-            document.getElementById('al_pindah').classList.remove('d-none');
-            
-            sessionStorage.setItem('siswa', 'Pindahan');
+            if(kond == "Pindahan"){
+                
+                document.getElementById('btn_reguler').classList.remove('btn-primary');
+                document.getElementById('btn_reguler').classList.add('btn-secondary');
+
+                document.getElementById('btn_pindah').classList.remove('btn-secondary');
+                document.getElementById('btn_pindah').classList.add('btn-primary');
+                
+                document.getElementById('al_awal').classList.remove('d-none');
+                document.getElementById('al_pindah').classList.remove('d-none');
+                
+                sessionStorage.setItem('siswa', 'Pindahan');
+            }else{
+                alert("Tidak Bisa Merubah Jenis pendaftaran, jika ingin merubah harap hubungi Admin Kami");
+            }
             
         }else{
-            document.getElementById('btn_reguler').classList.add('btn-primary');
-            document.getElementById('btn_reguler').classList.remove('btn-secondary');
-            document.getElementById('btn_pindah').classList.add('btn-secondary');
-            document.getElementById('btn_pindah').classList.remove('btn-primary');
+            if(kond == "Reguler"){
+                document.getElementById('btn_reguler').classList.add('btn-primary');
+                document.getElementById('btn_reguler').classList.remove('btn-secondary');
+                document.getElementById('btn_pindah').classList.add('btn-secondary');
+                document.getElementById('btn_pindah').classList.remove('btn-primary');
 
-            document.getElementById('al_awal').classList.add('d-none');
-            document.getElementById('al_pindah').classList.add('d-none');
-            
-            sessionStorage.setItem('siswa', 'Reguler');
+                document.getElementById('al_awal').classList.add('d-none');
+                document.getElementById('al_pindah').classList.add('d-none');
+                
+                sessionStorage.setItem('siswa', 'Reguler');
+            }else{
+                alert("Tidak Bisa Merubah Jenis pendaftaran, jika ingin merubah harap hubungi Admin Kami");
+            }
         }
         
     }
@@ -75,10 +83,10 @@
 
             document.getElementById('btn_reguler').classList.remove('btn-primary');
             document.getElementById('btn_reguler').classList.add('btn-secondary');
-
+            
             document.getElementById('btn_pindah').classList.remove('btn-secondary');
             document.getElementById('btn_pindah').classList.add('btn-primary');
-
+            
         }else{
             document.getElementById('btn_reguler').classList.add('btn-primary');
             document.getElementById('btn_reguler').classList.remove('btn-secondary');
