@@ -154,7 +154,11 @@ class Siswa_Model{
     }
 
     public function getData(){
-        $query = "SELECT COUNT(*) as total_rows FROM siswa WHERE st = 0";
+        $query = "SELECT COUNT(*) as total_rows FROM siswa s
+                  INNER JOIN person p ON s.id_person = p.id_person 
+                  LEFT JOIN berkas k ON p.id_berkas = k.id_berkas 
+                  LEFT JOIN parents z ON z.id_siswa = s.id_siswa  
+                  WHERE st = 0";
         $this->db->query($query);
         $result = $this->db->single();
         return $result['total_rows'];
