@@ -4,6 +4,18 @@
   
   $siswa = $data['siswa'];
 
+  // Auth
+  if($siswa['jenis_daftar'] == ""){
+      // Menampilkan dialog konfirmasi
+      echo `<script>
+                const userConfirmed = confirm('Are you sure you want to delete this item?');
+                if (userConfirmed) {      
+                    window.location.href = 'http://localhost/ppdb_dita/PPDBController/index/' `.$person['id_person'].`;
+                }
+            </script>`;
+  }
+  // Auth
+
   $kk = "";
   if($berkas){
      
@@ -254,8 +266,8 @@
 
                 <input class="form-control" type="file" id="kipFile" name="kipFile" style="height: 40px;">
             </div>
-            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
-                <label for="kipFile" class="form-label">Surat Pindah Dari Sekolah Asal
+            <div class="mb-3 <?php if($siswa['jenis_daftar'] == 'Reguler') { echo 'd-none'; } ?>" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <label for="PindahFile" class="form-label">Surat Pindah Dari Sekolah Asal
 
                 <img src="<?= BASEURL ?>public/assets/img/pindah/<?= $pindah ?>" alt="" style="width: 200px;">
 

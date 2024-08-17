@@ -23,6 +23,21 @@ class Siswa_Model{
         return $this->db->resultSet();
     }
 
+    public function searchSiswa($nisn){
+
+        $this->db->query('
+            SELECT * 
+            FROM ' . $this->table . ' s 
+            INNER JOIN person p ON s.id_person = p.id_person 
+            LEFT JOIN berkas k ON p.id_berkas = k.id_berkas 
+            LEFT JOIN parents z ON z.id_siswa = s.id_siswa
+            WHERE s.nisn LIKE "%'.$nisn.'%"
+        ');
+
+
+        return $this->db->resultSet();
+    }
+
     public function insert(){
         date_default_timezone_set('Asia/Jakarta');
 
@@ -68,7 +83,7 @@ class Siswa_Model{
         if(!$id_siswa){ 
         //     var_dump("Masuk IF");
         // die();
-            $query = "INSERT INTO siswa VALUES (:result, :id_person, :no_pendaftaran, :asal_sekolah, :npsn_sekolah_asal,:nisn, :nik, :biaya_sekolah, :sd, :smp, :kip, :cita_cita, :hobi, :anak_ke, :transportasi, :jarak_sekolah, :waktu_tempuh, :jml_saudara, :no_kk, :kepala_keluarga, :status, :jurusan, :kelas_awal, :alasan_pindah :created_at, :created_at)";
+            $query = "INSERT INTO siswa VALUES (:result, :id_person, :no_pendaftaran, :asal_sekolah, :npsn_sekolah_asal,:nisn, :nik, :biaya_sekolah, :sd, :smp, :kip, :cita_cita, :hobi, :anak_ke, :transportasi, :jarak_sekolah, :waktu_tempuh, :jml_saudara, :no_kk, :kepala_keluarga, :status, :jurusan, :kelas_awal, :alasan_pindah, :jenis_daftar, :created_at, :created_at)";
     
             $this->db->query($query);
 
@@ -97,6 +112,7 @@ class Siswa_Model{
             $this->db->bind(':jurusan', $_POST['jurusan']);
             $this->db->bind(':kelas_awal', $_POST['kelas_awal']);
             $this->db->bind(':alasan_pindah', $_POST['alasan_pindah']);
+            $this->db->bind(':jenis_daftar', $_POST['jenis_daftar'] != "" ? $_POST['jenis_daftar'] : "Reguler");
             $this->db->bind(':created_at', $created_at);
             
         }else{
@@ -124,7 +140,11 @@ class Siswa_Model{
             $jurusan                   = $_POST['jurusan'];
             $kelas_awal                   = $_POST['kelas_awal'];
             $alasan_pindah                   = $_POST['alasan_pindah'];
-            $query = "UPDATE siswa SET no_pendaftaran='$no_pendaftaran', asal_sekolah='$asal_sekolah', npsn_sekolah_asal='$npsn_sekolah_asal',nisn='$nisn', nik='$nik', biaya_sekolah='$biaya_sekolah', sd='$sd', smp='$smp', kip='$kip', cita_cita='$cita_cita', hobi='$hobi', anak_ke='$anak_ke', transportasi='$transportasi', jarak_sekolah='$jarak_sekolah', waktu_tempuh='$waktu_tempuh', jml_saudara='$jml_saudara', no_kk='$no_kk', kepala_keluarga='$kepala_keluarga', jurusan='$jurusan', kelas_awal='$kelas_awal', alasan_pindah='$alasan_pindah', updated_at='$created_at' WHERE id_siswa='$id_siswa' ";
+            $jenis_daftar                   = $_POST['jenis_daftar'] != "" ? $_POST['jenis_daftar'] : "Reguler";
+            // var_dump($jenis_daftar);
+            // die();
+
+            $query = "UPDATE siswa SET no_pendaftaran='$no_pendaftaran', asal_sekolah='$asal_sekolah', npsn_sekolah_asal='$npsn_sekolah_asal',nisn='$nisn', nik='$nik', biaya_sekolah='$biaya_sekolah', sd='$sd', smp='$smp', kip='$kip', cita_cita='$cita_cita', hobi='$hobi', anak_ke='$anak_ke', transportasi='$transportasi', jarak_sekolah='$jarak_sekolah', waktu_tempuh='$waktu_tempuh', jml_saudara='$jml_saudara', no_kk='$no_kk', kepala_keluarga='$kepala_keluarga', jurusan='$jurusan', kelas_awal='$kelas_awal', alasan_pindah='$alasan_pindah', jenis_daftar='$jenis_daftar', updated_at='$created_at' WHERE id_siswa='$id_siswa' ";
             // var_dump($query);
             // die();
             

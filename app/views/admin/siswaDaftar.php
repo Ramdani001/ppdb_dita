@@ -95,22 +95,36 @@
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Siswa Daftar</h5>
-
-        <table class="table table-hover">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h5 class="card-title">Siswa Daftar</h5>
+          <input type="text" name="search" id="search" class="shadow-md" placeholder="Masukan NISN" style="height: 30px; width: 300px; padding: 10px; border-radius: 5px;" onpress="search(this.value)">
+        </div>
+        <table class="table table-hover" id="siswaTable">
           <thead>
             <th class="text-center">No</th>
+            <th class="text-center">Profile</th>
             <th class="text-center">Nama</th>
             <th class="text-center">Asal Sekolah</th>
             <th class="text-center">No.Telpon</th>
             <th class="text-center">Status</th>
             <th class="text-center">Aksi</th>
           </thead>
-          <tbody>
-            <?php foreach ($data["list_siswa"] as $key => $value) { ?>
+          <tbody id="tableBody">
+            <!-- Rows will be inserted here by JavaScript -->
+          </tbody>
+          <!-- <tbody>
+            <?php $i = 1; foreach ($data["list_siswa"] as $key => $value) { ?>
               <tr>
+                <td class="text-center"><?= $i ?></td>
                 <td class="text-center">
-                  <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
+                  <div class="position-absolute <?php if($value['jenis_daftar'] == 'Reguler') { echo 'd-none'; } ?>"  style="background-color: green; font-size: 10px; padding: 5px; color: white; border-radius: 5px; margin-top: -10px; margin-left: -5px; transform: rotate(-20deg);">
+                    Pindahan
+                  </div>
+                  <?php if($value['profile'] != ""){ ?>
+                    <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/<?= $value['profile'] ?>" alt="foto">
+                   <?php }else{ ?>
+                    <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/default.png" alt="foto">
+                   <?php } ?>
                 </td>
                 <td class="text-center"><?= $value["nama"] ?></td>
                 <td class="text-center"><?= $value["asal_sekolah"] ?></td>
@@ -135,8 +149,9 @@
                       }else{
                         echo "Ditolak";
                       }
-                    ?> 
+                    ?>
                   </button>
+                  <?php $i++ ?>
                 </td>
                 <td class="text-center">
                   <div class="d-flex gap-3 justify-content-center">
@@ -152,16 +167,11 @@
                     <a class="btn btn-secondary text-light" type="button" target="_blank" href="<?= BASEURL ?>ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">
                     <i class="bi bi-printer"></i>
                     </a>
-   
-                    <!-- <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" data-siswa='<?= json_encode($value) ?>'>
-                      <i class="ri-delete-bin-2-line"></i>
-                    </button> -->
-  
                   </div>
                 </td>
               </tr>
             <?php } ?>
-          </tbody>
+          </tbody> -->
         </table>
        
       </div>

@@ -44,6 +44,26 @@ class ViewAdminController extends Controller {
         $this->view('admin/code/footer');
     } 
 
+    public function jsonSiswa($nisn = 0){
+
+        $data['list_siswa'] = $this->model('Siswa_model')->searchSiswa($nisn); 
+        $jsonData = json_encode($data["list_siswa"], JSON_PRETTY_PRINT);
+
+        // Menampilkan JSON
+        header('Content-Type: application/json');
+        echo $jsonData;
+    }
+
+    public function getAll($nisn = 0){
+
+        $data['list_siswa'] = $this->model('Siswa_model')->getAll(); 
+        $jsonData = json_encode($data["list_siswa"], JSON_PRETTY_PRINT);
+
+        // Menampilkan JSON
+        header('Content-Type: application/json');
+        echo $jsonData;
+    }
+
     public function laporan(){
         $data['title'] = "SMK PROFITA";
 

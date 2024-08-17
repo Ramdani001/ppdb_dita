@@ -55,6 +55,33 @@
       '6.000.000 - 10.000.000' => '6.000.000 - 10.000.000'
     );
 
+    $jenis_kelamin = "";
+
+    if($siswa){
+      $jenis_kelamin = $siswa['jk'];
+    }
+
+    $opt_jk = array(
+      'Laki-laki' => 'Laki-laki',
+      'Perempuan' => 'Perempuan'
+    );
+
+    
+    $agama = "";
+
+    if($person){
+      $agama = $person['agama'];
+    }
+
+    $opt_agama = array(
+      'Islam' => 'Islam',
+      'Kristen' => 'Kristen',
+      'Katolik' => 'Katolik',
+      'Hindu' => 'Hindu',
+      'Budha' => 'Budha',
+      'Khonghucu' => 'Khonghucu'
+    );
+
     // Jurusan
     $jurusan = "";
 
@@ -328,7 +355,15 @@
                   <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $person['jk'] ?>" >
+                  <!-- <input type="Text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $person['jk'] ?>" > -->
+                  <select class="form-select" name="jenis_kelamin" id="jenis_kelamin">
+                      <?php
+                      foreach ($opt_jk as $value => $label) {
+                          $selected = ($value == $jenis_kelamin) ? 'selected' : '';
+                          echo "<option value=\"$value\" $selected>$label</option>";
+                      }
+                      ?>
+                  </select>
                 </div>
               </div>
               
@@ -340,12 +375,11 @@
                   <label for="inputPassword6" class="col-form-label">Asal Sekolah</label>
                 </div>
                 <div class="col-6">
-                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control" value="<?php if($siswa){
-                        echo $siswa['asal_sekolah'];
+                  <input type="Text" id="asal_sekolah" name="asal_sekolah" class="form-control text-start" value="<?php if($siswa){
+                        echo ltrim($siswa['asal_sekolah']);
                     }else{
-                      echo "";
-                      } ?>
-                  " >
+                      echo ltrim("");
+                      } ?>">
                 </div>
               </div>
             </td>
@@ -413,8 +447,7 @@
                     }else{
                       echo "";
                     }
-                  ?>
-                  " >
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -431,8 +464,7 @@
                         }else{
                           echo "";
                         }
-                      ?>
-                      " >
+                      ?>" >
                   </div>
                 </div>
             </td>
@@ -443,14 +475,21 @@
                     <label for="agama" class="col-form-label">Agama</label>
                   </div>
                   <div class="col-6">
-                    <input type="Text" id="agama" name="agama" class="form-control" value="<?php
+                  <select class="form-select" name="agama" id="agama">
+                      <?php
+                      foreach ($opt_agama as $value => $label) {
+                          $selected = ($value == $agama) ? 'selected' : '';
+                          echo "<option value=\"$value\" $selected>$label</option>";
+                      }
+                      ?>
+                  </select>
+                    <!-- <input type="Text" id="agama" name="agama" class="form-control" value="<?php
                       if($person){
                         echo $person['agama'];
                       }else{
                         echo "";
                       }
-                    ?>
-                    " >
+                    ?>" > -->
                   </div>
                 </div>
             </td>
@@ -469,8 +508,7 @@
                     }else{
                       echo "";
                     }
-                  ?>
-                  " >
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -487,8 +525,7 @@
                     }else{
                       echo "";
                     }
-                  ?>
-                  " >
+                  ?>" >
                 </div>
               </div>
             </td>
@@ -565,6 +602,8 @@
                 </div>
               </div>
             </td>
+            <input type="hidden" name="jenis_daftar" id="jenis_daftar" value="<?php if($siswa){echo $siswa['jenis_daftar'];}else{ echo ""; } ?>">
+            <input type="hidden" name="local_jenis_daftar" id="local_jenis_daftar" value="<?php if($siswa){echo $siswa['jenis_daftar'];}else{ echo ""; } ?>">
           </tr>
           <tr>
           <td id="al_awal" class="d-none">
