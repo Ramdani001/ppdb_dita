@@ -197,8 +197,8 @@
         Formulir Pendaftaran Siswa Baru
       </div>
       <div class="d-flex p-3 gap-4">
-        <button class="btn btn-primary" onclick="changeSiswa(1)">Reguler</button>
-        <button class="btn btn-secondary" onclick="changeSiswa(2)">Pindahan</button>
+        <button id="btn_reguler" class="btn btn-primary" onclick="changeSiswa(1)">Reguler</button>
+        <button id="btn_pindah" class="btn btn-secondary" onclick="changeSiswa(2)">Pindahan</button>
       </div>
     </div>
     <div class="header border p-2 d-flex">

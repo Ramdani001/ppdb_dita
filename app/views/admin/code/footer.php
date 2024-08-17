@@ -35,12 +35,24 @@
     <script>
     function changeSiswa(e){
         if(e == 2){
+
+            document.getElementById('btn_reguler').classList.remove('btn-primary');
+            document.getElementById('btn_reguler').classList.add('btn-secondary');
+
+            document.getElementById('btn_pindah').classList.remove('btn-secondary');
+            document.getElementById('btn_pindah').classList.add('btn-primary');
+            
             document.getElementById('al_awal').classList.remove('d-none');
             document.getElementById('al_pindah').classList.remove('d-none');
             
             sessionStorage.setItem('siswa', 'Pindahan');
             
         }else{
+            document.getElementById('btn_reguler').classList.add('btn-primary');
+            document.getElementById('btn_reguler').classList.remove('btn-secondary');
+            document.getElementById('btn_pindah').classList.add('btn-secondary');
+            document.getElementById('btn_pindah').classList.remove('btn-primary');
+
             document.getElementById('al_awal').classList.add('d-none');
             document.getElementById('al_pindah').classList.add('d-none');
             
@@ -60,6 +72,19 @@
         if(kond == "Pindahan"){
             awal.classList.remove('d-none');
             pindah.classList.remove('d-none');
+
+            document.getElementById('btn_reguler').classList.remove('btn-primary');
+            document.getElementById('btn_reguler').classList.add('btn-secondary');
+
+            document.getElementById('btn_pindah').classList.remove('btn-secondary');
+            document.getElementById('btn_pindah').classList.add('btn-primary');
+
+        }else{
+            document.getElementById('btn_reguler').classList.add('btn-primary');
+            document.getElementById('btn_reguler').classList.remove('btn-secondary');
+            document.getElementById('btn_pindah').classList.add('btn-secondary');
+            document.getElementById('btn_pindah').classList.remove('btn-primary');
+
         }
 
     });
