@@ -43,6 +43,10 @@
       $sehat = $berkas['sehat'];
     }
 
+    if($berkas['pindah']){
+      $pindah = $berkas['pindah'];
+    }
+
   }
 
 ?>
@@ -249,6 +253,13 @@
                 <img src="<?= BASEURL ?>public/assets/img/kip/<?= $kip ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" id="kipFile" name="kipFile" style="height: 40px;">
+            </div>
+            <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
+                <label for="kipFile" class="form-label">Surat Pindah Dari Sekolah Asal
+
+                <img src="<?= BASEURL ?>public/assets/img/pindah/<?= $pindah ?>" alt="" style="width: 200px;">
+
+                <input class="form-control" type="file" id="PindahFile" name="PindahFile" style="height: 40px;">
             </div>
             <!-- Bawah -->
           </div>

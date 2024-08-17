@@ -65,7 +65,7 @@ class Berkas_Model{
 
                 if(!$id_berkas){
                     
-                    $query = "INSERT INTO berkas VALUES (:id_berkas,:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
+                    $query = "INSERT INTO berkas VALUES (:id_berkas,:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus, :pindah)";
                     $this->db->query($query);
                     
                     $this->db->bind(':id_berkas', $result);
@@ -79,6 +79,7 @@ class Berkas_Model{
                     $this->db->bind(':sehat', '-');
                     $this->db->bind(':pas_foto', '-');
                     $this->db->bind(':lulus', '-');
+                    $this->db->bind(':pindah', '-');
                     
 
                     // var_dump($$result);
@@ -150,7 +151,7 @@ class Berkas_Model{
         
             // Query INSERT tanpa id_berkas jika id_berkas adalah AUTO_INCREMENT
             $query = "INSERT INTO berkas (kk, akta, ijazah, kip, profile, kelakuan, ortu, sehat, pas_foto, lulus)
-            VALUES (:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus)";
+            VALUES (:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus, :pindah)";
 
             // Menyiapkan statement
             $this->db->query($query);
@@ -166,6 +167,7 @@ class Berkas_Model{
             $this->db->bind(':sehat', '-');
             $this->db->bind(':pas_foto', '-');
             $this->db->bind(':lulus', '-');
+            $this->db->bind(':pindah', '-');
 
             // Eksekusi query
             $this->db->execute();
@@ -197,6 +199,30 @@ class Berkas_Model{
             $kkFile_pindah = move_uploaded_file($kkFile_tmpName, 'public/assets/img/kk/'. $kkFile_namaFileBaru);
 
             $query = "UPDATE berkas SET kk='$kkFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
+            $this->db->query($query);
+
+            $this->db->execute();
+            $count++;
+        }
+        // ============== KK =====================
+
+        // ============== Pindah =====================
+        if(!empty($_FILES['PindahFile']['name'])){
+            $PindahFile_nameFile   = $_FILES['PindahFile']['name'];
+            $PindahFile_ukuran     = $_FILES['PindahFile']['size'];
+            $PindahFile_tmpName    = $_FILES['PindahFile']['tmp_name'];
+
+            $PindahFile_extensionVal = ['jpg', 'jpeg', 'png'];
+            $PindahFile_extensionGambar = explode('.', $PindahFile_nameFile);
+            $PindahFile_extensionGambar = strtolower(end($PindahFile_extensionGambar));
+
+            $PindahFile_namaFileBaru = uniqid();
+            $PindahFile_namaFileBaru .= '.';
+            $PindahFile_namaFileBaru .= $PindahFile_extensionGambar;
+
+            $PindahFile_pindah = move_uploaded_file($PindahFile_tmpName, 'public/assets/img/Pindah/'. $PindahFile_namaFileBaru);
+
+            $query = "UPDATE berkas SET Pindah='$PindahFile_namaFileBaru' WHERE id_berkas='$id_berkas'";
             $this->db->query($query);
 
             $this->db->execute();
