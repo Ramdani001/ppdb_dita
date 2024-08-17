@@ -32,6 +32,39 @@
 
      </script>
     
+    <script>
+    function changeSiswa(e){
+        if(e == 2){
+            document.getElementById('al_awal').classList.remove('d-none');
+            document.getElementById('al_pindah').classList.remove('d-none');
+            
+            sessionStorage.setItem('siswa', 'Pindahan');
+            
+        }else{
+            document.getElementById('al_awal').classList.add('d-none');
+            document.getElementById('al_pindah').classList.add('d-none');
+            
+            sessionStorage.setItem('siswa', 'Reguler');
+        }
+        
+    }
+
+    document.addEventListener("DOMContentLoaded", function(e) {
+        let kond = sessionStorage.getItem('siswa');
+
+        let awal = document.getElementById('al_awal');
+        let pindah = document.getElementById('al_pindah');
+
+        console.log(kond.value);
+
+        if(kond == "Pindahan"){
+            awal.classList.remove('d-none');
+            pindah.classList.remove('d-none');
+        }
+
+    });
+
+    </script>
 </body>
 </html>
 
