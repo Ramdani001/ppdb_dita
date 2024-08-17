@@ -8,7 +8,7 @@ class ViewAdminController extends Controller {
 
         $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
         $data['data'] = $this->model('Siswa_model')->getData();
-
+ 
         $data['daftar'] = $this->model('Siswa_model')->getDaftar();
 
         $data['user'] = $this->model('Siswa_model')->getUser();
@@ -35,7 +35,7 @@ class ViewAdminController extends Controller {
 
     public function siswaDaftar($id = 0){
         $data['title'] = "SMK PROFITA";
-
+ 
         $data['list_siswa'] = $this->model('Siswa_model')->getAll(); 
         $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
 
