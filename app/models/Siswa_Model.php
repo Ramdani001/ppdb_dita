@@ -161,11 +161,16 @@ class Siswa_Model{
     }
 
     public function getDaftar(){
-        $query = "SELECT COUNT(*) as total_rows FROM siswa";
+        $query = "SELECT COUNT(*) as total_rows 
+                    FROM siswa s 
+                    INNER JOIN person p ON s.id_person = p.id_person 
+                    LEFT JOIN berkas k ON p.id_berkas = k.id_berkas 
+                    LEFT JOIN parents z ON z.id_siswa = s.id_siswa
+                  ";
         $this->db->query($query);
 
         $result = $this->db->single();
-
+ 
         return $result['total_rows'];
     }
 
@@ -180,7 +185,16 @@ class Siswa_Model{
 
     public function count(){
 
-        $sql = "SELECT (SELECT COUNT(*) FROM siswa WHERE jurusan = 'Akuntansi') AS akuntansi, (SELECT COUNT(*) FROM siswa WHERE jurusan = 'Penjualan') AS penjualan, (SELECT COUNT(*) FROM siswa WHERE jurusan = 'Administrator Perkantoran') AS administrator_perkantoran;";
+        $sql = "SELECT 
+                SUM(CASE WHEN s.jurusan = 'Akuntansi' THEN 1 ELSE 0 END) AS akuntansi,
+                SUM(CASE WHEN s.jurusan = 'Penjualan' THEN 1 ELSE 0 END) AS penjualan,
+                SUM(CASE WHEN s.jurusan = 'Administrator Perkantoran' THEN 1 ELSE 0 END) AS administrator_perkantoran
+                FROM siswa s
+                INNER JOIN person p ON s.id_person = p.id_person 
+                LEFT JOIN berkas k ON p.id_berkas = k.id_berkas 
+                LEFT JOIN parents z ON z.id_siswa = s.id_siswa;
+
+        ";
         $this->db->query($sql);
         $this->db->execute();
         $record = $this->db->single();
