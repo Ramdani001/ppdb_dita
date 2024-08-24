@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Models;
 class Berkas_Model{
 
     private $table = "user";

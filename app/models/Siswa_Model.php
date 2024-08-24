@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Models;
 class Siswa_Model{
 
     private $table = "siswa";
