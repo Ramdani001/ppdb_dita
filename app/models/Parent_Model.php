@@ -1,5 +1,5 @@
 <?php
-namespace app\Models;
+namespace App\Models;
 class Parent_Model{
 
     private $table = "parents";
