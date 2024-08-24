@@ -1,9 +1,9 @@
 <?php
 
 // BASE URL
-define('BASEURL', 'http://203.175.10.169/SMK_PROFITA/');
+define('BASEURL', 'http://www.tempat-transit.cloud/SMK_PROFITA/');
 
-define('COMPONENT_PATH', 'http://203.175.10.169/SMK_PROFITA/app/views/component/');
+define('COMPONENT_PATH', 'http://www.tempat-transit.cloud/SMK_PROFITA/app/views/component/');
 
 // define('BASEURL', '203.175.10.169/ppdb_dita/');
 // define('COMPONENT_PATH', '203.175.10.169/ppdb_dita/app/views/component/');
