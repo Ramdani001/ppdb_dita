@@ -12,7 +12,7 @@ class Controller
     public function model($model)
     {
         // Sesuaikan path ke model sesuai dengan konfigurasi autoloading
-        $modelClass = 'App\\Models\\' . $model;
+        $modelClass = 'app\\Models\\' . $model;
         return new $modelClass;
     }
 }
