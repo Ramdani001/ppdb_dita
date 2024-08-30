@@ -33,7 +33,7 @@ class AdminController extends Controller {
             $send = $this->model('User_model')->login($_POST);
             
             if($send[1]['SESSION'] > 0){
-
+ 
                 $id_person = $send[0]['BERHASIL'];
                 
                 $sql = "SELECT tipe FROM person WHERE id_person = :id_person";

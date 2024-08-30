@@ -6,7 +6,7 @@ class LoginController extends Controller {
         
         $data['id_person'] = $id;
         $data['title'] = "SMK PROFITA";
-
+ 
         $data['person'] = $this->model('User_model')->getUser();
 
         $this->view('templates/header', $data);
