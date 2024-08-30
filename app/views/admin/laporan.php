@@ -165,7 +165,7 @@
             <th class="text-center">No</th>
             <th class="text-center">Nama</th>
             <th class="text-center">Asal Sekolah</th>
-            <th class="text-center">No.Telpon</th>
+            <th class="text-center">No.Telepon</th>
             <th class="text-center">Status</th>
           </thead>
           <tbody>

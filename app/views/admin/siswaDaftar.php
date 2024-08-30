@@ -105,7 +105,7 @@
             <th class="text-center">Profile</th>
             <th class="text-center">Nama</th>
             <th class="text-center">Asal Sekolah</th>
-            <th class="text-center">No.Telpon</th>
+            <th class="text-center">No.Telepon</th>
             <th class="text-center">Status</th>
             <th class="text-center">Aksi</th>
           </thead>
@@ -117,13 +117,13 @@
               <tr>
                 <td class="text-center"><?= $i ?></td>
                 <td class="text-center">
-                  <div class="position-absolute <?php if($value['jenis_daftar'] == 'Reguler') { echo 'd-none'; } ?>"  style="background-color: green; font-size: 10px; padding: 5px; color: white; border-radius: 5px; margin-top: -10px; margin-left: -5px; transform: rotate(-20deg);">
+                  <div class="position-absolute <?php if($value['jenis_daftar'] == 'Reguler') { echo 'd-none'; } ?>"  style="background-color: blue; font-size: 10px; padding: 5px; color: white; border-radius: 5px; margin-top: -10px; margin-left: -5px; transform: rotate(-20deg);">
                     Pindahan
                   </div>
                   <?php if($value['profile'] != ""){ ?>
-                    <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/<?= $value['profile'] ?>" alt="foto">
+                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/<?= $value['profile'] ?>" alt="foto">
                    <?php }else{ ?>
-                    <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/default.png" alt="foto">
+                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/default.png" alt="foto">
                    <?php } ?>
                 </td>
                 <td class="text-center"><?= $value["nama"] ?></td>
@@ -197,7 +197,7 @@
          <div>
           <h5>
             <b>
-              <u>Personal</u>
+              <u>Data Diri</u>
             </b>
           </h5>
          </div>

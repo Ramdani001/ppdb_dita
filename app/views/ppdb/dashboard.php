@@ -222,7 +222,7 @@
 
 <!-- Icon W.a -->
 <div class="bottom-0 rigth-0 w-full" style="position: fixed; right: 0;">
-    <a href="https://wa.link/m208kp" target="_blank">
+    <a href="https://wa.link/3k09wn" target="_blank">
       <img src="<?= BASEURL ?>public/assets/img/w.a.png" alt="as" width="100">
     </a>
   </div>
@@ -828,7 +828,7 @@
                 <div class="col-6">
                   <label for="kab_kota" class="col-form-label">Kabupaten/Kota</label>
                 </div>
-                <div class="col-6">
+                <div class="col-6"> 
                   <input type="Text" id="kab_kota" name="kab_kota" class="form-control" value="<?php
                     if($person){
                       echo $person['kab_kota'];

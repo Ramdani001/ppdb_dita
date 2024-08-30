@@ -1,6 +1,7 @@
 <?php
 
 class LoginController extends Controller {
+    
     public function index($id = 0){
         
         $data['id_person'] = $id;
