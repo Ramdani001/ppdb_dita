@@ -4,7 +4,7 @@
     <div class="d-flex flex-wrap justify-content-between gap-4">
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/gerbang.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/gerbang.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -14,7 +14,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/gedung.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/gedung.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -24,7 +24,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/ruang_kelas.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/ruang_kelas.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -34,7 +34,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/perpus.jpg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/perpus.jpg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -44,7 +44,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/lapangan sekolah.jpg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/lapangan sekolah.jpg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -54,7 +54,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/rakpiala.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/rakpiala.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -64,7 +64,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/resepsionis.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/resepsionis.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -74,7 +74,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/ruang_guru.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/ruang_guru.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -84,7 +84,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/lab_komputer.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/lab_komputer.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -94,7 +94,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/ruang_tu.jpg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/ruang_tu.jpg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -104,7 +104,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/ruang_meeting.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/ruang_meeting.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -114,7 +114,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 14rem; cursor: pointer; height: 16rem;">
-            <img src="<?= BASEURL ?>public/assets/img/sarana/masjid.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
+            <img src="public/assets/img/sarana/masjid.jpeg" style="height: 100%; object-fit: cover;" class="card-img-top" alt="guru">
             <!-- <input type="text" name="idGur" id="igGur"> -->
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
@@ -151,7 +151,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <img src="<?= BASEURL ?>public/assets/img/guru/guru3.jpg" class="card-img-top" alt="guru">
+        <img src="public/assets/img/guru/guru3.jpg" class="card-img-top" alt="guru">
         <div>
             <!-- Nama -->
             <div>
