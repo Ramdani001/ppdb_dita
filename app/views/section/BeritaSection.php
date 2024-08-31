@@ -5,7 +5,7 @@
     <fieldset class="mt-3">
         <div class="card shadow-md">
             <div class="card-body d-flex justify-content-between flex-wrap gap-2" >
-                    <img src="<?= BASEURL ?>public/assets/img/berita/berita1.jpg" class="card-img-top" alt="Berita" style="width: 25rem;">
+                    <img src="public/assets/img/berita/berita1.jpg" class="card-img-top" alt="Berita" style="width: 25rem;">
                     <div class="" style="width: 60%;">
                         <h2 class="text-2xl" style="color: #373737;">
                             <b>Juara Umum dan Juara Medali Emas</b> 

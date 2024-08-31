@@ -2,23 +2,23 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     
     <!-- Vendor JS Files -->
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/chart.js/chart.umd.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/echarts/echarts.min.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/quill/quill.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/tinymce/tinymce.min.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/php-email-form/validate.js"></script>
+    <script src="public/assets/admin/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="public/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="public/assets/admin/vendor/chart.js/chart.umd.js"></script>
+    <script src="public/assets/admin/vendor/echarts/echarts.min.js"></script>
+    <script src="public/assets/admin/vendor/quill/quill.js"></script>
+    <script src="public/assets/admin/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="public/assets/admin/vendor/tinymce/tinymce.min.js"></script>
+    <script src="public/assets/admin/vendor/php-email-form/validate.js"></script>
 
     <!-- Datables --> 
     <script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
     <!-- <script src="/DataTables/datatables.js"></script> -->
     <!-- Template Main JS File -->
-    <script src="<?= BASEURL ?>public/assets/admin/js/main.js"></script>
+    <script src="public/assets/admin/js/main.js"></script>
     
     <!-- My Script --> 
-    <script src="<?= BASEURL ?>public/assets/scriptPPDB.js"></script>
+    <script src="public/assets/scriptPPDB.js"></script>
 
      <script>
 
@@ -48,7 +48,7 @@
                                         Pindahan
                                     </div>
                                     <img style="width: 30px; height: 30px; border-radius: 100%;" 
-                                        src="${item.profile ? '<?= BASEURL ?>public/assets/img/profile/' + item.profile : '<?= BASEURL ?>public/assets/img/default.png'}" 
+                                        src="${item.profile ? 'public/assets/img/profile/' + item.profile : 'public/assets/img/default.png'}" 
                                         alt="foto">
                                 </td>
                                 <td class="text-center">${item.nama}</td>
@@ -67,7 +67,7 @@
                                         <button class="btn btn-success text-light" type="button" data-bs-toggle="modal" data-bs-target="#editModal" data-siswa='${JSON.stringify(item)}'>
                                             <i class="ri-file-edit-line"></i>
                                         </button>
-                                        <a class="btn btn-secondary text-light" type="button" target="_blank" href="${'<?= BASEURL ?>ViewAdminController/PrintSiswa/' + item.id_siswa}">
+                                        <a class="btn btn-secondary text-light" type="button" target="_blank" href="${'ViewAdminController/PrintSiswa/' + item.id_siswa}">
                                             <i class="bi bi-printer"></i>
                                         </a>
                                     </div>
@@ -114,7 +114,7 @@
                                         Pindahan
                                     </div>
                                     <img style="width: 30px; height: 30px; border-radius: 100%;" 
-                                        src="${item.profile ? '<?= BASEURL ?>public/assets/img/profile/' + item.profile : '<?= BASEURL ?>public/assets/img/default.png'}" 
+                                        src="${item.profile ? 'public/assets/img/profile/' + item.profile : 'public/assets/img/default.png'}" 
                                         alt="foto">
                                 </td>
                                 <td class="text-center">${item.nama}</td>
@@ -133,7 +133,7 @@
                                         <button class="btn btn-success text-light" type="button" data-bs-toggle="modal" data-bs-target="#editModal" data-siswa='${JSON.stringify(item)}'>
                                             <i class="ri-file-edit-line"></i>
                                         </button>
-                                        <a class="btn btn-secondary text-light" type="button" target="_blank" href="${'<?= BASEURL ?>ViewAdminController/PrintSiswa/' + item.id_siswa}">
+                                        <a class="btn btn-secondary text-light" type="button" target="_blank" href="${'ViewAdminController/PrintSiswa/' + item.id_siswa}">
                                             <i class="bi bi-printer"></i>
                                         </a>
                                     </div>
@@ -186,7 +186,7 @@
                                         Pindahan
                                     </div>
                                     <img style="width: 30px; height: 30px; border-radius: 100%;" 
-                                        src="${item.profile ? '<?= BASEURL ?>public/assets/img/profile/' + item.profile : '<?= BASEURL ?>public/assets/img/default.png'}" 
+                                        src="${item.profile ? 'public/assets/img/profile/' + item.profile : 'public/assets/img/default.png'}" 
                                         alt="foto">
                                 </td>
                                 <td class="text-center">${item.nama}</td>
@@ -205,7 +205,7 @@
                                         <button class="btn btn-success text-light" type="button" data-bs-toggle="modal" data-bs-target="#editModal" data-siswa='${JSON.stringify(item)}'>
                                             <i class="ri-file-edit-line"></i>
                                         </button>
-                                        <a class="btn btn-secondary text-light" type="button" target="_blank" href="${'<?= BASEURL ?>ViewAdminController/PrintSiswa/' + item.id_siswa}">
+                                        <a class="btn btn-secondary text-light" type="button" target="_blank" href="${'ViewAdminController/PrintSiswa/' + item.id_siswa}">
                                             <i class="bi bi-printer"></i>
                                         </a>
                                     </div>

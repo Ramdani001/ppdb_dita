@@ -16,7 +16,7 @@
       <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
+          <img src="public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
           <span class="d-none d-md-block dropdown-toggle ps-2"><?= $data['auth']['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
@@ -34,7 +34,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
+            <a class="dropdown-item d-flex align-items-center" href="LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -56,7 +56,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/">
+      <a class="nav-link collapsed" href="ViewAdminController/">
         <i class="bi bi-person"></i>
         <span>Dashboard</span>
       </a>
@@ -65,21 +65,21 @@
     <li class="nav-heading">Pages</li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/user">
+      <a class="nav-link collapsed" href="ViewAdminController/user">
         <i class="bi bi-person"></i>
         <span>User</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed " href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
+      <a class="nav-link collapsed " href="ViewAdminController/siswaDaftar">
         <i class="ri-graduation-cap-fill"></i>
         <span>Siswa Daftar</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed bg-primary text-light" href="<?= BASEURL ?>ViewAdminController/laporan">
+      <a class="nav-link collapsed bg-primary text-light" href="ViewAdminController/laporan">
         <i class="ri-folder-chart-fill"></i>
         <span>Laporan Pendaftaran</span>
       </a>
@@ -105,7 +105,7 @@
           document.addEventListener("DOMContentLoaded", () => {
 
             $.ajax({
-                url: '<?= BASEURL ?>ViewAdminController/chart',
+                url: 'ViewAdminController/chart',
                 success: function(data) {
 
                   console.log('Success:', data);
@@ -172,7 +172,7 @@
             <?php foreach ($data["list_siswa"] as $key => $value) { ?>
               <tr>
                 <td class="text-center">
-                  <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
+                  <img style="width: 30px; height: 30px; border-radius: 100%;" src="public/assets/img/profile/contoh.jpeg" alt="foto">
                 </td>
                 <td class="text-center"><?= $value["nama"] ?></td>
                 <td class="text-center"><?= $value["asal_sekolah"] ?></td>

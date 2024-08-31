@@ -84,7 +84,7 @@
             echo '
                 <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
                 <div style="width: 15px; height: 15px; background-color: blue; position: absolute; border-radius: 100%; margin-top: 2px; margin-left: -5px;"></div>
-                  <a href="'.BASEURL.'/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
+                  <a href="/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
                   <i class="bi bi-envelope"></i> 
                   </a>
                 </div>
@@ -113,10 +113,10 @@
         <?php
           if($berkas){
             echo '
-              <img src="'.BASEURL.'public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
+              <img src="public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
             ';
           }else{
-            echo '<img src="'.BASEURL.'public/assets/img/default.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">';
+            echo '<img src="public/assets/img/default.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">';
           }
         ?>
 
@@ -138,7 +138,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
+            <a class="dropdown-item d-flex align-items-center" href="LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -160,21 +160,21 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/index/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/index/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Formulir</span>
       </a>
     </li>
  
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/berkas/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Upload Berkas</span>
       </a>
     </li>
 
     <!-- <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/cetakKartu/<?= $person['id_person'] ?>">
         <i class="bi bi-question-circle"></i>
         <span>Cetak Kartu</span>
       </a>
@@ -188,7 +188,7 @@
     <h3 class="text-decoration-underline">
         UPLOAD BERKAS
     </h3>  
-    <form action="<?= BASEURL ?>PPDBController/updateBerkas/<?= $person['id_person'] ?>" enctype="multipart/form-data" method="POST">
+    <form action="PPDBController/updateBerkas/<?= $person['id_person'] ?>" enctype="multipart/form-data" method="POST">
  
       <input type="hidden" name="id_person" id="id_person" value="<?= $person['id_person'] ?>">
  
@@ -197,7 +197,7 @@
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;"> 
                 <span for="aktaFile" class="text-center">Akta</span>
 
-                <img src="<?= BASEURL ?>public/assets/img/akta/<?= $akta ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/akta/<?= $akta ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" id="aktaFile" name="aktaFile">
             </div>
@@ -205,7 +205,7 @@
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;"> 
                 <span for="kkFile" class="text-center">Kartu Keluarga</span>
 
-                <img src="<?= BASEURL ?>public/assets/img/kk/<?= $kk ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/kk/<?= $kk ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" id="kkFile" name="kkFile">
             </div>
@@ -213,7 +213,7 @@
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
                 <label for="ortu" class="form-label">KTP Orang Tua</label>
 
-                <img src="<?= BASEURL ?>public/assets/img/ortu/<?= $ortu ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/ortu/<?= $ortu ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" name="ortuFile" id="ortuFile">
             </div>
@@ -221,7 +221,7 @@
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
                 <label for="sehatFile" class="form-label">Kartu Keterangan Sehat</label>
 
-                <img src="<?= BASEURL ?>public/assets/img/sehat/<?= $sehat ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/sehat/<?= $sehat ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" name="sehatFile" id="sehatFile">
             </div>
@@ -229,7 +229,7 @@
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
                 <label for="kelakuanFile" class="form-label">Surat Kelakuan Baik Dari <br> Sekolah Asal</label>
 
-                <img src="<?= BASEURL ?>public/assets/img/kelakuan/<?= $kelakuan ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/kelakuan/<?= $kelakuan ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" name="kelakuanFile" id="kelakuanFile" style="height: 40px;">
             </div>
@@ -237,7 +237,7 @@
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
                 <label for="pasFotoFile" class="form-label">Pas Foto Ukuran 3x4</label>
 
-                <img src="<?= BASEURL ?>public/assets/img/pas_foto/<?= $pasFoto ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/pas_foto/<?= $pasFoto ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" name="pasFotoFile" id="pasFotoFile" style="height: 40px;">
             </div>
@@ -248,28 +248,28 @@
                   <div>(SMP/MTs)</div>
                 </div>
 
-                <img src="<?= BASEURL ?>public/assets/img/lulus/<?= $lulus ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/lulus/<?= $lulus ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" id="lulusFile" name="lulusFile" style="height: 40px;">
             </div>
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
                 <label for="ijazahFile" class="form-label">Ijazah SLTP <br> (Jika Sudah Ada) </label>
 
-                <img src="<?= BASEURL ?>public/assets/img/ijazah/<?= $ijazah ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/ijazah/<?= $ijazah ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" id="ijazahFile" name="ijazahFile" style="height: 40px;">
             </div>
             <div class="mb-3" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
                 <label for="kipFile" class="form-label">Kartu Indonesia Pintar <br> (Bila Memiliki) </label>
 
-                <img src="<?= BASEURL ?>public/assets/img/kip/<?= $kip ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/kip/<?= $kip ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" id="kipFile" name="kipFile" style="height: 40px;">
             </div>
             <div class="mb-3 <?php if($siswa['jenis_daftar'] == 'Reguler') { echo 'd-none'; } ?>" style="display: grid; gap: 5px; justify-items: center; width: 250px;">
                 <label for="PindahFile" class="form-label">Surat Pindah Dari Sekolah Asal
 
-                <img src="<?= BASEURL ?>public/assets/img/pindah/<?= $pindah ?>" alt="" style="width: 200px;">
+                <img src="public/assets/img/pindah/<?= $pindah ?>" alt="" style="width: 200px;">
 
                 <input class="form-control" type="file" id="PindahFile" name="PindahFile" style="height: 40px;">
             </div>

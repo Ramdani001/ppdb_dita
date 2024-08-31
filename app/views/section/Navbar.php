@@ -1,6 +1,6 @@
 <nav class="shadow row position-fixed top-0 bg-light w-100 m-0 navbar-expand-lg" style="z-index: 100;">
     <div class="brand p-1 ps-md-5 col-8 col-md-4 d-flex align-items-center">
-        <img src="<?= BASEURL ?>public/assets/img/logo.png" alt="logo" id="logo">
+        <img src="public/assets/img/logo.png" alt="logo" id="logo">
         <h4 class="ms-2">SMK PROFITA BANDUNG</h4>
     </div>
     <div id="btnMobile" class="col-1 fs-1 d-md-none" style="width: 30%; display: grid; justify-content: end; align-items: center;">
@@ -20,28 +20,28 @@
         </div> 
         <div class="d-flex align-items-center gap-3 mt-md-3 gap-4">
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#heroSection">Beranda</a>
+                <a class="text-decoration-none text-menu text-dark" href="Landing#heroSection">Beranda</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#profileSection">Sambutan</a>
+                <a class="text-decoration-none text-menu text-dark" href="Landing#profileSection">Sambutan</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing/Akademika">Tenaga Pendidik</a>
+                <a class="text-decoration-none text-menu text-dark" href="Landing/Akademika">Tenaga Pendidik</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#galeriSection">Galeri</a>
+                <a class="text-decoration-none text-menu text-dark" href="Landing#galeriSection">Galeri</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing/Sarana">Sarana & Prasarana</a>
+                <a class="text-decoration-none text-menu text-dark" href="Landing/Sarana">Sarana & Prasarana</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#beritaSection">Berita</a>
+                <a class="text-decoration-none text-menu text-dark" href="Landing#beritaSection">Berita</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>Landing#kontakSection">Kontak</a>
+                <a class="text-decoration-none text-menu text-dark" href="Landing#kontakSection">Kontak</a>
             </div>
             <div class="nav-link">
-                <a class="text-decoration-none text-menu text-dark" href="<?= BASEURL ?>LoginController">PPDB</a>
+                <a class="text-decoration-none text-menu text-dark" href="LoginController">PPDB</a>
             </div>
         </div>
     </div>

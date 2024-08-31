@@ -121,7 +121,7 @@
             echo '
                 <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
                 <div style="width: 15px; height: 15px; background-color: blue; position: absolute; border-radius: 100%; margin-top: 2px; margin-left: -5px;"></div>
-                  <a href="'.BASEURL.'/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
+                  <a href="/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
                   <i class="bi bi-envelope"></i> 
                   </a>
                 </div>
@@ -145,14 +145,14 @@
         <?php
           if($berkas){
             echo '
-              <img src="'.BASEURL.'public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
+              <img src="public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
             ';
           }else{
-            echo '<img src="'.BASEURL.'public/assets/img/default.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">';
+            echo '<img src="public/assets/img/default.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">';
           }
         ?>
 
-          <!-- <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle"> -->
+          <!-- <img src="public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle"> -->
 
           <span class="d-none d-md-block dropdown-toggle ps-2"><?= $person['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
@@ -171,7 +171,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
+            <a class="dropdown-item d-flex align-items-center" href="LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -193,21 +193,21 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/index/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/index/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Formulir</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/berkas/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Upload Berkas</span>
       </a>
     </li>
 
     <!-- <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/cetakKartu/<?= $person['id_person'] ?>">
         <i class="bi bi-question-circle"></i>
         <span>Cetak Kartu</span>
       </a>
@@ -223,7 +223,7 @@
 <!-- Icon W.a -->
 <div class="bottom-0 rigth-0 w-full" style="position: fixed; right: 0;">
     <a href="https://wa.link/3k09wn" target="_blank">
-      <img src="<?= BASEURL ?>public/assets/img/w.a.png" alt="as" width="100">
+      <img src="public/assets/img/w.a.png" alt="as" width="100">
     </a>
   </div>
   <!-- Icon W.a -->    
@@ -277,7 +277,7 @@
       
     </div>
 
-  <form action="<?= BASEURL ?>PPDBController/insertFormulir/<?= $person['id_person'] ?>" method="post" enctype="multipart/form-data">
+  <form action="PPDBController/insertFormulir/<?= $person['id_person'] ?>" method="post" enctype="multipart/form-data">
     <!-- form data diri -->
  
     <input type="hidden" value="<?= $person['id_person'] ?>" name="id_person" id="id_person">
@@ -1300,7 +1300,7 @@
         <table class="w-100">
           <tr>
             <td>
-              <img src="<?= BASEURL ?>public/assets/img/profile/<?= $foto_profile ?>" alt="" style="width: 300px;">
+              <img src="public/assets/img/profile/<?= $foto_profile ?>" alt="" style="width: 300px;">
             </td>
           </tr>
           <tr>

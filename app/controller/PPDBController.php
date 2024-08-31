@@ -130,7 +130,7 @@ class PPDBController extends Controller {
                         $this->db->query($sql);
                         $data['person'] = $this->db->single();
                     
-                        header("Location: ".BASEURL."PPDBController/$id_person");
+                        header("Location: "PPDBController/$id_person");
                         exit(); 
                     }
 
@@ -154,7 +154,7 @@ class PPDBController extends Controller {
             $this->db->query($sql);
             $data['person'] = $this->db->single();
         
-            header("Location: ".BASEURL."PPDBController/berkas/$id_person");
+            header("Location: "PPDBController/berkas/$id_person");
             exit(); 
         }
 

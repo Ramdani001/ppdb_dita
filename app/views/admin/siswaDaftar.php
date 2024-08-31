@@ -16,7 +16,7 @@
       <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
+          <img src="public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
           <span class="d-none d-md-block dropdown-toggle ps-2"><?= $data['auth']['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
@@ -33,7 +33,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
+            <a class="dropdown-item d-flex align-items-center" href="LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -55,7 +55,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/">
+      <a class="nav-link collapsed" href="ViewAdminController/">
         <i class="bi bi-person"></i>
         <span>Dashboard</span>
       </a>
@@ -64,21 +64,21 @@
     <li class="nav-heading">Pages</li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/user">
+      <a class="nav-link collapsed" href="ViewAdminController/user">
         <i class="bi bi-person"></i>
         <span>User</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed bg-primary text-light " href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
+      <a class="nav-link collapsed bg-primary text-light " href="ViewAdminController/siswaDaftar">
         <i class="ri-graduation-cap-fill"></i>
         <span>Siswa Daftar</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/laporan">
+      <a class="nav-link collapsed" href="ViewAdminController/laporan">
         <i class="ri-folder-chart-fill"></i>
         <span>Laporan Pendaftaran</span>
       </a>
@@ -121,9 +121,9 @@
                     Pindahan
                   </div>
                   <?php if($value['profile'] != ""){ ?>
-                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/<?= $value['profile'] ?>" alt="foto">
+                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="public/assets/img/profile/<?= $value['profile'] ?>" alt="foto">
                    <?php }else{ ?>
-                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/default.png" alt="foto">
+                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="public/assets/img/default.png" alt="foto">
                    <?php } ?>
                 </td>
                 <td class="text-center"><?= $value["nama"] ?></td>
@@ -164,7 +164,7 @@
                       <i class="ri-file-edit-line"></i> 
                     </button>
  
-                    <a class="btn btn-secondary text-light" type="button" target="_blank" href="<?= BASEURL ?>ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">
+                    <a class="btn btn-secondary text-light" type="button" target="_blank" href="ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">
                     <i class="bi bi-printer"></i>
                     </a>
                   </div>
@@ -659,7 +659,7 @@
 </div>
 <!-- Modal Detail -->
 
-<input type="hidden" value="<?= BASEURL ?>" id="base_url">
+<input type="hidden" value="" id="base_url">
 <!-- Modal Edit -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -669,7 +669,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="<?= BASEURL ?>AdminController/editStatus" method="POST">
+        <form action="AdminController/editStatus" method="POST">
           <div style="">
             <div class="w-50">
               <!-- <div><span>No. Pendaftaran</span></div> -->

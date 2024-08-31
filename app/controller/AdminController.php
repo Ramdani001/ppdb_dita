@@ -42,15 +42,15 @@ class AdminController extends Controller {
                 $this->db->execute();
                 
                 if($this->db->single()['tipe'] == 3){
-                    header('Location: '. BASEURL .'PPDBController/index/'.$id_person);
+                    header('Location: PPDBController/index/'.$id_person);
                 }else{
-                    header('Location: '. BASEURL .'ViewAdminController/index/'.$id_person);
+                    header('Location: ViewAdminController/index/'.$id_person);
                 }
                 exit;
             }else{  
                 Flasher::setFlash('Gagal Login Mohon periksan emil & password', 'Login', 'danger');
 
-                header('Location: '. BASEURL .'LoginController');
+                header('Location: LoginController');
                 exit;
             }
         }else if($type == 'register'){
@@ -58,11 +58,11 @@ class AdminController extends Controller {
             if($this->model('User_model')->register($_POST)){
                 Flasher::setFlash('Selamat Bergabung', 'Login', 'success');
                 $_SESSION['message'] = 'Berhasil dibuat!';
-                header('Location: '. BASEURL .'LoginController');
+                header('Location: LoginController');
                 exit;
             }else{
                 $_SESSION['message'] = 'Gagal dibuat!';
-                header('Location: '. BASEURL .'AdminController');
+                header('Location: AdminController');
                 exit;
             }
         }
@@ -75,11 +75,11 @@ class AdminController extends Controller {
             $this->model('User_model')->deleteByIdPerson($id_person);
             $this->model('Person_model')->deleteByIdPerson($id_person);
 
-            header('Location: '. BASEURL .'ViewAdminController/user');
+            header('Location: ViewAdminController/user');
             exit;
         } else {
             $_SESSION['message'] = 'Gagal dihapus!';
-            header('Location: '. BASEURL .'ViewAdminController/user');
+            header('Location: ViewAdminController/user');
             exit;
         }
     }
@@ -89,7 +89,7 @@ class AdminController extends Controller {
         $siswa = $this->model('Siswa_Model')->editStatus($_POST); 
         
         if($siswa > 0){
-            header('Location: '. BASEURL .'ViewAdminController/siswaDaftar');
+            header('Location: ViewAdminController/siswaDaftar');
         }else{
             var_dump($siswa);
             die();

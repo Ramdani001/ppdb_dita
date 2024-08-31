@@ -2,7 +2,7 @@
     <div class="profileContent d-flex gap-5 p-5 align-items-center" style=' height: 100vh; background-repeat: no-repeat; background-position: center;'>
          
         <div class="kepsek w-50 h-100" style="display: grid; place-items: center;">
-            <img src="<?= BASEURL ?>public/assets/img/kepsek.jpg" alt="" class="shadow-lg border border-3 border-light">
+            <img src="public/assets/img/kepsek.jpg" alt="" class="shadow-lg border border-3 border-light">
         </div>
         <div class="right-profile w-50">
             <!-- yang ini -->
