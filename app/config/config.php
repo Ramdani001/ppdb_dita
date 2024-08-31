@@ -1,9 +1,9 @@
 <?php
 
 // BASE URL
-define('BASEURL', 'http://localhost/ditappdb/');
+define('BASEURL', 'http://localhost/ppdb_dita/');
 
-define('COMPONENT_PATH', 'http://localhost/ditappdb/app/views/component/');
+define('COMPONENT_PATH', 'http://localhost/ppdb_dita/app/views/component/');
 
 // define('BASEURL', 'http://www.tempat-transit.cloud/SMK_PROFITA/');
 // define('COMPONENT_PATH', 'http://www.tempat-transit.cloud/SMK_PROFITA/app/views/component/');
