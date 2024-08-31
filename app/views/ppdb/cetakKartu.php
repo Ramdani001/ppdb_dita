@@ -29,7 +29,7 @@
         echo '
             <div class="me-3 fs-4" style="color: rgb(33, 37, 41);">
             <div style="width: 15px; height: 15px; background-color: blue; position: absolute; border-radius: 100%; margin-top: 2px; margin-left: -5px;"></div>
-              <a href="'.BASEURL.'/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
+              <a href="/AdminController/messages/'.$person['id_person'].'" target="_blank" style="text-decoration: none; color: blue;">
               <i class="bi bi-envelope"></i> 
               </a>
             </div>
@@ -57,10 +57,10 @@
         <?php
           if($berkas){
             echo '
-              <img src="'.BASEURL.'public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
+              <img src="public/assets/img/profile/'.$berkas['profile'].'" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
             ';
           }else{
-            echo '<img src="'.BASEURL.'public/assets/img/default.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">';
+            echo '<img src="public/assets/img/default.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">';
           }
         ?>
           <span class="d-none d-md-block dropdown-toggle ps-2">Rizkan Ramdani</span>
@@ -79,7 +79,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
+            <a class="dropdown-item d-flex align-items-center" href="LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -101,21 +101,21 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/index/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/index/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Formulir</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/berkas/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/berkas/<?= $person['id_person'] ?>">
         <i class="bi bi-person"></i>
         <span>Upload Berkas</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>PPDBController/cetakKartu/<?= $person['id_person'] ?>">
+      <a class="nav-link collapsed" href="PPDBController/cetakKartu/<?= $person['id_person'] ?>">
         <i class="bi bi-question-circle"></i>
         <span>Cetak Kartu</span>
       </a>
@@ -139,7 +139,7 @@
           </h2>
           <div class="card-body p-3 gap-4 d-flex justfiy-content-around align-items-center">
             <div class="left">
-                <img src="<?= BASEURL ?>public/assets/img/profile/<?= $foto_profile ?>" alt="" style="width: 150px; border-radius: 10px;">
+                <img src="public/assets/img/profile/<?= $foto_profile ?>" alt="" style="width: 150px; border-radius: 10px;">
             </div>
             <div class="right p-3 w-100 mt-4">
                 <div class="d-flex justify-content-center w-100 mb-3">

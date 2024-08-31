@@ -8,7 +8,7 @@ class ViewAdminController extends Controller {
 
         $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
         $data['data'] = $this->model('Siswa_model')->getData();
-
+ 
         $data['daftar'] = $this->model('Siswa_model')->getDaftar();
 
         $data['user'] = $this->model('Siswa_model')->getUser();
@@ -35,7 +35,7 @@ class ViewAdminController extends Controller {
 
     public function siswaDaftar($id = 0){
         $data['title'] = "SMK PROFITA";
-
+ 
         $data['list_siswa'] = $this->model('Siswa_model')->getAll(); 
         $data['auth'] = $this->model('Person_model')->getById($_SESSION["id_person"]);
 
@@ -43,6 +43,26 @@ class ViewAdminController extends Controller {
             $this->view('admin/siswaDaftar', $data);
         $this->view('admin/code/footer');
     } 
+
+    public function jsonSiswa($nisn = 0){
+
+        $data['list_siswa'] = $this->model('Siswa_model')->searchSiswa($nisn); 
+        $jsonData = json_encode($data["list_siswa"], JSON_PRETTY_PRINT);
+
+        // Menampilkan JSON
+        header('Content-Type: application/json');
+        echo $jsonData;
+    }
+
+    public function getAll($nisn = 0){
+
+        $data['list_siswa'] = $this->model('Siswa_model')->getAll(); 
+        $jsonData = json_encode($data["list_siswa"], JSON_PRETTY_PRINT);
+
+        // Menampilkan JSON
+        header('Content-Type: application/json');
+        echo $jsonData;
+    }
 
     public function laporan(){
         $data['title'] = "SMK PROFITA";
