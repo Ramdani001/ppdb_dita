@@ -220,6 +220,7 @@
 <!-- Content -->
 <main class="d-flex w-100 h-100 me-1 rounded shadow-lg p-3 card z-1" style="height: 87vh; margin-top: 5%; margin-left: 24%;">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <!-- Icon W.a -->
 <div class="bottom-0 rigth-0 w-full" style="position: fixed; right: 0;">
@@ -229,6 +230,9 @@
   </div>
   <!-- Icon W.a -->    
 <div class="d-flex">
+=======
+    <div class="d-flex">
+>>>>>>> parent of 2529033 (Perbaikan User FE)
 =======
     <div class="d-flex">
 >>>>>>> parent of 2529033 (Perbaikan User FE)
