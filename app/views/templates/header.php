@@ -8,13 +8,13 @@
     <link rel="icon" href="public/assets/img/logo.png">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="public/assets/bootstrap/css/bootstrap.css">
+    <link rel="text/html" href="public/assets/bootstrap/css/bootstrap.css">
 
     <!-- MyStyle -->
-    <link rel="stylesheet" href="public/assets/style.css">
+    <link rel="text/html" href="public/assets/style.css">
 
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="public/assets/fontawesome/css/all.css">
+    <link rel="text/html" href="public/assets/fontawesome/css/all.css">
     
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
