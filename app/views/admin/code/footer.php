@@ -1,6 +1,11 @@
+<<<<<<< HEAD
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     
+=======
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+>>>>>>> parent of 2529033 (Perbaikan User FE)
     <!-- Vendor JS Files -->
     <script src="public/assets/admin/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="public/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -264,6 +269,7 @@
     
     <script>
     function changeSiswa(e){
+<<<<<<< HEAD
         let kond = document.getElementById('jenis_daftar').value;
         let kond_db = document.getElementById('local_jenis_daftar').value;
         // console.log(kond);
@@ -301,6 +307,31 @@
             }else{
                 alert("Tidak Bisa Merubah Jenis pendaftaran, jika ingin merubah harap hubungi Admin Kami Reguler");
             }
+=======
+        if(e == 2){
+
+            document.getElementById('btn_reguler').classList.remove('btn-primary');
+            document.getElementById('btn_reguler').classList.add('btn-secondary');
+
+            document.getElementById('btn_pindah').classList.remove('btn-secondary');
+            document.getElementById('btn_pindah').classList.add('btn-primary');
+            
+            document.getElementById('al_awal').classList.remove('d-none');
+            document.getElementById('al_pindah').classList.remove('d-none');
+            
+            sessionStorage.setItem('siswa', 'Pindahan');
+            
+        }else{
+            document.getElementById('btn_reguler').classList.add('btn-primary');
+            document.getElementById('btn_reguler').classList.remove('btn-secondary');
+            document.getElementById('btn_pindah').classList.add('btn-secondary');
+            document.getElementById('btn_pindah').classList.remove('btn-primary');
+
+            document.getElementById('al_awal').classList.add('d-none');
+            document.getElementById('al_pindah').classList.add('d-none');
+            
+            sessionStorage.setItem('siswa', 'Reguler');
+>>>>>>> parent of 2529033 (Perbaikan User FE)
         }
         
     }
@@ -317,10 +348,10 @@
 
             document.getElementById('btn_reguler').classList.remove('btn-primary');
             document.getElementById('btn_reguler').classList.add('btn-secondary');
-            
+
             document.getElementById('btn_pindah').classList.remove('btn-secondary');
             document.getElementById('btn_pindah').classList.add('btn-primary');
-            
+
         }else{
             document.getElementById('al_awal').classList.add('d-none');
             document.getElementById('al_pindah').classList.add('d-none');
