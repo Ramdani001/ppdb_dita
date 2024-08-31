@@ -192,14 +192,8 @@
 
 <!-- Content -->
 <main class="d-flex w-100 h-100 me-1 rounded shadow-lg p-3 card z-1" style="height: 87vh; margin-top: 5%; margin-left: 24%;">
-    <div class="d-flex">
-      <div class="card-title w-100" style="border-bottom: 1px solid gray;">
-        Formulir Pendaftaran Siswa Baru
-      </div>
-      <div class="d-flex p-3 gap-4">
-        <button class="btn btn-primary" onclick="changeSiswa(1)">Reguler</button>
-        <button class="btn btn-secondary" onclick="changeSiswa(2)">Pindahan</button>
-      </div>
+    <div class="card-title w-100" style="border-bottom: 1px solid gray;">
+      Formulir Pendaftaran Siswa Baru
     </div>
     <div class="header border p-2 d-flex">
       <!-- Btn Data Diri -->
@@ -554,42 +548,6 @@
                       echo "";
                     }
                   ?>" >
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-          <td id="al_awal" class="d-none">
-              <!-- Kelas Awal -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="kip" class="col-form-label">Kelas Awal</label>
-                </div>
-                <div class="col-6">
-                  <input type="Text" id="kelas_awal" name="kelas_awal" class="form-control" value="<?php
-                    if($siswa){
-                      echo $siswa['kelas_awal'];
-                    }else{
-                      echo "";
-                    }
-                  ?>" >
-                </div>
-              </div> 
-            </td>
-          <td id="al_pindah" class="d-none">
-              <!-- Alasan Pindah -->
-              <div class="row g-3 align-items-center m-2">
-                <div class="col-6">
-                  <label for="kip" class="col-form-label">Alasan Pindah</label>
-                </div>
-                <div class="col-6">
-                  <textarea type="Text" id="alasan_pindah" name="alasan_pindah" class="form-control"><?php
-                    if($siswa){
-                      echo $siswa['alasan_pindah'];
-                    }else{
-                      echo "";
-                    }
-                  ?></textarea>
                 </div>
               </div>
             </td>
