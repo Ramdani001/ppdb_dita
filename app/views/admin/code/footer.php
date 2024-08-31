@@ -1,25 +1,18 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     
-=======
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-=======
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/chart.js/chart.umd.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/echarts/echarts.min.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/quill/quill.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/tinymce/tinymce.min.js"></script>
-    <script src="<?= BASEURL ?>public/assets/admin/vendor/php-email-form/validate.js"></script>
->>>>>>> parent of 2529033 (Perbaikan User FE)
-
->>>>>>> parent of 2529033 (Perbaikan User FE)
+    <script src="public/assets/admin/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="public/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="public/assets/admin/vendor/chart.js/chart.umd.js"></script>
+    <script src="public/assets/admin/vendor/echarts/echarts.min.js"></script>
+    <script src="public/assets/admin/vendor/quill/quill.js"></script>
+    <script src="public/assets/admin/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="public/assets/admin/vendor/tinymce/tinymce.min.js"></script>
+    <script src="public/assets/admin/vendor/php-email-form/validate.js"></script>
     <!-- Vendor JS Files -->
     <script src="public/assets/admin/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="public/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
