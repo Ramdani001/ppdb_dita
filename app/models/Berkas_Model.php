@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Models;
 class Berkas_Model{
 
     private $table = "user";
@@ -150,7 +150,7 @@ class Berkas_Model{
         // die();
         
             // Query INSERT tanpa id_berkas jika id_berkas adalah AUTO_INCREMENT
-            $query = "INSERT INTO berkas (kk, akta, ijazah, kip, profile, kelakuan, ortu, sehat, pas_foto, lulus)
+            $query = "INSERT INTO berkas (kk, akta, ijazah, kip, profile, kelakuan, ortu, sehat, pas_foto, lulus, pindah)
             VALUES (:kk, :akta, :ijazah, :kip, :profile, :kelakuan, :ortu, :sehat, :pas_foto, :lulus, :pindah)";
 
             // Menyiapkan statement

@@ -16,7 +16,7 @@
       <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
+          <img src="public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
           <span class="d-none d-md-block dropdown-toggle ps-2"><?= $data['auth']['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
@@ -33,7 +33,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
+            <a class="dropdown-item d-flex align-items-center" href="LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -55,7 +55,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/">
+      <a class="nav-link collapsed" href="ViewAdminController/">
         <i class="bi bi-person"></i>
         <span>Dashboard</span>
       </a>
@@ -64,21 +64,21 @@
     <li class="nav-heading">Pages</li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/user">
+      <a class="nav-link collapsed" href="ViewAdminController/user">
         <i class="bi bi-person"></i>
         <span>User</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed bg-primary text-light " href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
+      <a class="nav-link collapsed bg-primary text-light " href="ViewAdminController/siswaDaftar">
         <i class="ri-graduation-cap-fill"></i>
         <span>Siswa Daftar</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/laporan">
+      <a class="nav-link collapsed" href="ViewAdminController/laporan">
         <i class="ri-folder-chart-fill"></i>
         <span>Laporan Pendaftaran</span>
       </a>
@@ -95,22 +95,36 @@
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Siswa Daftar</h5>
-
-        <table class="table table-hover">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h5 class="card-title">Siswa Daftar</h5>
+          <input type="text" name="search" id="search" class="shadow-md" placeholder="Masukan NISN" style="height: 30px; width: 300px; padding: 10px; border-radius: 5px;" onpress="search(this.value)">
+        </div>
+        <table class="table table-hover" id="siswaTable">
           <thead>
             <th class="text-center">No</th>
+            <th class="text-center">Profile</th>
             <th class="text-center">Nama</th>
             <th class="text-center">Asal Sekolah</th>
-            <th class="text-center">No.Telpon</th>
+            <th class="text-center">No.Telepon</th>
             <th class="text-center">Status</th>
             <th class="text-center">Aksi</th>
           </thead>
-          <tbody>
-            <?php foreach ($data["list_siswa"] as $key => $value) { ?>
+          <tbody id="tableBody">
+            <!-- Rows will be inserted here by JavaScript -->
+          </tbody>
+          <!-- <tbody>
+            <?php $i = 1; foreach ($data["list_siswa"] as $key => $value) { ?>
               <tr>
+                <td class="text-center"><?= $i ?></td>
                 <td class="text-center">
-                  <img style="width: 30px; height: 30px; border-radius: 100%;" src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="foto">
+                  <div class="position-absolute <?php if($value['jenis_daftar'] == 'Reguler') { echo 'd-none'; } ?>"  style="background-color: blue; font-size: 10px; padding: 5px; color: white; border-radius: 5px; margin-top: -10px; margin-left: -5px; transform: rotate(-20deg);">
+                    Pindahan
+                  </div>
+                  <?php if($value['profile'] != ""){ ?>
+                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="public/assets/img/profile/<?= $value['profile'] ?>" alt="foto">
+                   <?php }else{ ?>
+                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="public/assets/img/default.png" alt="foto">
+                   <?php } ?>
                 </td>
                 <td class="text-center"><?= $value["nama"] ?></td>
                 <td class="text-center"><?= $value["asal_sekolah"] ?></td>
@@ -135,8 +149,9 @@
                       }else{
                         echo "Ditolak";
                       }
-                    ?> 
+                    ?>
                   </button>
+                  <?php $i++ ?>
                 </td>
                 <td class="text-center">
                   <div class="d-flex gap-3 justify-content-center">
@@ -149,19 +164,14 @@
                       <i class="ri-file-edit-line"></i> 
                     </button>
  
-                    <a class="btn btn-secondary text-light" type="button" target="_blank" href="<?= BASEURL ?>ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">
+                    <a class="btn btn-secondary text-light" type="button" target="_blank" href="ViewAdminController/PrintSiswa/<?= $value['id_siswa'] ?>">
                     <i class="bi bi-printer"></i>
                     </a>
-   
-                    <!-- <button class="btn btn-danger text-light" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" data-siswa='<?= json_encode($value) ?>'>
-                      <i class="ri-delete-bin-2-line"></i>
-                    </button> -->
-  
                   </div>
                 </td>
               </tr>
             <?php } ?>
-          </tbody>
+          </tbody> -->
         </table>
        
       </div>
@@ -187,7 +197,7 @@
          <div>
           <h5>
             <b>
-              <u>Personal</u>
+              <u>Data Diri</u>
             </b>
           </h5>
          </div>
@@ -283,35 +293,35 @@
             <input type="text" class="form-control" id="det_biayai" disabled>
           </div> -->
           <!-- SD -->
-          <!-- <div class="mb-3">
+          <div class="mb-3">
             <label for="det_sd" class="form-label">SD</label>
             <input type="text" class="form-control" id="det_sd" disabled>
-          </div> -->
+          </div>
           <!-- Jurusan -->
           <div class="mb-3">
             <label for="det_jurusan" class="form-label">Jurusan</label>
             <input type="text" class="form-control" id="det_jurusan" disabled>
           </div>
           <!-- SMP -->
-          <!-- <div class="mb-3">
+          <div class="mb-3">
             <label for="det_smp" class="form-label">SMP</label>
             <input type="text" class="form-control" id="det_smp" disabled>
-          </div> -->
+          </div>
           <!-- No.KIP -->
           <!-- <div class="mb-3">
             <label for="det_no_kip" class="form-label">No.KIP</label>
             <input type="text" class="form-control" id="det_no_kip" disabled>
           </div> -->
           <!-- No.KK -->
-          <!-- <div class="mb-3">
+          <div class="mb-3">
             <label for="det_no_kk" class="form-label">No.KK</label>
             <input type="text" class="form-control" id="det_no_kk" disabled>
-          </div> -->
+          </div>
           <!-- Kepala Keluarga -->
-          <!-- <div class="mb-3">
+          <div class="mb-3">
             <label for="det_kepala_keluarga" class="form-label">Kepala Keluarga</label>
             <input type="text" class="form-control" id="det_kepala_keluarga" disabled>
-          </div> -->
+          </div>
 
           <!-- Bawah -->
         </div>
@@ -429,10 +439,10 @@
             <input type="text" class="form-control" id="det_ayah" disabled>
           </div>
           <!-- Status Ayah -->
-          <!-- <div class="mb-3">
+          <div class="mb-3">
             <label for="det_stat_ayah" class="form-label">Status Ayah</label>
             <input type="text" class="form-control" id="det_stat_ayah" disabled>
-          </div> -->
+          </div>
           <!-- NIK -->
           <div class="mb-3">
             <label for="det_nik_ayah" class="form-label">NIK</label>
@@ -490,10 +500,10 @@
               <input type="text" class="form-control" id="det_pendidikan_ibu" disabled>
             </div>
             <!-- Pekerjaan -->
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="det_pekerjaan_ibu" class="form-label">Pekerjaan</label>
               <input type="text" class="form-control" id="det_pekerjaan_ibu" disabled>
-            </div>
+            </div> -->
             <!-- Penghasilan -->
             <div class="mb-3">
               <label for="det_penghasilan_ibu" class="form-label">Penghasilan</label>
@@ -649,7 +659,7 @@
 </div>
 <!-- Modal Detail -->
 
-<input type="hidden" value="<?= BASEURL ?>" id="base_url">
+<input type="hidden" value="" id="base_url">
 <!-- Modal Edit -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -659,7 +669,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="<?= BASEURL ?>AdminController/editStatus" method="POST">
+        <form action="AdminController/editStatus" method="POST">
           <div style="">
             <div class="w-50">
               <!-- <div><span>No. Pendaftaran</span></div> -->
@@ -746,13 +756,13 @@
         document.getElementById('det_email').value = siswa.email;
         document.getElementById('det_phone').value = siswa.no_telp;
         // document.getElementById('det_biayai').value = siswa.biaya_sekolah;
-        // document.getElementById('det_sd').value = siswa.sd;
+        document.getElementById('det_sd').value = siswa.sd;
         document.getElementById('det_jurusan').value = siswa.jurusan;
-        // document.getElementById('det_smp').value = siswa.smp;
+        document.getElementById('det_smp').value = siswa.smp;
         // document.getElementById('det_no_kip').value = siswa.kip;
         // document.getElementById('det_no_kip').value = siswa.kip;
-        // document.getElementById('det_no_kk').value = siswa.no_kk;
-        // document.getElementById('det_kepala_keluarga').value = siswa.kepala_keluarga;
+        document.getElementById('det_no_kk').value = siswa.no_kk;
+        document.getElementById('det_kepala_keluarga').value = siswa.kepala_keluarga;
 
         document.getElementById('det_alamat').value = siswa.alamat;
         document.getElementById('det_rt').value = siswa.rt;
@@ -766,7 +776,7 @@
         // document.getElementById('det_jarak_kesekolah').value = siswa.jarak_sekolah;
         // document.getElementById('det_tempuh').value = siswa.waktu_tempuh;
         document.getElementById('det_ayah').value = siswa.nama_ayah;
-        // document.getElementById('det_stat_ayah').value = siswa.status_ayah;
+        document.getElementById('det_stat_ayah').value = siswa.status_ayah;
         document.getElementById('det_nik_ayah').value = siswa.nik_ayah;
         document.getElementById('det_lahir_ayah').value = siswa.tgl_lhr_ayah;
         document.getElementById('det_pendidikan_ayah').value = siswa.pendidikan_ayah;
@@ -777,7 +787,7 @@
         document.getElementById('det_ibu').value = siswa.nama_ibu;
         document.getElementById('det_lahir_ibu').value = siswa.tgl_lhr_ibu;
         document.getElementById('det_pendidikan_ibu').value = siswa.pendidikan_ibu;
-        document.getElementById('det_pekerjaan_ibu').value = siswa.pekerjaan_ibu;
+        // document.getElementById('det_pekerjaan_ibu').value = siswa.pekerjaan_ibu;
         document.getElementById('det_penghasilan_ibu').value = siswa.penghasilan_ibu;
         document.getElementById('det_nik_ibu').value = siswa.nik_ibu;
 

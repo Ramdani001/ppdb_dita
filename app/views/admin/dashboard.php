@@ -30,7 +30,7 @@
       <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="<?= BASEURL ?>public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
+          <img src="public/assets/img/profile/contoh.jpeg" alt="Profile" class="rounded-circle">
           <span class="d-none d-md-block dropdown-toggle ps-2"><?= $data['auth']['nama'] ?></span>
         </a><!-- End Profile Iamge Icon -->
 
@@ -54,7 +54,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="<?= BASEURL ?>LoginController/logout">
+            <a class="dropdown-item d-flex align-items-center" href="LoginController/logout">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
@@ -85,21 +85,21 @@
     <li class="nav-heading">Pages</li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/user">
+      <a class="nav-link collapsed" href="ViewAdminController/user">
         <i class="bi bi-person"></i>
         <span>User</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/siswaDaftar">
+      <a class="nav-link collapsed" href="ViewAdminController/siswaDaftar">
         <i class="bi bi-question-circle"></i>
         <span>Siswa Daftar</span>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= BASEURL ?>ViewAdminController/laporan">
+      <a class="nav-link collapsed" href="ViewAdminController/laporan">
         <i class="bi bi-question-circle"></i>
         <span>Laporan Pendaftaran</span>
       </a>
@@ -172,7 +172,7 @@
           document.addEventListener("DOMContentLoaded", () => {
 
             $.ajax({
-                url: '<?= BASEURL ?>ViewAdminController/chart',
+                url: 'ViewAdminController/chart',
                 success: function(data) {
 
                   console.log('Success:', data);
@@ -186,8 +186,7 @@
                               backgroundColor: [
                                 'rgb(255, 99, 132)',
                                 'rgb(54, 162, 235)',
-                                'rgb(255, 205, 86)',
-                                'rgb(255, 205, 200)'
+                                'rgb(255, 205, 86)'
                               ],
                               hoverOffset: 4
                             }]
