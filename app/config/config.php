@@ -1,9 +1,9 @@
 <?php
 
 // BASE URL
-define('BASEURL', 'C:/laragon/www/ppdbdita/');
+define('BASEURL', 'C:/laragon/www/ditappdb/');
 
-define('COMPONENT_PATH', 'C:/laragon/www/ppdbdita/app/views/component/');
+define('COMPONENT_PATH', 'C:/laragon/www/ditappdb/app/views/component/');
 
 // Local
 define('DB_HOST', 'localhost');
