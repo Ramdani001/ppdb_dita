@@ -18,7 +18,7 @@
 <header style="margin: 20px;">
         <div style="display: flex; gap: 30px; justify-content: center; align-items: center; border-bottom: 2px solid black;">
             <div>
-                <img src="<?= BASEURL ?>public/assets/img/logo.png" alt="" style="width: 150px;">
+                <img src="public/assets/img/logo.png" alt="" style="width: 150px;">
             </div>
             <div style="text-align: center;">
                 <h3>PEMERINTAH KOTA BANDUNG</h3>
@@ -136,7 +136,7 @@
                 <!-- ttd -->
                 <div style="display: flex; justify-content: end; margin: 15px;">
                     <div style="">
-                        <img src="<?= BASEURL ?>public/assets/img/ttd.png" alt="" style="width: 150px;" >
+                        <img src="public/assets/img/ttd.png" alt="" style="width: 150px;" >
                     </div>
                 </div>
                 <!-- img  -->

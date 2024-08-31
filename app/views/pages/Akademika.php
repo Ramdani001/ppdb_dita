@@ -4,7 +4,7 @@
     <div class="d-flex flex-wrap justify-content-between gap-5 flex-wrap">
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/guru1.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/guru1.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Shintia Apriliani, S.pd.
@@ -15,7 +15,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/guru2.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/guru2.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Supono Iskanda, S.pd.
@@ -26,7 +26,7 @@
         </div>
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/guru3.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/guru3.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Tono, S.pd.
@@ -38,7 +38,7 @@
 
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/guru4.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/guru4.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Dimas, S.pd.
@@ -50,7 +50,7 @@
 
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/aiKeukeu.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/aiKeukeu.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Ai Keukeu S.Pd
@@ -62,7 +62,7 @@
 
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/dede_hasanudin.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/dede_hasanudin.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Dede Hasanudin, S.pd.
@@ -74,7 +74,7 @@
 
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/dewi_pratiwi.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/dewi_pratiwi.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Dewi Pratiwi, S.pd.
@@ -86,7 +86,7 @@
 
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/dian_anggraeni.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/dian_anggraeni.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Dian Anggraeni, S.pd.
@@ -98,7 +98,7 @@
 
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/ahsya_bila.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/ahsya_bila.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Ahsyabila Fazira, S.pd.
@@ -110,7 +110,7 @@
 
         <!-- Card -->
         <div class="card" style="width: 18rem;">
-            <img src="<?= BASEURL ?>public/assets/img/guru/ananda_hilda.jpg" class="card-img-top" alt="guru">
+            <img src="public/assets/img/guru/ananda_hilda.jpg" class="card-img-top" alt="guru">
             <div class="card-body text-center">
                 <div class="card-tittle text-center">
                     Ananda Hilda, S.pd.

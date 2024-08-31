@@ -12,7 +12,7 @@
     <div class="card-body">
       
       <h2 class="text-center">SMK PROFITA</h2>
-      <form action="<?= BASEURL ?>/AdminController/Auth/login" method="post" class="p-2 mt-5">
+      <form action="/AdminController/Auth/login" method="post" class="p-2 mt-5">
         <div class="mb-3"> 
           <label for="emailLogin" class="form-label">Email address</label>
           <input type="email" class="form-control" id="emailLogin" name="email" aria-describedby="emailHelp" required>
@@ -34,7 +34,7 @@
   <div class="card" style="height: 80%;">
     <div class="card-body">
       <h2 class="text-center">SMK PROFITA</h2>
-      <form action="<?= BASEURL ?>/AdminController/auth/register" method="post" class="p-2">
+      <form action="<?= BASEURL ?>AdminController/auth/register" method="post" class="p-2">
         <div class="mb-3">
           <label for="name" class="form-label">Nama Lengkap</label>
           <input type="text" name="name" id="name1" class="form-control" id="name" aria-describedby="emailHelp" required>

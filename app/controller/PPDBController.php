@@ -115,7 +115,7 @@ class PPDBController extends Controller {
                 $parent = $this->model('Parent_Model')->insert($_POST);
                 // var_dump($parent);
                 // die(); 
-                 
+                  
                 // if($parent > 0){
                     $berkas = $this->model('Berkas_Model')->profile($_POST);
                     // var_dump($berkas);
